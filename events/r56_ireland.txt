@@ -5,6 +5,35 @@
 add_namespace = ireland
 
 add_namespace = news
+country_event = {
+	id = ireland.r
+	title = ireland.111.r
+	desc = ireland.111.r
+	picture = GFX_report_event_polish_civil_war
+	
+	trigger = {
+		tag = IRE
+		date > 1937.06.01
+	}
+	
+	option = {
+		name = ireland.111.r
+		ENG = {
+			if = {
+				limit = { IRE = { owns_state = 134  controls_state = 134 } }
+				transfer_state = 134 add_state_core = 134
+			}
+			if = {
+				limit = { IRE = { owns_state = 135  controls_state = 135 } }
+				transfer_state = 135 add_state_core = 135
+			}
+			if = {
+				limit = { IRE = { owns_state = 113 controls_state = 113 } }
+				transfer_state = 113 add_state_core = 113
+			}
+		}
+	}
+}
 
 ###nortern ireland
 country_event = {
