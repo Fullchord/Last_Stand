@@ -9,14 +9,14 @@ state={
 	resources={
 	}
 	history={
-		owner = AFG
+		owner = TUR
 		buildings = {
 			infrastructure = 1
 		}
 		victory_points = {
 			12248 1 
 		}
-		add_core_of = AFG
+		add_core_of = TUR
 	}
 
 	provinces={
