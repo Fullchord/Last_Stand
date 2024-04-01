@@ -436,25 +436,7 @@ country_event = {
 	}
 }
 
-# French Reject Demands
-country_event = {
-	id = japan.7
-	title = japan.7.t
-	desc = japan.7.d
-	picture = GFX_report_event_japanese_soldiers_03
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = japan.7.a
-		
-			add_timed_idea = {
-				idea = JAP_no_indochina
-				days = 120
-			}
-			news_event = { days = 5 id = news.6 }
-	}
-}
+
 
 # Germany Agrees to Withdraw Falkenhausen
 country_event = {
