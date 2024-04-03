@@ -9942,19 +9942,7 @@ mutually_exclusive = {
 			GER = { has_government = fascism }
 		}
 		completion_reward = {
-			every_country = {
-				limit = {
-					OR = {
-						original_tag = ENG
-						is_subject_of = ENG
-						is_in_faction_with = ENG
-					}
-				}
-				add_timed_idea = {
-					idea = strike_mainland_europe
-					days = 365
-				}
-			}
+			add_potential_special_forces_tree = yes
 		}
 	}
 }
