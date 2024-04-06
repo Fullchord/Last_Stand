@@ -2,6 +2,42 @@
 
 # Ask SOV about joining Comintern
 country_event = {
+	id = czech.i
+	title = czke.t
+	desc = czke.d
+	picture = GFX_report_event_polish_civil_war
+	
+	trigger = {
+		tag = SLO
+		date > 1937.06.01
+		HUN = {
+			exists = no
+		}
+	}
+	
+	option = {
+		name = czke.o
+		ROM = {
+			if = {
+				limit = { SLO = { owns_state = 70 controls_state = 70 } }
+				transfer_state = 70
+			}
+			if = {
+				limit = { SLO = { owns_state = 664 controls_state = 664 } }
+				transfer_state = 664
+			}
+			if = {
+				limit = { SLO = { owns_state = 71 controls_state = 71 } }
+				transfer_state = 71
+			}
+			if = {
+				limit = { SLO = { owns_state = 996 controls_state = 996 } }
+				transfer_state = 996
+			}
+		}
+	}
+}
+country_event = {
 	id = czech.1
 	title = czech.1.t
 	desc = czech.1.d
