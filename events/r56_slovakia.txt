@@ -5,6 +5,9 @@
 add_namespace = axis_minors_slovakia
 
 
+ 
+
+
 
 #border war with hungary here
 country_event = {

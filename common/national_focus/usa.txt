@@ -1736,8 +1736,8 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			add_stability = 0.15
 			add_war_support = 0.05
-			add_ideas = r56_USA_over_there
 			if = {
 				limit = {
 					NOT = { has_idea = BEL_volunteer_corps }
@@ -1757,7 +1757,6 @@ focus_tree = {
 				}
 				add_stability = -0.25
 			}
-			USA_congress_small_opposition = yes
 		}
 	}
 	focus = {

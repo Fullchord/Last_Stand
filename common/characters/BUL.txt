@@ -201,8 +201,8 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { trait_reckless cavalry_leader }
-			skill = 3
+			traits = { old_guard infantry_leader cavalry_leader }
+			skill = 4
 			attack_skill = 4
 			defense_skill = 2
 			planning_skill = 3
@@ -220,8 +220,8 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { old_guard infantry_leader }
-			skill = 3
+			traits = { old_guard infantry_leader cavalry_leader commando }
+			skill = 5
 			attack_skill = 4
 			defense_skill = 4
 			planning_skill = 2

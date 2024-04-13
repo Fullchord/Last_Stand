@@ -3404,7 +3404,18 @@ country_event = {
 					}
 				}
 			}
-			SLO = { transfer_state = 664 }
+			SLO = { transfer_state = 996 }
+		}
+		if = {
+			limit = {
+				664 = {
+					OR = {
+						is_owned_by = CZE
+						is_owned_by = GER
+					}
+				}
+			}
+			SLO = { transfer_state = 996 }
 		}
 		if = {
 			limit = { country_exists = CZE }
