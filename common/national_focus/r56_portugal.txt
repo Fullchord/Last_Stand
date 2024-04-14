@@ -1338,7 +1338,7 @@ focus_tree = {
 	focus = {
 		id = POR_salazar
 		icon = GFX_goal_generic_befriend_portugal
-		x = 20
+		x = 17
 		y = 0
 		cost = 10
 		ai_will_do = {
@@ -1375,7 +1375,7 @@ focus_tree = {
 		id = POR_extra_tech_slot2
 		icon = GFX_focus_research
 		prerequisite = { focus = POR_salazar }
-		x = 25
+		x = 19
 		y = 1
 		cost = 10
 		ai_will_do = {
@@ -1415,45 +1415,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
-	focus = {
-		id = por_nationalism_focus2
-		icon = GFX_focus_por_support_mns
-		prerequisite = { focus = POR_collectivist_ethos }
-		mutually_exclusive = { focus = POR_internationalism_focus }
-		mutually_exclusive = { focus = POR_nationalism_focus }
-		available = {
-			OR = {
-				has_government = fascism
-				has_government = neutrality
-			}
-		}
-		x = 16
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 50
-				modifier = {
-					factor = 0
-					is_historical_focus_on = yes
-				}
-		}
-
-		completion_reward = {
-			add_timed_idea = { idea = nationalism days = 1095 }
-		}
-	}
-
+	
 	focus = {
 		id = POR_nationalism_focus
 		icon = GFX_goal_salazar
 		prerequisite = { focus = POR_collectivist_ethos }
 		mutually_exclusive = { focus = POR_internationalism_focus }
 		mutually_exclusive = { focus = por_nationalism_focus2 }
-		x = 14
+		x = 17
 		y = 2
 		cost = 10
 
@@ -1466,192 +1435,12 @@ focus_tree = {
 		}
 	}
 
-
-	focus = {
-		id = POR_internationalism_focus
-		icon = GFX_goal_POR_pcp
-		prerequisite = { focus = POR_collectivist_ethos }
-		mutually_exclusive = { focus = POR_nationalism_focus }
-		mutually_exclusive = { focus = por_nationalism_focus2 }
-		x = 18
-		y = 2
-		cost = 10
-
-		ai_will_do = {
-			factor = 50
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-
-		completion_reward = {
-			add_timed_idea = { idea = internationalism days = 1095 }
-		}
-	}	
-
-	focus = {
-		id = POR_liberty_ethos
-		icon = GFX_goal_spr_support_democracy_portugal
-		prerequisite = { focus = POR_salazar }
-		mutually_exclusive = { focus = POR_collectivist_ethos }
-		x = 23
-		y = 1
-		cost = 10
-
-		ai_will_do = {
-			factor = 50
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-
-		completion_reward = {
-			add_ideas = liberty_ethos_focus
-			add_ideas = democratic_influence
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-
-	focus = {
-		id = POR_militarism
-		icon = GFX_focus_mex_restore_the_army_of_christ
-		prerequisite = { focus = por_nationalism_focus2 }
-		x = 16
-		y = 3
-		cost = 10
-		completion_reward = {
-			if = {
-				limit = { has_idea = neutrality_idea }
-				remove_ideas = neutrality_idea
-			}			
-			add_ideas = militarism_focus
-			army_experience = 20
-			set_rule = { can_send_volunteers = yes }
-		}
-		search_filters = {  FOCUS_FILTER_MANPOWER }
-	}
-
-	focus = {
-		id = POR_political_correctness
-		icon = GFX_goal_generic_dangerous_deal
-		prerequisite = { focus = POR_internationalism_focus }
-		x = 18
-		y = 3
-		cost = 10
-		completion_reward = {
-			if = {
-				limit = { has_idea = neutrality_idea }
-				remove_ideas = neutrality_idea
-			}		
-			add_political_power = 120
-			add_ideas = idea_political_correctness
-		}
-		search_filters = {  FOCUS_FILTER_POLITICAL }
-	}
-
-	focus = {
-		id = POR_progress_cult
-		icon = GFX_goal_research_silver_cooperation
-		prerequisite = { focus = POR_socialist_realism }
-		mutually_exclusive = { focus = POR_socialist_science }
-		x = 22
-		y = 4
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			add_ideas = progress_cult_focus
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-
-	focus = {
-		id = POR_socialist_realism
-		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = POR_internationalism_focus }
-		x = 20
-		y = 3
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			add_political_power = 120
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-
-	focus = {
-		id = POR_socialist_science
-		icon = GFX_socialist_science
-		prerequisite = { focus = POR_socialist_realism }
-		mutually_exclusive = { focus = POR_progress_cult }
-		x = 20
-		y = 4
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			add_ideas = socialist_science_focus
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER }
-	}
-
-
-	focus = {
-		id = POR_neutrality_focus
-		icon = GFX_goal_generic_neutrality_focus
-		prerequisite = { focus = POR_liberty_ethos }
-		mutually_exclusive = { focus = POR_interventionism_focus }
-		x = 23
-		y = 2
-		cost = 10
-		ai_will_do = {
-			factor = 3
-		}
-		completion_reward = {
-			if = {
-				limit = { NOT = { has_idea = neutrality_idea } }
-				add_ideas = neutrality_idea
-			}
-			add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
-	}
-
-	focus = {
-		id = POR_interventionism_focus
-		icon = GFX_goal_class_a_reservists
-		prerequisite = { focus = POR_liberty_ethos }
-		mutually_exclusive = { focus = POR_neutrality_focus }
-		x = 25
-		y = 2
-		cost = 10
-
-		ai_will_do = {
-			factor = 35
-		}
-
-		completion_reward = {
-			if = {
-				limit = { has_idea = neutrality_idea }
-				remove_ideas = neutrality_idea
-			}	
-			set_rule = { can_send_volunteers = yes }
-			add_political_power = 150
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-
+	
 	focus = {
 		id = POR_military_youth
 		icon = GFX_mocidade
 		prerequisite = { focus = POR_policia_estado }
-		x = 14
+		x = 17
 		y = 5
 		cost = 10
 		completion_reward = {
@@ -1679,136 +1468,10 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
 	}
 
-	focus = {
-		id = POR_deterrence
-		icon = GFX_goal_generic_defence
-		prerequisite = { focus = POR_neutrality_focus }
-		x = 23
-		y = 3
-		cost = 10
-		completion_reward = {
-			add_ideas = deterrence
-		}
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
+	
 
-	focus = {
-		id = POR_volunteer_corps
-		icon = GFX_goal_generic_allies_build_infantry
-		prerequisite = { focus = POR_interventionism_focus }
-		x = 25
-		y = 3
-		cost = 10
-		completion_reward = {
-			add_ideas = volunteer_corps_focus
-		}
-	}
-
-	focus = {
-		id = POR_paramilitarism
-		icon = GFX_focus_por_portuguese_legion
-		prerequisite = { focus = POR_militarism }
-		x = 16
-		y = 5
-		cost = 10
-		completion_reward = {
-			add_ideas = paramilitarism_focus
-		}
-	}
-
-	focus = {
-		id = POR_indoctrination_focus
-		icon = GFX_postive_heroism
-		prerequisite = { focus = POR_political_correctness }
-		x = 18
-		y = 4
-		cost = 10
-		completion_reward = {
-			add_ideas = indoctrination_focus
-			add_political_power = 100
-		}
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
-	}
-
-focus = {
-		id = POR_women_pilots
-		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = POR_indoctrination_focus }
-		x = 18
-		y = 5
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			air_experience = 25
-			set_rule = {
-				can_generate_female_aces = yes
-			}
-		}
-	}
-
-
-	focus = {
-		id = POR_foreign_expeditions
-		icon = GFX_goal_generic_more_territorial_claims
-		prerequisite = { focus = POR_volunteer_corps }
-		x = 24
-		y = 4
-		cost = 10
-		completion_reward = {
-			add_ideas = foreign_expeditions_focus
-		}
-	}
-
-	focus = {
-		id = POR_why_we_fight
-		icon = GFX_goal_generic_propaganda
-		prerequisite = { focus = POR_foreign_expeditions focus = POR_deterrence }
-		available = { 
-			OR = { 
-				threat > 0.75 
-				has_defensive_war = yes 
-			}
-		}
-
-		continue_if_invalid = yes
-		
-		x = 23
-		y = 5
-		cost = 10
-		completion_reward = {
-			if = {
-				limit = { NOT = { has_idea = neutrality_idea } }
-				set_rule = { can_create_factions = yes }
-			}
-			add_ideas = why_we_fight_focus
-		}
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
-	}
-
-	focus = {
-		id = POR_political_commissars
-		icon = GFX_goal_focus_communist_army
-		prerequisite = { focus = POR_indoctrination_focus focus = POR_socialist_science focus = POR_progress_cult}
-		available = {
-		}
-		x = 20
-		y = 5
-		cost = 10
-		completion_reward = {
-			add_ideas = political_commissars_focus
-			if = {
-				limit = { has_government = communism }
-				add_popularity = {
-					ideology = communism
-					popularity = 0.2
-				}
-			}
-			add_political_power = 100
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
+	
+	
 
 	focus = {
 		id = POR_ideological_fanaticism
@@ -1830,59 +1493,12 @@ focus = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 	}
 	
-	focus = {
-		id = POR_technology_sharing
-		icon = GFX_goal_research_silver_cooperation
-		prerequisite = { focus = POR_ideological_fanaticism focus = POR_why_we_fight }
-		available = {
-			has_war = yes
-			is_in_faction = yes
-			OR = {
-				num_of_factories > 50
-				any_country = {
-					is_in_faction_with = ROOT
-					num_of_factories > 50
-				}
-			}
-		}		
-		x = 23
-		y = 7
-		cost = 10
-		completion_reward = {
-			if = {
-				limit = {
-					original_research_slots > 2
-				}
-				add_tech_bonus = {
-					name = electronics_bonus
-					bonus = 1
-					uses = 2
-					category = electronics
-				}
-				add_tech_bonus = {
-					name = industrial_bonus
-					bonus = 1
-					uses = 2
-					category = industry
-				}	
-				add_tech_bonus = {
-					name = infantry_weapons_bonus
-					bonus = 1
-					uses = 1
-					category = infantry_weapons
-					category = artillery
-				}
-							
-			}			
-		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
-	}
-
+	
 	focus = {
 		id = POR_deus_patria_familia
 		icon = GFX_goal_fatima
 		prerequisite = { focus = POR_nationalism_focus }
-		x = 14
+		x = 17
 		y = 3
 		cost = 10
 		completion_reward = {
@@ -1909,7 +1525,7 @@ focus = {
 		id = POR_policia_estado
 		icon = GFX_goal_pide
 		prerequisite = { focus = POR_deus_patria_familia }
-		x = 14
+		x = 17
 		y = 4
 		cost = 10
 		completion_reward = {
@@ -1917,174 +1533,16 @@ focus = {
 		}
 	}
 
-
 	
-	focus = {
-		id = POR_join_allies
-		icon = GFX_goal_generic_major_alliance
-		prerequisite = { focus = POR_volunteer_corps }
-		available = {
-			is_puppet = no
-			has_government = democratic
-			ENG = {
-				exists = yes
-				has_government = democratic
-			}
-			NOT = { has_war_with = ENG }
-		}
-		bypass = {
-			is_in_faction_with = ENG
-		}
-
-		x = 25
-		y = 5
-		cost = 10
-		completion_reward = {
-			create_corps_commander = {
-				name = "José Mendes dos Reis"
-				portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
-				traits = { war_hero infantry_officer }
-				skill = 3
-				attack_skill = 3
-				defense_skill = 2
-				planning_skill = 3
-				logistics_skill = 3
-			}
-			create_navy_leader = {
-				name = "Armando Pereira de Castro Agatão Lança"
-				portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_1.dds"
-				traits = { spotter bold }
-				skill = 3
-				attack_skill = 2
-				defense_skill = 4
-				maneuvering_skill = 3
-				coordination_skill = 2
-			}			
-				ENG = {
-					country_event = { id = portugal.30 }
-				}
-		}
-	}
-
-focus = {
-		id = POR_join_allies2
-		icon = GFX_focus_chi_british_cooperation
-		prerequisite = { focus = POR_military_youth }
-		available = {
-			is_puppet = no
-			ENG = {
-				exists = yes
-				has_government = democratic
-			}
-			NOT = { has_war_with = ENG }
-		}
-		bypass = {
-			is_in_faction_with = ENG
-		}
-
-		x = 14
-		y = 6
-		cost = 10
-		completion_reward = {
-				ENG = {
-					country_event = { id = portugal.30 }
-				}
-		}
-	}
-
-focus = {
-		id = POR_join_axis
-		icon = GFX_goal_generic_the_axis
-		prerequisite = { focus = POR_paramilitarism }
-		
-		x = 16
-		y = 6
-		cost = 10
-
-		available = {
-			is_in_faction = no
-			is_puppet = no
-			has_government = fascism
-			any_other_country = {
-				is_major = yes
-				has_government = fascism
-				is_faction_leader = yes
-				NOT = { has_war_with = ROOT }
-				has_opinion = {
-					target = ROOT
-					value > -11
-				}						
-			}
-		}
-		completion_reward = {
-			if = {
-				limit = {
-					GER = {
-						has_government = fascism
-						is_faction_leader = yes
-						has_capitulated = no
-						NOT = { has_war_with = ROOT }
-						exists = yes
-					}
-					NOT = {
-						any_other_country = {
-							is_in_faction_with = GER
-							has_war_with = ROOT
-						}
-					}					
-				}
-				GER = {
-					country_event = portugal.10
-				}
-			}
-			else = {
-				get_best_alliance_match_fascism_effect = yes
-				var:best_leader = {
-					country_event = generic.2
-				}
-			}		
-		}
-		search_filters = { FOCUS_FILTER_ALLIANCE }
-	}
-
-
-	focus = {
-		id = POR_join_comintern
-		icon = GFX_focus_chi_mission_to_the_soviet_union
-		prerequisite = { focus = POR_political_commissars }
-	
-
-		available = {
-			is_puppet = no
-			has_government = communism
-			SOV = {
-				exists = yes
-				has_government = communism
-			}
-			NOT = { has_war_with = SOV }
-		}
-		bypass = {
-			is_in_faction_with = SOV
-		}
-
-
-		x = 20
-		y = 6
-		cost = 10
-		completion_reward = {
-			SOV = {
-				country_event = { id = portugal.20 }
-			}
-		}
-		search_filters = { FOCUS_FILTER_ALLIANCE }
-	}
-
 focus = {
 		id = POR_call_of_arms
 		icon = GFX_goal_portugalwar
-		x = 30
-		y = 0
+		x = 16
+		y = 6
 		cost = 5
+		prerequisite = {
+			focus = POR_military_youth
+		}
 		ai_will_do = {
 			factor = 1
 		}	
@@ -2095,328 +1553,5 @@ focus = {
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 	}
 
-	focus = {
-		id = POR_demand_ceuta
-		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = POR_call_of_arms }
-		mutually_exclusive = { focus = POR_befriend_spain }
-		x = 27
-		y = 1
-		cost = 2
 
-		available = {
-			POR = {
-				has_army_manpower = { size > 150000 }
-				}
-			SPR = {
-				has_war = no
-				controls_state = 290
-			}
-			threat > 0.25
-		}
-		
-		ai_will_do = {
-			factor = 0.25
-		}
-
-
-		bypass = {
-			290 = { is_owned_by = POR }
-		}
-		
-		completion_reward = {
-
-
-			SPR = {
-			add_opinion_modifier = { target = POR modifier = POR_greedy }
-			}
-
-
-			add_named_threat = { threat = 1 name = portugal.t1.t }
-			army_experience = 15
-			290 = { add_claim_by = POR }
-            add_stability = 0.05
-			if =  {
-				limit = {
-					SPR = { owns_state = 290 }
-				}
-				SPR = {
-					country_event = { id = portugal.1 }
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = POR_befriend_spain
-		icon = GFX_focus_intervention_spain_nationalists
-		prerequisite = { focus = POR_call_of_arms }
-		mutually_exclusive = { focus = POR_demand_ceuta }
-		x = 29
-		y = 1
-		cost = 2
-		ai_will_do = {
-			factor = 0.25
-		}
-		
-		available = {
-			any_country = {
-				original_tag = SPR
-				has_government = ROOT
-				is_in_faction = no
-				NOT = {
-					tag = SPC
-				}
-			}
-			is_in_faction = no
-			NOT = {
-				is_puppet = yes
-			}
-			threat > 0.5
-		}
-		search_filters = { FOCUS_FILTER_ALLIANCE FOCUS_FILTER_POLITICAL }
-		completion_reward = {
-			set_rule = { can_create_factions = yes }
-			create_faction = "Imperio Iberico"
-			random_country = {
-				limit = {
-					has_government = ROOT
-					original_tag = SPR
-					NOT = {
-						tag = SPC
-					}
-				}
-				country_event = generic.5
-			}
-		}
-			
-	}
-
-	focus = {
-		id = POR_ceuta
-		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = POR_demand_ceuta }
-		x = 27
-		y = 2
-		cost = 10
-
-		available = {
-			POR = {
-				controls_state = 290
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-                290 = {
-                    add_building_construction = {
-                        type = infrastructure
-                        level = 2
-                        instant_build = yes 
-                    }               
-                    add_extra_state_shared_building_slots = 2
-                    add_building_construction = {
-                        type = industrial_complex
-                        level = 2
-                        instant_build = yes
-                    }
-                }
-            }
-            search_filters = { FOCUS_FILTER_INDUSTRY }
-		}
-
-	focus = {
-		id = POR_demand_rhodesia
-		icon = GFX_focus_por_the_pink_map
-		prerequisite = { focus = POR_call_of_arms }
-		mutually_exclusive = { focus = POR_demand_ceylon }
-		x = 32
-		y = 1
-		cost = 10
-
-		available = {
-			POR = {
-				has_army_manpower = { size > 300000 }
-				}
-			ENG = {
-				controls_state = 545
-			}
-		}
-		
-		ai_will_do = {
-			factor = 15
-		}
-
-
-		bypass = {
-			545 = { is_owned_by = POR }
-		}
-		
-		completion_reward = {
-
-
-	
-
-			add_named_threat = { threat = 1 name = portugal.t1.t }
-			army_experience = 15
-			545 = { add_claim_by = POR }
-			if =  {
-				limit = {
-					ENG = { owns_state = 545 }
-				}
-				ENG = {
-					country_event = { id = portugal.4 }
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = POR_rhodesia
-		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = POR_demand_rhodesia }
-		x = 33
-		y = 2
-		cost = 10
-
-		available = {
-			POR = {
-				controls_state = 545
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-                545 = {
-                    add_building_construction = {
-                        type = infrastructure
-                        level = 2
-                        instant_build = yes 
-                    }               
-                    add_extra_state_shared_building_slots = 2
-                    add_building_construction = {
-                        type = industrial_complex
-                        level = 2
-                        instant_build = yes
-                    }
-                }
-            }
-            search_filters = { FOCUS_FILTER_INDUSTRY }
-		}
-
-	focus = {
-		id = POR_demand_ceylon
-		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = POR_call_of_arms }
-		mutually_exclusive = { focus = POR_demand_rhodesia }
-		x = 34
-		y = 1
-		cost = 10
-
-		available = {
-			POR = {
-				has_army_manpower = { size > 300000 }
-				}
-			ENG = {
-				controls_state = 422
-			}
-		}
-		
-		ai_will_do = {
-			factor = 15
-		}
-
-
-		bypass = {
-			422 = { is_owned_by = POR }
-		}
-		
-		completion_reward = {
-
-
-			ENG = {
-			add_opinion_modifier = { target = POR modifier = POR_greedy }
-			}
-
-
-			add_named_threat = { threat = 1 name = portugal.t1.t }
-			army_experience = 15
-			422 = { add_claim_by = POR }
-			if =  {
-				limit = {
-					ENG = { owns_state = 422 }
-				}
-				ENG = {
-					country_event = { id = portugal.40 }
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = POR_brazil
-		icon = GFX_goal_generic_attack_brazil
-		prerequisite = { focus = POR_call_of_arms }
-		mutually_exclusive = { focus = POR_befriend_brazil }
-		x = 31
-		y = 2
-		cost = 10
-
-		available = {	
-			r56_script_i_am_sane = yes
-			BRA = {
-				r56_script_target_is_sane = yes
-			}
-		}
-			
-		bypass = {
-			BRA = {
-				r56_script_standard_bypass = yes
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-				create_wargoal = { 
-					target = BRA 
-					expire = 0
-					type = annex_everything 
-				}              
-			}
-			search_filters = { FOCUS_FILTER_ANNEXATION }
-        }
-
-    focus = {
-		id = POR_befriend_brazil
-		icon = GFX_goal_generic_improve_relations
-		prerequisite = { focus = POR_befriend_spain }
-		mutually_exclusive = { focus = POR_brazil }
-		x = 29
-		y = 2
-		cost = 2
-		ai_will_do = {
-			factor = 0.25
-		}
-		
-		available = {
-			BRA = {
-				exists = yes
-				is_in_faction = no
-			}
-			threat > 0.8
-		}
-		completion_reward = {	
-			BRA = {
-				country_event = generic.5
-			}
-		}
-		search_filters = { FOCUS_FILTER_ALLIANCE }
-	}
 }

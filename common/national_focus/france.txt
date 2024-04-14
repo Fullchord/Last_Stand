@@ -460,7 +460,7 @@ focus_tree = {
 						level = 3
 						instant_build = yes
 					}
-					add_core_of = FRA
+					add_compliance = 100
 				}
 			}
 			if = {
@@ -487,7 +487,7 @@ focus_tree = {
 							level = 3
 							instant_build = yes
 						}
-						add_core_of = FRA
+						add_compliance = 100
 					}
 				}
 			}
@@ -523,7 +523,7 @@ focus_tree = {
 						instant_build = yes
 					}
 					
-					add_core_of = FRA
+					add_compliance = 100
 
 				}
 			}
@@ -610,7 +610,7 @@ focus_tree = {
 						level = 3
 						instant_build = yes
 					}
-					add_core_of = FRA
+					add_compliance = 100
 				}
 			}
 			if = {
@@ -689,7 +689,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-				add_core_of = FRA
+				add_compliance = 100
 			}
 			every_other_country = {
 				limit = {
@@ -746,7 +746,7 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
-				add_core_of = FRA
+				add_compliance = 100
 			}
 			462 = {
 				add_building_construction = {
@@ -754,7 +754,7 @@ focus_tree = {
 					level = 3
 					instant_build = yes
 				}
-				add_core_of = FRA
+				add_compliance = 100
 			}
 			if = {
 				limit = {
@@ -4542,49 +4542,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = FRA_de_gaulle_strategy
 		}
-		x = 67
+		x = 18
 		y = 0
-		offset = {
-			x = -20
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = FRA_action_francaise
-			}
-		}
-		offset = {
-			x = -18
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				OR = {
-					has_completed_focus = FRA_brumaire_movement
-					has_completed_focus = FRA_support_the_legitimatises
-					has_completed_focus = FRA_side_with_the_orleanists
-				}
-			}
-		}
-		offset = {
-			x = -47
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				OR = {
-					has_completed_focus = FRA_status_quo
-					has_completed_focus = FRA_far_right_leagues
-					has_completed_focus = FRA_radicalize_front
-				}
-			}
-		}
+		
 		relative_position_id = FRA_rearmament
 		ai_will_do = {
 			factor = 2
