@@ -11,7 +11,7 @@ state={
 	}
 
 	history={
-		owner = SWE
+		owner = TUR
 		victory_points = {
 			6050 20 
 		}
@@ -38,7 +38,7 @@ state={
 				coastal_bunker = 3
 			}
 		}
-		add_core_of = SWE
+		add_core_of = TUR
 	}
 
 	provinces={
