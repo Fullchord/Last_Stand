@@ -74,7 +74,7 @@ NDefines.NCountry.NUCLEAR_BOMB_DROP_UNITY_EFFECT_MAX_VP = 1;
 	
 NDefines.NProduction.LICENSE_EQUIPMENT_SPEED_NOT_FACTION = 0
 NDefines.NProduction.LICENSE_EQUIPMENT_TECH_SPEED_PER_YEAR = 0
-NDefines.NProduction.LICENSE_EQUIPMENT_BASE_SPEED = -0.25
+NDefines.NProduction.LICENSE_EQUIPMENT_BASE_SPEED = -0.1
 NDefines.NProduction.BASE_LICENSE_IC_COST = 0	
 NDefines.NProduction.LICENSE_IC_COST_YEAR_INCREASE = 0	
 NDefines.NDiplomacy.LICENSE_ACCEPTANCE_PUPPET_BASE = 20			-- Acceptance modifier for puppets requesting production licenses.
