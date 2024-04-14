@@ -777,8 +777,8 @@
  ECR_neutrality_ADJ:0 "East-Chahar"
 
  #ENG
- ENG_neutrality:0 "United Kingdom"
- ENG_neutrality_DEF:0 "the United Kingdom"
+ ENG_neutrality:0 "UK"
+ ENG_neutrality_DEF:0 "the UK"
  ENG:0 "Great Britain"
  ENG_DEF:0 "Great Britain"
  ENG_ADJ:0 "British"
@@ -2503,8 +2503,8 @@
  SOV_neutrality_DEF:0 "the Russian Empire"
  SOV_democratic:0 "Russian Democratic Federal Republic"
  SOV_democratic_DEF:0 "the Russian Democratic Federal Republic"
- SOV_communism:0 "Union of Soviet Socialist Republics"
- SOV_communism_DEF:0 "the Union of Soviet Socialist Republics"
+ SOV_communism:0 "USSR"
+ SOV_communism_DEF:0 "the USSR"
 
 
  #SOM
@@ -2892,8 +2892,8 @@
  URG_communism_ADJ:0 "Uruguayan"
 
  #USA
- USA_democratic:0 "United States of America"
- USA_democratic_DEF:0 "the United States of America"
+ USA_democratic:0 "USA"
+ USA_democratic_DEF:0 "the USA"
  USA_fascism:0 "United States of America"
  USA_fascism_DEF:0 "the United States of America"
  USA_neutrality:1 "United States of America"
