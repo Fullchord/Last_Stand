@@ -2313,6 +2313,9 @@ country_event = {
 		ai_chance = {
 			factor = 85
 		}
+		set_capital = {
+			state = 461
+		}
 		set_global_flag = fall_of_france
 		set_country_flag = free_france
 		save_global_event_target_as = free_france
