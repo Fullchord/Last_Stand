@@ -2863,53 +2863,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
-	focus = {
-		id = FRA_support_the_finns
-		icon = GFX_focus_invite_finland
-		x = 1
-		y = 1
-		prerequisite = {
-			focus = FRA_reynaud_economic_reforms
-			focus = FRA_rearmament_policy
-		}
-		relative_position_id = FRA_rearmament_policy
-		cost = 5
-
-		ai_will_do = {
-			factor = 3
-		}
-
-		available = {
-			FIN = {
-				has_war = yes
-				NOT = {
-					has_war_with = ROOT
-				}
-			}
-			is_subject = no
-		}
-		
-		bypass = {
-
-		}
-
-		
-		
-		
-
-		completion_reward = {
-			army_experience = 10
-			FIN = {
-				add_manpower = 10000
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 2500
-					producer = FRA
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_MILITARY_EQUIPMENT }
-	}
+	
 	focus = {
 		id = FRA_go_with_britain
 		icon = GFX_ENG_alliance
@@ -3137,29 +3091,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_ALLIANCE FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 	}
-	focus = {
-		id = FRA_intervention
-		icon = GFX_goal_generic_military_sphere
-		cost = 10
-		prerequisite = {
-			focus = FRA_little_entente
-		}
-		relative_position_id = FRA_little_entente
-		x = -3
-		y = 1
-		
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			set_rule = {
-				can_send_volunteers = yes
-			}
-			add_ideas = {
-				FRA_intervention_idea
-			}
-		}
-	}
+	
 	focus = {
 		id = FRA_invite_yugoslavia
 		icon = GFX_goal_generic_befriend_yugoslavia
@@ -3409,77 +3341,7 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_ALLIANCE }
 	}
-	focus = {
-		id = FRA_invite_poland
-		icon = GFX_goal_generic_befriend_poland
-		cost = 10
-		prerequisite = {
-			focus = FRA_little_entente
-		}
-		relative_position_id = FRA_little_entente
-		x = -2
-		y = 2
-		available = {
-			is_subject = no
-			OR = {
-				AND = {
-					is_in_faction = yes
-					NOT = {
-						any_country = {
-							is_in_faction_with = ROOT
-							has_war_with = POL
-						}
-					}
-				}
-				AND = {
-					POL = {
-						has_government = democratic
-						is_faction_leader = yes
-					}
-					is_in_faction = no
-				}
-
-
-			}
-
-		}
-		bypass = {
-			POL = {
-				OR = {
-					exists = no
-					is_subject = yes
-					has_war_with = ROOT
-					is_in_faction_with = ROOT
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 3
-		}
-		completion_reward = {
-			if = {
-				limit = {
-					is_in_faction = yes
-				}
-				POL = {
-					country_event = france.17
-				}				
-			}
-			if = {
-				limit = {
-					is_in_faction = no
-					POL = {
-						is_faction_leader = yes
-					}
-				}
-				POL = {
-					country_event = generic.2
-				}				
-			} 
-
-		}
-		search_filters = { FOCUS_FILTER_ALLIANCE }
-	}
+	
 	focus = {
 		id = FRA_foreign_guest_workers
 		icon = GFX_BEL_union_agreement
