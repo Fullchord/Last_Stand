@@ -3025,7 +3025,7 @@ focus_tree = {
 
 		
 		
-		x = -4
+		x = -2
 		y = 1
 		relative_position_id = r56_USA_foundation_of_NATO
 		cost = 8
@@ -3094,7 +3094,7 @@ focus_tree = {
 
 		
 		
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = r56_USA_guide_true_democracies
 		cost = 5
@@ -3123,7 +3123,7 @@ focus_tree = {
 
 		
 		
-		x = 4
+		x = 2
 		y = 1
 		relative_position_id = r56_USA_foundation_of_NATO
 		cost = 8
@@ -3203,7 +3203,7 @@ focus_tree = {
 	focus = {
 		id = USA_homeland_security
 		icon = GFX_goal_generic_defence
-		x = -7
+		x = -4
 		y = 1
 		prerequisite = { focus = USA_war_plans_division }
 		relative_position_id = USA_war_plans_division
@@ -3275,7 +3275,7 @@ focus_tree = {
 	focus = {
 		id = USA_war_plan_blue
 		icon = GFX_goal_USA_over_there
-		x = -7
+		x = -4
 		y = 2
 		prerequisite = { focus = USA_homeland_security }
 		relative_position_id = USA_war_plans_division
@@ -3317,7 +3317,7 @@ focus_tree = {
 	focus = {
 		id = USA_intervention_in_the_americas
 		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = -4
+		x = -2
 		y = 1
 		prerequisite = { focus = USA_war_plans_division }
 		relative_position_id = USA_war_plans_division
@@ -3712,7 +3712,7 @@ focus_tree = {
 	focus = {
 		id = USA_intervention_in_asia
 		icon = GFX_goal_generic_major_war
-		x = 6
+		x = 3
 		y = 1
 		prerequisite = { focus = USA_war_plans_division }
 		relative_position_id = USA_war_plans_division
@@ -3749,7 +3749,7 @@ focus_tree = {
 		continue_if_invalid = yes
 		available_if_capitulated = yes
 
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = USA_intervention_in_asia
 		cost = 10
@@ -7440,7 +7440,7 @@ focus_tree = {
 		available = {
 			OR = { 
 				date > 1940.01.01
-	}
+			}
 			democratic > 0.80
 		}
 		
