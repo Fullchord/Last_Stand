@@ -2246,12 +2246,12 @@ ideas = {
 			
 			modifier = {
 				port_strike = 1
-				carrier_capacity_penalty_reduction = -0.5
-				sortie_efficiency = 0.5
-				naval_strike_attack_factor = 0.12
-				naval_strike_targetting_factor = 0.12
-				naval_strike_agility_factor = 0.12
-				invasion_preparation = -0.12
+				carrier_capacity_penalty_reduction = -0.75
+				sortie_efficiency = 1.0
+				naval_strike_attack_factor = 0.20
+				naval_strike_targetting_factor = 0.20
+				naval_strike_agility_factor = 0.20
+				invasion_preparation = -0.50
 			}
 		}
 
