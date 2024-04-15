@@ -3626,11 +3626,11 @@ focus_tree = {
 			custom_effect_tooltip = GER_build_panzer_quality_tt
 			add_ideas = GER_tank_quality
 			add_tech_bonus = {
-				name = SOV_the_iron_wall_of_russian_resolve
-				ahead_reduction = 1
-				bonus = 1.0
+				add_tech_bonus = {
+				bonus = 1
 				uses = 1
-				technology = super_heavy_tank_chassis
+				category = industry
+			}
 			}
 		}
 		search_filters = {
