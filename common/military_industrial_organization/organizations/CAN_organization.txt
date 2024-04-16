@@ -7,6 +7,15 @@
  #  #  # #  # # # ## 
 
  #################### 
+ CAN_Vickars_heavy = {
+	include = generic_heavy_tank_organization
+	icon = GFX_idea_vickers_armstrong_bel
+	allowed = { 
+		tag = CAN
+	}
+
+	
+}
 CAN_vickers_armstrong_can_organization = {
 	name = CAN_vickers_armstrong_can_organization
 	include = generic_medium_tank_organization

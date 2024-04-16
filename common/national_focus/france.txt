@@ -2128,21 +2128,7 @@ focus_tree = {
 		
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			add_state_core = 459
-			add_state_core = 460
-			add_state_core = 513
-			add_state_core = 933
-			add_state_core = 514
-			if = {
-				limit = {
-					ALG = {
-						exists = yes
-						is_subject_of = ROOT
-					}
-				}
-				annex_country = { target = ALG }
-			}
-			FRA_right_wing_riot_effect = yes
+			add_stability = 0.1
 		}
 	}
 	focus = {
