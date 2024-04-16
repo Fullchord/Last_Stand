@@ -863,31 +863,40 @@
 		completion_reward = {
            		declare_war_on = {
 					target = USA
+					type = take_state_focus
 				}
 				declare_war_on = {
 					target = FRA
+					type = take_state_focus
 				}
 				declare_war_on = {
 					target = ENG
+					type = take_state_focus
 				}
 				declare_war_on = {
 					target = RAJ
+					type = take_state_focus
 				}
 				hidden_effect = {
 					declare_war_on = {
+						type = take_state_focus
 						target = AST
 					}
 					declare_war_on = {
+						type = take_state_focus
 						target = SAF
 					}
 					declare_war_on = {
 						target = CAN
+						type = take_state_focus
 					}
 					declare_war_on = {
 						target = BRA
+						type = take_state_focus
 					}
 					declare_war_on = {
 						target = MEX
+						type = take_state_focus
 					}
 				}
 			

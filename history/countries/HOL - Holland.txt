@@ -84,6 +84,7 @@ if = {
 }
 
 add_ideas = {
+	No_invade
 	HOL_wilhelmina 
 	HOL_reliance_on_the_gold_standard
 	BEL_pillarized_society

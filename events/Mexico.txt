@@ -1128,19 +1128,8 @@ country_event = {
 	trigger = {
 		tag = MEX
 		date > 1936.08.28
-		OR = {
-			has_government = neutrality
-			AND = {
-				has_government = communism
-				NOT = {
-					has_country_leader = { ruling_only = yes character = MEX_dionisio_encina }
-				} 
-			}
 
-		}
-		NOT = {
-			has_global_flag = trotsky_not_welcome_in_mexico
-		}
+		
 		NOT = {
 			SOV_is_left_opposition = yes 
 			NOT = { SOV_soviet_civil_war_not_started = yes } # IF the civil war has already started, and Left Opposition has risen up, Trotsky probably won't appear in Mexico

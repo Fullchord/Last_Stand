@@ -3167,6 +3167,12 @@ focus_tree = {
 		y = 1
 		relative_position_id = RAJ_two_nation_theory
 
+		available = {
+			ENG = {
+				has_completed_focus = ENG_imperial_conference
+			}
+		}
+
 		cost = 20
 
 		ai_will_do = {
@@ -3242,11 +3248,7 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			NOT = {
-				has_country_leader = {
-    				name = "Lord Linlithgow"
-				}
-			}
+			
 		}
 		
 		bypass = {
@@ -3274,7 +3276,6 @@ focus_tree = {
 				planning_skill = 4
 				logistics_skill = 4
 			}
-			add_ideas = RAJ_revenge
 			add_ideas = war_economy
 		}
 	}

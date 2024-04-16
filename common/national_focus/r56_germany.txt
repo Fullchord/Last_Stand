@@ -3052,7 +3052,7 @@ focus_tree = {
 		prerequisite = {
 			#focus = GER_naval_rearmament_r56
 		}
-		x = 12
+		x = 5
 		y = 1
 		relative_position_id = GER_anschluss
 		ai_will_do = {
@@ -3209,7 +3209,7 @@ focus_tree = {
 		prerequisite = {
 			focus = GER_anschluss
 		}
-		x = 9
+		x = 3
 		y = 1
 		relative_position_id = GER_anschluss
 		available = {
@@ -5672,7 +5672,7 @@ focus_tree = {
 		#	focus = GER_czech_friend
 		#}
 		relative_position_id = GER_anschluss
-		x = 7
+		x = 1
 		y = 1
 		ai_will_do = {
 			factor = 9
@@ -7458,7 +7458,7 @@ focus = {
 
 	
 
-	x = 65
+	x = 57
 	y = 0
 	
 	ai_will_do = {
