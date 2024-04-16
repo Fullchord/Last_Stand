@@ -1,6 +1,31 @@
 political_actions = {
 
 
+	Annex_malaya = {	
+	allowed = {
+		tag = ENG
+	}
+	available = {
+		date > 1937.6.1
+
+	}
+	complete_effect = {
+		annex_country = {
+		target = MAL
+		transfer_troops = yes
+	}
+	every_state = {
+		limit = {
+			is_core_of = MAL
+										
+		}
+		add_compliance = 100
+	}
+   }
+
+}
+		
+	
 
 
 	targeted_race_for_the_bomb = {
