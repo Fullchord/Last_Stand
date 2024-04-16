@@ -341,7 +341,7 @@ ideas = {
 			picture = generic_war_preparation
 
 			modifier = {
-				production_factory_max_efficiency_factor = 0.075
+				production_factory_max_efficiency_factor = 0.05
 			}
 		}
 	

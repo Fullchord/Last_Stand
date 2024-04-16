@@ -24,6 +24,107 @@ political_actions = {
    }
 
 }
+Annex_malaya = {	
+	allowed = {
+		tag = ENG
+	}
+	available = {
+		date > 1937.6.1
+
+	}
+	complete_effect = {
+		annex_country = {
+		target = MAL
+		transfer_troops = yes
+	}
+	every_state = {
+		limit = {
+			is_core_of = MAL
+										
+		}
+		add_compliance = 100
+	}
+   }
+
+}
+Annex_Mexico = {	
+	allowed = {
+		tag = USA
+	}
+	available = {
+		date > 1937.6.1
+		MEX = {
+			is_ai = yes
+		}
+
+	}
+	complete_effect = {
+		annex_country = {
+		target = MEX
+		transfer_troops = yes
+	}
+	every_state = {
+		limit = {
+			is_core_of = MEX
+										
+		}
+		add_compliance = 100
+	}
+   }
+
+}
+Annex_Mexico_1 = {	
+	allowed = {
+		tag = BRA
+	}
+	available = {
+		MEX = {
+			is_ai = yes
+		}
+		date > 1937.6.1§
+
+	}
+	complete_effect = {
+		annex_country = {
+		target = MEX
+		transfer_troops = yes
+	}
+	every_state = {
+		limit = {
+			is_core_of = MEX
+										
+		}
+		add_compliance = 100
+	}
+   }
+
+}
+Annex_Brazil = {	
+	allowed = {
+		tag = MEX
+	}
+	available = {
+		BRA = {
+			is_ai = yes
+		}
+		date > 1937.6.1
+
+	}
+	complete_effect = {
+		annex_country = {
+		target = BRA
+		transfer_troops = yes
+	}
+	every_state = {
+		limit = {
+			is_core_of = BRA
+										
+		}
+		add_compliance = 100
+	}
+   }
+
+}
 		
 	
 

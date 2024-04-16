@@ -117,7 +117,7 @@ ideas = {
 		modifier = {
 			conscription = 0.015
 			mobilization_speed = 0.15
-			command_power_gain_mult = -0.05
+			max_planning_factor = 0.15
 		}
 	}
 
@@ -384,6 +384,7 @@ ideas = {
 			picture = generic_goods_red_bonus
 
 			modifier = {
+				production_factory_max_efficiency_factor = 0.1
 				consumer_goods_factor = -0.25
 			}
 
