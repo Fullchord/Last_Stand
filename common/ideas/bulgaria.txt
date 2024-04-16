@@ -870,6 +870,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
+				cas_damage_reduction = 0.1
 				conscription_factor = 0.1
 				non_core_manpower = 0.05
 				experience_gain_navy_factor = 0.1
@@ -881,6 +882,7 @@ ideas = {
 				army_morale_factor = 0.1
 				max_command_power = 25
 				justify_war_goal_time = -0.5
+				army_org_factor = 0.1
 			}
 		}
 
@@ -899,6 +901,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
+				cas_damage_reduction = 0.1
 				conscription_factor = 0.1
 				non_core_manpower = 0.05
 				experience_gain_navy_factor = 0.1
@@ -929,6 +932,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
+				cas_damage_reduction = 0.1
 				conscription_factor = 0.1
 				non_core_manpower = 0.05
 				experience_gain_navy_factor = 0.15
@@ -959,6 +963,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
+				cas_damage_reduction = 0.25
 				conscription_factor = 0.1
 				non_core_manpower = 0.05
 				experience_gain_navy_factor = 0.15
@@ -1043,6 +1048,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
+				cas_damage_reduction = 0.25
 				conscription_factor = 0.1
 				non_core_manpower = 0.05
 				experience_gain_navy_factor = 0.05
