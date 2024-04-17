@@ -5811,7 +5811,6 @@ focus_tree = {
 		x = 0
 		y = 1
 		prerequisite = { focus = USA_build_the_pentagon }
-		mutually_exclusive = { focus = USA_victory_program }
 		relative_position_id = USA_build_the_pentagon
 		cost = 10
 
@@ -5856,63 +5855,7 @@ focus_tree = {
 			USA_congress_small_opposition = yes
 		}
 	}
-	focus = {
-		id = USA_victory_program
-		icon = GFX_goal_polish_wartime_industry
-		x = 2
-		y = 1
-		prerequisite = { focus = USA_build_the_pentagon }
-		mutually_exclusive = { focus = USA_90_division_gamble }
-		relative_position_id = USA_build_the_pentagon
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			has_war_support > 0.10
-			if = {
-				limit = {
-					threat < 0.5
-					has_war = no
-				}
-				congress_high_support_trigger = yes
-			}
-			else = {
-				congress_medium_support_trigger = yes
-			}
-		}
-
-		completion_reward = {
-			add_ideas = r56_USA_victory_program
-			if = {
-				limit = {
-					has_war = no
-				}
-				custom_effect_tooltip = USA_victory_program_focus_tt
-				if = {
-					limit = {
-						has_war_support < 0.4
-						has_war_support > 0.2
-						has_war = no
-					}
-					add_stability = -0.1
-				}
-				else_if = {
-					limit = {
-						has_war_support < 0.2
-						has_war = no
-					}
-					add_stability = -0.25
-				}
-				else = {
-
-				}
-			}
-			USA_congress_small_opposition = yes
-		}
-	}
+	
 	focus = {
 		id = USA_department_of_defense
 		icon = GFX_Goal_USA_department_of_defense
