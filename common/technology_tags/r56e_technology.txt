@@ -46,9 +46,7 @@ technology_folders = {
 		ledger = army
 	}
 
-	etax_folder = {
-		ledger = civilian
-	}
+	
 }
 
 #####-----------------------------------------------------------> End

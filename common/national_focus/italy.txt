@@ -72,7 +72,7 @@ focus_tree = {
 
 		bypass = {
 			OR = {
-				NOT = { has_global_flag = second_italo_ethiopian_war_flag }
+
 				AND = {
 					550 = { NOT = { is_owned_and_controlled_by = ITA } }
 					559 = { NOT = { is_owned_and_controlled_by = ITA } }
@@ -213,7 +213,6 @@ focus_tree = {
 		relative_position_id = ITA_italian_highways_bba
 		cost = 5
 		available = {
-			NOT = { has_global_flag = second_italo_ethiopian_war_flag }
 			OR = {
 				any_owned_state = { is_on_continent = africa }
 				any_subject_country = { capital_scope = { is_on_continent = africa } }
@@ -4470,7 +4469,6 @@ focus_tree = {
 		relative_position_id = ITA_preserve_army_traditions
 		cost = 10
 		available = {
-			NOT = { has_global_flag = second_italo_ethiopian_war_flag }
 			#NTH_Manu: Should probably also require a completed focus in any of the ME political paths, so that it can unlock appropriate generals
 		}
 
@@ -8339,25 +8337,7 @@ focus_tree = {
 		icon = GFX_focus_generic_attack_ethiopia
 		x = 51
 		y = 0
-		offset = {
-			x = -20
-			y = 0
-			trigger = {
-				OR = {
-					NOT = { has_dlc = "By Blood Alone" }
-					AND = {
-						has_game_rule = {
-							rule = obsolete_focus_branches_visibility
-							option = HIDE
-						}
-						OR = {
-							has_completed_focus = ITA_culto_del_duce
-							has_completed_focus = ITA_convene_the_grand_council
-						}
-					}
-				}
-			}
-		}
+
 		cost = 1
 
 	
@@ -8768,8 +8748,7 @@ focus_tree = {
 		}
 
 		available = {
-			NOT = { has_global_flag = second_italo_ethiopian_war_flag }
-			NOT = { has_country_flag = ITA_defeat_in_ethiopia_flag }
+
 		}
 
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_BALANCE_OF_POWER}

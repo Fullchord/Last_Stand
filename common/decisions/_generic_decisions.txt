@@ -2,28 +2,7 @@
 political_actions = {
 
 
-	france_convoys = {
-		FRA_convoys = {
-			   
-			   allowed = {
-		   }
-		   
-		   available = {
-			   has_global_flag = fall_of_france
-		   } 
-		   fire_only_once = yes
-		   visible = {
-			   original_tag = FRA
-		   }
-		   
-		   complete_effect = {
-				  add_equipment_to_stockpile ={
-				   type = convoy
-				   amount = 260
-			   }
-		   }	
-		}		
-		   }
+
 
 
 	Annex_malaya = {	

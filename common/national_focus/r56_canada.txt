@@ -4350,52 +4350,7 @@ focus_tree = {
 	#####   QUEBEC STUFF  ######
 	############################
 		
-	focus = {
-		id = r56_CAN_suppress_the_separatists
-		icon = GFX_focus_generic_strike_at_democracy1
-		relative_position_id = r56_CAN_communism
-		x = 5
-		y = 0
-		
-		search_filters = { FOCUS_FILTER_POLITICAL }
-
-		cost = 10
-		
-		ai_will_do = {
-			factor = 5
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-		
-		prerequisite = {
-			#focus = r56_CAN_forge_our_own_future
-		}
-		
-		available = {
-			is_subject = no #otherwiese useless
-			OR = {
-				has_completed_focus = r56_CAN_trust_in_the_commonwealth
-				has_completed_focus = r56_CAN_forge_our_own_future
-				has_completed_focus = r56_CAN_emergency_assembly
-			}
-			QBC = {
-				exists = yes
-				NOT = {
-					is_subject_of = ROOT
-				}
-			}
-		}
-
-		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = QBC
-				expire = 0
-			} 
-		}
-	}		
+	
 
     ############################
 	#####   ALT-DEMOCRACY  #####

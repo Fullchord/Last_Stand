@@ -17,7 +17,7 @@ auto_tech_rush = {
                     date > 1936.04.01
                 }
             complete_effect = {
-                SWE = {
+                TUR = {
                     create_production_license = {
                         target = ROOT
                         equipment = {
@@ -48,7 +48,7 @@ auto_tech_rush = {
                     date > 1936.12.01
                 }
             complete_effect = {
-                SWE = {
+                TUR  = {
                     create_production_license = {
                         target = ROOT
                         equipment = {
@@ -79,7 +79,7 @@ auto_tech_rush = {
                     date > 1938.02.01
                 }
             complete_effect = {
-                SWE = {
+                TUR  = {
                     create_production_license = {
                         target = ROOT
                         equipment = {
@@ -110,7 +110,7 @@ auto_tech_rush = {
                     date > 1938.06.01
                 }
             complete_effect = {
-                SWE = {
+                TUR  = {
                     create_production_license = {
                         target = ROOT
                         equipment = {
@@ -141,7 +141,7 @@ auto_tech_rush = {
                     date > 1938.06.01
                 }
             complete_effect = {
-                SWE = {
+                TUR = {
                     create_production_license = {
                         target = ROOT
                         equipment = {
@@ -172,7 +172,7 @@ auto_tech_rush = {
                     date > 1939.01.01
                 }
             complete_effect = {
-                SWE = {
+                TUR  = {
                     create_production_license = {
                         target = ROOT
                         equipment = {
@@ -203,7 +203,7 @@ auto_tech_rush = {
                     date > 1940.02.01
                 }
             complete_effect = {
-                SWE = {
+                TUR  = {
                     create_production_license = {
                         target = ROOT
                         equipment = {
@@ -234,7 +234,7 @@ auto_tech_rush = {
                     date > 1940.02.01
                 }
             complete_effect = {
-                SWE = {
+                TUR  = {
                     create_production_license = {
                         target = ROOT
                         equipment = {
@@ -265,7 +265,7 @@ auto_tech_rush = {
                     date > 1940.03.01
                 }
             complete_effect = {
-                SWE = {
+                TUR  = {
                     create_production_license = {
                         target = ROOT
                         equipment = {
@@ -296,7 +296,7 @@ auto_tech_rush = {
                     date > 1938.06.01
                 }
             complete_effect = {
-                SWE = {
+                TUR  = {
                     create_production_license = {
                         target = ROOT
                         equipment = {
