@@ -34,7 +34,7 @@ state = {
 			4995 1 
 		}
 		
-		owner = ETH
+		owner = ITA
 		add_core_of = ETH
 		
 
