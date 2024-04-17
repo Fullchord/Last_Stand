@@ -8332,64 +8332,41 @@ focus_tree = {
 ##     ## ####  ######     ##     #######  ##     ## ####  ######  ##     ## ######## 
 
 
-	focus = {
-		id = ITA_the_abyssinian_fiasco
-		icon = GFX_focus_generic_anti_fascist_diplomacy
-		mutually_exclusive = { focus = ITA_solid_progress focus = ITA_struggle_in_ethiopia }
-		x = 10
-		y = 0
-		relative_position_id = ITA_naval_power_projection
-		cost = 5
+	
 
-		allow_branch = {
-			has_dlc = "By Blood Alone"
-			if = {
-				limit = {
-					has_game_rule = {
-						rule = obsolete_focus_branches_visibility
-						option = HIDE
+	focus = {
+		id = ITA_solid_progress
+		icon = GFX_focus_generic_attack_ethiopia
+		x = 51
+		y = 0
+		offset = {
+			x = -20
+			y = 0
+			trigger = {
+				OR = {
+					NOT = { has_dlc = "By Blood Alone" }
+					AND = {
+						has_game_rule = {
+							rule = obsolete_focus_branches_visibility
+							option = HIDE
+						}
+						OR = {
+							has_completed_focus = ITA_culto_del_duce
+							has_completed_focus = ITA_convene_the_grand_council
+						}
 					}
 				}
-				NOT = { has_completed_focus = ITA_culto_del_duce }
-				NOT = { has_completed_focus = ITA_convene_the_grand_council }
 			}
 		}
+		cost = 1
 
 	
 
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = ITA_the_abyssinian_fiasco_completion_tt
-				always = no
+				tooltip = ITA_solid_progress_completion_tt
+				always = yes
 			}
-		}
-
-		completion_reward = {
-			add_popularity = {
-				ideology = fascism 
-				popularity = -0.15
-			}
-			add_war_support = -0.03
-		}
-	}
-
-	focus = {
-		id = ITA_solid_progress
-		icon = GFX_focus_generic_attack_ethiopia
-		mutually_exclusive = { focus = ITA_the_abyssinian_fiasco focus = ITA_struggle_in_ethiopia }
-		x = 2
-		y = 0
-		
-
-		relative_position_id = ITA_the_abyssinian_fiasco
-		cost = 5
-
-		bypass = {
-			ITA_has_peaced_out_eth_on_startup = yes
-		}
-
-		available = {
-				ETH = { has_capitulated = yes }
 		}
 
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT}
@@ -8399,36 +8376,15 @@ focus_tree = {
 				ideology = fascism 
 				popularity = 0.05
 			}
-			add_war_support = 0.03
-			add_stability = 0.03
+			add_war_support = 0.09
+			add_stability = 0.09
+			army_experience = 200
+			
 			add_political_power = 25
 		}
 	}
 
-	focus = {
-		id = ITA_struggle_in_ethiopia
-		icon = GFX_goal_generic_major_war
-		mutually_exclusive = { focus = ITA_the_abyssinian_fiasco focus = ITA_solid_progress }
-		x = 2
-		y = 0
-		relative_position_id = ITA_solid_progress
-		cost = 5
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = ITA_the_abyssinian_fiasco_completion_tt
-				always = no
-			}
-		}
-
-		completion_reward = {
-			add_popularity = {
-				ideology = fascism 
-				popularity = -0.05
-			}
-			add_stability = -0.03
-			add_political_power = -25
-		}
-	}
+	
 
 	
 
