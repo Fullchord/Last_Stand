@@ -86,36 +86,16 @@ formable_nations_mod_category = {
 		complete_effect = { capital_scope = { set_state_flag = formable_nations_old_capital }
 			set_cosmetic_tag = FORM_BRI
 			add_stability = 0.2
-			set_capital = { state = 291 }
 			custom_effect_tooltip = core_land
 			hidden_effect = { sound_effect = complete_focus  set_country_flag = unform_available
 				113 = { add_core_of = ROOT }
 				134 = { add_core_of = ROOT }
 				135 = { add_core_of = ROOT }
-				119 = { add_core_of = ROOT }
-				120 = { add_core_of = ROOT }
-				121 = { add_core_of = ROOT }
-				133 = { add_core_of = ROOT }
-				136 = { add_core_of = ROOT }
-				131 = { add_core_of = ROOT }
-				130 = { add_core_of = ROOT }
-				132 = { add_core_of = ROOT }
-				128 = { add_core_of = ROOT }
-				122 = { add_core_of = ROOT }
-				129 = { add_core_of = ROOT }
-				125 = { add_core_of = ROOT }
-				338 = { add_core_of = ROOT }
-				123 = { add_core_of = ROOT }
-				127 = { add_core_of = ROOT }
-				126 = { add_core_of = ROOT }
+				
 
 
 			}
-			656 = { add_core_of = ROOT }
-			454 = { add_core_of = ROOT }
-			455 = { add_core_of = ROOT }
-			344 = { add_core_of = ROOT }
-			350 = { add_core_of = ROOT }
+	
 		}
 	}
 

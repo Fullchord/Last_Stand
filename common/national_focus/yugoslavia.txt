@@ -63,6 +63,9 @@ focus_tree = {
 		y = 0
 
 		cost = 10
+		available = {
+			always = false
+		}
 
 		ai_will_do = {
 			factor = 200
@@ -2630,6 +2633,9 @@ focus_tree = {
 		mutually_exclusive = { focus = YUG_western_focus }
 		x = 11
 		y = 0
+		available = {
+			always = false
+		}
 
 		cost = 10
 

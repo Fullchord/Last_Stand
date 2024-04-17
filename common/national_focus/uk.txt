@@ -5985,39 +5985,7 @@ mutually_exclusive = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			custom_effect_tooltip = ENG_imperial_conference_tt
 			add_political_power = 120
-			every_country = {
-				limit = {
-					OR = {
-						tag = ENG
-						AND = {
-							is_subject_of = ENG
-							tag = CAN
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = SAF
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = RAJ
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = AST
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = NZL
-						}
-					}
-				}
-				country_event = { id = britain.54 hours = 6 }
-			}
-			hidden_effect = { 
-				news_event = { id = britain.26 days = 1 }
-			}
 		}
 	}
 
