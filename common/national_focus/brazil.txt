@@ -60,7 +60,7 @@ focus_tree = {
 		id = BRA_end_the_occupation
 		icon = GFX_goal_BRA_end_the_occupation
 		prerequisite = { focus = bra_a_voz_do_brasil }
-		x = 10
+		x = 8
 		y = 1
 		relative_position_id = bra_a_voz_do_brasil
 		cost = 5
@@ -116,49 +116,14 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
-	focus = {
-		id = bra_monarquia_focus
-		icon = GFX_focus_por_reclaim_crown_jewel
-		prerequisite = { focus = bra_polaca }
-		mutually_exclusive = { focus = bra_populism }
-		mutually_exclusive = { focus = bra_federalism }
-		available = {
-			has_government = neutrality
-			has_idea = bra_instabilidade
-		}
-		x = 0
-		y = 1
-		relative_position_id = bra_polaca
-		cost = 14.30
-		ai_will_do = {
-			factor = 50
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-			modifier = {
-				URG = {
-					is_ai = no
-				}
-				factor = 0
-			}
-		}
-		completion_reward = {
-			add_named_threat = { threat = 0.5 name = bra_monarquia_focus_t }
-			remove_ideas = bra_instabilidade
-			hidden_effect = {
-				country_event = { days = 1 id = bra.5 }
-			}
-			custom_effect_tooltip = bra_monarquia_tooltip
-		}
-	}
+
 	focus = {
 		id = bra_populism
 		icon = GFX_focus_bra_populism
 		prerequisite = { focus = bra_polaca }
 		mutually_exclusive = { focus = bra_federalism }
 		mutually_exclusive = { focus = bra_monarquia_focus }
-		x = -2
+		x = 0
 		y = 1
 		relative_position_id = bra_polaca
 		cost = 10
@@ -186,182 +151,8 @@ focus_tree = {
 			remove_ideas = bra_instabilidade
 		}
 	}
-	focus = {
-		id = bra_2_prestes_column
-		icon = GFX_goal_generic_uprising
-		prerequisite = { focus = bra_populism }
-		mutually_exclusive = { focus = bra_quereismo }
-		available = {
-			has_country_leader = { 
-				character = BRA_getulio_vargas
-				ruling_only = yes
-			}
-		}
-		x = -1
-		y = 1
-		relative_position_id = bra_populism
-		ai_will_do = {
-			factor = 25
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-		cost = 5
-
-		bypass = {
-			NOT = {
-				has_country_leader = { 
-					character = BRA_getulio_vargas
-					ruling_only = yes
-				}
-			}
-		}
-
-		completion_reward = {
-			country_event = { days = 1 id = bra.13 }
-		}
-	}
-	focus = {
-		id = bra_plan_cohen
-		icon = GFX_goal_workers_support
-		prerequisite = { focus = bra_2_prestes_column }
-		x = 0
-		y = 1
-		relative_position_id = bra_2_prestes_column
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-		cost = 5
-		completion_reward = {
-			swap_ideas = { remove_idea = bra_antropofagia add_idea = bra_antropofagia_com_1 }
-		}
-	}
-	focus = {
-		id = bra_cosmopolitanism
-		icon = GFX_focus_generic_join_comintern
-		prerequisite = { focus = bra_plan_cohen }
-		x = 0
-		y = 2
-		relative_position_id = bra_2_prestes_column
-		cost = 5
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-		completion_reward = {
-			swap_ideas = { remove_idea = bra_antropofagia_com_1 add_idea = bra_antropofagia_com_2 }
-		}
-	}
-	focus = {
-		id = bra_federalism
-		icon = GFX_focus_bra_federalism
-		prerequisite = { focus = bra_polaca }
-		mutually_exclusive = { focus = bra_populism }
-		mutually_exclusive = { focus = bra_monarquia_focus }
-		x = 2
-		y = 1
-		relative_position_id = bra_polaca
-		ai_will_do = {
-			factor = 50
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-		cost = 10
-		available = {
-			AND = {
-				NOT = {
-					has_government = communism
-				}
-				has_idea = bra_instabilidade
-			}
-		}
-		completion_reward = {
-			remove_ideas = bra_instabilidade
-		}
-	}
-	focus = {
-		id = bra_brazilian_action
-		icon = GFX_focus_bra_the_integralist_levant
-		prerequisite = { focus = bra_federalism }
-		mutually_exclusive = { focus = bra_regionalism }
-		x = 1
-		y = 1
-		relative_position_id = bra_federalism
-		ai_will_do = {
-			factor = 25
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-		cost = 5
-		available = { 
-			has_country_leader = { 
-				character = BRA_getulio_vargas
-				ruling_only = yes
-			}
-		}
-
-		bypass = {
-			NOT = {
-				has_country_leader = { 
-					character = BRA_getulio_vargas
-					ruling_only = yes
-				}
-			}
-		}
-		completion_reward = {
-			country_event = { days = 1 id = bra.14 }
-		}
-	}
-	focus = {
-		id = bra_dreams_of_an_empire
-		icon = GFX_goal_BRA_coa_fascism
-		prerequisite = { focus = bra_brazilian_action }
-		x = 0
-		y = 1
-		relative_position_id = bra_brazilian_action
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-		cost = 5
-		completion_reward = {
-			swap_ideas = { remove_idea = bra_antropofagia add_idea = bra_antropofagia_fasc_1 }
-		}
-	}
-	focus = {
-		id = bra_vital_espace
-		icon = GFX_goal_centralize_power
-		prerequisite = { focus = bra_dreams_of_an_empire }
-		x = 0
-		y = 1
-		relative_position_id = bra_dreams_of_an_empire
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
-		}
-		cost = 5
-		completion_reward = {
-			swap_ideas = { remove_idea = bra_antropofagia_fasc_1 add_idea = bra_antropofagia_fasc_2 }
-		}
-	}
+	
+	
 	focus = {
 		id = bra_quereismo
 		icon = GFX_goal_generic_propaganda
@@ -374,7 +165,7 @@ focus_tree = {
 			}
 		}
 		relative_position_id = bra_populism
-		x = 1
+		x = 0
 		y = 1
 		ai_will_do = {
 			factor = 25
@@ -452,73 +243,14 @@ focus_tree = {
 			swap_ideas = { remove_idea = bra_antropofagia_neu_1 add_idea = bra_antropofagia_neu_2 }
 		}
 	}
-	focus = {
-		id = bra_regionalism
-		icon = GFX_goal_generic_freedom
-		prerequisite = { focus = bra_federalism }
-		mutually_exclusive = { focus = bra_brazilian_action }
-		available = { 
-			has_country_leader = { 
-				character = BRA_getulio_vargas
-				ruling_only = yes
-			}
-		}
-		relative_position_id = bra_federalism
-		x = -1
-		y = 1
-		ai_will_do = {
-			factor = 25
-		}
-		cost = 5
-
-		bypass = {
-			NOT = {
-				has_country_leader = { 
-					character = BRA_getulio_vargas
-					ruling_only = yes
-				}
-			}
-		}
-		
-		completion_reward = {
-			country_event = { days = 1 id = bra.16 }
-		}
-	}
-	focus = {
-		id = bra_abertura
-		icon = GFX_focus_bra_non_ducor_duco
-		prerequisite = { focus = bra_regionalism }
-		relative_position_id = bra_regionalism
-		x = 0
-		y = 1
-		ai_will_do = {
-			factor = 0.5
-		}
-		cost = 5
-		completion_reward = {
-			swap_ideas = { remove_idea = bra_antropofagia add_idea = bra_antropofagia_dem_1 }
-		}
-	}
-	focus = {
-		id = bra_tecnocratic_reform
-		icon = GFX_focus_generic_the_giant_wakes
-		prerequisite = { focus = bra_abertura }
-		relative_position_id = bra_abertura
-		x = 0
-		y = 1
-
-		cost = 5
-		completion_reward = {
-			swap_ideas = { remove_idea = bra_antropofagia_dem_1 add_idea = bra_antropofagia_dem_2 }
-		}
-	}
+	
 	focus = {
 		id = bra_brasilia
 		icon = GFX_focus_spa_the_spanish_miracle
 		prerequisite = { focus = bra_tiro_de_guerra focus = bra_vital_espace }
-		x = 2
+		x = 1
 		y = 2
-		relative_position_id = bra_tecnocratic_reform
+		relative_position_id = bra_patriotic_effort
 		cost = 10
 		completion_reward = {
 			if = {
@@ -760,9 +492,9 @@ focus_tree = {
 		id = bra_tiro_de_guerra
 		icon = GFX_goal_generic_democratic_army
 		prerequisite = { focus = bra_patriotic_effort focus = bra_tecnocratic_reform focus = bra_monarquia_focus focus = bra_vital_espace focus = bra_cosmopolitanism }
-		x = -1
+		x = 0
 		y = 1
-		relative_position_id = bra_tecnocratic_reform
+		relative_position_id = bra_patriotic_effort
 		cost = 10
 		completion_reward = {
 			set_cosmetic_tag = FORM_SOUs
@@ -830,7 +562,7 @@ focus_tree = {
 		prerequisite = { focus = bra_tiro_de_guerra }
 		x = -1
 		y = 2
-		relative_position_id = bra_tecnocratic_reform
+		relative_position_id = bra_patriotic_effort
 		cost = 10
 		completion_reward = {
 			set_rule = { can_send_volunteers = yes }
@@ -843,7 +575,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production2
 		prerequisite = { focus = bra_a_voz_do_brasil }
 		relative_position_id = bra_a_voz_do_brasil
-		x = -7
+		x = -5
 		y = 1
 		cost = 5
 		
@@ -863,7 +595,7 @@ focus_tree = {
 		icon = GFX_focus_generic_cryptologic_bomb
 		prerequisite = { focus = bra_a_voz_do_brasil }
 		relative_position_id = bra_a_voz_do_brasil
-		x = -5
+		x = -3
 		y = 1
 		cost = 5
 		
@@ -1633,7 +1365,7 @@ focus = {
 		icon = GFX_goal_generic_economics_reform
 		prerequisite = { focus = bra_a_voz_do_brasil }
 		relative_position_id = bra_a_voz_do_brasil
-		x = -10
+		x = -8
 		y = 1
 		cost = 10
 		completion_reward = {

@@ -7,6 +7,13 @@ debug_decisions = {
 propaganda_efforts = {
 	icon = generic_propaganda
 }
+auto_tech_rush = {
+	icon = generic_propaganda
+
+	visible = {
+        always = yes
+	}
+}
 MTG_naval_treaties = {
 	picture = GFX_decision_cat_picture_naval_treaties
 	allowed = {

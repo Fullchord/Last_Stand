@@ -10,50 +10,9 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = { #fasc
-		name = bra.2.a
-		ai_chance = { 
-			factor = 0
-			modifier = { #NOT SURE IF FASCIST AND MONARCHIST AND FASCIST ARE TIED, but Vargas needs to kill himself 
-				OR = {
-					has_country_flag = BRA_AI_RANDOM_FASCIST 
-					has_game_rule = {
-						rule = BRA_ai_behavior
-						option = FASCIST
-					}
-					has_country_flag = BRA_AI_RANDOM_MONARCHIST 
-					has_game_rule = {
-						rule = BRA_ai_behavior
-						option = MONARCHIST
-					}					
-				}
-				add = 1000
-			}			
-		}
-		add_popularity = { ideology = fascism popularity = 0.2 }
-		hidden_effect = { set_country_flag = bra_suicidio_2 }
-		country_event = { days = 1 id = bra.3 }
-	}
 	
-	option = { #com
-		name = bra.2.b
-		ai_chance = { 
-			factor = 0
-			modifier = {
-				OR = {
-					has_country_flag = BRA_AI_RANDOM_COMMUNIST
-					has_game_rule = {
-						rule = BRA_ai_behavior
-						option = COMMUNIST
-					}
-				}
-				add = 1000
-			}			
-		}
-		add_popularity = { ideology = communism popularity = 0.2 }
-		hidden_effect = { set_country_flag = bra_suicidio_2 }
-		country_event = { days = 1 id = bra.3 }
-	}
+	
+	
 	
 	option = { #en
 		name = bra.2.c
@@ -81,25 +40,7 @@ country_event = {
 		country_event = { days = 1 id = bra.3 }
 	}
 	
-	option = { #dem
-		name = bra.2.e
-		ai_chance = { 
-			factor = 0
-			modifier = {
-				OR = {
-					has_country_flag = BRA_AI_RANDOM_DEMOCRATIC
-					has_game_rule = {
-						rule = BRA_ai_behavior
-						option = DEMOCRATIC
-					}
-				}
-				add = 1000
-			}			
-		}
-		add_popularity = { ideology = democratic popularity = 0.2 }
-		hidden_effect = { set_country_flag = bra_suicidio_2 }
-		country_event = { days = 1 id = bra.3 }
-	}
+	
 }
 
 country_event = {
