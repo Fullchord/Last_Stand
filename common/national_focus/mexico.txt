@@ -2937,6 +2937,9 @@ focus_tree = {
 		prerequisite = { focus = MEX_focus_military_aviation_specialists }
 		x = 1
 		y = 1
+		available = {
+			date > 1938.01.01
+		}
 		relative_position_id = MEX_focus_tank_workshops
 
 		cost = 10
@@ -2957,6 +2960,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
+			add_ideas = war_economy
 			every_state = {
 				limit = {
 					OR = {

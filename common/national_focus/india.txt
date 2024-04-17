@@ -249,7 +249,7 @@ focus_tree = {
 		id = RAJ_all_india_forward_bloc
 		icon = GFX_focus_RAJ_all_india_forward_bloc
 		prerequisite = { focus = RAJ_swaraj }
-		x = -3
+		x = -1
 		y = 1
 		relative_position_id = RAJ_swaraj
 

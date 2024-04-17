@@ -7,6 +7,15 @@
  #  #  # #  # # # ## 
 
  #################### 
+ SPR_porsche = {
+	include = generic_heavy_tank_organization
+	icon = GFX_idea_porsche
+	allowed = { 
+		tag = SPR
+	}
+
+	
+}
 
 SPR_tallares_mecanicos_y_garaje_organization = {
 	name = SPR_tallares_mecanicos_y_garaje

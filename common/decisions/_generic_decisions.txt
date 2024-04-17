@@ -72,6 +72,61 @@ Annex_Mexico = {
 	}
    }
 
+   
+}
+Annex_Portugal = {	
+	allowed = {
+		tag = SPR
+	}
+	available = {
+		date > 1938.1.1
+		MEX = {
+			is_ai = yes
+		}
+
+	}
+	complete_effect = {
+		annex_country = {
+		target = POR
+		transfer_troops = yes
+	}
+	every_state = {
+		limit = {
+			is_core_of = POR						
+		}
+		add_compliance = 100
+	}
+   }
+
+}
+Annex_Spain = {	
+	allowed = {
+		tag = POR
+	}
+	available = {
+		date > 1938.1.1
+		SPR = {
+			is_ai = yes
+		}
+		SPR = {
+			has_civil_war = no
+		}
+
+	}
+	complete_effect = {
+		annex_country = {
+		target = SPR
+		transfer_troops = yes
+	}
+	every_state = {
+		limit = {
+			is_core_of = SPR
+										
+		}
+		add_compliance = 100
+	}
+   }
+
 }
 Annex_Mexico_1 = {	
 	allowed = {
