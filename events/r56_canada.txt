@@ -4,67 +4,8 @@
 
 add_namespace = r56_canada
 
-# Change "Defence of Canada Regulations to fascism"
-country_event = {
-	id = r56_canada.1
-	title = r56_canada.1.t
-	desc = r56_canada.1.d
-	picture = GFX_report_event_canada_patriation
-	is_triggered_only = yes
-	
-	option = {
-		name = r56_canada.1.a 
-		if = {
-			limit = {
-				has_idea = r56_CAN_docr_democratic
-			}
-			swap_ideas = {
-				remove_idea = r56_CAN_docr_democratic
-				add_idea = r56_CAN_docr_fascism
-			}
-		}
-		else_if = {
-			limit = {
-				has_idea = r56_CAN_docr_communism
-			}
-			swap_ideas = {
-				remove_idea = r56_CAN_docr_communism
-				add_idea = r56_CAN_docr_fascism
-			}
-		}
-	}
-}
+#
 
-# Change "Defence of Canada Regulations to communism"
-country_event = {
-	id = r56_canada.2
-	title = r56_canada.1.t
-	desc = r56_canada.1.d
-	picture = GFX_report_event_canada_patriation
-	is_triggered_only = yes
-	
-	option = {
-		name = r56_canada.1.a 
-		if = {
-			limit = {
-				has_idea = r56_CAN_docr_democratic
-			}
-			swap_ideas = {
-				remove_idea = r56_CAN_docr_democratic
-				add_idea = r56_CAN_docr_communism
-			}
-		}
-		else_if = {
-			limit = {
-				has_idea = r56_CAN_docr_fascism
-			}
-			swap_ideas = {
-				remove_idea = r56_CAN_docr_fascism
-				add_idea = r56_CAN_docr_communism
-			}
-		}
-	}
-}
 
 # Change "Defence of Canada Regulations to democratic"
 country_event = {
