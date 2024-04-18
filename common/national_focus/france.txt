@@ -3173,6 +3173,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		available = {
+			has_completed_focus = FRA_defense_national_funds
 			date > 1938.01.01
 		}
 		
@@ -3180,6 +3181,17 @@ focus_tree = {
 			factor = 3
 		}
 		completion_reward = {
+			hidden_effect = {
+				remove_ideas = FRA_industrial_support2
+				remove_ideas = FRA_industrial_support3
+				remove_ideas = FRA_industrial_support4
+				remove_ideas = FRA_industrial_support5
+				remove_ideas = FRA_industrial_support6
+				remove_ideas = FRA_industrial_support7
+				remove_ideas = FRA_industrial_support8
+				remove_ideas = FRA_industrial_support9
+			}
+			remove_ideas = FRA_industrial_support1
 			declare_war_on = {
 				target = HOL
 				type = take_state_focus

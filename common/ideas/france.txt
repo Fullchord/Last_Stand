@@ -966,6 +966,8 @@ ideas = {
 			picture = generic_production_bonus
 			allowed = {
 				always = no
+			
+
 			}
 
 			modifier = {
