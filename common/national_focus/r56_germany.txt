@@ -604,11 +604,21 @@ focus_tree = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = ti_bonus
-				cost_reduction = 2.0
-				uses = 3
+				cost_reduction = 0.5
+				uses = 2
 				category = trade_interdiction_tree
 			}
-
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				add_tech_bonus = {
+					name = GER_trade_interdiction
+					bonus = 3.0
+					uses = 1
+					category = naval_minelaying
+				}
+			}
 		}
 	}
 
@@ -711,6 +721,10 @@ focus_tree = {
 								is_coastal = yes
 							}
 							arms_factory > 1
+						}
+						remove_building = {
+							type = arms_factory
+							level = 2
 						}
 					}
 				}
@@ -3288,8 +3302,8 @@ focus_tree = {
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = GER_nav_doc
-				cost_reduction = 1.0
-				uses = 3
+				cost_reduction = 0.5
+				uses = 2
 				category = naval_doctrine
 			}
 		}
