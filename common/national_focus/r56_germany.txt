@@ -4240,7 +4240,12 @@ focus_tree = {
 			custom_effect_tooltip = GER_city_besiegement_heer_tt
 			custom_effect_tooltip = GER_city_besiegement_tt
 			hidden_effect = { set_technology = { siege_artillery = 1 } }
-			
+			add_tech_bonus = {
+                name = infantry_artillery_bonus
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
 		}
 		search_filters = {
 			FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_EQUIPMENT
