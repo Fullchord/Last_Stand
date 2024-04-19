@@ -3146,13 +3146,15 @@ focus_tree = {
 			factor = 10
 		}
 		completion_reward = {
-			add_tech_bonus = {
-				name = air_plane_models
-				bonus = 1
-				uses = 2
-				category = light_air
-				category = medium_air
-				category = heavy_air
+			add_resource = {
+				type = aluminum
+				amount = 8
+				state = 52
+			}
+			add_resource = {
+				type = aluminum
+				amount = 8
+				state = 50
 			}
 		}
 		search_filters = {
