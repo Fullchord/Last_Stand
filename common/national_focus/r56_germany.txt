@@ -4262,7 +4262,12 @@ focus_tree = {
 			add_to_variable = { GER_mobile_warfare_planning_speed = 0.05 }
 			custom_effect_tooltip = GER_pocket_liqudation_tt
 			#add_ideas = GER_pocket_liqudation_idea
-
+			add_tech_bonus = {
+				name = GER_shock_troops_tech_bonus
+				bonus = 3
+				uses = 1
+				category = r56_shock_infantry_tech
+			}
 		}
 		search_filters = {
 			FOCUS_FILTER_RESEARCH FOCUS_FILTER_MILITARY_EQUIPMENT
