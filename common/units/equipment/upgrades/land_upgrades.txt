@@ -30,7 +30,7 @@ upgrades = {
 
 		resource_cost_thresholds = {
 			10 = { #higher level engines do require more strategic resources
-				#chromium = 0
+				#chromium = 1
 			}
 		}
 
@@ -72,15 +72,15 @@ upgrades = {
 
 		resource_cost_thresholds = { # resource values defined here are TOTAL added cost, not cumulative
 			5 = { #more armor requires more resources
-				steel = 0
+				steel = 1 
 			}
 			10 = {
-				steel = 0
-				#chromium = 0
+				steel = 1
+				#chromium = 1
 			}
 			15 = {
-				steel = 0
-				#chromium = 0
+				steel = 1
+				#chromium = 2
 			}
 		}
 
