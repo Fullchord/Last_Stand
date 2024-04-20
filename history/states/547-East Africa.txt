@@ -13,10 +13,10 @@ state={
 			
 		}
 		victory_points = {
-			1939 2
+			1939 2 
 		}
 		
-		add_core_of = Cyp
+		add_core_of = SWE
 
 	}
 

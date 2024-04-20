@@ -9,7 +9,7 @@ state={
 		steel=53 # was: 84
 	}
 
-	history={
+history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
 		owner = USA
 		buildings = {
 			infrastructure = 3 #was: 6
@@ -18,12 +18,6 @@ state={
 		add_core_of = USA
 		victory_points = {
 			12357 5 
-		}
-		victory_points = {
-			4166 1
-		}
-		victory_points = {
-			12456 1
 		}
 
 	}

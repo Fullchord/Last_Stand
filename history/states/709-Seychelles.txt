@@ -1,21 +1,18 @@
 state={
 	id=709
 	name="STATE_709"
-	manpower = 28125
+	manpower = 126703
 	
 	state_category = small_island
 	
-	history={
+	history=
+	{
 		owner = ENG
-		add_core_of = Cyp
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
 			2188 = {
 				naval_base = 1
 			}
-		}
-		victory_points = {
-			2188 1
 		}
 	}
 	

@@ -6,19 +6,15 @@ state={
 	
 	state_category = wasteland
 	resources={
-		tungsten=1 # was: 54 #reduced to 1, moved to Burma
+		# tungsten=49 # was: 54
 	}
 
-	history={
+history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
 		owner = RAJ
 		buildings = {
 			infrastructure = 1
 		}
-		victory_points = {
-			12730 1 
-		}
-		add_core_of = CHI
-		add_core_of = RAJ
+
 	}
 
 	provinces={

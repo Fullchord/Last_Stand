@@ -1,11 +1,7 @@
 #scripted triggers for Division Medals feature
 
 should_have_german_medals_trigger = {
-	OR = {
-		original_tag = GER
-		original_tag = PRE
-	}
-	
+	original_tag = GER
 }
 
 should_have_usa_medals_trigger = {
@@ -17,36 +13,7 @@ should_have_soviet_medals_trigger = {
 }
 
 should_have_english_medals_trigger = {
-	OR = {
-		original_tag = ENG
-		AND = {
-			original_tag = CAN
-			is_in_faction_with = ENG
-		}
-		AND = {
-			original_tag = SAF
-			is_in_faction_with = ENG
-		}		
-		AND = {
-			original_tag = AST
-			is_in_faction_with = ENG
-		}		
-		AND = {
-			original_tag = NZL
-			is_in_faction_with = ENG
-		}
-		AND = {
-			original_tag = RAJ
-			has_cosmetic_tag = RAJ_UK
-			is_in_faction_with = ENG
-		}
-		AND = {
-			original_tag = MAL
-			has_cosmetic_tag = MAL_UK
-			is_in_faction_with = ENG
-		}						
-	}
-	
+	original_tag = ENG
 }
 
 should_have_french_medals_trigger = {
@@ -64,15 +31,7 @@ should_have_japanese_medals_trigger = {
 should_have_ethiopian_medals_trigger = {
 	original_tag = ETH
 }
-should_have_belgian_medals_trigger = {
-	original_tag = BEL
-}
-should_have_hungarian_medals_trigger = {
-	original_tag = HUN
-}
-should_have_peruvian_medals_trigger = {
-	original_tag = PRU
-}
+
 should_have_any_unique_medals_trigger = {
 	OR = {
 		should_have_german_medals_trigger = yes
@@ -83,8 +42,5 @@ should_have_any_unique_medals_trigger = {
 		should_have_italian_medals_trigger = yes
 		should_have_japanese_medals_trigger = yes
 		should_have_ethiopian_medals_trigger = yes 
-		should_have_belgian_medals_trigger = yes
-		should_have_hungarian_medals_trigger = yes 
-		should_have_peruvian_medals_trigger = yes
 	}
 }

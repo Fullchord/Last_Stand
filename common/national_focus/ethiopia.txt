@@ -12,7 +12,7 @@ focus_tree = {
 	country = {
 		factor = 0
 		modifier = {
-			add = 30
+			add = 10
 			original_tag = ETH
 			has_dlc = "By Blood Alone"
 			NOT = {
@@ -145,6 +145,8 @@ focus_tree = {
 				has_war = yes 
 			}
 		}
+
+		search_filters = {}
 
 		completion_reward = {
 			add_ideas = ETH_scavenging_tactics_idea
@@ -447,6 +449,8 @@ focus_tree = {
 			}
 		}
 
+		search_filters = {}
+
 		completion_reward = {
 			random_controlled_state = {
 				limit = { 
@@ -503,6 +507,8 @@ focus_tree = {
 			}
 		}
 
+		search_filters = {}
+
 		completion_reward = {
 			custom_effect_tooltip = ETH_improve_the_administration_tt
 			add_to_variable = { ETH_bureaucracy_research_speed_factor = 0.05 } # Reduce the Research Speed Penalty
@@ -530,6 +536,8 @@ focus_tree = {
 				has_war = yes 
 			}
 		}
+
+		search_filters = {}
 
 		completion_reward = {
 			custom_effect_tooltip = ETH_mounted_levies_tt
@@ -593,6 +601,8 @@ focus_tree = {
 			}
 		}
 
+		search_filters = {}
+
 		completion_reward = {
 			custom_effect_tooltip = ETH_regional_training_centers_tt
 			add_to_variable = { ETH_modifier_army_sub_unit_irregular_infantry_defence_factor = 0.05 }
@@ -619,6 +629,8 @@ focus_tree = {
 				has_war = yes 
 			}
 		}
+
+		search_filters = {}
 
 		completion_reward = {
 			custom_effect_tooltip = ETH_expand_the_kebur_zabagna_tt	
@@ -702,6 +714,8 @@ focus_tree = {
 			}
 		}
 
+		search_filters = {}
+
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = ETH_tactical_training 
@@ -733,6 +747,8 @@ focus_tree = {
 			}
 		}
 
+		search_filters = {}
+
 		completion_reward = {
 			add_ideas = ETH_peacekeeping_forces_idea
 		}
@@ -756,29 +772,33 @@ focus_tree = {
 			}
 		}
 
+		search_filters = {}
+
 		completion_reward = {
-			create_equipment_variant = {
-				name = "CR.32" #
-				type = small_plane_airframe_0
-				modules = {
-					fixed_main_weapon_slot = light_mg_2x
-					engine_type_slot = engine_1_1x
-					special_type_slot_1 = empty
+			hidden_effect = {
+				create_equipment_variant = {
+					name = "CR.32" #
+					type = small_plane_airframe_0
+					modules = {
+						fixed_main_weapon_slot = light_mg_2x
+						engine_type_slot = engine_1_1x
+						special_type_slot_1 = empty
+					}
+				}
+				create_equipment_variant = {
+					name = "Ca.101" #
+					type = medium_plane_airframe_0
+					modules = {
+						fixed_main_weapon_slot = medium_bomb_bay
+						engine_type_slot = engine_1_3x
+						special_type_slot_1 = lmg_defense_turret
+					}
+					obsolete = yes
+					icon = "GFX_ITA_early_bomber_old_medium"
 				}
 			}
-			create_equipment_variant = {
-				name = "Ca.101" #
-				type = medium_plane_airframe_0
-				modules = {
-					fixed_main_weapon_slot = medium_bomb_bay
-					engine_type_slot = engine_1_3x
-					special_type_slot_1 = lmg_defense_turret
-				}
-				obsolete = yes
-				icon = "GFX_ITA_early_bomber_old_medium"
-			}
-			#custom_effect_tooltip = ETH_copy_light_plane_tt #Obsolete tt now
-			#custom_effect_tooltip = ETH_copy_medium_plane_tt #Obsolete tt now
+			custom_effect_tooltip = ETH_copy_light_plane_tt
+			custom_effect_tooltip = ETH_copy_medium_plane_tt
 		}
 	}
 	focus = {
@@ -862,6 +882,8 @@ focus_tree = {
 			}
 		}
 
+		search_filters = {}
+
 		completion_reward = {
 			add_ideas = ETH_regional_supply_depts_idea
 		}
@@ -884,6 +906,8 @@ focus_tree = {
 				has_war = yes 
 			}
 		}
+
+		search_filters = {}
 
 		completion_reward = {
 			custom_effect_tooltip = ETH_expand_the_levy_tt 
@@ -943,6 +967,8 @@ focus_tree = {
 		}
 		bypass = { NOT = { has_idea = ETH_conservative_high_command_idea } }
 
+		search_filters = {}
+
 		completion_reward = {
 			IF = {
 				limit = {
@@ -972,6 +998,8 @@ focus_tree = {
 			}
 		}
 
+		search_filters = {}
+
 		completion_reward = {
 			custom_effect_tooltip = ETH_camouflage_army_tt
 			add_to_variable = { ETH_army_cas_damage_reduction = 0.1 }
@@ -996,6 +1024,8 @@ focus_tree = {
 		ai_will_do = {
 			base = 1
 		}
+
+		search_filters = {}
 
 		complete_tooltip = {
 			custom_effect_tooltip = available_political_advisor
@@ -1084,6 +1114,8 @@ focus_tree = {
 			base = 0.5
 		}
 
+		search_filters = {}
+
 		completion_reward = {
 			custom_effect_tooltip = ETH_purchase_obsolete_ships_tt
 			set_country_flag = generic_purchase_old_ships_flag
@@ -1140,6 +1172,8 @@ focus_tree = {
 			}
 		}
 
+		search_filters = {}
+
 		completion_reward = {
 			custom_effect_tooltip = ETH_old_reliable_tt
 			add_to_variable = { ETH_army_max_dig_in_factor = 0.5 }
@@ -1170,6 +1204,8 @@ focus_tree = {
 			}
 		}
 
+
+		search_filters = {}
 
 		completion_reward = {
 			custom_effect_tooltip = ETH_available_as_air_chief_tt
@@ -1202,6 +1238,8 @@ focus_tree = {
 			}
 		}
 
+
+		search_filters = {}
 
 		completion_reward = {
 			add_ideas = ETH_ethiopian_officers_idea
@@ -1261,6 +1299,8 @@ focus_tree = {
 			}
 		}
 
+		search_filters = {}
+
 		completion_reward = {
 			custom_effect_tooltip = ETH_officer_promotion_boost_tt
 			add_doctrine_cost_reduction = {
@@ -1307,699 +1347,711 @@ focus_tree = {
 #    #  #  # #  # #  # #  #  #  #  # #       #  # #  # #  #      #  #  # #  # #  #   #  #  #  #  #  #  # #   
 #   ### #  # #  # #  #  ##  ### #  # ###     #  # #  # ###      ### #  # ###   ##  ##   #  #  # ### #  # ### 
 
-	focus = {
-		id = ETH_develop_the_capital_region
-		icon = GFX_focus_generic_energy
-		#prerequisite = { focus = }
+focus = {
+	id = ETH_develop_the_capital_region
+	icon = GFX_focus_generic_energy
+	#prerequisite = { focus = }
 
-		x = 22
-		y = 0
-		#relative_position_id =
-		cost = 10
-		available = {
-			271 = {
-				is_controlled_by = ROOT
-			}
-			has_civil_war = no
+	x = 22
+	y = 0
+	#relative_position_id =
+	cost = 10
+	available = {
+		271 = {
+			is_controlled_by = ROOT
 		}
+		has_civil_war = no
+	}
 
 
-		search_filters = {FOCUS_FILTER_INDUSTRY}
+	search_filters = {FOCUS_FILTER_INDUSTRY}
 
-		completion_reward = {
-			capital_scope = {
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 2
-				custom_effect_tooltip = ETH_develop_the_capital_region_tt
-				set_state_flag = ETH_can_electrify_state_flag
+	completion_reward = {
+		271 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
 			}
+			add_extra_state_shared_building_slots = 2
+			custom_effect_tooltip = ETH_develop_the_capital_region_tt
+			set_state_flag = ETH_can_electrify_state_flag
+		}
+		
+	}
+}
+focus = {
+	id = ETH_the_state_bank_of_ethiopia
+	icon = GFX_focus_ETH_the_state_bank_of_ethiopia
+	prerequisite = { focus = ETH_develop_the_capital_region }
+	dynamic = yes 
+	x = -4
+	y = 1
+	relative_position_id = ETH_develop_the_capital_region
+	cost = 10
+	available = {
+		all_owned_state = {
+			is_controlled_by = ROOT
+		}
+		has_civil_war = no
+	}
+
+	search_filters = {FOCUS_FILTER_BALANCE_OF_POWER}
+
+	completion_reward = {
+		ETH_BOP_centralization_small_effect = yes 
+		custom_effect_tooltip = ETH_the_state_bank_of_ethiopia_tt
+		add_to_variable = { ETH_bureaucracy_research_speed_factor = 0.05 }
+		add_to_variable = { ETH_bureaucracy_production_speed_buildings_factor = 0.05 }
+	}
+}
+focus = {
+	id = ETH_infrastructure_projects
+	icon = GFX_goal_generic_construct_infrastructure
+	prerequisite = { focus = ETH_develop_the_capital_region }
+
+	x = -1
+	y = 1
+	relative_position_id = ETH_develop_the_capital_region
+	cost = 10
+	available = {
+		any_owned_state = {
+			is_controlled_by = ROOT
+		}
+		has_civil_war = no
+	}
+
+	search_filters = {}
+
+	completion_reward = {
+		add_timed_idea = {
+			idea = ETH_infrastructure_projects
+			days = 360
+		}
+		every_owned_state = {
+			limit = {
+				is_controlled_by = ROOT
+				check_variable = { ETH_state_development_production_speed < -0.2 }
+			}
+			custom_effect_tooltip = ETH_infrastructure_projects_tt
+			add_to_variable = { ETH_state_development_production_speed = 0.1 }
+		}
+	}
+}
+focus = {
+	id = ETH_state_owned_industry
+	icon = GFX_focus_generic_industry_1
+	prerequisite = { focus = ETH_develop_the_capital_region }
+	mutually_exclusive = { focus = ETH_encourage_local_development }
+	x = 2
+	y = 1
+	relative_position_id = ETH_develop_the_capital_region
+	cost = 10
+	available = {
+		all_owned_state = {
+			is_controlled_by = ROOT
+		}
+		has_civil_war = no
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			factor = 0.5
+			has_completed_focus = ETH_callout_to_the_world
+		}
+	}
+
+	search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_BALANCE_OF_POWER}
+	complete_tooltip = {
+		random_owned_controlled_state = {
+			limit = {
+				has_state_flag = state_industry_flag
+			}
+			prioritize = { 835 } # Hararghe
+			ETH_upgrade_state_category = yes 
+			ETH_upgrade_main_city = yes 
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			custom_effect_tooltip = ETH_state_owned_industry_tt
+			add_to_variable = { ETH_state_development_production_speed = 0.2 }
+			add_to_variable = { ETH_state_development_local_building_slots_factor = 0.2 }
+			
+			add_extra_state_shared_building_slots = 2 
 			
 		}
-	}
-	focus = {
-		id = ETH_the_state_bank_of_ethiopia
-		icon = GFX_focus_ETH_the_state_bank_of_ethiopia
-		prerequisite = { focus = ETH_develop_the_capital_region }
-		dynamic = yes 
-		x = -4
-		y = 1
-		relative_position_id = ETH_develop_the_capital_region
-		cost = 10
-		available = {
-			all_owned_state = {
-				is_controlled_by = ROOT
-			}
-			has_civil_war = no
-		}
-
-		search_filters = {FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			ETH_BOP_centralization_small_effect = yes 
-			custom_effect_tooltip = ETH_the_state_bank_of_ethiopia_tt
-			add_to_variable = { ETH_bureaucracy_research_speed_factor = 0.05 }
-			add_to_variable = { ETH_bureaucracy_production_speed_buildings_factor = 0.05 }
-		}
-	}
-	focus = {
-		id = ETH_infrastructure_projects
-		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = ETH_develop_the_capital_region }
-
-		x = -1
-		y = 1
-		relative_position_id = ETH_develop_the_capital_region
-		cost = 10
-		available = {
-			any_owned_state = {
-				is_controlled_by = ROOT
-			}
-			has_civil_war = no
-		}
-
-		completion_reward = {
-			add_timed_idea = {
-				idea = ETH_infrastructure_projects
-				days = 360
-			}
-			every_owned_state = {
-				limit = {
-					is_controlled_by = ROOT
-					check_variable = { ETH_state_development_production_speed < -0.2 }
-				}
-				custom_effect_tooltip = ETH_infrastructure_projects_tt
-				add_to_variable = { ETH_state_development_production_speed = 0.1 }
-			}
-		}
-	}
-	focus = {
-		id = ETH_state_owned_industry
-		icon = GFX_focus_generic_industry_1
-		prerequisite = { focus = ETH_develop_the_capital_region }
-		mutually_exclusive = { focus = ETH_encourage_local_development }
-		x = 2
-		y = 1
-		relative_position_id = ETH_develop_the_capital_region
-		cost = 10
-		available = {
-			all_owned_state = {
-				is_controlled_by = ROOT
-			}
-			has_civil_war = no
-		}
-		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 0.5
-				has_completed_focus = ETH_callout_to_the_world
-			}
-		}
-
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_BALANCE_OF_POWER}
-		complete_tooltip = {
-			random_owned_controlled_state = {
-				limit = {
-					has_state_flag = state_industry_flag
-				}
-				prioritize = { 835 } # Hararghe
-				ETH_upgrade_state_category = yes 
-				ETH_upgrade_main_city = yes 
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-				custom_effect_tooltip = ETH_state_owned_industry_tt
-				add_to_variable = { ETH_state_development_production_speed = 0.2 }
-				add_to_variable = { ETH_state_development_local_building_slots_factor = 0.2 }
-				
-				add_extra_state_shared_building_slots = 2 
-				
-			}
-			IF = {
-				limit = {
-					271 = {
-						is_controlled_by = ROOT 
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
-						}
-					}
-				}
-				271 = { add_extra_state_shared_building_slots = 1 }		
-			}
-		}
-
-		completion_reward = {
-			ETH_BOP_centralization_large_effect = yes 
-			random_owned_controlled_state = {
-				limit = {
-					not = { state = 271 }
-				}
-				prioritize = { 835 } # Hararghe
-				ETH_upgrade_state_category = yes 
-				ETH_upgrade_main_city = yes 
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 2 
-				custom_effect_tooltip = ETH_state_owned_industry_tt
-				add_to_variable = { ETH_state_development_production_speed = 0.2 }
-				add_to_variable = { ETH_state_development_local_building_slots_factor = 0.2 }
-				set_state_flag = state_industry_flag 
-
-				
-			}
-			IF = {
-				limit = {
-					271 = {
-						is_controlled_by = ROOT 
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
-						}
-					}
-				}
-				271 = { add_extra_state_shared_building_slots = 1 }
-			}
-		}
-	}
-	focus = {
-		id = ETH_encourage_local_development
-		icon = GFX_goal_generic_construct_civilian
-		prerequisite = { focus = ETH_develop_the_capital_region }
-		mutually_exclusive = { focus = ETH_state_owned_industry }
-		x = 4
-		y = 1
-		relative_position_id = ETH_develop_the_capital_region
-		cost = 10
-		available = {
-			all_owned_state = {
-				is_controlled_by = ROOT
-			}
-			has_civil_war = no
-		}
-		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 1.5
-				OR = {
-					has_completed_focus = ETH_callout_to_the_world
-					has_government = democratic
-				}
-			}
-		}
-
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			ETH_BOP_decentralization_large_effect = yes 
-			every_owned_state = {
-				limit = { 
-					check_variable = { ETH_state_development_production_speed < -0.15 }
-					check_variable = { ETH_state_development_local_building_slots_factor < -0.15 }
-					NOT = { state = 271 }
-				}
-				custom_effect_tooltip = ETH_encourage_local_development_tt
-				add_to_variable = { ETH_state_development_production_speed = 0.1 }
-				add_to_variable = { ETH_state_development_local_building_slots_factor = 0.1 }
-			}
-			custom_effect_tooltip = ETH_encourage_local_development_2_tt
-			hidden_effect = {
-				country_event = {
-					id = BBA_ethiopia_industrial_financial_events.1
-					days = 5
-					random_days = 10 
-				}
-			}
-		}
-	}
-	focus = {
-		id = ETH_a_port_of_our_own
-		icon = GFX_goal_generic_build_navy
-		prerequisite = { focus = ETH_infrastructure_projects }
-
-		x = -1
-		y = 1
-		relative_position_id = ETH_infrastructure_projects
-		cost = 10
-		available = {
-			any_controlled_state = { 
-				is_coastal = yes 
-				naval_base > 0
-			}	
-		}
-		ai_will_do = {
-			base = 1
-		}
-
-
-		completion_reward = {
-			random_controlled_state = {
-				limit = { 
-					is_coastal = yes 
-					naval_base < 10
-				}
-				prioritize = { 550 268 }
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = {
-						all_provinces = yes
-						limit_to_naval_base = yes
-				    }
-				}
-				add_building_construction = {
-				    type = coastal_bunker
-				    level = 2
-				    instant_build = yes
-				    province = {
-						all_provinces = yes
-						limit_to_naval_base = yes 
-				    }
-				}
-			}
-		}
-	}
-	focus = {
-		id = ETH_expanding_the_railway_network
-		icon = GFX_focus_POL_warsaw_main_station
-		prerequisite = { focus = ETH_infrastructure_projects }
-
-		x = 1
-		y = 1
-		relative_position_id = ETH_infrastructure_projects
-		cost = 10
-		available = {
-			all_owned_state = {
-				is_controlled_by = ROOT
-			}
-		}
-		ai_will_do = {
-			base = 1.5
-		}
-
-		completion_reward = {
-			# Connect Addis with the North if Addis is capital
-			IF = {
-				limit = {
-					271 = { is_capital = yes }
-				}
-				build_railway = {
-					level = 1
-					build_only_on_allied = yes
-					fallback = yes
-					start_province = 5010
-					target_province = 13237
-				}
-			}
-			# Otherwise, connect new capital with Addis as that's the central rail hub
-			ELSE = {
-				random_owned_state = {
-					limit = {
-						is_capital = yes 
-					}
-					ROOT = {
-						build_railway = {
-							level = 1
-							build_only_on_allied = yes
-							fallback = yes
-							start_state = PREV
-							target_state = 271
-						}
-					}
-				}
-			}
-			custom_effect_tooltip = available_industrial_concern
-			show_ideas_tooltip = ETH_cie
-		}
-	}
-	focus = {
-		id = ETH_taxing_the_nobility
-		icon = GFX_focus_mex_privatisation
-		prerequisite = { focus = ETH_the_state_bank_of_ethiopia }
-		mutually_exclusive = { focus = ETH_expand_tax_exemptions }
-		dynamic = yes
-		x = 0
-		y = 1
-		relative_position_id = ETH_the_state_bank_of_ethiopia
-		cost = 10
-		available = {
-		}
-		ai_will_do = {
-			base = 1.5
-			modifier = {
-				factor = 2
-				has_government = communism
-			}
-		}
-
-		search_filters = {FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			ETH_BOP_centralization_large_effect = yes 
-			add_stability = -0.05
-			add_ideas = ETH_taxed_nobility_idea
-		}
-	}
-	focus = {
-		id = ETH_expand_tax_exemptions
-		icon = GFX_focus_generic_concessions
-		prerequisite = { focus = ETH_the_state_bank_of_ethiopia }
-		mutually_exclusive = { focus = ETH_taxing_the_nobility }
-		dynamic = yes
-		x = -2
-		y = 1
-		relative_position_id = ETH_the_state_bank_of_ethiopia
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 2
-				has_government = fascism
-			}
-		}
-
-		search_filters = {FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			ETH_BOP_decentralization_large_effect = yes 
-			add_stability = 0.2
-			add_war_support = 0.1
-			custom_effect_tooltip = ETH_expand_tax_exemptions_tt
-			add_to_variable = { ETH_bureaucracy_production_speed_buildings_factor = -0.05 }
-			add_to_variable = { ETH_bureaucracy_production_factory_max_efficiency_factor = -0.05 } # $MODIFIER_PRODUCTION_FACTORY_MAX_EFFICIENCY$
-		}
-	}
-	focus = {
-		id = ETH_reform_the_currency
-		icon = GFX_focus_ETH_reform_the_currency
-		prerequisite = { focus = ETH_taxing_the_nobility focus = ETH_expand_tax_exemptions}
-
-		x = 0
-		y = 1
-		relative_position_id = ETH_taxing_the_nobility
-		cost = 10
-		available = {
-			is_subject = no
-		}
-		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 1.5
-				NOT = { has_government = fascism }
-			}
-		}
-
-		search_filters = {FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			ETH_BOP_centralization_large_effect = yes 
-			add_stability = 0.03
-			custom_effect_tooltip = ETH_communal_agriculture_consumer_tt
-			add_to_variable = {
-				ETH_industrialization_consumer_goods_factor = -0.15
-			}
-		}
-	}
-	focus = {
-		id = ETH_increased_factory_output
-		icon = GFX_focus_generic_industry_2
-		prerequisite = { focus = ETH_state_owned_industry focus = ETH_encourage_local_development }
-		mutually_exclusive = { focus = ETH_adapt_and_improve }
-		x = 0
-		y = 1
-		relative_position_id = ETH_state_owned_industry
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			base = 1.5
-		}
-
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-
-		completion_reward = {
-			custom_effect_tooltip = ETH_increased_factory_output_tt
-			add_to_variable = { ETH_production_factory_max_efficiency_factor = 0.1 }
-		}
-	}
-	focus = {
-		id = ETH_adapt_and_improve
-		icon = GFX_focus_generic_license_production
-		prerequisite = { focus = ETH_encourage_local_development focus = ETH_state_owned_industry }
-		mutually_exclusive = { focus = ETH_increased_factory_output }
-		x = 0
-		y = 1
-		relative_position_id = ETH_encourage_local_development
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 2
-				OR = {
-					has_government = democratic
-					has_completed_focus = ETH_callout_to_the_world
-				}
-			}
-		}
-
-		search_filters = {FOCUS_FILTER_ARMY_XP}
-
-		completion_reward = {
-			custom_effect_tooltip = ETH_adapt_and_improve_tt
-			add_to_variable = { ETH_air_equipment_upgrade_xp_cost = -0.25 }
-			add_to_variable = { ETH_land_equipment_upgrade_xp_cost = -0.25 }
-			army_experience = 10
-			air_experience = 10
-		}
-	}
-	focus = {
-		id = ETH_the_state_court
-		icon = GFX_focus_generic_court
-		prerequisite = { focus = ETH_reform_the_currency }
-
-		x = 0
-		y = 1
-		relative_position_id = ETH_reform_the_currency
-		cost = 10
-		available = {
-			is_subject = no
-		}
-		ai_will_do = {
-			base = 2
-		}
-
-		search_filters = {FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			ETH_BOP_centralization_large_effect = yes 
-			add_stability = 0.1
-			custom_effect_tooltip = ETH_the_state_court_tt
-			add_to_variable = { ETH_bureaucracy_production_speed_buildings_factor = 0.1 }
-			add_to_variable = { ETH_bureaucracy_production_factory_max_efficiency_factor = 0.05 } # $MODIFIER_PRODUCTION_FACTORY_MAX_EFFICIENCY$
-			add_to_variable = { ETH_bureaucracy_research_speed_factor = 0.1 }
-			ETH_check_remove_corrupt_bureaucracy = yes 
-		}
-	}
-	focus = {
-		id = ETH_ethiopian_shipbuilding
-		icon = GFX_focus_POL_develop_polish_shipbuilding
-		prerequisite = { focus = ETH_a_port_of_our_own }
-		dynamic = yes 
-		x = 0
-		y = 1
-		relative_position_id = ETH_a_port_of_our_own
-		cost = 10
-		available = {
-			any_controlled_state = { is_coastal = yes }
-		}
-		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 2
-				has_government = fascism
-			}
-		}
-
-		search_filters = {FOCUS_FILTER_NAVY_XP}
-
-		completion_reward = {
-			navy_experience = 35
-			add_tech_bonus = {
-				name = ETH_shipbuilding_bonus
-				bonus = 0.25
-				uses = 1
-				category = dd_tech
-			}
-			random_controlled_state = {
-				limit = { 
-					is_coastal = yes 
-					dockyard < 9
+		IF = {
+			limit = {
+				271 = {
+					is_controlled_by = ROOT 
 					free_building_slots = {
 						building = arms_factory
-						size > 1
+						size > 0
 						include_locked = yes
 					}
 				}
-				prioritize = { 550 268 }
-				add_extra_state_shared_building_slots = 2
+			}
+			271 = { add_extra_state_shared_building_slots = 1 }		
+		}
+	}
+
+	completion_reward = {
+		ETH_BOP_centralization_large_effect = yes 
+		random_owned_controlled_state = {
+			limit = {
+				not = { state = 271 }
+			}
+			prioritize = { 835 } # Hararghe
+			ETH_upgrade_state_category = yes 
+			ETH_upgrade_main_city = yes 
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2 
+			custom_effect_tooltip = ETH_state_owned_industry_tt
+			add_to_variable = { ETH_state_development_production_speed = 0.2 }
+			add_to_variable = { ETH_state_development_local_building_slots_factor = 0.2 }
+			set_state_flag = state_industry_flag 
+
+			
+		}
+		IF = {
+			limit = {
+				271 = {
+					is_controlled_by = ROOT 
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+			}
+			271 = { add_extra_state_shared_building_slots = 1 }
+		}
+	}
+}
+focus = {
+	id = ETH_encourage_local_development
+	icon = GFX_goal_generic_construct_civilian
+	prerequisite = { focus = ETH_develop_the_capital_region }
+	mutually_exclusive = { focus = ETH_state_owned_industry }
+	x = 4
+	y = 1
+	relative_position_id = ETH_develop_the_capital_region
+	cost = 10
+	available = {
+		all_owned_state = {
+			is_controlled_by = ROOT
+		}
+		has_civil_war = no
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_completed_focus = ETH_callout_to_the_world
+				has_government = democratic
+			}
+		}
+	}
+
+	search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_BALANCE_OF_POWER}
+
+	completion_reward = {
+		ETH_BOP_decentralization_large_effect = yes 
+		every_owned_state = {
+			limit = { 
+				check_variable = { ETH_state_development_production_speed < -0.15 }
+				check_variable = { ETH_state_development_local_building_slots_factor < -0.15 }
+				NOT = { state = 271 }
+			}
+			custom_effect_tooltip = ETH_encourage_local_development_tt
+			add_to_variable = { ETH_state_development_production_speed = 0.1 }
+			add_to_variable = { ETH_state_development_local_building_slots_factor = 0.1 }
+		}
+		custom_effect_tooltip = ETH_encourage_local_development_2_tt
+		hidden_effect = {
+			country_event = {
+				id = BBA_ethiopia_industrial_financial_events.1
+				days = 5
+				random_days = 10 
+			}
+		}
+	}
+}
+focus = {
+	id = ETH_a_port_of_our_own
+	icon = GFX_goal_generic_build_navy
+	prerequisite = { focus = ETH_infrastructure_projects }
+
+	x = -1
+	y = 1
+	relative_position_id = ETH_infrastructure_projects
+	cost = 10
+	available = {
+		any_controlled_state = { 
+			is_coastal = yes 
+			naval_base > 0
+		}	
+	}
+	ai_will_do = {
+		base = 1
+	}
+
+
+	search_filters = {}
+
+	completion_reward = {
+		random_controlled_state = {
+			limit = { 
+				is_coastal = yes 
+				naval_base < 10
+			}
+			prioritize = { 550 268 }
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = naval_base
+				level = 2
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_naval_base = yes
+				}
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				level = 2
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_naval_base = yes 
+				}
+			}
+		}
+	}
+}
+focus = {
+	id = ETH_expanding_the_railway_network
+	icon = GFX_focus_POL_warsaw_main_station
+	prerequisite = { focus = ETH_infrastructure_projects }
+
+	x = 1
+	y = 1
+	relative_position_id = ETH_infrastructure_projects
+	cost = 10
+	available = {
+		all_owned_state = {
+			is_controlled_by = ROOT
+		}
+	}
+	ai_will_do = {
+		base = 1.5
+	}
+
+	search_filters = {}
+
+	completion_reward = {
+		# Connect Addis with the North if Addis is capital
+		IF = {
+			limit = {
+				271 = { is_capital = yes }
+			}
+			build_railway = {
+				level = 1
+				build_only_on_allied = yes
+				fallback = yes
+				start_province = 5010
+				target_province = 13237
+			}
+		}
+		# Otherwise, connect new capital with Addis as that's the central rail hub
+		ELSE = {
+			random_owned_state = {
+				limit = {
+					is_capital = yes 
+				}
+				ROOT = {
+					build_railway = {
+						level = 1
+						build_only_on_allied = yes
+						fallback = yes
+						start_state = PREV
+						target_state = 271
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = available_industrial_concern
+		show_ideas_tooltip = ETH_cie
+	}
+}
+focus = {
+	id = ETH_taxing_the_nobility
+	icon = GFX_focus_mex_privatisation
+	prerequisite = { focus = ETH_the_state_bank_of_ethiopia }
+	mutually_exclusive = { focus = ETH_expand_tax_exemptions }
+	dynamic = yes
+	x = 0
+	y = 1
+	relative_position_id = ETH_the_state_bank_of_ethiopia
+	cost = 10
+	available = {
+	}
+	ai_will_do = {
+		base = 1.5
+		modifier = {
+			factor = 2
+			has_government = communism
+		}
+	}
+
+	search_filters = {FOCUS_FILTER_BALANCE_OF_POWER}
+
+	completion_reward = {
+		ETH_BOP_centralization_large_effect = yes 
+		add_stability = -0.05
+		add_ideas = ETH_taxed_nobility_idea
+	}
+}
+focus = {
+	id = ETH_expand_tax_exemptions
+	icon = GFX_focus_generic_concessions
+	prerequisite = { focus = ETH_the_state_bank_of_ethiopia }
+	mutually_exclusive = { focus = ETH_taxing_the_nobility }
+	dynamic = yes
+	x = -2
+	y = 1
+	relative_position_id = ETH_the_state_bank_of_ethiopia
+	cost = 5
+	available = {
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			factor = 2
+			has_government = fascism
+		}
+	}
+
+	search_filters = {FOCUS_FILTER_BALANCE_OF_POWER}
+
+	completion_reward = {
+		ETH_BOP_decentralization_large_effect = yes 
+		add_stability = 0.2
+		add_war_support = 0.1
+		custom_effect_tooltip = ETH_expand_tax_exemptions_tt
+		add_to_variable = { ETH_bureaucracy_production_speed_buildings_factor = -0.05 }
+		add_to_variable = { ETH_bureaucracy_production_factory_max_efficiency_factor = -0.05 } # $MODIFIER_PRODUCTION_FACTORY_MAX_EFFICIENCY$
+	}
+}
+focus = {
+	id = ETH_reform_the_currency
+	icon = GFX_focus_ETH_reform_the_currency
+	prerequisite = { focus = ETH_taxing_the_nobility focus = ETH_expand_tax_exemptions}
+
+	x = 0
+	y = 1
+	relative_position_id = ETH_taxing_the_nobility
+	cost = 10
+	available = {
+		is_subject = no
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			factor = 1.5
+			NOT = { has_government = fascism }
+		}
+	}
+
+	search_filters = {FOCUS_FILTER_BALANCE_OF_POWER}
+
+	completion_reward = {
+		ETH_BOP_centralization_large_effect = yes 
+		add_stability = 0.03
+		custom_effect_tooltip = ETH_communal_agriculture_consumer_tt
+		add_to_variable = {
+			ETH_industrialization_consumer_goods_factor = -0.05
+		}
+	}
+}
+focus = {
+	id = ETH_increased_factory_output
+	icon = GFX_focus_generic_industry_2
+	prerequisite = { focus = ETH_state_owned_industry focus = ETH_encourage_local_development }
+	mutually_exclusive = { focus = ETH_adapt_and_improve }
+	x = 0
+	y = 1
+	relative_position_id = ETH_state_owned_industry
+	cost = 5
+	available = {
+	}
+	ai_will_do = {
+		base = 1.5
+	}
+
+	search_filters = {FOCUS_FILTER_INDUSTRY}
+
+	completion_reward = {
+		custom_effect_tooltip = ETH_increased_factory_output_tt
+		add_to_variable = { ETH_production_factory_max_efficiency_factor = 0.1 }
+	}
+}
+focus = {
+	id = ETH_adapt_and_improve
+	icon = GFX_focus_generic_license_production
+	prerequisite = { focus = ETH_encourage_local_development focus = ETH_state_owned_industry }
+	mutually_exclusive = { focus = ETH_increased_factory_output }
+	x = 0
+	y = 1
+	relative_position_id = ETH_encourage_local_development
+	cost = 5
+	available = {
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			factor = 2
+			OR = {
+				has_government = democratic
+				has_completed_focus = ETH_callout_to_the_world
+			}
+		}
+	}
+
+	search_filters = {FOCUS_FILTER_ARMY_XP}
+
+	completion_reward = {
+		custom_effect_tooltip = ETH_adapt_and_improve_tt
+		add_to_variable = { ETH_air_equipment_upgrade_xp_cost = -0.25 }
+		add_to_variable = { ETH_land_equipment_upgrade_xp_cost = -0.25 }
+		army_experience = 10
+		air_experience = 10
+	}
+}
+focus = {
+	id = ETH_the_state_court
+	icon = GFX_focus_generic_court
+	prerequisite = { focus = ETH_reform_the_currency }
+
+	x = 0
+	y = 1
+	relative_position_id = ETH_reform_the_currency
+	cost = 10
+	available = {
+		is_subject = no
+	}
+	ai_will_do = {
+		base = 2
+	}
+
+	search_filters = {FOCUS_FILTER_BALANCE_OF_POWER}
+
+	completion_reward = {
+		ETH_BOP_centralization_large_effect = yes 
+		add_stability = 0.1
+		custom_effect_tooltip = ETH_the_state_court_tt
+		add_to_variable = { ETH_bureaucracy_production_speed_buildings_factor = 0.1 }
+		add_to_variable = { ETH_bureaucracy_production_factory_max_efficiency_factor = 0.05 } # $MODIFIER_PRODUCTION_FACTORY_MAX_EFFICIENCY$
+		add_to_variable = { ETH_bureaucracy_research_speed_factor = 0.1 }
+		ETH_check_remove_corrupt_bureaucracy = yes 
+	}
+}
+focus = {
+	id = ETH_ethiopian_shipbuilding
+	icon = GFX_focus_POL_develop_polish_shipbuilding
+	prerequisite = { focus = ETH_a_port_of_our_own }
+	dynamic = yes 
+	x = 0
+	y = 1
+	relative_position_id = ETH_a_port_of_our_own
+	cost = 10
+	available = {
+		any_controlled_state = { is_coastal = yes }
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			factor = 2
+			has_government = fascism
+		}
+	}
+
+	search_filters = {FOCUS_FILTER_NAVY_XP}
+
+	completion_reward = {
+		navy_experience = 35
+		add_tech_bonus = {
+			name = ETH_shipbuilding_bonus
+			bonus = 0.25
+			uses = 1
+			category = dd_tech
+		}
+		random_controlled_state = {
+			limit = { 
+				is_coastal = yes 
+				dockyard < 9
+				free_building_slots = {
+					building = arms_factory
+					size > 1
+					include_locked = yes
+				}
+			}
+			prioritize = { 550 268 }
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = dockyard
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+focus = {
+	id = ETH_connecting_the_south
+	icon = GFX_focus_generic_railroad
+	prerequisite = { focus = ETH_expanding_the_railway_network }
+
+	x = 0
+	y = 1
+	relative_position_id = ETH_expanding_the_railway_network
+	cost = 10
+	available = {
+		OR = {
+			836 = { is_controlled_by = ROOT }
+			837 = { is_controlled_by = ROOT }
+		}
+	}
+	ai_will_do = {
+		base = 2
+		modifier = {
+			factor = 2
+			has_cosmetic_tag = jimma
+		}
+	}
+
+	search_filters = {}
+
+	completion_reward = {
+		IF = {
+			limit = {
+				837 = { is_owned_and_controlled_by = ROOT }
+			}
+			837 = {
 				add_building_construction = {
-					type = dockyard
-					level = 2
+					type = supply_node
+					province = 13247
+					level = 1
 					instant_build = yes
 				}
 			}
-		}
-	}
-	focus = {
-		id = ETH_connecting_the_south
-		icon = GFX_focus_generic_railroad
-		prerequisite = { focus = ETH_expanding_the_railway_network }
-
-		x = 0
-		y = 1
-		relative_position_id = ETH_expanding_the_railway_network
-		cost = 10
-		available = {
-			OR = {
-				836 = { is_controlled_by = ROOT }
-				837 = { is_controlled_by = ROOT }
+			build_railway = {
+				level = 1
+				build_only_on_allied = yes
+				fallback = yes
+				start_province = 5010
+				target_province = 13247
 			}
 		}
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 2
-				has_cosmetic_tag = jimma
+		ELSE_IF = {
+			limit = {
+				836 = { is_owned_and_controlled_by = ROOT }
 			}
-		}
-
-		completion_reward = {
-			IF = {
-				limit = {
-					837 = { is_owned_and_controlled_by = ROOT }
-				}
-				837 = {
-					add_building_construction = {
-						type = supply_node
-						province = 13247
-						level = 1
-						instant_build = yes
-					}
-				}
-				build_railway = {
+			836 = {
+				add_building_construction = {
+					type = supply_node
+					province = 12812
 					level = 1
-					build_only_on_allied = yes
-					fallback = yes
-					start_province = 5010
-					target_province = 13247
+					instant_build = yes
 				}
 			}
-			ELSE_IF = {
-				limit = {
-					836 = { is_owned_and_controlled_by = ROOT }
-				}
-				836 = {
-					add_building_construction = {
-						type = supply_node
-						province = 12812
-						level = 1
-						instant_build = yes
-					}
-				}
-				build_railway = {
-					level = 1
-					build_only_on_allied = yes
-					fallback = yes
-					start_province = 5010
-					target_province = 12812
-				}
+			build_railway = {
+				level = 1
+				build_only_on_allied = yes
+				fallback = yes
+				start_province = 5010
+				target_province = 12812
 			}
 		}
 	}
-	focus = {
-		id = ETH_bomb_proofing
-		icon = GFX_goal_generic_occupy_start_war
-		prerequisite = { focus = ETH_increased_factory_output focus = ETH_adapt_and_improve }
-		mutually_exclusive = { focus = ETH_rapid_industrial_expansion }
-		x = 0
-		y = 1
-		relative_position_id = ETH_increased_factory_output
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			base = 1
-		}
-
-		completion_reward = {
-			custom_effect_tooltip = ETH_bomb_proofing_tt
-			add_to_variable = { ETH_industrialization_industry_air_damage_factor = -0.1 }
-			add_to_variable = { ETH_industrialization_industry_repair_factor = 0.1 }
-			add_to_variable = { ETH_production_factory_max_efficiency_factor = 0.05 }
-		}
+}
+focus = {
+	id = ETH_bomb_proofing
+	icon = GFX_goal_generic_occupy_start_war
+	prerequisite = { focus = ETH_increased_factory_output focus = ETH_adapt_and_improve }
+	mutually_exclusive = { focus = ETH_rapid_industrial_expansion }
+	x = 0
+	y = 1
+	relative_position_id = ETH_increased_factory_output
+	cost = 5
+	available = {
 	}
-	focus = {
-		id = ETH_rapid_industrial_expansion
-		icon = GFX_focus_SOV_organize_wreckers
-		prerequisite = { focus = ETH_adapt_and_improve focus = ETH_increased_factory_output }
-		mutually_exclusive = { focus = ETH_bomb_proofing }
-		x = 0
-		y = 1
-		relative_position_id = ETH_adapt_and_improve
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			base = 1.5
-		}
-
-		completion_reward = {
-		custom_effect_tooltip = ETH_rapid_industrial_expansion_tt
-			add_to_variable = { ETH_production_speed_buildings_factor = 0.1 }
-		}
+	ai_will_do = {
+		base = 1
 	}
-	focus = {
-		id = ETH_develop_the_horn_of_africa
-		icon = GFX_focus_ETH_develop_the_horn_of_africa
-		prerequisite = { focus = ETH_ethiopian_shipbuilding focus = ETH_connecting_the_south }
 
-		x = 1
-		y = 1
-		relative_position_id = ETH_ethiopian_shipbuilding
-		cost = 10
-		available = {
-		}
-		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 0 
-				has_war = yes 
-			} 
-		}
+	search_filters = {}
 
-		search_filters = {FOCUS_FILTER_ANNEXATION}
-
-		completion_reward = {
-			custom_effect_tooltip = ETH_develop_the_horn_of_africa_tt
-			custom_effect_tooltip = ETH_horn_of_africa_tt
-		}
+	completion_reward = {
+		custom_effect_tooltip = ETH_bomb_proofing_tt
+		add_to_variable = { ETH_industrialization_industry_air_damage_factor = -0.1 }
+		add_to_variable = { ETH_industrialization_industry_repair_factor = 0.1 }
+		add_to_variable = { ETH_production_factory_max_efficiency_factor = 0.05 }
 	}
+}
+focus = {
+	id = ETH_rapid_industrial_expansion
+	icon = GFX_focus_SOV_organize_wreckers
+	prerequisite = { focus = ETH_adapt_and_improve focus = ETH_increased_factory_output }
+	mutually_exclusive = { focus = ETH_bomb_proofing }
+	x = 0
+	y = 1
+	relative_position_id = ETH_adapt_and_improve
+	cost = 5
+	available = {
+	}
+	ai_will_do = {
+		base = 1.5
+	}
+
+	search_filters = {}
+
+	completion_reward = {
+	custom_effect_tooltip = ETH_rapid_industrial_expansion_tt
+		add_to_variable = { ETH_production_speed_buildings_factor = 0.1 }
+	}
+}
+focus = {
+	id = ETH_develop_the_horn_of_africa
+	icon = GFX_focus_ETH_develop_the_horn_of_africa
+	prerequisite = { focus = ETH_ethiopian_shipbuilding focus = ETH_connecting_the_south }
+
+	x = 1
+	y = 1
+	relative_position_id = ETH_ethiopian_shipbuilding
+	cost = 10
+	available = {
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			factor = 0 
+			has_war = yes 
+		} 
+	}
+
+	search_filters = {FOCUS_FILTER_ANNEXATION}
+
+	completion_reward = {
+		custom_effect_tooltip = ETH_develop_the_horn_of_africa_tt
+		custom_effect_tooltip = ETH_horn_of_africa_tt
+	}
+}
 	focus = {
 		id = ETH_invest_in_the_north
 		icon = GFX_focus_ETH_invest_in_the_north
@@ -2024,6 +2076,8 @@ focus_tree = {
 				has_cosmetic_tag = gojjam
 			}
 		}
+
+		search_filters = {}
 
 		completion_reward = {
 			every_owned_state = {
@@ -2052,59 +2106,70 @@ focus_tree = {
 				}
 
 			}
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = ETH_hmmbi
-		}
-	}
-	focus = {
-		id = ETH_invest_in_the_east
-		icon = GFX_focus_ETH_invest_in_the_east
-		prerequisite = { focus = ETH_bomb_proofing focus = ETH_rapid_industrial_expansion }
-
-		x = 3
-		y = 1
-		relative_position_id = ETH_bomb_proofing
-		cost = 10
-		available = {
-			OR = {
-				836 = {is_owned_by = ROOT}
-				835 = {is_owned_by = ROOT}
-				843 = {is_owned_by = ROOT}
-			}
-		}
-		ai_will_do = {
-			base = 2
-		}
-
-		completion_reward = {
-			every_owned_state = {
+			IF = {
 				limit = {
-					OR = {
-						state = 836
-						state = 835
-						state = 843
-					}
-				}
-				custom_effect_tooltip = ETH_invest_tt
-				set_state_flag = ETH_investment_state_flag # Mark state as "invested in"
-				 # Enable electrification
-				IF = {
-					limit = {
-						NOT = { has_state_flag = ETH_can_electrify_state_flag }
-					}
-					set_state_flag = ETH_can_electrify_state_flag
-				}
-				IF = {
-					limit = {
-						NOT = { has_state_flag = ETH_can_improve_communication_state_flag }
-					}
-					set_state_flag = ETH_can_improve_communication_state_flag
-				}							
+					has_dlc = "Arms Against Tyranny"
+				}	
+				custom_effect_tooltip = invites_mio_tt
+				show_mio_tooltip = ETH_hmmbi_organization
 			}
-			custom_effect_tooltip = available_industrial_concern
-			show_ideas_tooltip = ETH_dire_dawa_industries
+			ELSE = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = ETH_hmmbi
+			}
 		}
 	}
+focus = {
+	id = ETH_invest_in_the_east
+	icon = GFX_focus_ETH_invest_in_the_east
+	prerequisite = { focus = ETH_bomb_proofing focus = ETH_rapid_industrial_expansion }
+
+	x = 3
+	y = 1
+	relative_position_id = ETH_bomb_proofing
+	cost = 10
+	available = {
+		OR = {
+			836 = {is_owned_by = ROOT}
+			835 = {is_owned_by = ROOT}
+			843 = {is_owned_by = ROOT}
+		}
+	}
+	ai_will_do = {
+		base = 2
+	}
+
+	search_filters = {}
+
+	completion_reward = {
+		every_owned_state = {
+			limit = {
+				OR = {
+					state = 836
+					state = 835
+					state = 843
+				}
+			}
+			custom_effect_tooltip = ETH_invest_tt
+			set_state_flag = ETH_investment_state_flag # Mark state as "invested in"
+			 # Enable electrification
+			IF = {
+				limit = {
+					NOT = { has_state_flag = ETH_can_electrify_state_flag }
+				}
+				set_state_flag = ETH_can_electrify_state_flag
+			}
+			IF = {
+				limit = {
+					NOT = { has_state_flag = ETH_can_improve_communication_state_flag }
+				}
+				set_state_flag = ETH_can_improve_communication_state_flag
+			}							
+		}
+		custom_effect_tooltip = available_industrial_concern
+		show_ideas_tooltip = ETH_dire_dawa_industries
+	}
+}
 	focus = {
 		id = ETH_invest_in_the_west
 		icon = GFX_focus_ETH_invest_in_the_west
@@ -2127,6 +2192,8 @@ focus_tree = {
 				has_cosmetic_tag = jimma
 			}
 		}
+
+		search_filters = {}
 
 		completion_reward = {
 			every_owned_state = {
@@ -2152,45 +2219,179 @@ focus_tree = {
 					set_state_flag = ETH_can_improve_communication_state_flag
 				}
 			}
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = ETH_ncgf
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}	
+				custom_effect_tooltip = invites_mio_tt
+				show_mio_tooltip = ETH_ncgf_organization
+			}
+			ELSE = {
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = ETH_ncgf
+			}
 		}
 	}
-	focus = {
-		id = ETH_expand_the_coffee_industry
-		icon = GFX_focus_generic_coffee
-		prerequisite = { focus = ETH_invest_in_the_west }
+focus = {
+	id = ETH_expand_the_coffee_industry
+	icon = GFX_focus_generic_coffee
+	prerequisite = { focus = ETH_invest_in_the_west }
 
-		x = 0
-		y = 1
-		relative_position_id = ETH_invest_in_the_west
-		cost = 10
-		available = {
-			837 = { is_controlled_by_ROOT_or_ally = yes }
+	x = 0
+	y = 1
+	relative_position_id = ETH_invest_in_the_west
+	cost = 10
+	available = {
+		837 = { is_controlled_by_ROOT_or_ally = yes }
+	}
+	ai_will_do = {
+		base = 2
+	}
+
+	search_filters = {FOCUS_FILTER_INDUSTRY}
+
+	completion_reward = {
+		add_ideas = ETH_coffee_exports_idea
+		837 = {
+			
 		}
-		ai_will_do = {
-			base = 2
+		IF = {
+			limit = {
+				837 = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+			}
+			837 = { 
+				add_extra_state_shared_building_slots = 1 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
+	}
+}
+focus = {
+	id = ETH_modernizing_the_industry
+	icon = GFX_focus_generic_industry_3
+	prerequisite = { focus = ETH_invest_in_the_west focus = ETH_invest_in_the_east focus = ETH_invest_in_the_north }
 
-		search_filters = {FOCUS_FILTER_INDUSTRY}
+	x = 0
+	y = 1
+	relative_position_id = ETH_invest_in_the_north
+	cost = 10
+	available = {
+	}
+	ai_will_do = {
+		base = 2
+		modifier = {
+			factor = 0
+			OR = {
+				owns_state = 837
+				owns_state = 838
+				owns_state = 839
+			}
+			NOT = { has_completed_focus = ETH_invest_in_the_west }
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				owns_state = 842
+				owns_state = 841
+				owns_state = 840
+			}
+			NOT = { has_completed_focus = ETH_invest_in_the_north }
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				owns_state = 836
+				owns_state = 835
+				owns_state = 843
+			}
+			NOT = { has_completed_focus = ETH_invest_in_the_east }
+		}
+	}
+	search_filters = {FOCUS_FILTER_INDUSTRY}
 
-		completion_reward = {
-			add_ideas = ETH_coffee_exports_idea
-			837 = {
-				
+	completion_reward = {
+		custom_effect_tooltip = ETH_modernizing_the_industry_tt
+		hidden_effect = {
+			every_state = {
+				limit = { has_state_flag = ETH_investment_state_flag }
+				add_extra_state_shared_building_slots = 1
 			}
 			IF = {
 				limit = {
-					837 = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
-						}
+					OR = {
+						837 = { has_state_flag = ETH_investment_state_flag } 
+						838 = { has_state_flag = ETH_investment_state_flag } 
+						839 = { has_state_flag = ETH_investment_state_flag } 
 					}
 				}
-				837 = { 
-					add_extra_state_shared_building_slots = 1 
+				random_owned_state = {
+					limit = {
+						OR = {
+							state = 837 
+							state = 838 
+							state = 839 
+						}
+						has_state_flag = ETH_investment_state_flag
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			IF = {
+				limit = {
+					OR = {
+						843 = { has_state_flag = ETH_investment_state_flag } 
+						835 = { has_state_flag = ETH_investment_state_flag } 
+						836 = { has_state_flag = ETH_investment_state_flag } 
+					}
+				}
+				random_owned_state = {
+					limit = {
+						OR = {
+							state = 843 
+							state = 835 
+							state = 836 
+						}
+						has_state_flag = ETH_investment_state_flag
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+
+			}
+			IF = {
+				limit = {
+					OR = {
+						841 = { has_state_flag = ETH_investment_state_flag } 
+						840 = { has_state_flag = ETH_investment_state_flag } 
+						842 = { has_state_flag = ETH_investment_state_flag } 
+					}
+				}
+				random_owned_state = {
+					limit = {
+						OR = {
+							state = 843 
+							state = 835 
+							state = 836 
+						}
+						has_state_flag = ETH_investment_state_flag
+					}
 					add_building_construction = {
 						type = industrial_complex
 						level = 1
@@ -2199,310 +2400,187 @@ focus_tree = {
 				}
 			}
 		}
+		custom_effect_tooltip = available_industrial_concern
+		show_ideas_tooltip = ETH_ethiopian_electric_power
 	}
-	focus = {
-		id = ETH_modernizing_the_industry
-		icon = GFX_focus_generic_industry_3
-		prerequisite = { focus = ETH_invest_in_the_west focus = ETH_invest_in_the_east focus = ETH_invest_in_the_north }
+}
+focus = {
+	id = ETH_animal_husbandry
+	icon = GFX_focus_generic_horse_studs
+	prerequisite = { focus = ETH_invest_in_the_east }
 
-		x = 0
-		y = 1
-		relative_position_id = ETH_invest_in_the_north
-		cost = 10
-		available = {
-		}
-		ai_will_do = {
-			base = 2
-			modifier = {
-				factor = 0
-				OR = {
-					owns_state = 837
-					owns_state = 838
-					owns_state = 839
-				}
-				NOT = { has_completed_focus = ETH_invest_in_the_west }
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					owns_state = 842
-					owns_state = 841
-					owns_state = 840
-				}
-				NOT = { has_completed_focus = ETH_invest_in_the_north }
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					owns_state = 836
-					owns_state = 835
-					owns_state = 843
-				}
-				NOT = { has_completed_focus = ETH_invest_in_the_east }
-			}
-		}
-		search_filters = {FOCUS_FILTER_INDUSTRY}
+	x = 0
+	y = 1
+	relative_position_id = ETH_invest_in_the_east
+	cost = 5
+	available = {
+	}
+	ai_will_do = {
+		base = 2
+	}
 
-		completion_reward = {
-			custom_effect_tooltip = ETH_modernizing_the_industry_tt
-			hidden_effect = {
-				every_state = {
-					limit = { has_state_flag = ETH_investment_state_flag }
-					add_extra_state_shared_building_slots = 1
-				}
-				IF = {
-					limit = {
-						OR = {
-							837 = { has_state_flag = ETH_investment_state_flag } 
-							838 = { has_state_flag = ETH_investment_state_flag } 
-							839 = { has_state_flag = ETH_investment_state_flag } 
-						}
-					}
-					random_owned_state = {
-						limit = {
-							OR = {
-								state = 837 
-								state = 838 
-								state = 839 
-							}
-							has_state_flag = ETH_investment_state_flag
-						}
-						add_building_construction = {
-							type = industrial_complex
-							level = 1
-							instant_build = yes
-						}
-					}
-				}
-				IF = {
-					limit = {
-						OR = {
-							843 = { has_state_flag = ETH_investment_state_flag } 
-							835 = { has_state_flag = ETH_investment_state_flag } 
-							836 = { has_state_flag = ETH_investment_state_flag } 
-						}
-					}
-					random_owned_state = {
-						limit = {
-							OR = {
-								state = 843 
-								state = 835 
-								state = 836 
-							}
-							has_state_flag = ETH_investment_state_flag
-						}
-						add_building_construction = {
-							type = industrial_complex
-							level = 1
-							instant_build = yes
-						}
-					}
 
-				}
-				IF = {
-					limit = {
-						OR = {
-							841 = { has_state_flag = ETH_investment_state_flag } 
-							840 = { has_state_flag = ETH_investment_state_flag } 
-							842 = { has_state_flag = ETH_investment_state_flag } 
-						}
-					}
-					random_owned_state = {
-						limit = {
-							OR = {
-								state = 843 
-								state = 835 
-								state = 836 
-							}
-							has_state_flag = ETH_investment_state_flag
-						}
-						add_building_construction = {
-							type = industrial_complex
-							level = 1
-							instant_build = yes
-						}
-					}
-				}
-			}
-			custom_effect_tooltip = available_industrial_concern
-			show_ideas_tooltip = ETH_ethiopian_electric_power
+	search_filters = {}
+
+	completion_reward = {
+		add_stability = 0.1
+		add_ideas = ETH_national_studs_idea
+		set_technology = { camelry = 1 }
+	}
+}
+focus = {
+	id = ETH_ethiopian_industrial_research_institute
+	icon = GFX_focus_research
+	prerequisite = { focus = ETH_modernizing_the_industry }
+	mutually_exclusive = { focus = ETH_invite_foreign_prospectors }
+	dynamic = yes 
+	x = -1
+	y = 1
+	relative_position_id = ETH_modernizing_the_industry
+	cost = 10
+	available = {
+		num_of_controlled_factories > 30
+	}
+	ai_will_do = {
+		base = 2
+	}
+
+	search_filters = {FOCUS_FILTER_RESEARCH}
+
+	completion_reward = {
+		add_research_slot = 1
+	}
+}
+focus = {
+	id = ETH_invite_foreign_prospectors
+	icon = GFX_goal_generic_intelligence_exchange
+	prerequisite = { focus = ETH_modernizing_the_industry }
+	mutually_exclusive = { focus = ETH_ethiopian_industrial_research_institute }
+	x = 1
+	y = 1
+	relative_position_id = ETH_modernizing_the_industry
+	cost = 10
+	available = {
+		OR = {
+			835 = { is_controlled_by_ROOT_or_ally = yes }
+			836 = { is_controlled_by_ROOT_or_ally = yes }
 		}
 	}
-	focus = {
-		id = ETH_animal_husbandry
-		icon = GFX_focus_generic_horse_studs
-		prerequisite = { focus = ETH_invest_in_the_east }
-
-		x = 0
-		y = 1
-		relative_position_id = ETH_invest_in_the_east
-		cost = 5
-		available = {
-		}
-		ai_will_do = {
-			base = 2
-		}
-
-
-		completion_reward = {
-			add_stability = 0.1
-			add_ideas = ETH_national_studs_idea
-			set_technology = { camelry = 1 }
-		}
-	}
-	focus = {
-		id = ETH_ethiopian_industrial_research_institute
-		icon = GFX_focus_research
-		prerequisite = { focus = ETH_modernizing_the_industry }
-		mutually_exclusive = { focus = ETH_invite_foreign_prospectors }
-		dynamic = yes 
-		x = -1
-		y = 1
-		relative_position_id = ETH_modernizing_the_industry
-		cost = 10
-		available = {
-			num_of_controlled_factories > 30
-		}
-		ai_will_do = {
-			base = 2
-		}
-
-		search_filters = {FOCUS_FILTER_RESEARCH}
-
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-	focus = {
-		id = ETH_invite_foreign_prospectors
-		icon = GFX_goal_generic_intelligence_exchange
-		prerequisite = { focus = ETH_modernizing_the_industry }
-		mutually_exclusive = { focus = ETH_ethiopian_industrial_research_institute }
-		x = 1
-		y = 1
-		relative_position_id = ETH_modernizing_the_industry
-		cost = 10
-		available = {
-			OR = {
-				835 = { is_controlled_by_ROOT_or_ally = yes }
-				836 = { is_controlled_by_ROOT_or_ally = yes }
-			}
-		}
-		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 3
-				is_in_faction_with = USA
-			}
-		}
-
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-
-		completion_reward = {
-			# Add oil in the Ogaden
-			random_state = {
-				limit = { 
-					OR = { 
-						state = 835
-						state = 836 
-					}
-				}
-				prioritize = { 835 }
-				add_resource = {
-					type = oil
-					amount = 10
-				}
-			}
-			custom_effect_tooltip = ETH_invite_foreign_prospectors_tt
-			custom_effect_tooltip = available_industrial_concern
-			show_ideas_tooltip = ETH_tenneco
-			custom_effect_tooltip = available_industrial_concern
-			show_ideas_tooltip = ETH_standard_oil_california
+	ai_will_do = {
+		base = 1
+		modifier = {
+			factor = 3
+			is_in_faction_with = USA
 		}
 	}
 
-	focus = {
-		id = ETH_invite_foreign_industrialists
-		icon = GFX_focus_generic_industry_3
-		prerequisite = { focus = ETH_ethiopian_industrial_research_institute focus = ETH_invite_foreign_prospectors }
-		mutually_exclusive = {}
-		dynamic = yes
-		x = 1
-		y = 1
-		relative_position_id = ETH_ethiopian_industrial_research_institute
-		cost = 10
-		available = {
-		
-		}
-		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 3
-				is_in_faction_with = USA
+	search_filters = {FOCUS_FILTER_INDUSTRY}
+
+	completion_reward = {
+		# Add oil in the Ogaden
+		random_state = {
+			limit = { 
+				OR = { 
+					state = 835
+					state = 836 
+				}
+			}
+			prioritize = { 835 }
+			add_resource = {
+				type = oil
+				amount = 10
 			}
 		}
+		custom_effect_tooltip = ETH_invite_foreign_prospectors_tt
+		custom_effect_tooltip = available_industrial_concern
+		show_ideas_tooltip = ETH_tenneco
+		custom_effect_tooltip = available_industrial_concern
+		show_ideas_tooltip = ETH_standard_oil_california
+	}
+}
 
-		search_filters = {FOCUS_FILTER_INDUSTRY}
+focus = {
+	id = ETH_invite_foreign_industrialists
+	icon = GFX_focus_generic_industry_3
+	prerequisite = { focus = ETH_ethiopian_industrial_research_institute focus = ETH_invite_foreign_prospectors }
+	mutually_exclusive = {}
+	dynamic = yes
+	x = 1
+	y = 1
+	relative_position_id = ETH_ethiopian_industrial_research_institute
+	cost = 10
+	available = {
+	
+	}
+	ai_will_do = {
+		base = 1
+		modifier = {
+			factor = 3
+			is_in_faction_with = USA
+		}
+	}
 
-		completion_reward = {
-			custom_effect_tooltip = ETH_invite_foreign_industrialists_tt
-			IF = {
-				limit = {
-					ENG = {
-						exists = yes
-						has_opinion = {
-							target = ROOT
-							value > 50
-						}
-					}					
-				}
+	search_filters = {FOCUS_FILTER_INDUSTRY}
+
+	completion_reward = {
+		custom_effect_tooltip = ETH_invite_foreign_industrialists_tt
+		IF = {
+			limit = {
+				ENG = {
+					exists = yes
+					has_opinion = {
+						target = ROOT
+						value > 50
+					}
+				}					
 			}
-			IF = {
-				limit = {
-					SWE = {
-						exists = yes
-						has_opinion = {
-							target = ROOT
-							value > 50
-						}
-					}					
-				}
+		}
+		IF = {
+			limit = {
+				SWE = {
+					exists = yes
+					has_opinion = {
+						target = ROOT
+						value > 50
+					}
+				}					
 			}
-			IF = {
-				limit = {
-					GER = {
-						exists = yes
-						has_opinion = {
-							target = ROOT
-							value > 50
-						}
-					}					
-				}
+		}
+		IF = {
+			limit = {
+				GER = {
+					exists = yes
+					has_opinion = {
+						target = ROOT
+						value > 50
+					}
+				}					
 			}
-			IF = {
-				limit = {
-					CZE = {
-						exists = yes
-						has_opinion = {
-							target = ROOT
-							value > 50
-						}
-					}					
-				}
+		}
+		IF = {
+			limit = {
+				CZE = {
+					exists = yes
+					has_opinion = {
+						target = ROOT
+						value > 50
+					}
+				}					
 			}
-			IF = {
-				limit = {
-					JAP = {
-						exists = yes
-						has_opinion = {
-							target = ROOT
-							value > 50
-						}
-					}					
-				}
+		}
+		IF = {
+			limit = {
+				JAP = {
+					exists = yes
+					has_opinion = {
+						target = ROOT
+						value > 50
+					}
+				}					
 			}
 		}
 	}
+}
 
 ### #  # ###      ## ###  ##   ##  #  # ###      ### ###  ##  #    ##     ### ### #  # ###  ##  ###  ###  ##  #  #     #   #  ##  ###  
  #  #  # #       #   #   #  # #  # ## # #  #      #   #  #  # #   #  #    #    #  #  #  #  #  # #  #  #  #  # ## #     #   # #  # #  # 
@@ -2967,7 +3045,7 @@ focus_tree = {
 		id = ETH_rally_around_the_emperor
 		icon = GFX_focus_ETH_rally_around_the_emperor
 		#prerequisite = { focus = }
-		mutually_exclusive = { focus = ETH_military_communism focus = ETH_reach_out_to_the_italians}
+		mutually_exclusive = { focus = ETH_reach_out_to_the_italians}
 		x = 41
 		y = 0
 		#offset = { 
@@ -2978,6 +3056,7 @@ focus_tree = {
 		#relative_position_id =
 		cost = 5
 		available = {
+			always = no
 			has_country_leader = {
 				character = ETH_haile_selassie 
 				ruling_only = yes 
@@ -3190,7 +3269,6 @@ focus_tree = {
 	 					is_league_of_nations_member = yes 
 	 					is_subject = no # Embargo managed by overlord
 	 					NOT = { tag = ROOT }
-	 					NOT = { tag =  ITA }
 	 				}
 	 				country_event = {
 	 					id = BBA_italo_ethiopian_war_events.10
@@ -3271,7 +3349,7 @@ focus_tree = {
  			league_of_nations_is_active = yes 
  			has_global_flag = second_italo_ethiopian_war_flag
  			has_war_escalation_level_5 = yes 
- 			911 = {
+ 			446 = {
  				owner = {
  					is_league_of_nations_member = yes
  					controls_state = PREV
@@ -3289,7 +3367,7 @@ focus_tree = {
  		search_filters = {}
 
  		completion_reward = {
- 			911 = {
+ 			446 = {
  				owner = {
 					country_event = {
 						id = BBA_italo_ethiopian_war_events.11
@@ -3374,6 +3452,8 @@ focus_tree = {
 				check_variable = { ETH.host_nation = SWE } 
 			}
 		}
+
+		search_filters = {}
 
 		completion_reward = {
 			#TODO_TA create News Event
@@ -3554,6 +3634,8 @@ focus_tree = {
 		}
 		available_if_capitulated = yes 
 
+		search_filters = {}
+
 		completion_reward = {
 			ENG = { 
 				country_event = {
@@ -3618,6 +3700,8 @@ focus_tree = {
 			check_variable = { ETH.host_nation = ENG }
 		}
 		available_if_capitulated = yes 
+
+		search_filters = {}
 
 		completion_reward = {
 			add_manpower = 50000
@@ -3785,13 +3869,7 @@ focus_tree = {
 			ETH_BOP_centralization_small_effect = yes 
 			custom_effect_tooltip = ETH_learning_from_the_enemy_tt
 			add_to_variable = { ETH_industrialization_industrial_capacity_factory = 0.1 }
-			if = {
-				limit = {
-					NOT = { has_global_flag = second_italo_ethiopian_war_flag }
-				}
-				custom_effect_tooltip = available_chief_of_airforce
-				show_ideas_tooltip = ETH_carl_gustav_von_rosen
-			}
+			
 			add_tech_bonus = {
 				name = ETH_learning_from_the_enemy_armor
 				bonus = 0.25
@@ -3808,45 +3886,49 @@ focus_tree = {
 				limit = {
 					has_dlc = "No Step Back"
 				}
-				#custom_effect_tooltip = ETH_light_tank_tt #Obsolete tt now
+				custom_effect_tooltip = ETH_light_tank_tt
+				hidden_effect = {
+					create_equipment_variant = {
+						name = "L3/35"
+						type = light_tank_chassis_1
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_heavy_machine_gun
+							turret_type_slot = tank_light_fixed_superstructure_turret
+							suspension_type_slot = tank_bogie_suspension
+							armor_type_slot = tank_riveted_armor
+							engine_type_slot = tank_gasoline_engine
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 1
+							tank_nsb_armor_upgrade = 1
+						}
+						icon = "GFX_ITA_basic_light_tank_medium"
+					}
+				}
+			}
+			custom_effect_tooltip = ETH_aircraft_tt
+			hidden_effect = {
 				create_equipment_variant = {
-					name = "L3/35"
-					type = light_tank_chassis_1
-					parent_version = 0
+					name = "CR.32" #
+					type = small_plane_airframe_0
 					modules = {
-						main_armament_slot = tank_heavy_machine_gun
-						turret_type_slot = tank_light_fixed_superstructure_turret
-						suspension_type_slot = tank_bogie_suspension
-						armor_type_slot = tank_riveted_armor
-						engine_type_slot = tank_gasoline_engine
+						fixed_main_weapon_slot = light_mg_2x
+						engine_type_slot = engine_1_1x
+						special_type_slot_1 = empty
 					}
-					upgrades = {
-						tank_nsb_engine_upgrade = 1
-						tank_nsb_armor_upgrade = 1
+				}
+				create_equipment_variant = {
+					name = "Ca.101" #
+					type = medium_plane_airframe_0
+					modules = {
+						fixed_main_weapon_slot = medium_bomb_bay
+						engine_type_slot = engine_1_3x
+						special_type_slot_1 = lmg_defense_turret
 					}
-					icon = "GFX_ITA_basic_light_tank_medium"
+					obsolete = yes
+					icon = "GFX_ITA_early_bomber_old_medium"
 				}
-			}
-			#custom_effect_tooltip = ETH_aircraft_tt #Obsolete tt now
-			create_equipment_variant = {
-				name = "CR.32" #
-				type = small_plane_airframe_0
-				modules = {
-					fixed_main_weapon_slot = light_mg_2x
-					engine_type_slot = engine_1_1x
-					special_type_slot_1 = empty
-				}
-			}
-			create_equipment_variant = {
-				name = "Ca.101" #
-				type = medium_plane_airframe_0
-				modules = {
-					fixed_main_weapon_slot = medium_bomb_bay
-					engine_type_slot = engine_1_3x
-					special_type_slot_1 = lmg_defense_turret
-				}
-				obsolete = yes
-				icon = "GFX_ITA_early_bomber_old_medium"
 			}
 		}
 	}
@@ -3897,6 +3979,8 @@ focus_tree = {
 			has_legitimacy > 40
 		}
 		available_if_capitulated = yes 
+
+		search_filters = {}
 
 		completion_reward = {
 			custom_effect_tooltip = ETH_secure_arms_tt
@@ -3972,6 +4056,8 @@ focus_tree = {
 			
 		}
 
+		search_filters = {}
+
 		completion_reward = {
 			add_war_support = 0.1
 			IF = {
@@ -4031,7 +4117,7 @@ focus_tree = {
 			OR = {
 				AND = {
 					is_government_in_exile = no 
-					any_owned_state = { is_controlled_by_ROOT_or_ally = yes }
+					all_owned_state = { is_controlled_by_ROOT_or_ally = yes }
 				}
 				AND = {
 					is_government_in_exile = yes
@@ -4055,6 +4141,8 @@ focus_tree = {
 			
 		}
 		cancel_if_invalid = yes 
+
+		search_filters = {}
 
 		completion_reward = {
 			# If not in exile
@@ -4101,10 +4189,12 @@ focus_tree = {
 					target = ROOT
 					value > 99
 				}
-				owns_state = 1016
+				owns_state = 454
 			}
 		}
 		available_if_capitulated = yes 
+
+		search_filters = {}
 
 		completion_reward = {
 			ENG = {
@@ -4141,6 +4231,8 @@ focus_tree = {
 			}
 		}
 		available_if_capitulated = yes 
+
+		search_filters = {}
 
 		completion_reward = {
 			ENG = {
@@ -4201,6 +4293,8 @@ focus_tree = {
 			base = 2
 		}
 
+		search_filters = {}
+
 		completion_reward = {
 			add_timed_idea = {
 				idea = ETH_rebuilding_the_country_idea
@@ -4218,12 +4312,13 @@ focus_tree = {
 		relative_position_id = ETH_reclaiming_ethiopia
 		cost = 10
 		available = {
-			is_ai = no
 			all_owned_state = { is_controlled_by_ROOT_or_ally = yes }
 		}
 		ai_will_do = {
 			base = 1.5
 		}
+
+		search_filters = {}
 
 		completion_reward = {
 			set_country_flag = ETH_anti_colonialism_flag
@@ -4338,9 +4433,6 @@ focus_tree = {
 			NOT = { has_war_with = 268.owner }
 			268 = {
 				NOT = { is_core_of = 268.owner }
-				268 = {
-					is_controlled_by = 268.owner
-				}
 			}
 			908 = { is_owned_by = ROOT }
 		}
@@ -4491,9 +4583,6 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_POLITICAL}
 
 		completion_reward = {
-			835 = {
-				add_core_of = HAR
-			}
 			remove_power_balance = {
 				id = ETH_centralization_balance
 			}
@@ -4607,7 +4696,6 @@ focus_tree = {
 		relative_position_id = ETH_a_federal_empire
 		cost = 10
 		available = {
-			is_ai = no
 		}
 		ai_will_do = {
 			base = 1
@@ -4616,6 +4704,8 @@ focus_tree = {
 				is_historical_focus_on = yes 
 			}
 		}
+
+		search_filters = {}
 
 		completion_reward = {
 			IF = {
@@ -4710,26 +4800,21 @@ focus_tree = {
 			custom_effect_tooltip = ETH_the_one_true_heir_of_solomon_tt 
 			IF = {
 				limit = {
-					NOT = { 1016 = { is_owned_by = ROOT } }
+					NOT = { 454 = { is_owned_by = ROOT } }
 				}
-				1016 = { add_core_of = ROOT }
+				454 = { add_core_of = ROOT }
 				create_wargoal = {
 					type = take_core_state  
-					target = 1016.owner
-					generator = { 1016 }
+					target = 454.owner
+					generator = { 454 }
 				}
 				453 = { add_claim_by = ROOT }
-				911 = { add_claim_by = ROOT }
-				995 = { add_claim_by = ROOT }
+				446 = { add_claim_by = ROOT }
 				907 = { add_claim_by = ROOT }
 				447 = { add_claim_by = ROOT }
 				457 = { add_claim_by = ROOT }
 				456 = { add_claim_by = ROOT }
 
-				966 = { add_claim_by = ROOT }
-				949 = { add_claim_by = ROOT }
-				1017 = { add_claim_by = ROOT }
-				454 = { add_claim_by = ROOT }
 			}
 		}
 	}
@@ -4836,6 +4921,8 @@ focus_tree = {
 		}
 		available_if_capitulated = yes 
 
+		search_filters = {}
+
 		completion_reward = {
 			add_legitimacy = 10
 			add_political_power = 100
@@ -4868,6 +4955,8 @@ focus_tree = {
 			}
 		}
 		available_if_capitulated = yes 
+
+		search_filters = {}
 
 		completion_reward = {
 			add_offsite_building = { type = dockyard level = 1 }
@@ -4925,6 +5014,8 @@ focus_tree = {
 			}
 		}
 		available_if_capitulated = yes 
+
+		search_filters = {}
 
 		completion_reward = {
 
@@ -5003,6 +5094,8 @@ focus_tree = {
 		}
 		available_if_capitulated = yes 
 
+		search_filters = {}
+
 		completion_reward = {
 			JAP = {
 				country_event = {
@@ -5044,6 +5137,8 @@ focus_tree = {
 		}
 		available_if_capitulated = yes 
 
+		search_filters = {}
+
 		completion_reward = {
 			add_political_power = 150
 			add_legitimacy = 10
@@ -5074,6 +5169,8 @@ focus_tree = {
 		}
 		available_if_capitulated = yes 
 
+		search_filters = {}
+
 		completion_reward = {
 			IF = {
 				limit = {
@@ -5094,7 +5191,6 @@ focus_tree = {
 			create_equipment_variant = {
 				name = "He 51" #
 				type = small_plane_airframe_0
-				allow_without_tech = yes #Makes no difference since tech is granted above, but makes tooltip shorter and less confusing
 				modules = {
 					fixed_main_weapon_slot = light_mg_2x
 					engine_type_slot = engine_1_1x
@@ -5104,7 +5200,6 @@ focus_tree = {
 			create_equipment_variant = {
 				name = "DO 23" #
 				type = medium_plane_airframe_0
-				allow_without_tech = yes #Makes no difference since tech is granted above, but makes tooltip shorter and less confusing
 				modules = {
 					fixed_main_weapon_slot = medium_bomb_bay
 					fixed_auxiliary_weapon_slot_1 = empty
@@ -5144,6 +5239,8 @@ focus_tree = {
 		}
 		available_if_capitulated = yes 
 
+		search_filters = {}
+
 		completion_reward = {
 			IF = {
 				limit = {
@@ -5169,7 +5266,6 @@ focus_tree = {
 					name = "Panzer I Ausf. A"
 					type = light_tank_chassis_1
 					parent_version = 0
-					allow_without_tech = yes #Makes no difference since tech is granted above, but makes tooltip shorter and less confusing
 					modules = {
 						main_armament_slot = tank_heavy_machine_gun
 						turret_type_slot = tank_light_one_man_tank_turret
@@ -5257,6 +5353,8 @@ focus_tree = {
 		}
 		available_if_capitulated = yes 
 
+		search_filters = {}
+
 		completion_reward = { 
 			GER = {
 				country_event = {
@@ -5293,6 +5391,8 @@ focus_tree = {
 			}
 		}
 		available_if_capitulated = yes 
+
+		search_filters = {}
 
 		completion_reward = {
 			custom_effect_tooltip = ETH_unlock_false_flag_tt
@@ -5335,6 +5435,8 @@ focus_tree = {
 			check_variable = { ETH.host_nation = SWE }
 		}
 		available_if_capitulated = yes 
+
+		search_filters = {}
 
 		completion_reward = {
 			IF = {
@@ -5389,6 +5491,8 @@ focus_tree = {
 		}
 		available_if_capitulated = yes 
 
+		search_filters = {}
+
 		completion_reward = {
 			IF = { 
 				limit = {
@@ -5436,6 +5540,8 @@ focus_tree = {
 			}
 		}
 		available_if_capitulated = yes 
+
+		search_filters = {}
 
 		completion_reward = {
 			custom_effect_tooltip = TODO
@@ -5490,6 +5596,8 @@ focus_tree = {
 		}
 		available_if_capitulated = yes 
 
+		search_filters = {}
+
 		completion_reward = {
 			custom_effect_tooltip = ETH_SWE_join_war_tt
 			SWE = {
@@ -5502,1620 +5610,6 @@ focus_tree = {
 		}
 	}
 
-
-	##############
-	#            #
-	# COMMUNISM  #
-	#            #
-	##############
-
-	focus = {
-		id = ETH_military_communism
-		mutually_exclusive = { focus = ETH_rally_around_the_emperor focus = ETH_reach_out_to_the_italians}
-		search_filters = { FOCUS_FILTER_POLITICAL }	
-		x = 69
-		y = 0
-		offset = { 
-			x = 4
-			y = 0
-			trigger = { has_variable = ETH.host_nation }
-		}
-		icon = GFX_focus_generic_join_comintern
-		cost = 5
-		available = {
-			is_subject = no
-		}	
-
-		completion_reward = {
-			add_timed_idea = {
-				idea = ETH_military_communism
-				days = 365
-			}			
-		}
-	}
-
-	focus = {
-		id = ETH_defending_our_homes
-		prerequisite = { focus = ETH_military_communism }
-		icon = GFX_focus_generic_manpower
-		relative_position_id = ETH_military_communism
-		x = -2
-		y = 1
-		
-		cost = 5
-		available = { has_war = yes }		
-
-		search_filters = { FOCUS_FILTER_POLITICAL }	
-		completion_reward = {
-			add_timed_idea = {
- 				idea = ETH_defending_our_homes
- 				days = 365
- 			}
-		}
-	}
-
-	focus = {
-		id = ETH_anti_imperialist_agitation
-		prerequisite = { focus = ETH_military_communism }
-		icon = GFX_focus_spr_masters_of_our_own_fate
-		relative_position_id = ETH_military_communism
-		x = 2
-		y = 1
-		
-		cost = 5
-		available = { has_government = neutrality }		
-
-		search_filters = { FOCUS_FILTER_POLITICAL }	
-
-		completion_reward = {
-			add_popularity = { ideology = communism popularity = 0.1 }
-		}
-	}
-
-	focus = {
-		id = ETH_in_the_name_of_the_people
-		prerequisite = { focus = ETH_defending_our_homes focus = ETH_anti_imperialist_agitation }
-		icon = GFX_focus_ETH_in_the_name_of_the_people
-		relative_position_id = ETH_defending_our_homes
-		x = 2
-		y = 1
-		
-		cost = 5
-		available = {
-			root = { communism > 0.20 }
-			NOT = {
-				has_government = communism
-			}
-		}		
-
-		search_filters = { FOCUS_FILTER_POLITICAL }	
-
-		completion_reward = {
-			country_event = {
-					hours = 1
-					id = BBA_ethiopia_communist_events.05
-			}
-			#set_power_balance = {
-			#	id = ETH_centralization_balance
-			#	left_side = ETH_decentralization_anarchist
-			#	right_side = ETH_communist_side
-			#}
-			division_template = {
-				name = "Red Guards"
-				is_locked = yes
-				priority = 2
-				template_counter = 69
-				override_model = ETH_infantry_alt_0_entity
-				#override_model = ETH_infantry_2_alt_0_entity
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					#infantry = { x = 1 y = 2 }
-				}				
-			}
-			division_template = {
-				name = "Black Lions"
-				is_locked = yes
-				priority = 2
-				template_counter = 60
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					#infantry = { x = 1 y = 2 }
-				}				
-			}
-			custom_effect_tooltip = EHT_in_the_name_of_the_people_tt
-			hidden_effect = {
-				random_owned_controlled_state = {
-					limit = {
-						is_capital = yes 
-					}
-					create_unit = {
-						division = "name = \"Black Lions Division\" division_template = \"Black Lions\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"Black Lions Division\" division_template = \"Black Lions\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"Black Lions Division\" division_template = \"Black Lions\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"Red Guards Division\" division_template = \"Red Guards\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
-						owner = ROOT
-					}
-					create_unit = {
-						division = "name = \"Red Guards Division\" division_template = \"Red Guards\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
-						owner = ROOT
-					}
-				}
-			}
-			news_event = {
-				id = bba_news.4
-				hours = 16
-			}		
-		}
-	}
-
-	focus = {
-		id = ETH_callout_to_the_world
-		prerequisite = { focus = ETH_in_the_name_of_the_people }
-		mutually_exclusive = { focus = ETH_soviet_aid }
-		relative_position_id = ETH_in_the_name_of_the_people
-		x = -3
-		y = 1
-		icon = GFX_focus_ETH_callout_to_the_world
-		cost = 5
-		available = { 
-			is_subject = no 
-			has_government = communism
-		}
-	
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			custom_effect_tooltip = ETH_callout_to_the_world_tt
-			add_political_power = 150
-			add_popularity = { ideology = communism popularity = 0.05 }
-			hidden_effect = {
-				IF = {
-					limit = {
-						ENG = {
-							NOT = {
-								has_government = communism
-							}
-						}
-					}
-					ENG = {
-						ENG_sylvia_pankhurst = {
-				  			set_nationality = ETH
-				  			set_character_flag = ETH_anarchist_socialist_advisor
-				   		}	
-					}
-				}
-				set_country_flag = IA_emma_goldman_recruited_flag
-				set_party_name = { ideology = communism long_name = ETH_communism_party_long name = ETH_communism_party}
-			}
-			ETH_BOP_decentralization_large_effect = yes
-		}
-	}
-
-	focus = {
-		id = ETH_soviet_aid
-		icon = GFX_focus_SOV_the_glory_of_the_red_army_communism
-		prerequisite = { focus = ETH_in_the_name_of_the_people }
-		mutually_exclusive = { focus = ETH_callout_to_the_world }
-		relative_position_id = ETH_in_the_name_of_the_people
-		x = 3
-		y = 1
-
-		cost = 5
-		available = {			
-			is_subject = no
-			has_government = communism
-			SOV = {
-				has_government = communism
-			}				
-		}
-
-		search_filters = { FOCUS_FILTER_BALANCE_OF_POWER }
-
-		completion_reward = {
-			add_political_power = 150
-			SOV = {
-				country_event = {
-					hours = 1
-					id = BBA_ethiopia_communist_events.01
-				}
-			}
-			ETH_BOP_centralization_large_effect = yes
-			custom_effect_tooltip = ETH_soviet_aid_tt				
-		}
-	}
-
-	focus = {
-		id = ETH_humanitarian_aid
-		prerequisite = { focus = ETH_callout_to_the_world }
-		icon = GFX_goal_generic_trade
-		relative_position_id = ETH_callout_to_the_world
-		x = -1
-		y = 1
-			
-		cost = 5
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-
-		completion_reward = {
-			custom_effect_tooltip = ETH_humanitarian_aid_tt	
-			add_to_variable = { ETH_communist_factory_repair_factor = 0.1 }
-			add_political_power = 100
-		}
-	}
-
-	focus = {
-		id = ETH_support_from_the_japanese_communists
-		prerequisite = { focus = ETH_callout_to_the_world }
-		icon = GFX_focus_ETH_support_from_the_japanese_communists
-		relative_position_id = ETH_callout_to_the_world
-		x = 1
-		y = 1
-			
-		cost = 5
-		available = { has_government = communism }
-			
-
-		search_filters = {FOCUS_FILTER_POLITICAL}
-
-		completion_reward = {			
-			custom_effect_tooltip = ETH_support_from_the_japanese_communists_tt
-			set_country_flag = IA_anarchists_recruited_flag
-			JAP = {
-				IF = {
-					limit = {
-						OR = { 
-							has_government = fascism
-							has_government = neutrality
-						}
-					}
-					country_event = {
-						id = BBA_ethiopia_communist_events.55
-						hours = 7
-					}
-					custom_effect_tooltip = ETH_support_from_the_japanese_communists_fascist_tt
-				}
-				ELSE_IF = {
-					limit = {
-						has_government = communism
-					}
-					country_event = {
-						id = BBA_ethiopia_communist_events.56
-						hours = 7
-					}
-				}				
-			}
-		}
-	}
-
-	focus = {
-		id = ETH_international_brigades_communist
-		icon = GFX_focus_secret_rearmament
-		prerequisite = { focus = ETH_humanitarian_aid focus = ETH_support_from_the_japanese_communists }
-		mutually_exclusive = { focus = ETH_peoples_army}
-		relative_position_id = ETH_humanitarian_aid
-		x = 0
-		y = 1
-			
-		cost = 10
-		available = { 
-			has_government = communism 
-			has_global_flag = second_italo_ethiopian_war_flag
-		}
-			
-		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
-		completion_reward = {	
-			add_timed_idea = {
-				idea = ETH_communist_international_brigades
-				days = 365
-			}
-			add_war_support = 0.1
-		}
-	}
-
-	focus = {
-		id = ETH_peoples_army
-		prerequisite = { focus = ETH_humanitarian_aid focus = ETH_support_from_the_japanese_communists }
-		mutually_exclusive = { focus = ETH_international_brigades_communist}
-		relative_position_id =  ETH_support_from_the_japanese_communists
-		x = 0
-		y = 1
-		icon = GFX_focus_prc_infiltration
-		cost = 10
-		available = { has_government = communism }
-			
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			IF = {
-				limit = {
-					has_idea = ETH_conservative_high_command_idea
-				}
-				remove_ideas = ETH_conservative_high_command_idea
-			}
-			add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.5
-				uses = 2
-				category = cat_mass_assault
-			}
-			add_ideas = ETH_peoples_army_idea
-		}
-	}
-
-	focus = {
-		id = ETH_peace_negotiations
-		prerequisite = { focus = ETH_international_brigades_communist focus = ETH_peoples_army }
-		icon = GFX_goal_generic_dangerous_deal
-		relative_position_id = ETH_international_brigades_communist
-		x = 1
-		y = 1
-		
-		cost = 10
-		available = { 
-			#has_global_flag = second_italo_ethiopian_war_flag
-			ROOT = {
-				count_triggers = {
-				    amount = 3
-				    controls_state = 271
-				    controls_state = 839
-				    controls_state = 838
-				    controls_state = 837
-				}			
-			}
-			ITA = { has_civil_war = no }
-		}
-		bypass = {
-			NOT = { has_global_flag = second_italo_ethiopian_war_flag }
-		}
-
-		search_filters = {FOCUS_FILTER_POLITICAL}
-		completion_reward = {
-			IF = {
-				limit = { 
-					ITA = { 
-						AND = { 
-							has_war_with = ETH
-							ETH = {
-								NOT = {
-									is_in_faction = yes
-								}
-							}
-						}
-					}
-				}
-				ITA = {
-					country_event = {
-						id = BBA_ethiopia_communist_events.30
-						hours = 1
-					}
-				}	
-			}
-			ELSE = {
-				add_political_power = 150
-				set_global_flag = ethiopia_recognized_flag
-			}
-			ETH_no_longer_alone = yes 	
-			set_global_flag =  italo_ethiopian_peace_negotiations_ongoing
-		}
-	}
-
-	focus = {
-		id = ETH_raise_from_the_ranks
-		prerequisite = { focus = ETH_callout_to_the_world focus = ETH_soviet_aid }
-		icon = GFX_focus_generic_military_academy
-		relative_position_id = ETH_in_the_name_of_the_people
-		x = 0
-		y = 2
-			
-		cost = 10	
-		search_filters = {FOCUS_FILTER_ARMY_XP}
-
-		completion_reward = {
-			custom_effect_tooltip = ETH_raise_from_the_ranks_tt
-			hidden_effect = {
-				ETH_random_general = yes
-				ETH_random_general = yes
-			}
-			army_experience = 50
-			IF = {
-				limit = {
-					has_idea = ETH_conservative_high_command_idea
-				}
-				remove_ideas = ETH_conservative_high_command_idea
-			}			
-		}
-	}
-
-	focus = {
-		id = ETH_the_new_administration
-		prerequisite = { focus = ETH_raise_from_the_ranks }
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		relative_position_id = ETH_raise_from_the_ranks
-		x = 0
-		y = 1
-			
-		cost = 10
-		available = { has_government = communism }
-		search_filters = {FOCUS_FILTER_POLITICAL}
-
-		completion_reward = {
-			#custom_effect_tooltip = rebellious_educator_tt
-			custom_effect_tooltip = ETH_the_new_administration_tt
-			hidden_effect ={
-				ETH_senedu_gebru = {
-						set_character_flag = ETH_visible_advisor_flag
-				}
-				ETH_random_character = yes
-				ETH_random_character = yes}
-		}
-	}
-
-	focus = {
-		id = ETH_soviet_rifles
-		prerequisite = { focus = ETH_soviet_aid}
-		icon = GFX_focus_generic_combined_arms
-		relative_position_id = ETH_soviet_aid
-		x = -1
-		y = 1
-			
-		cost = 5
-		available = { SOV = { has_government = communism } }
-		completion_reward = {
-			SOV = {
-				country_event = {
-					hours = 1
-					id = BBA_ethiopia_communist_events.08
-				}
-			}
-			custom_effect_tooltip = ETH_soviet_rifles_tt
-			custom_effect_tooltip = ETH_soviet_rejection_tt
-		}
-	}
-
-	focus = {
-		id = ETH_military_advisors
-		prerequisite = { focus = ETH_soviet_aid }
-		icon = GFX_focus_generic_military_mission
-		relative_position_id = ETH_soviet_aid
-		x = 1
-		y = 1
-			
-		cost = 5
-		search_filters = {}
-
-		completion_reward = {
-			SOV = {
-				country_event = {
-					hours = 1
-					id = BBA_ethiopia_communist_events.11
-				}
-			}
-			custom_effect_tooltip = ETH_military_advisors_tt
-			custom_effect_tooltip = ETH_soviet_rejection_tt
-			ETH_BOP_centralization_large_effect = yes
-		}
-	}
-
-	focus = {
-		id = ETH_clearing_the_skies
-		prerequisite = { focus = ETH_soviet_rifles focus = ETH_military_advisors }
-		icon = GFX_goal_generic_air_fighter2
-		mutually_exclusive = { focus = ETH_counter_the_armored_threat}
-		relative_position_id = ETH_soviet_rifles
-		x = 0
-		y = 1
-			
-		cost = 10
-			
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			SOV = {
-				country_event = {
-					hours = 1
-					id = BBA_ethiopia_communist_events.14
-				}
-			}
-			custom_effect_tooltip = ETH_clearing_the_skies_tt
-			custom_effect_tooltip = ETH_soviet_rejection_tt
-		}
-	}
-
-	focus = {
-		id = ETH_counter_the_armored_threat
-		prerequisite = { focus = ETH_military_advisors focus = ETH_soviet_rifles }
-		icon = GFX_goal_generic_army_tanks
-		mutually_exclusive = { focus = ETH_clearing_the_skies}
-		relative_position_id = ETH_military_advisors
-		x = 0
-		y = 1			
-		cost = 10
-		search_filters = {FOCUS_FILTER_RESEARCH}
-
-		completion_reward = {
-			SOV = {
-				country_event = {
-					hours = 1
-					id = BBA_ethiopia_communist_events.17
-				}
-			}
-			IF = {
-				limit = { has_dlc = "La Resistance" }
-				custom_effect_tooltip = ETH_counter_the_armored_threat_LaR_tt
-			}
-			ELSE_IF = {
-				limit = {has_dlc = "No Step Back"}
-				custom_effect_tooltip = ETH_counter_the_armored_threat_NoLaR_tt
-			}
-			ELSE = {
-				custom_effect_tooltip = ETH_counter_the_armored_threat_NoNSB_tt
-			}
-			custom_effect_tooltip = ETH_soviet_rejection_tt		
-		}
- 	}
-
-	focus = {
-		id = ETH_soviet_mediation
-		prerequisite = { focus = ETH_clearing_the_skies focus = ETH_counter_the_armored_threat}
-		relative_position_id = ETH_clearing_the_skies
-		x = 1
-		y = 1
-		icon = GFX_focus_chi_mission_to_the_soviet_union
-		cost = 10
-		available = { 
-			#has_global_flag = second_italo_ethiopian_war_flag
-			SOV = { has_government = communism }
-			ITA = { has_civil_war = no }
-		}
-		bypass = {
-			OR = {
-				NOT = { has_global_flag = second_italo_ethiopian_war_flag }
-				SOV = {NOT = {has_government = communism}}
-			}
-		}
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER}
-		completion_reward = {
-			SOV = {
-				country_event = {
-					id = BBA_ethiopia_communist_events.25
-				}
-			}
-			ETH_BOP_centralization_large_effect = yes
-			ETH_no_longer_alone = yes 
-			custom_effect_tooltip = ETH_soviet_mediation_tt
-			custom_effect_tooltip = ETH_soviet_rejection_tt
-			set_global_flag =  italo_ethiopian_peace_negotiations_ongoing
-		}
-	}
-
-	focus = {
-		id = ETH_red_army_engineers
-		prerequisite = { focus = ETH_soviet_mediation}
-		icon = GFX_focus_SOV_organize_wreckers
-		relative_position_id = ETH_soviet_mediation
-		x = 0
-		y = 1
-			
-		cost = 10
-		available = {
-				#has_country_flag = ETH_italo_ethiopian_war_is_over_flag
-		}
-		bypass = {
-			SOV = {NOT = {has_government = communism}}
-		}
-		search_filters = {FOCUS_FILTER_INDUSTRY }
-
-		completion_reward = {
-			add_ideas = ETH_red_army_engineers
-			if = {
-				limit = { NOT = {has_tech = tech_engineers}}
-				set_technology = { tech_engineers = 1}
-				set_technology = { tech_support = 1}
-			}
-			else = {
-				add_tech_bonus = { 
-					name = ETH_red_army_engineers
-					bonus = 0.5
-					uses = 2
-					category = support_tech
-				}
-			}
-			IF = {
-				limit = { is_subject_of = SOV }
-				add_autonomy_score = {
-					value = -20
-					localization = ETH_red_army_engineers
-				}	
-			}
-		}
-	}
-
-	focus = {
-		id = ETH_liberate_aussa
-		prerequisite = { focus = ETH_soviet_mediation}
-		icon = GFX_focus_SOV_builder_of_the_red_army
-		relative_position_id = ETH_soviet_mediation
-		x = 3
-		y = 1
-			
-		cost = 10
-		available = {
-			AFA = {exists = yes}
-		}
-		bypass = {
-			AND = {
-				AFA = {exists = no}
-				908 = {
-					is_owned_by = ETH
-				}
-			}
-		}
-		search_filters = {FOCUS_FILTER_ANNEXATION}
-		will_lead_to_war_with = AFA
-		completion_reward = {
-			908 = {
-				OWNER = {
-					ETH = {
-						declare_war_on = {
-							target = PREV
-							type = take_core_state
-							generator = { 908 }
-						}
-						#create_wargoal = {
-						#	type = take_core_state  
-						#	target = PREV
-						#	generator = { 908 }
-						#}
-					}
-				}
-			}		
-		}
-	}
-
-	focus = {
-		id = ETH_demand_DJI
-		prerequisite = { focus = ETH_liberate_aussa}
-		icon = GFX_focus_attack_france
-		relative_position_id = ETH_liberate_aussa
-		x = 0
-		y = 1
-			
-		cost = 10
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = ETH_france_divided_tt
-				any_country = {
-					original_tag = FRA 
-					exists = yes 
-					has_government = fascism
-				}
-				any_country = {
-					original_tag = FRA 
-					exists = yes 
-					NOT = { has_government = fascism }
-				}
-			}
-		}
-			
-		search_filters = {FOCUS_FILTER_ANNEXATION}
-
-		completion_reward = {
-			custom_effect_tooltip = ETH_exploit_french_weakness_tt			
-		}
-	}
-
-	focus = {
-		id = ETH_laying_the_tracks
-		prerequisite = { focus = ETH_soviet_mediation focus = ETH_peace_negotiations}
-		icon = GFX_goal_generic_construct_infrastructure
-		relative_position_id = ETH_soviet_mediation
-		x = -2
-		y = 1
-			
-		cost = 10
-		available = {
-			has_full_control_of_state = 842
-			has_full_control_of_state = 843
-			has_full_control_of_state = 835
-			has_full_control_of_state = 271
-			has_full_control_of_state = 837
-		}
-		search_filters = {}
-
-		completion_reward = {
-			if = {
-				limit = {
-					has_full_control_of_state = 842
-					has_full_control_of_state = 843
-					has_full_control_of_state = 835
-					has_full_control_of_state = 271
-					has_full_control_of_state = 837
-				}
-				build_railway = {
-					#level = 1
-					path = { 7980 13240 5041 13236 13238 }
-				}
-				build_railway = {
-					#level = 1
-					start_province = 5010 
-					target_province = 13237
-				}
-				build_railway = {
-					#level = 1
-					start_province = 5010 
-					target_province = 12812
-				}
-				835 = {
-					add_building_construction = {
-						type = supply_node
-						province = 12812
-						level = 1
-						instant_build = yes
-					}
-				}	
-				842 = {
-					add_building_construction = {
-						type = supply_node
-						province = 13237
-						level = 1
-						instant_build = yes
-					}
-				}					
-			}
-		}
-	}
-
-	focus = {
-		id = ETH_transformation_of_nature
-		prerequisite = { focus = ETH_soviet_mediation focus = ETH_peace_negotiations}
-		icon = GFX_focus_generic_africa_factory
-		relative_position_id = ETH_soviet_mediation
-		x = -4
-		y = 1
-			
-		cost = 10
-
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-		completion_reward = {
-			add_ideas = ETH_transformation_of_nature
-			hidden_effect = {
-				ETH_add_random_building_slot_effect = yes
-				ETH_add_random_building_slot_effect = yes
-				ETH_add_random_building_slot_effect = yes
-				ETH_add_random_building_slot_effect = yes
-			}
-			custom_effect_tooltip = ETH_transformation_of_nature_tt
-		}
-	}
-
-	focus = {
-		id = ETH_a_guiding_hand
-		prerequisite = { focus = ETH_peace_negotiations}
-		icon = GFX_focus_generic_self_management
-		mutually_exclusive = {focus = ETH_local_committees }
-		relative_position_id = ETH_peace_negotiations
-		x = 0
-		y = 1
-			
-		cost = 10
-		
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			ETH_BOP_centralization_large_effect = yes
-			add_political_power = 100
-			add_stability = 0.1
-			set_party_name = { ideology = communism long_name = ETH_workers_party_long name = ETH_workers_party}
-		}
-	}
-
-	focus = {
-		id = ETH_local_committees
-		icon = GFX_goal_generic_national_unity
-		prerequisite = { focus = ETH_peace_negotiations}
-		mutually_exclusive = {focus = ETH_a_guiding_hand }
-		relative_position_id = ETH_peace_negotiations
-		x = -2
-		y = 1
-			
-		cost = 10
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			add_political_power = 120
-			ETH_BOP_decentralization_large_effect = yes
-			add_stability = 0.05
-			
-			promote_character = ETH_anarchist_council
-			set_party_name = { ideology = communism long_name = ETH_anarcho_communist_long name = ETH_anarcho_communist}
-			set_country_flag = ETH_anarchist_council_flag
-			set_cosmetic_tag = ethiopia_anarcho_communist
-		}
-	}
-
-	focus = {
-		id = ETH_support_spain
-		prerequisite = { focus = ETH_peace_negotiations}
-		allow_branch = {
-			has_dlc = "La Resistance"
-		}
-			
-		icon = GFX_focus_intervention_spain_republic
-		relative_position_id = ETH_peace_negotiations
-		x = -5
-		y = 1
-		bypass = {
-			NOT = {
-				country_exists = SPC
-			}
-			has_global_flag = scw_over
-		}
-		cost = 5
-		available = {
-			AND = {
-				country_exists = SPC
-				NOT = { has_global_flag = scw_over}	
-			}
-		}
-			
-		search_filters = {}
-		completion_reward = {
-			SPC = {
-				#set_country_flag = ETH_support
-				country_event = {
-					id = BBA_ethiopia_communist_events.38
-					hours = 1
-				}
-			}
-			# set_rule = { can_send_volunteers = yes }
-			add_relation_modifier = {
-				target = SPC
-				modifier = ETH_support_spain_static_modifier
-			}
-			add_relation_rule_override = {
-				target = SPC
-				can_send_volunteers = yes
-			}
-			hidden_effect = {
-				ROOT = {
-					set_rule = { can_send_volunteers = yes }
-					add_timed_idea = {
-						idea = ETH_aid_SPC
-						days = 730
-					}
-					add_ai_strategy = {
-						type = send_volunteers_desire
-						id = SPC
-						value = 200
-					}
-				}
-			}			
-		}
-	}
-
-	focus = {
-		id = ETH_the_rif
-		prerequisite = { focus = ETH_support_spain}	
-		mutually_exclusive = {focus = ETH_refuge_for_the_spanish_exiles}		
-		relative_position_id = ETH_support_spain
-		icon = GFX_focus_ETH_the_rif
-		x = -1
-		y = 1
-			
-		cost = 10
-		available = {
-			AND = {
-				country_exists = SPC
-				SPC = {
-					owns_state = 290
-				}
-				has_global_flag = scw_over
-			}
-		}
-			
-		search_filters = {}
-
-		completion_reward = {
-			SPC = {
-				country_event = {
-					id = BBA_ethiopia_communist_events.35
-					hours = 1
-				}
-			}	
-		}
-	}
-
-	focus = {
-		id = ETH_refuge_for_the_spanish_exiles
-		prerequisite = { focus = ETH_support_spain}
-		icon = GFX_focus_spr_anarchism_knows_no_borders		
-		mutually_exclusive = {focus = ETH_the_rif}
-		relative_position_id = ETH_support_spain
-		x = 1
-		y = 1
-			
-		cost = 10
-		available = {
-			AND = {
-				NOT = { country_exists = SPC }
-				has_global_flag = scw_over
-			}
-		}
-			
-		search_filters = {}
-
-		completion_reward = {
-			add_ideas = ETH_refuge_for_spanish_exiles_idea
-			add_power_balance_modifier = {
-				id = ETH_centralization_balance
-				modifier = ETH_BoP_spanish_exiles_modifier
-			}
-
-		}
-	}
-
-	focus = {
-		id = ETH_communal_education
-		prerequisite = { focus = ETH_local_committees focus = ETH_a_guiding_hand }
-		icon = GFX_focus_research
-		relative_position_id = ETH_local_committees
-		x = 0
-		y = 1
-		
-		cost = 10
-		
-		search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			#add_political_power = 100
-			#custom_effect_tooltip = ETH_social_reforms_tt
-			ETH_BOP_decentralization_small_effect = yes
-			add_research_slot = 1
-		}
-	}
-
-	focus = {
-		id = ETH_seize_the_means
-		prerequisite = { focus = ETH_local_committees focus = ETH_a_guiding_hand }
-		icon = GFX_focus_spr_masters_of_our_own_fate
-		relative_position_id = ETH_local_committees
-		x = 2
-		y = 1
-		
-		cost = 10
-		
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			ETH_add_random_civ_factory_effect = yes
-			ETH_BOP_decentralization_large_effect = yes
-		}
-	}
-
-	focus = {
-		id = ETH_mass_transit
-		prerequisite = { focus = ETH_communal_education focus = ETH_seize_the_means}	
-		relative_position_id = ETH_communal_education
-		x = 0
-		y = 1
-		icon = GFX_focus_POL_warsaw_main_station
-		cost = 10
-		
-		search_filters = {FOCUS_FILTER_RESEARCH FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			add_equipment_to_stockpile = {
-				type = train_equipment
-				amount = 30
-				producer = ETH
-			}
-			add_tech_bonus = {
-				name = ETH_mass_transit
-				bonus = 1
-				uses = 2
-				category = train_tech
-			}
-			ETH_BOP_decentralization_large_effect = yes
-			add_ideas = ETH_mass_transit_idea
-		}
-	}
-
-	focus = {
-		id = ETH_communal_agriculture
-		prerequisite = { focus = ETH_communal_education focus = ETH_seize_the_means}
-		relative_position_id = ETH_seize_the_means
-		x = 0
-		y = 1
-		icon = GFX_goal_generic_demand_territory
-		cost = 10
-		
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			custom_effect_tooltip = ETH_communal_agriculture_industry_tt
-			add_to_variable = { 
-				ETH_industrialization_industrial_capacity_factory = 0.1 
-			}
-			custom_effect_tooltip = ETH_communal_agriculture_consumer_tt
-			add_to_variable = {
-				ETH_industrialization_consumer_goods_factor = -0.15
-			}
-			ETH_BOP_decentralization_large_effect = yes
-		}
-	}
-
-	focus = {
-		id = ETH_african_wildfire
-		prerequisite = { focus = ETH_mass_transit focus = ETH_communal_agriculture}
-		relative_position_id = ETH_mass_transit
-		x = 0
-		y = 1
-		icon = GFX_focus_ETH_african_wildfire
-		
-		cost = 10
-		completion_reward = {
-			add_political_power = 100 
-			add_command_power = 50 
-			custom_effect_tooltip = ETH_african_independence_tt
-			ETH_set_up_african_resistance_states = yes # build array
-			set_country_flag = ETH_anti_colonialism_flag # display category 
-			custom_effect_tooltip = ETH_african_independence_join_tt
-			set_country_flag = ETH_can_intervene_flag # unlock intervention decisions	
-		}
-	}
-
-	focus = {
-		id = ETH_preparing_for_the_inevitable
-		prerequisite = { focus = ETH_mass_transit focus = ETH_communal_agriculture}
-		relative_position_id = ETH_mass_transit
-		x = 2
-		y = 1
-		icon = GFX_goal_generic_fortify_city
-		cost = 10
-		completion_reward = {
-			add_war_support = 0.1
-			every_owned_state = {
-				limit = {
-					is_capital = yes
-				}
-				add_building_construction = {
-					type = bunker
-					province = {
-						id = 5010
-					}
-					level = 2
-					instant_build = yes
-				}
-			}
-			add_ideas = ETH_prepare_for_the_inevitable_idea
-		}
-	}
-
-	focus = {
-		id = ETH_flames_across_the_sea
-		prerequisite = { focus = ETH_african_wildfire}
-		relative_position_id = ETH_african_wildfire
-		icon = GFX_goal_generic_major_war
-		x = 0
-		y = 1
-		
-		cost = 10
-		completion_reward = {
-			add_political_power = 100 
-			add_command_power = 50 
-			custom_effect_tooltip = ETH_arabian_independence_tt
-			ETH_set_up_middle_east_resistance_states = yes # build array		
-		}
-	}
-
-	focus = {
-		id = ETH_heavy_industry
-		prerequisite = { focus = ETH_transformation_of_nature focus = ETH_laying_the_tracks}
-		icon = GFX_goal_generic_soviet_construction
-		relative_position_id = ETH_transformation_of_nature
-		x = 1
-		y = 1
-		
-		cost = 10
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-
-		completion_reward = {
-			#Add civ factories in random state
-			ETH_add_random_civ_factory_effect = yes
-			ETH_add_random_civ_factory_effect = yes
-		}
-	}
-
-	focus = {
-		id = ETH_arms_production
-		prerequisite = { focus = ETH_heavy_industry}
-		icon = GFX_goal_generic_army_artillery2
-		relative_position_id = ETH_heavy_industry
-		x = 0
-		y = 1
-		
-		cost = 10
-		
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-
-		completion_reward = {
-			#Add military factories in random state
-			ETH_add_random_mil_factory_effect = yes
-			ETH_add_random_mil_factory_effect = yes
-		}
-	}
-
-	focus = {
-		id = ETH_mytishchi-ababa_plant
-		prerequisite = { focus = ETH_red_army_engineers}
-		icon = GFX_goal_generic_construct_mil_factory
-		mutually_exclusive = { focus = ETH_send_home_advisors }
-		relative_position_id = ETH_red_army_engineers
-		x = -1
-		y = 1
-		
-		cost = 10
-		available = { 
-			has_full_control_of_state = 271 
-			SOV = { has_government = communism }
-		}
-		
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-
-		completion_reward = {
-			271 = {
-				if = {
-					limit = {
-						free_building_slots = {
-							building = arms_factory
-							size > 0
-							include_locked = yes
-						}
-						OR = {
-							is_in_home_area = yes
-							NOT = {
-								owner = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-										is_in_home_area = yes
-									}
-								}
-							}
-						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = arms_factory
-						level = 1
-						instant_build = yes
-					}		
-				}
-			}
-			set_technology = { interwar_antiair = 1 }
-			IF = {
-				limit = { is_subject_of = SOV }
-				add_autonomy_score = {
-					value = -100
-					localization = ETH_mytishchi-ababa_plant
-				}	
-			}
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = SOV_mytishchy_machine_building_plant
-			ETH_BOP_centralization_large_effect = yes
-		}
-	}
-
-	focus = {
-		id = ETH_send_home_advisors
-		icon = GFX_focus_renounce_the_treaty_of_trianon
-		prerequisite = { focus = ETH_red_army_engineers}
-		mutually_exclusive = { focus = ETH_mytishchi-ababa_plant }
-		relative_position_id = ETH_red_army_engineers
-		x = 1
-		y = 1
-		
-		cost = 10
-		completion_reward = {
-		custom_effect_tooltip = ETH_send_home_advisors_tt
-			every_character = {
-				limit = {
-					has_character_flag = soviet_advisor_eth
-				}
-				set_nationality = SOV
-			}
-			add_ideas = ETH_send_home_advisors_idea
-			IF = {
-				limit = { is_subject_of = SOV }
-				add_autonomy_score = {
-					value = 200
-					localization = ETH_send_home_advisors
-				}
-			}
-			SOV = {
-				country_event = {
-					id = BBA_ethiopia_communist_events.41
-					hours = 1
-				}
-			}
-		}
-
-	}
-
-	focus = {
-		id = ETH_soviet-ethiopian_trade_agreement
-		prerequisite = { focus = ETH_mytishchi-ababa_plant focus = ETH_send_home_advisors }
-		icon = GFX_focus_ETH_soviet-ethiopian_trade_agreement
-		mutually_exclusive = { focus = ETH_seek_new_trading_partners }
-		relative_position_id = ETH_mytishchi-ababa_plant
-		x = 0
-		y = 1
-		
-		cost = 10
-		available = {
-			SOV = { has_government = communism }
-		}
-		
-		search_filters = {FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			SOV = { 
-				add_opinion_modifier =  { 
-					target = ETH 
-					modifier = ETH_SOV_trade 
-				} 
-			}
-			custom_effect_tooltip = available_designer
-			show_ideas_tooltip = SOV_rubin_design_bureau
-			show_ideas_tooltip = SOV_mig_design_bureau
-			show_ideas_tooltip = SOV_gaz
-			custom_effect_tooltip = ETH_stalingrad_tractor_factory_tt
-			IF = {
-				limit = { is_subject_of = SOV }
-				add_autonomy_score = {
-					value = -100
-					localization = ETH_soviet-ethiopian_trade_agreement
-				}
-			}
-			ETH_BOP_centralization_large_effect = yes
-		}
-	}
-
-	focus = {
-		id = ETH_seek_new_trading_partners
-		prerequisite = { focus = ETH_mytishchi-ababa_plant focus = ETH_send_home_advisors }
-		mutually_exclusive = { focus = ETH_soviet-ethiopian_trade_agreement }
-		relative_position_id = ETH_send_home_advisors
-		x = 0
-		y = 1
-		
-		cost = 10
-		icon = GFX_goal_generic_positive_trade_relations
-		
-		search_filters = {}
-
-		completion_reward = {
-			every_other_country = {
-				limit = {
-					is_major = yes
-					NOT = {
-						has_government = fascism
-						tag = SOV
-					}
-
-				}
-				add_opinion_modifier =  { 
-					target = ETH 
-					modifier = ETH_seek_other_trade_partners 
-				} 
-			}
-			IF = {
-				limit = { is_subject_of = SOV }
-				add_autonomy_score = {
-					value = 200
-					localization = ETH_seek_new_trading_partners
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = ETH_our_own_path
-		prerequisite = {focus = ETH_soviet-ethiopian_trade_agreement focus = ETH_seek_new_trading_partners }
-		icon = GFX_goal_anti_comintern_pact
-		available = {
-			is_subject_of = SOV
-		}
-		cost = 10
-		relative_position_id = ETH_seek_new_trading_partners
-		x = 1
-		y = 1
-		search_filters = {}
-		completion_reward = {
-			SOV = {
-				set_autonomy = {
-					target = ETH
-					autonomy_state = autonomy_free
-				}
-				country_event = {
-					id = BBA_ethiopia_communist_events.52
-					hours = 1
-				}
-			}
-			leave_faction = yes
-			custom_effect_tooltip = ETH_our_own_path_tt
-		}
-	}
-
-	focus = {
-		id = ETH_freedom_at_gunpoint 
-		prerequisite = { focus = ETH_seek_new_trading_partners focus = ETH_soviet-ethiopian_trade_agreement }
-		icon = GFX_focus_ETH_freedom_at_gunpoint
-		relative_position_id = ETH_soviet-ethiopian_trade_agreement
-		x = 1
-		y = 1
-		
-		cost = 10		#TODO_ASD: Need a way of doing this dynamically 
-		will_lead_to_war_with = ENG
-		will_lead_to_war_with = ITA
-		will_lead_to_war_with = FRA
-
-		completion_reward = {
-			custom_effect_tooltip = ETH_freedom_at_gunpoint_tt
-			ETH_setup_freedom_at_gunpoint_array = yes
-		}
-	}
-
-	focus = {
-		id = ETH_boots_on_the_shore
-		prerequisite = { focus = ETH_freedom_at_gunpoint }
-		icon = GFX_focus_ETH_boots_on_the_shore
-		relative_position_id = ETH_freedom_at_gunpoint
-		x = 0
-		y = 1
-		
-		cost = 10
-		
-		search_filters = {FOCUS_FILTER_ANNEXATION}
-
-		completion_reward = {
-				create_wargoal = {
-					type = puppet_wargoal_focus
-					target = SAU
-					expire = 0
-			} 
-		}
-	}
-
-	focus = {
-		id = ETH_request_soviet_hulls
-		prerequisite = { focus = ETH_soviet-ethiopian_trade_agreement }
-		icon = GFX_focus_generic_africa_naval
-		relative_position_id = ETH_soviet-ethiopian_trade_agreement
-		x = -1
-		y = 1
-		
-		cost = 10
-		available = {
-			ROOT = { num_of_naval_factories > 1}
-		}		
-		search_filters = {}
-		completion_reward = {	
-			navy_experience = 35
-					add_tech_bonus = {
-						bonus = 0.25
-						uses = 1
-						category = bb_tech
-					}		
-			if = {
-				limit = { 
-					has_dlc = "Man the Guns"
-					country_exists = SOV
-				}
-				hidden_effect = {  
-					create_ship = {
-						type = ship_hull_heavy_1
-						equipment_variant = "Marat Class"
-						creator = SOV
-						name = "Marat Class I"
-					}
-				}
-				#add_equipment_production = {
-				#	equipment = {
-				#		type = ship_hull_heavy_1
-				#		creator = "SOV" 
-				#		version_name = "Sevastopol-class"
-				#	}
-				#	name = "Addis Ababa" 
-				#	requested_factories = 1
-				#	progress = 0.8
-				#	amount = 1
-				#}
-				#add_equipment_production = {
-				#	equipment = {
-				#		type = ship_hull_heavy_1
-				#		creator = "SOV" 
-				#		version_name = "Sevastopol-class"
-				#	}
-				#	name = "Aksum" 
-				#	requested_factories = 1
-				#	progress = 0.6
-				#	amount = 1
-				#}	
-			}
-			if = {
-				limit = { not = { has_dlc = "Man the Guns" } }
-				add_equipment_production = {
-					equipment = {
-						type = battleship_1
-						creator = "SOV" 
-					}
-					requested_factories = 1
-					progress = 0.8
-					amount = 2
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = ETH_organization_of_african_unity
-		prerequisite = { focus = ETH_african_wildfire focus = ETH_freedom_at_gunpoint }
-		icon = GFX_focus_ETH_organization_of_african_unity
-		relative_position_id = ETH_african_wildfire
-		x = 4
-		y = 1
-		
-		cost = 10
-		available = {
-			is_puppet = no 
-		}
-		
-		search_filters = {}
-
-		completion_reward = {
-			custom_effect_tooltip = ETH_organization_of_african_unity_tt
-			add_political_power = 150
-			add_ideas = organization_of_african_unity_member_idea
-			set_country_flag = org_of_african_unity_founder
-			IF = {
-				limit = 
-				{ has_completed_focus = ETH_soviet_mediation }
-				set_country_flag = org_founder_is_authoritarian_flag
-			}
-			news_event = {
-				id = bba_africa_news.3
-				hours = 2
-			}
-		}
-	}
-
-	focus = {
-		id = ETH_mutual_defense
-		prerequisite = { focus = ETH_organization_of_african_unity }
-		icon = GFX_goal_generic_defence
-		relative_position_id = ETH_organization_of_african_unity
-		x = -1
-		y = 1
-		cost = 10
-		search_filters = {}
-		completion_reward = {
-			custom_effect_tooltip = ETH_mutual_defense_tt			
-			every_other_country = {
-				limit = {
-					is_subject = no
-					has_idea = organization_of_african_unity_member_idea
-				}
-				country_event = {
-					id = BBA_african_union_events.15
-					hours = 1
-				}			
-			}
-			add_dynamic_modifier = {
-				modifier = african_union_defense_agreement_modifier
-			}	
-		}
-	}
-
-	focus = {
-		id = ETH_african_central_bank
-		prerequisite = { focus = ETH_organization_of_african_unity }
-		icon = GFX_focus_usa_reestablish_the_gold_standard
-		relative_position_id = ETH_organization_of_african_unity
-		x = 1
-		y = 1
-		
-		cost = 10
-		completion_reward = {
-			custom_effect_tooltip = ETH_african_central_bank_tt
-			every_other_country = {
-				limit = {
-					has_idea = organization_of_african_unity_member_idea
-				}
-				country_event = {
-					id = BBA_african_union_events.4
-					hours = 1
-				}	
-			}
-			set_variable = { org_africa_central_bank_stability_factor = -0.05}
-			set_variable = { org_africa_central_bank_industrial_complex_factor = -0.1}
-			set_variable = { org_africa_central_bank_infrastructure_factor = -0.1}
-			add_dynamic_modifier = {
-				modifier = african_union_central_bank_modifier
-			}
-			custom_effect_tooltip = ETH_african_central_bank_2_tt	
-		}
-	}
-
-	focus = {
-		id = ETH_executive_council
-		prerequisite = { focus = ETH_mutual_defense }
-		prerequisite = { focus = ETH_african_central_bank}
-		icon = GFX_goal_generic_improve_relations
-		relative_position_id = ETH_mutual_defense
-		x = 1
-		y = 1
-		
-		cost = 10
-		completion_reward = {
-			custom_effect_tooltip = ETH_executive_council_tt
-			every_other_country = {
-				limit = {
-					has_idea = organization_of_african_unity_member_idea				
-				}
-				country_event = {
-					id = BBA_african_union_events.7
-					hours = 1
-				}
-			}
-			add_dynamic_modifier = {
-				modifier = african_union_executive_council_modifier
-			}				
-		}
-	}
-
-	focus = {
-		id = ETH_african_union
-		prerequisite = { focus = ETH_executive_council }
-		icon = GFX_focus_ETH_african_union
-		relative_position_id = ETH_executive_council
-		x = 0
-		y = 1
-		
-		cost = 10
-		
-		search_filters = {FOCUS_FILTER_ANNEXATION}
-
-		completion_reward = {
-			set_cosmetic_tag = ETH_African_Union
-			add_political_power = 100
-			hidden_effect = {
-				set_country_flag = org_leader_is_african_union
-			}
-			custom_effect_tooltip = ETH_african_union_tt
-			news_event = {
-				id = bba_africa_news.4
-				hours = 2
-			}
-		}
-	}
 
 ############################################################################
 
@@ -7131,7 +5625,7 @@ focus_tree = {
 		id = ETH_reach_out_to_the_italians
 		icon = GFX_focus_ETH_reach_out_to_the_italians
 		#prerequisite = { focus = }
-		mutually_exclusive = { focus = ETH_rally_around_the_emperor focus = ETH_military_communism }
+		mutually_exclusive = { focus = ETH_rally_around_the_emperor }
 
 		x = 53
 		y = 0
@@ -7289,6 +5783,8 @@ focus_tree = {
 			is_subject_of = ITA
 		}
 
+		search_filters = {}
+
 		completion_reward = {
 			add_ideas = ETH_italian_settlers_idea
 			custom_effect_tooltip = ETH_invite_italian_settlers_tt
@@ -7443,7 +5939,6 @@ focus_tree = {
 		id = ETH_amedeos_feast_of_maskal
 		icon = GFX_focus_ETH_amedeos_feast_of_maskal
 		prerequisite = { focus = ETH_invite_italian_settlers focus = ETH_replace_the_abuna }
-		mutually_exclusive = { focus = ETH_assertiveness }
 		x = 1
 		y = 1
 		relative_position_id = ETH_invite_italian_settlers
@@ -7452,13 +5947,7 @@ focus_tree = {
 			is_subject_of = ITA
 			ITA = {
 				has_civil_war = no
-				OR = {
-					has_government = fascism
-					has_completed_focus = ITA_monarchia_d_italia
-					hidden_trigger = {
-						has_government = neutrality # if ITA has been couped to be a monarchy
-					}
-				}
+				has_government = fascism
 			}
 		}
 
@@ -7506,114 +5995,11 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = ETH_assertiveness
-		icon = GFX_focus_generic_support_the_left_right
-		prerequisite = { focus = ETH_replace_the_abuna focus = ETH_the_capital_victory_parade }
-		dynamic = yes 
-		mutually_exclusive = { focus = ETH_amedeos_feast_of_maskal }
-		x = 1
-		y = 1
-		relative_position_id = ETH_replace_the_abuna
-		cost = 10
-		available = {
-		}
-
-		search_filters = {FOCUS_FILTER_POLITICAL}
-
-		completion_reward = {
-			add_autonomy_score = { 
-				value = 200 
-				localization = ETH_assertiveness_autonomy_effect
-			}
-			IF = { 
-				limit = {
-					has_completed_focus = ETH_sway_the_warlords
-					has_cosmetic_tag = jimma
-				}
-				ETH_balcho_safo = {
-					clr_character_flag = ETH_imprisoned_flag 
-				}
-				ETH_tadesse_birru = {
-					clr_character_flag = ETH_imprisoned_flag 
-				}
-			}
-			OVERLORD = {
-				add_opinion_modifier = {
-					target = ROOT 
-					modifier = ETH_uncooperative_subject
-				}
-			}
-			swap_ideas = {
-				remove_idea = ETH_victor_emanuel_of_ethiopia_idea
-				add_idea = ETH_victor_emanuel_of_ethiopia_idea_bad
-			}
-			IF = { 
-				limit = {
-					NOT = { has_template = "Guards"}
-				}
-				division_template = {
-					name = "Guards"
-					is_locked = yes
-					priority = 2
-					regiments = {
-						infantry = { x = 0 y = 0 }
-						infantry = { x = 0 y = 1 }
-						infantry = { x = 0 y = 2 }
-						infantry = { x = 1 y = 0 }
-						infantry = { x = 1 y = 1 }
-						infantry = { x = 1 y = 2 }
-					}
-					
-				}
-			}
-			IF = {
-				limit = {
-					has_cosmetic_tag = jimma
-				}
-				random_owned_controlled_state = {
-					limit = {
-						is_capital = yes 
-					}
-					create_unit = {
-						division = "name = \"Jimma Guards Division\" division_template = \"Guards\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
-						owner = ROOT
-					}
-				}
-			}
-			ELSE_IF = {
-				limit = {
-					has_cosmetic_tag = gojjam
-				}
-				random_owned_controlled_state = {
-					limit = {
-						is_capital = yes 
-					}
-					create_unit = {
-						division = "name = \"Gojjam Guards Division\" division_template = \"Guards\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
-						owner = ROOT
-					}
-				}
-			}
-			ElSE = {
-				random_owned_controlled_state = {
-					limit = {
-						is_capital = yes 
-					}
-					create_unit = {
-						division = "name = \"Imperial Guards Division\" division_template = \"Guards\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
-						owner = ROOT
-					}
-				}
-			}
-			custom_effect_tooltip = ETH_assertiveness_tt
-		}
-	}
-	focus = {
 		id = ETH_exploit_french_weakness
 		icon = GFX_focus_attack_france
 		prerequisite = { focus = ETH_the_capital_victory_parade }
 
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = ETH_the_capital_victory_parade
 		cost = 10
@@ -7652,13 +6038,7 @@ focus_tree = {
 			is_subject_of = ITA
 			ITA = {
 				has_civil_war = no
-				OR = {
-					has_government = fascism
-					has_completed_focus = ITA_monarchia_d_italia
-					hidden_trigger = {
-						has_government = neutrality # if ITA has been couped to be a monarchy
-					}
-				}
+				has_government = fascism
 			}
 		}
 
@@ -7681,13 +6061,7 @@ focus_tree = {
 			is_subject_of = ITA
 			ITA = {
 				has_civil_war = no
-				OR = {
-					has_government = fascism
-					has_completed_focus = ITA_monarchia_d_italia
-					hidden_trigger = {
-						has_government = neutrality # if ITA has been couped to be a monarchy
-					}
-				}
+				has_government = fascism
 			}
 		}
 
@@ -7707,7 +6081,7 @@ focus_tree = {
 	focus = {
 		id = ETH_cooperation
 		icon = GFX_goal_generic_improve_relations
-		prerequisite = { focus = ETH_amedeos_feast_of_maskal focus = ETH_assertiveness }
+		prerequisite = { focus = ETH_amedeos_feast_of_maskal }
 		dynamic = yes 
 		x = 1
 		y = 1
@@ -7715,6 +6089,8 @@ focus_tree = {
 		cost = 10
 		available = {
 		}
+
+		search_filters = {}
 
 		completion_reward = {
 			add_offsite_building = {
@@ -7737,51 +6113,7 @@ focus_tree = {
 			}
 		}
 	}
-	focus = {
-		id = ETH_reinforce_dynamic_identity 
-		icon = GFX_goal_generic_propaganda
-		prerequisite = { focus = ETH_assertiveness }
-		dynamic = yes 
-		x = 1
-		y = 1
-		relative_position_id = ETH_assertiveness
-		cost = 10
-		available = {
-		}
 
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = { 
-			ETH_BOP_centralization_large_effect = yes
-			add_political_power = 100
-			add_war_support = 0.1
-			add_stability = 0.05
-			IF = {
-				limit = { is_subject = yes }
-				add_autonomy_ratio = {
-					value = 0.2
-					localization = ETH_reinforced_identity
-				}
-			}
-		}
-	}
-	focus = {
-		id = ETH_underground_wargames
-		icon = GFX_goal_generic_cavalry
-		prerequisite = { focus = ETH_assertiveness }
-
-		x = 3
-		y = 1
-		relative_position_id = ETH_assertiveness
-		cost = 10
-		available = {
-		}
-
-		completion_reward = {
-			add_ideas = ETH_underground_wargames_idea
-			add_offsite_building = { type = arms_factory level = 1 }
-		}
-	}
 	focus = {
 		id = ETH_adopt_the_lira
 		icon = GFX_focus_ETH_adopt_the_lira
@@ -7795,13 +6127,7 @@ focus_tree = {
 			is_subject_of = ITA
 			ITA = {
 				has_civil_war = no
-				OR = {
-					has_government = fascism
-					has_completed_focus = ITA_monarchia_d_italia
-					hidden_trigger = {
-						has_government = neutrality # if ITA has been couped to be a monarchy
-					}
-				}
+				has_government = fascism
 			}
 		}
 
@@ -7826,15 +6152,11 @@ focus_tree = {
 			is_subject_of = ITA
 			ITA = {
 				has_civil_war = no
-				OR = {
-					has_government = fascism
-					has_completed_focus = ITA_monarchia_d_italia
-					hidden_trigger = {
-						has_government = neutrality # if ITA has been couped to be a monarchy
-					}
-				}
+				has_government = fascism
 			}
 		}
+
+		search_filters = {}
 
 		completion_reward = {
 			custom_effect_tooltip = ETH_request_italian_equipment_tt
@@ -7855,6 +6177,8 @@ focus_tree = {
 		cost = 10
 		available = {
 		}
+
+		search_filters = {}
 
 		completion_reward = {
 			# Gugsa
@@ -7944,62 +6268,7 @@ focus_tree = {
 			}			
 		}
 	}
-	focus = {
-		id = ETH_set_up_a_customs_barrier
-		icon = GFX_goal_generic_trade
-		prerequisite = { focus = ETH_reinforce_dynamic_identity }
 
-		x = 0
-		y = 1
-		relative_position_id = ETH_reinforce_dynamic_identity
-		cost = 10
-		available = {
-		}
-
-		search_filters = {FOCUS_FILTER_BALANCE_OF_POWER}
-
-		completion_reward = {
-			ETH_BOP_centralization_large_effect = yes 
-			add_ideas = ETH_customs_barrier_ETH_idea
-			ITA = { add_ideas = ETH_customs_barrier_ITA_idea }
-		}
-	}
-	focus = {
-		id = ETH_contact_the_exiles
-		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = ETH_underground_wargames }
-
-		x = 0
-		y = 1
-		relative_position_id = ETH_underground_wargames
-		cost = 10
-		available = {
-		}
-
-		search_filters = {FOCUS_FILTER_MANPOWER}
-
-		completion_reward = {
-			add_timed_idea = {
-				idea = ETH_the_exiles
-				days = 365
-			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
-				amount = 450
-				producer = ETH
-			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
-				amount = 200
-				producer = ITA
-			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
-				amount = 350
-				producer = ENG
-			}
-		}
-	}
 	focus = {
 		id = ETH_outsourced_production
 		icon = GFX_focus_generic_truck
@@ -8038,148 +6307,34 @@ focus_tree = {
 				hours = 1
 			}
 			custom_effect_tooltip = ETH_outsourced_production_tt
-			custom_effect_tooltip = ETH_outsourced_production_air_tt
-			show_ideas_tooltip = ETH_imam
-			show_ideas_tooltip = caproni_ETH
-			show_ideas_tooltip = macchi_ETH
-			custom_effect_tooltip = ETH_outsourced_production_army_tt
-			show_ideas_tooltip = fiat_ETH
-			show_ideas_tooltip = breda_ETH
-			show_ideas_tooltip = beretta_ETH
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}	
+				custom_effect_tooltip = ETH_outsourced_production_air_tt
+				show_mio_tooltip = ITA_imam_organization
+				show_mio_tooltip = ITA_caproni_organization
+				show_mio_tooltip = ITA_macchi_organization
+				custom_effect_tooltip = ETH_outsourced_production_army_tt
+				show_mio_tooltip = ITA_fiat_organization
+				show_mio_tooltip = ITA_breda_organization
+				show_mio_tooltip = ITA_beretta_organization
+			}
+			ELSE = {
+				custom_effect_tooltip = ETH_outsourced_production_air_tt
+				show_ideas_tooltip = ETH_imam
+				show_ideas_tooltip = caproni_ETH
+				show_ideas_tooltip = macchi_ETH
+				custom_effect_tooltip = ETH_outsourced_production_army_tt
+				show_ideas_tooltip = fiat_ETH
+				show_ideas_tooltip = breda_ETH
+				show_ideas_tooltip = beretta_ETH
+			}
 			custom_effect_tooltip = ETH_outsourced_production_factories_tt
 		}
 	}
-	focus = {
-		id = ETH_together_for_victory
-		icon = GFX_focus_generic_diplomatic_treaty
-		prerequisite = { focus = ETH_set_up_a_customs_barrier }
 
-		x = -1
-		y = 1
-		relative_position_id = ETH_set_up_a_customs_barrier
-		cost = 10
-		available = {
-		}
-		bypass = { is_subject = no }
 
-		search_filters = { FOCUS_FILTER_BALANCE_OF_POWER }
-
-		completion_reward = {
-			ETH_BOP_decentralization_small_effect = yes 
-			set_country_flag = ETH_freedom_fighters_flag
-
-			IF = {
-				limit = {
-					is_or_will_be_jimma = yes
-				}
-				ITA = {
-					every_owned_state = {
-						limit = {
-							OR = {
-								is_core_of = SOM 
-								is_core_of = ORO
-
-							}
-						}
-						set_state_flag = ETH_freedom_fighters_flag
-						custom_effect_tooltip = ETH_together_for_victory_tt
-					}
-				}
-			}
-			ELSE  = {
-				ITA = {
-					every_owned_state = {
-						limit = {
-							OR = {
-								is_core_of = ERI 
-								is_core_of = TIG
-								is_core_of = AFA
-							}
-						}
-						set_state_flag = ETH_freedom_fighters_flag
-						custom_effect_tooltip = ETH_together_for_victory_tt
-					}
-					
-				}
-			}
-		}
-	}
-	focus = {
-		id = ETH_our_enemys_enemy
-		icon = GFX_goal_generic_dangerous_deal
-		prerequisite = { focus = ETH_set_up_a_customs_barrier focus = ETH_contact_the_exiles }
-
-		x = 1
-		y = 1
-		relative_position_id = ETH_set_up_a_customs_barrier
-		cost = 10
-		available = {
-		}
-
-		completion_reward = {
-			every_other_country = {
-				limit = {
-					is_major = yes
-					#Make sure to filter out ITA
-					NOT = {
-						is_in_faction_with = ITA
-						ETH = {
-							is_puppet_of = PREV
-						}
-					}
-				}
-				country_event = {
-					id = BBA_ethiopia_fascist_events.61
-					days = 1
-				}
-			}
-			custom_effect_tooltip = ETH_our_enemys_enemy_tt
-		}
-	}
-	focus = {
-		id = ETH_raid_italian_depots
-		icon = GFX_focus_generic_conspiracy
-		prerequisite = { focus = ETH_contact_the_exiles }
-
-		x = 1
-		y = 1
-		relative_position_id = ETH_contact_the_exiles
-		cost = 10
-		available = {
-		}
-
-		completion_reward = {
-			ITA = {	
-				add_timed_idea = {
-					idea = ETH_raid_italian_depots_idea
-					days = 365
-				}
-			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
-				amount = 1000
-				producer = ITA
-			}
-			custom_effect_tooltip = ETH_raid_italian_depots_tt
-			hidden_effect = {
-				country_event = {
-					id = BBA_ethiopia_fascist_events.68
-					days = 10
-					random_days = 150
-				}
-				country_event = {
-					id = BBA_ethiopia_fascist_events.68
-					days = 100
-					random_days = 200
-				}
-				country_event = {
-					id = BBA_ethiopia_fascist_events.68
-					days = 250
-					random_days = 365
-				}
-			}			
-		}
-	}
 	focus = {
 		id = ETH_the_italian_language
 		icon = GFX_focus_generic_italy_propaganda
@@ -8193,13 +6348,7 @@ focus_tree = {
 			is_subject_of = ITA
 			ITA = {
 				has_civil_war = no
-				OR = {
-					has_government = fascism
-					has_completed_focus = ITA_monarchia_d_italia
-					hidden_trigger = {
-						has_government = neutrality # if ITA has been couped to be a monarchy
-					}
-				}
+				has_government = fascism
 			}
 		}
 
@@ -8239,13 +6388,7 @@ focus_tree = {
 			is_subject_of = ITA
 			ITA = {
 				has_civil_war = no
-				OR = {
-					has_government = fascism
-					has_completed_focus = ITA_monarchia_d_italia
-					hidden_trigger = {
-						has_government = neutrality # if ITA has been couped to be a monarchy
-					}
-				}
+				has_government = fascism
 			}
 		}
 
@@ -8272,38 +6415,7 @@ focus_tree = {
 			}
 		}
 	}
-	focus = {
-		id = ETH_negusa_nagast
-		icon = GFX_focus_ETH_negusa-nagast
-		prerequisite = { focus = ETH_together_for_victory focus = ETH_our_enemys_enemy focus = ETH_raid_italian_depots }
 
-		x = 0
-		y = 1
-		relative_position_id = ETH_our_enemys_enemy
-		cost = 10
-		available = {
-		}
-		bypass = {
-			is_subject = no
-		}
-
-		search_filters = {FOCUS_FILTER_POLITICAL}
-
-		completion_reward = {
-			custom_effect_tooltip = ETH_negusa_nagast_tt
-			IF = {
-				limit = {
-					is_subject = yes
-				}
-				OVERLORD = {
-					country_event = {
-						id = BBA_ethiopia_fascist_events.20
-						hours = 1 
-					}
-				}
-			}
-		}
-	}
 	focus = {
 		id = ETH_the_italo-ethiopian_empire
 		icon = GFX_focus_ETH_the-italo_ethiopian_empire
@@ -8318,13 +6430,7 @@ focus_tree = {
 			is_subject_of = ITA
 			ITA = {
 				has_civil_war = no
-				OR = {
-					has_government = fascism
-					has_completed_focus = ITA_monarchia_d_italia
-					hidden_trigger = {
-						has_government = neutrality # if ITA has been couped to be a monarchy
-					}
-				}
+				has_government = fascism
 			}
 		}
 
@@ -8412,203 +6518,6 @@ focus_tree = {
 			}
 		}
 	}
-	focus = {
-		id = ETH_reclaim_the_empire
-		icon = GFX_goal_generic_major_war
-		prerequisite = { focus = ETH_negusa_nagast }
 
-		x = 0
-		y = 1
-		relative_position_id = ETH_negusa_nagast
-		cost = 10
-		available = {
-		}
-
-		completion_reward = {
-			custom_effect_tooltip = ETH_reclaim_the_empire_tt
-			add_political_power = 150 
-			
-		}
-	}
-	focus = {
-		id = ETH_the_liberator_of_country_short
-		icon = GFX_focus_hol_united_netherlands
-		prerequisite = { focus = ETH_negusa_nagast }
-		dynamic = yes 
-		x = 2
-		y = 1
-		relative_position_id = ETH_negusa_nagast
-		cost = 10
-		available = {
-		}
-
-		search_filters = {FOCUS_FILTER_POLITICAL}
-
-		completion_reward = {
-			add_political_power = 120
-			IF = {
-				limit = {
-					OR = {
-						has_country_leader_with_trait = inexperienced_sultan_2
-						has_country_leader_with_trait = inexperienced_sultan
-					}
-				}
-				ETH_abba_jofir = {
-					IF = {
-						limit = { has_trait = inexperienced_sultan_2 }
-						swap_country_leader_traits = { 
-							remove = inexperienced_sultan_2
-							add = liberator_of_eth_jofir 
-						}
-					}
-					ELSE = {
-						swap_country_leader_traits = { 
-							remove = inexperienced_sultan
-							add = liberator_of_eth_jofir 
-						}
-					}
-				}
-			}
-			ELSE_IF = {
-				limit = {
-					OR = {
-						has_country_leader_with_trait = crowned_adder_2
-						has_country_leader_with_trait = crowned_adder
-					}				
-				}
-				ETH_haile_selassie_gugsa = {
-					IF = {
-						limit = {has_trait = crowned_adder_2}
-						swap_country_leader_traits = { 
-							remove = crowned_adder_2
-							add = liberator_of_eth_gugsa 
-						}
-					}
-					ELSE = {
-						swap_country_leader_traits = {
-							remove = crowned_adder
-							add = liberator_of_eth_gugsa 
-						}
-					}					
-				}
-			}
-			ELSE_IF = {
-				limit = {
-					OR = {
-						has_country_leader_with_trait = tainted_ras_2
-						has_country_leader_with_trait = tainted_ras
-					}					
-				}
-				ETH_hailu_tekle_haymanot = {
-					IF = {
-						limit = {has_trait = tainted_ras_2}
-						swap_country_leader_traits = { 
-							remove = tainted_ras_2
-							add = liberator_of_eth_haymanot
-						}
-					}
-					ELSE = {
-						swap_country_leader_traits = { 
-							remove = tainted_ras
-							add = liberator_of_eth_haymanot
-						}
-					}					
-				}
-			}
-		}
-	}
-	focus = {
-		id = ETH_consolidate_east_africa
-		icon = GFX_focus_ETH_consolidate_east_africa
-		prerequisite = { focus = ETH_reclaim_the_empire }
-
-		x = 0
-		y = 1
-		relative_position_id = ETH_reclaim_the_empire
-		cost = 10
-		available = {
-		}
-
-		search_filters = {FOCUS_FILTER_ANNEXATION}
-
-		completion_reward = {
-			custom_effect_tooltip = ETH_consolidate_east_africa_tt
-			hidden_effect = {
-				886 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				} 
-				883 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				} 
-				551 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				} 
-				767 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				} 
-				549 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				} 
-				887 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				} 
-				884 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				} 
-				885 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				} 
-				904 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				} 
-				548 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				} 
-				903 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				} 
-				547 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				}
-				905 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				}
-				844 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				}
-				559 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				}
-				269 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				} 
-				268 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				} 
-				550 = { 
-					set_state_flag = ETH_consolidate_ea_flag
-					add_claim_by = ETH 
-				}
-			}
-			
-		}
-	}
 
 }

@@ -81,32 +81,6 @@ no_garrison = {
 
 	ai_will_do = {
 		base = 0
-
-		modifier = {
-			FROM = {
-				has_government = democratic
-			}
-			has_active_resistance = no
-			add = 200
-		}
-		# if losing, get manpower & equipment back
-		modifier = {
-			FROM = {
-				surrender_progress > 0.15
-			}
-			add = 100
-		}
-		modifier = {
-			FROM = {
-				surrender_progress > 0.4
-			}
-			add = 500
-		}
-
-		modifier = {
-			check_variable  = { uncapped_resistance_target > -0.4 }
-			add = -60
-		}
 	}
 }
 
@@ -152,11 +126,12 @@ foreign_civilian_oversight = {
 		local_factories 				= 0.00
 		local_resources 				= 0.00
 	}
+	starting_law = yes
 
 	ai_will_do = {
 		base = 120
 		modifier = {
-			check_variable  = { resistance_target_without_law > 0.05}
+			check_variable  = { resistance_target_without_law > 0.24}
 			add = 100
 		}
 	}
@@ -168,20 +143,19 @@ local_police_force_garrison = {
 	sound_effect = "Martial_Law_Interface_Local_Police_Force_Garrison"
 
 	state_modifier = {
-		resistance_target 				= -0.15
+		resistance_target 				= -0.10
 		compliance_gain 				= -0.025
 		required_garrison_factor 		= -0.30
 		resistance_damage_to_garrison	= -0.5
 		local_factories 				= 0.00
 		local_resources 				= 0.00
 	}
-	starting_law = yes			#vanilla has military governor, but police seems rather more fitting
 
 
 	ai_will_do = {
 		base = 100
 		modifier = {
-			check_variable  = { resistance_target_without_law > 0.09}
+			check_variable  = { resistance_target_without_law > 0.44}
 			add = 200
 		}
 
@@ -245,7 +219,7 @@ military_governor_occupation = {
 	sound_effect = "Martial_Law_Interface_Military_Governor_Occupation"
 
 	state_modifier = {
-		resistance_target 			= -0.35
+		resistance_target 			= -0.3
 		compliance_gain 			= -0.045
 		required_garrison_factor 	= 0.0
 		#local_factories 			= 0.00
@@ -268,7 +242,7 @@ military_governor_occupation = {
 		#	add = 150
 		#}
 		modifier = {
-			check_variable  = { resistance_target_without_law > 0.24}
+			check_variable  = { resistance_target_without_law > 0.45}
 			add = 400
 		}
 	}
@@ -291,7 +265,7 @@ martial_law_occupation = {
 		base = 0
 
 		modifier = {
-			check_variable = { resistance_target_without_law > 0.44}
+			check_variable = { resistance_target_without_law > 0.69}
 
 			set_temp_variable = { resistance_limit = 40 }
 			set_temp_variable = { requirement_limit = 0.8 }
@@ -454,7 +428,7 @@ brutally_oppressive_occupation = {
 		base = 0
 
 		modifier = {
-			check_variable  = { resistance_target_without_law > 0.84 }
+			check_variable  = { resistance_target_without_law > 0.94 }
 
 			set_temp_variable = { resistance_limit = 40 }
 			set_temp_variable = { requirement_limit = 2.0 }
@@ -504,36 +478,19 @@ colonial_police = {
 	fallback_law = colonial_police_improved
 
 	visible = {
+		original_tag = ITA
+		#NOT = { has_completed_focus = ITA_regional_development }
+		NOT = { has_country_flag = ITA_colonial_police_improved_flag }
 		OR = {
 			AND = {
-				original_tag = ITA
-				#NOT = { has_completed_focus = ITA_regional_development }
-				NOT = { has_country_flag = ITA_colonial_police_improved_flag }
-				OR = {
-					AND = {
-						has_completed_focus = ITA_albanian_fascist_militia
-						FROM = { original_tag = ALB }
-					}
-					AND = {
-						has_completed_focus = ITA_ministry_of_italian_africa
-						FROM = { capital_scope = { is_on_continent = africa } }
-					}
-				}
+				has_completed_focus = ITA_albanian_fascist_militia
+				FROM = { original_tag = ALB }
 			}
 			AND = {
-				original_tag = AOI
-				
-				NOT = { has_country_flag = ITA_colonial_police_improved_flag }
-				
-					
-				has_completed_focus = AOI_securing_east_africa
+				has_completed_focus = ITA_ministry_of_italian_africa
 				FROM = { capital_scope = { is_on_continent = africa } }
-				
-				
-			}			
-			
-		}	
-		
+			}
+		}
 	}
 
 	state_modifier = { #CHANGES HERE NEED TO BE APPLIED ALSO IN ITA_fake_colonial_police_law idea
@@ -574,27 +531,16 @@ colonial_police_improved = {
 	fallback_law = colonial_police_final
 
 	visible = {
+		original_tag = ITA
+		has_completed_focus = ITA_regional_development
+		NOT = { has_country_flag = ITA_colonial_police_final_flag }
 		OR = {
 			AND = {
-				original_tag = ITA
-				has_completed_focus = ITA_regional_development
-				NOT = { has_country_flag = ITA_colonial_police_final_flag }
-				OR = {
-					AND = {
-						FROM = { original_tag = ALB }
-						has_completed_focus = ITA_albanian_fascist_militia
-					}
-					FROM = { capital_scope = { is_on_continent = africa } }
-				}
+				FROM = { original_tag = ALB }
+				has_completed_focus = ITA_albanian_fascist_militia
 			}
-			AND = {
-				original_tag = AOI
-				FROM = { capital_scope = { is_on_continent = africa } }
-				has_completed_focus = AOI_organize_the_police_structure
-			}
+			FROM = { capital_scope = { is_on_continent = africa } }
 		}
-		
-		
 	}
 
 	state_modifier = {
@@ -637,25 +583,15 @@ colonial_police_final = {
 	fallback_law = foreign_civilian_oversight
 
 	visible = {
+		original_tag = ITA
+		has_completed_focus = ITA_polizia_dell_africa_italiana
 		OR = {
 			AND = {
-				original_tag = ITA
-				has_completed_focus = ITA_polizia_dell_africa_italiana
-				OR = {
-					AND = {
-						FROM = { original_tag = ALB }
-						has_completed_focus = ITA_albanian_fascist_militia
-					}
-					FROM = { capital_scope = { is_on_continent = africa } }
-				}
+				FROM = { original_tag = ALB }
+				has_completed_focus = ITA_albanian_fascist_militia
 			}
-			AND = {
-				original_tag = AOI
-				has_completed_focus = AOI_italian_african_police
-			}
+			FROM = { capital_scope = { is_on_continent = africa } }
 		}
-		
-
 	}
 
 	state_modifier = {

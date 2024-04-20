@@ -5,16 +5,13 @@ state={
 	state_category = small_island
 	
 	history={
-		owner = RAJ
+		owner = ENG
 		buildings = {
-			infrastructure = 2 #was 3
+			infrastructure = 2
 			12251 = {
 				naval_base = 2
 
 			}
-		}
-		victory_points = {
-			12251 1
 		}
 
 	}

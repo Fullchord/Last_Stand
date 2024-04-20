@@ -6,8 +6,8 @@ state={
 		tungsten=2.000
 	}
 
-	history={
-		owner = JAP
+history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
+		owner = SIA
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1
@@ -24,7 +24,7 @@ state={
 		}
 		
 		
-		add_core_of = JAP
+		add_core_of = SIA
 
 	}
 

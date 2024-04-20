@@ -1,23 +1,21 @@
 state={
 	id=897
 	name="STATE_897"
-	manpower = 138600
+    manpower = 1
 	state_category = pastoral 
 
 	history={
-		owner = SAF
+        owner = WST
 		buildings = {
 			infrastructure = 2
 			2123 = {
 				naval_base = 1
 
 			}
-		}
-		victory_points = {
-			2123 1
-		}		
 
-		add_core_of = SAF
+		}
+
+		add_core_of = MZB
 
 	}
 	provinces={

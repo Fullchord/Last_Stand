@@ -9,9 +9,11 @@ state= {
 		chromium = 3 # was: 4
 	}
 
-	history= {
+history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
 		owner = CHI
 		add_core_of = CHI
+		add_core_of = GXC
+		add_core_of = GXC
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 2
@@ -21,8 +23,14 @@ state= {
 		victory_points = { 
 			10404 3 
 		}
-		victory_points = {
-			10459 1
+
+		1938.10.25 = {
+			if = {
+				limit = {
+					NOT = { has_dlc = "Waking the Tiger" }
+				}
+				CHI = { transfer_state = PREV }
+			}
 		}
 
 	}

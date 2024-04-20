@@ -5,7 +5,7 @@ technologies = {
 		doctrine_name = "MOBILE_WARFARE_DOCTRINE"
 		
 		xp_research_type = army
-		xp_unlock_cost = 1
+		xp_unlock_cost = 0
 		
 		xor = { superior_firepower trench_warfare mass_assault } 
 
@@ -922,7 +922,7 @@ technologies = {
 		doctrine_name = "SUPERIOR_FIREPOWER_DOCTRINE"
 		
 		xp_research_type = army
-		xp_unlock_cost = 1
+		xp_unlock_cost = 0
 		
 		xor = { mobile_warfare trench_warfare mass_assault } 
 
@@ -1793,7 +1793,7 @@ technologies = {
 		doctrine_name = "GRAND_BATTLEPLAN_DOCTRINE"
 
 		xp_research_type = army
-		xp_unlock_cost = 1
+		xp_unlock_cost = 0
 		
 		xor = { mobile_warfare superior_firepower mass_assault } 
 	
@@ -2661,7 +2661,7 @@ technologies = {
 		doctrine_name = "MASS_ASSAULT_DOCTRINE"
 		
 		xp_research_type = army
-		xp_unlock_cost = 1
+		xp_unlock_cost = 0
 		xor = { mobile_warfare superior_firepower trench_warfare } 
 
 		path = {
@@ -3394,6 +3394,10 @@ technologies = {
 			leads_to_tech = guerilla_warfare
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = guerilla_warfare_disabled
+			research_cost_coeff = 1
+		}
 
 		doctrine = yes	
 		research_cost = 4.5
@@ -3435,8 +3439,19 @@ technologies = {
 		
 		resistance_growth_on_our_occupied_states = 0.25 
 		
+		allow = {
+			has_game_rule = {
+				rule = elwolf_guerrilla_tactics
+				option = ALLOWED
+			}
+		}
+
 		enable_tactic = tactic_guerrilla_tactics
 		
+		xor = {
+			guerilla_warfare_disabled
+		}
+
 		doctrine = yes	
 		research_cost = 4.5
 		
@@ -3447,7 +3462,49 @@ technologies = {
 		
 		folder = {
 			name = land_doctrine_folder
-			position = { x = 2 y = 14 }
+			position = { x = 1 y = 16 }
+		}
+		
+		ai_will_do = {
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+			factor = 20
+		}
+		
+		ai_research_weights = {
+			industry = 2.0
+		}
+	}
+
+	guerilla_warfare_disabled = {
+		xp_research_type = army
+		xp_unlock_cost = 100
+		xor = {
+			guerilla_warfare
+		}
+
+		out_of_supply_factor = -0.30
+		category_army = {
+			default_morale = 0.2
+		}
+		
+		resistance_growth_on_our_occupied_states = 0.25 
+
+		doctrine = yes	
+		research_cost = 4.5
+		
+		categories = {
+			land_doctrine
+			cat_mass_assault
+		}
+		
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 3 y = 16 }
 		}
 		
 		ai_will_do = {

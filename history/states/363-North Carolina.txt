@@ -6,7 +6,7 @@ state={
 	
 	state_category = city
 
-	history={
+history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
 		owner = USA
 		buildings = {
 			infrastructure = 3 #was: 6
@@ -19,12 +19,6 @@ state={
 		add_core_of = USA
 		victory_points = {
 			7138 3 
-		}
-		victory_points = {
-			1132 1 
-		}
-		victory_points = {
-			7045 1 
 		}
 
 	}

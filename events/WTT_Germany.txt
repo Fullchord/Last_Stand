@@ -6,12 +6,14 @@ country_event = {
 	title = wtt_germany.1.t
 	desc = wtt_germany.1.d
 	picture = GFX_report_event_ger_civil_war
+
 	is_triggered_only = yes
 	
 	#civil war starts
 	option = {
 		name = wtt_germany.1.a
 		hidden_effect = {
+
 			set_capital = { state = 55 }
 			start_civil_war = {
 				ruling_party = neutrality
@@ -27,18 +29,12 @@ country_event = {
 					original_tag = GER
 					has_government = fascism
 				}
-				set_country_flag = GER_nazi_civil_war_flag
-				set_equipment_fraction = 0.5
 				set_stability = 0.9
 				set_war_support = 0.8
 				load_oob = "GER_German_Civil_War_fascist"
 			}
 			hidden_effect = { news_event = { id = wtt_news.1 hours = 6 } }
 			
-			set_politics = {
-				ruling_party = neutrality
-				elections_allowed = no
-			}
 			add_popularity = {
 				ideology = communism
 				popularity = 0.2
@@ -80,7 +76,7 @@ country_event = {
 				}
 				promote_leader = yes
 			}
-		}			
+		}
 		hidden_effect = {
 			random_other_country = {
 				limit = {
@@ -246,13 +242,15 @@ country_event = {
 				ideology = despotism
 				traits = {
 					anti_democrat
-					imperial_connections
-				}
+					imperial_connections				}
 			}
 			promote_leader = yes
 			}
 		}
-		hidden_effect = { news_event = { id = wtt_news.3 hours = 6 } }
+		hidden_effect = { 
+			news_event = { id = wtt_news.3 hours = 6 } 
+			set_cosmetic_tag = GER_neutrality
+		}
 	}
 }
 
@@ -446,16 +444,15 @@ country_event = {
 	# It is done (no choice needed because decision was taken in previous focus's events)
 	option = {
 		name = wtt_germany.11.a
-		retire_character = ITA_benito_mussolini
 		set_politics = { ruling_party = neutrality elections_allowed = no }
 		add_popularity = { ideology = neutrality popularity = 0.1 }
 		swap_ideas = {
 			remove_idea = GER_preparing_ITA_coup
 			add_idea = GER_preparing_ITA_coup2
 		}
-		remove_ideas = victor_emmanuel
+		remove_ideas = vittorio_emanuele
 		ITA_vittorio_emanuele_iii = {
-			promote_character = { ideology = absolute_monarchism }
+			promote_character = { ideology = despotism }
 		}
 		add_ai_strategy = {
 			type = alliance
@@ -518,9 +515,9 @@ country_event = {
 		}
 		effect_tooltip = {
 			GER = { transfer_state = 85 }
+			GER = { transfer_state = 807 }
 			GER = { transfer_state = 86 }
 			GER = { transfer_state = 762 }
-			GER = { transfer_state = 807 }
 			GER = { add_ideas = anti_soviet_pact }
 			add_ideas = anti_soviet_pact
 			add_opinion_modifier = { target = GER modifier = danzig_for_guarantees }
@@ -534,7 +531,7 @@ country_event = {
 	option = {
 		name = wtt_germany.14.b
 		ai_chance = {
-			factor = 50
+			#factor = 50
 			modifier = {
 				factor = 0.5
 				strength_ratio = { tag = GER ratio < 1 }
@@ -572,13 +569,12 @@ country_event = {
 	option = {
 		name = wtt_germany.15.a
 		transfer_state = 85
+		transfer_state = 807
 		transfer_state = 86
 		transfer_state = 762
-		transfer_state = 807
 		add_state_core = 85
 		add_state_core = 86
 		add_state_core = 762
-		add_state_core = 807
 		86 = { set_state_name = "Posen" }
 		set_province_name = { id = 6558 name = "Posen" }
 		762 = { set_state_name = "Kattowitz" }
@@ -631,7 +627,6 @@ country_event = {
 		add_state_claim = 85
 		add_state_claim = 86
 		add_state_claim = 762
-		add_state_claim = 807
 	}
 
 	# Give it up
@@ -715,7 +710,7 @@ country_event = {
 		ai_chance = {
 			factor = 90
 		}
-		add_named_threat = { threat = 5 name = GER_soviet_military_exercises }
+		add_named_threat = { threat = 10 name = GER_soviet_military_exercises }
 		add_timed_idea = { idea = GER_soviet_military_exercises days = 365 }
 		army_experience = 50
 		add_political_power = 100
@@ -728,7 +723,7 @@ country_event = {
 		ai_chance = {
 			factor = 5
 		}
-		add_named_threat = { threat = -2.5 name = GER_soviet_smoothes_relationships }
+		add_named_threat = { threat = -5 name = GER_soviet_smoothes_relationships }
 		add_political_power = -50
 		every_country = {
 			limit = {
@@ -1023,7 +1018,6 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_government = neutrality
-		NOT = { has_completed_focus = GER_consolidate_new_reich }
 		date > 1940.1.1
 		has_country_leader = { ruling_only = yes character = GER_august_von_mackensen }
 	}
@@ -1149,7 +1143,7 @@ country_event = {
 		ai_chance = { 
 			factor = 1 
 			modifier = {
-				factor = 20
+				factor = 10
 				strength_ratio = {
 					tag = GER
 					ratio > 0.7
@@ -2424,31 +2418,12 @@ country_event = {
 		is_in_faction_with = AUS
 		AUS = {
 			is_major = no
-			NOT = { has_cosmetic_tag = HUN_EMPIRE }
 		}
 		OR = {
 			AUS = { has_government = democratic }
 			AUS = { has_government = neutrality }
 		}
-		NOT = {
-			is_puppet = yes
-			country_exists = BAY
-			GER = { has_completed_focus = GER_anschluss_vanilla }
-			GER = { has_completed_focus = GER_anschluss }			
-		}
-		is_owner_neighbor_of = AUS
-		if = {
-			limit = {
-				AUS = {
-					is_puppet = yes
-				}			
-			}
-			AUS = {
-				is_puppet_of = GER
-			}
-		}
 		NOT = { has_global_flag = GER_reformed_austro_hungarian_empire }
-		NOT = { has_completed_focus = GER_aus_ally } #since trigger is original_tag ger this should work
 	}
 
 	mean_time_to_happen = { days = 60 }
@@ -2682,7 +2657,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 2
+		days = 4
 	}
 	
 	option = {
@@ -2867,7 +2842,6 @@ country_event = {
 			GER = {
 				add_state_core = 8
 				add_state_core = 28
-				add_state_core = 965
 			}
 		}
 	}
@@ -2888,27 +2862,6 @@ country_event = {
 			GER = {
 				add_state_core = 8
 				add_state_core = 28
-				add_state_core = 965
-			}
-		}
-	}
-}
-# Reintegration notification for Luxemburg
-country_event = {
-	id = wtt_germany.641
-	title = wtt_germany.641.t
-	desc = wtt_germany.63.desc
-	picture = GFX_report_event_generic_peaceful_annexation
-
-	is_triggered_only = yes
-	
-	option = {
-		name = wtt_germany.63.a
-		effect_tooltip = {
-			GER = {
-				add_state_core = 8
-				add_state_core = 28
-				add_state_core = 965
 			}
 		}
 	}
@@ -3131,17 +3084,9 @@ country_event = {
 			}
 			set_politics = { ruling_party = neutrality elections_allowed = no }
 		}
-		create_country_leader = {
-			name = "Otto von Habsburg"
-			desc = "POLITICS_OTTO_VON_HABSBURG_DESC"
-			picture = GFX_Portrait_hungary_otto_von_hapsburg
-			expire = "1965.1.1"
-			ideology = absolute_monarchism
-			traits = {
-				anti_fascist_agent
-				r56_trait_opposed_to_communism
-			}
-		}
+		
+		promote_character = HUN_otto_von_habsburg #Already a country leader (Non-Aligned -> Despotism)
+
 		if = {
 			limit = {
 				tag = AUS
@@ -3151,7 +3096,6 @@ country_event = {
 			annex_country = { target = HUN transfer_troops = yes }
 			annex_country = { target = CZE transfer_troops = yes }
 			154 = { add_core_of = ROOT }
-			913 = { add_core_of = ROOT }
 			155 = { add_core_of = ROOT }
 			43 = { add_core_of = ROOT }
 			69 = { add_core_of = ROOT }
@@ -3161,7 +3105,6 @@ country_event = {
 			72 = { add_core_of = ROOT }
 			70 = { add_core_of = ROOT }
 			664 = { add_core_of = ROOT }
-			996 = { add_core_of = ROOT }
 			71 = { add_core_of = ROOT }
 			73 = { add_core_of = ROOT }
 			GER = { add_to_faction = AUS }
@@ -3176,6 +3119,7 @@ country_event = {
 			annex_country = { target = CZE transfer_troops = yes }
 			152 = { add_core_of = ROOT }
 			153 = { add_core_of = ROOT }
+			848 = { add_core_of = ROOT } #Vorarlberg 
 			4 = { add_core_of = ROOT }
 			69 = { add_core_of = ROOT }
 			9 = { add_core_of = ROOT }
@@ -3184,7 +3128,6 @@ country_event = {
 			72 = { add_core_of = ROOT }
 			70 = { add_core_of = ROOT }
 			664 = { add_core_of = ROOT }
-			996 = { add_core_of = ROOT }
 			71 = { add_core_of = ROOT }
 			73 = { add_core_of = ROOT }
 			GER = { add_to_faction = HUN }
@@ -3199,9 +3142,9 @@ country_event = {
 			annex_country = { target = AUS transfer_troops = yes }
 			152 = { add_core_of = ROOT }
 			153 = { add_core_of = ROOT }
+			848 = { add_core_of = ROOT } #Vorarlberg 
 			4 = { add_core_of = ROOT }
 			154 = { add_core_of = ROOT }
-			913 = { add_core_of = ROOT }
 			155 = { add_core_of = ROOT }
 			43 = { add_core_of = ROOT }
 			GER = { add_to_faction = CZE }
@@ -3485,153 +3428,6 @@ country_event = {
 	
 	option = {
 		name = wtt_germany.74.a
-	}
-}
-
-# Claim Northern Schleswig
-country_event = {
-	id = wtt_germany.80
-	title = wtt_germany.80.t
-	desc = wtt_germany.80.desc
-	picture = GFX_report_event_generic_read_write
-	is_triggered_only = yes
-	
-	option = { # Accept demands
-		name = wtt_germany.80.a
-		ai_chance = { 
-			factor = 90
-			modifier = {
-				factor = 0
-				NOT = {
-					is_puppet_of = GER
-					is_in_faction_with = GER
-				}
-				GER = {
-					surrender_progress > 0.09
-				}
-			}
-			modifier = {
-				factor = 0
-				any_other_country = {
-					is_in_faction_with = ROOT
-					has_war_with = GER
-				}
-			}
-			modifier = {
-				factor = 0
-				any_other_country = {
-					NOT = {
-						tag = GER
-					}
-					ROOT = {
-						is_puppet_of = PREV
-					}
-					NOT = {
-						is_in_faction_with = GER
-					}
-				}
-			}
-		}
-		GER = {
-			country_event = { days = 1 id = wtt_germany.81 }
-		}
-	}
-	option = { # Refuse
-		name = wtt_germany.80.b		
-		ai_chance = { 
-			factor = 10
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-				NOT = {
-					GER = {
-						surrender_progress > 0.09
-					}
-				}
-				NOT = {
-					any_other_country = {
-						is_in_faction_with = ROOT
-						has_war_with = GER
-					}
-				}
-				NOT = {
-					any_other_country = {
-						NOT = {
-							tag = GER
-						}
-						ROOT = {
-							is_puppet_of = PREV
-						}
-						NOT = {
-							is_in_faction_with = GER
-						}
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					is_in_faction_with = GER
-					ROOT = {
-						is_puppet_of = GER
-					}
-				}
-			}
-		}
-		effect_tooltip = {
-			GER = {
-				create_wargoal = {
-				type = take_state_focus
-				target = ROOT
-				generator = { 964 }
-				}
-				country_event = { days = 1 id = wtt_germany.82 }
-			}
-		}
-		hidden_effect = {
-			GER = {
-				country_event = { days = 1 id = wtt_germany.82 }
-			}
-		}		
-	}
-}
-
-# Claim Northern Schleswig - Denmark Folds
-country_event = {
-	id = wtt_germany.81
-	title = wtt_germany.81.t
-	desc = wtt_germany.81.d
-	picture = GFX_report_event_vienna_award_hungary
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = wtt_germany.81.a
-		GER = {
-			transfer_state = 964
-			add_state_core = 964
-		}
-		964 = { set_state_name = "Nordschleswig" }
-		set_province_name = { id = 11251 name = "Apenrade" }
-	}
-}
-
-# Claim Northern Schleswig - Denmark Rejects Demand
-country_event = {
-	id = wtt_germany.82
-	title = wtt_germany.82.t
-	desc = wtt_germany.82.d
-	picture = GFX_report_event_lithuania_army
-
-	is_triggered_only = yes
-
-	option = {
-		name = wtt_germany.82.a
-		create_wargoal = {
-			type = take_state_focus
-			target = DEN
-			generator = { 964 }
-		}
 	}
 }
 

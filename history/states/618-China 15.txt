@@ -6,15 +6,17 @@ state={
 
 	state_category = pastoral
 
-	history={
-		victory_points = {
-			4823 1
-		}
+history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
 		owner = CHI
 		add_core_of = CHI
+		add_core_of = SIK
+		add_core_of = SIK
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
 			industrial_complex = 1
+		}
+		victory_points = {
+			4823 2
 		}
 	}
 

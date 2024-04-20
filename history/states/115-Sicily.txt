@@ -1,11 +1,9 @@
 
-state={
-	id=115
-	name="STATE_115"
-	manpower = 3836571
-	
-	state_category = city
-	history={
+state = {
+	id = 115
+	name = "STATE_115"
+
+	history = {
 		owner = ITA
 		victory_points = {
 			10074 20 
@@ -17,7 +15,7 @@ state={
 			4014 5 
 		}
 		victory_points = {
-			13305 1 
+			13256 1 
 		}
 		buildings = {
 			infrastructure = 3
@@ -40,14 +38,18 @@ state={
 				naval_base = 3
 
 			}
+
 		}
 		add_core_of = ITA
-		#add_core_of = NAP
+		add_core_of = ITA
+
 	}
 
-	provinces={
-		1009 1156 3857 4014 4159 7059 7147 10074 12047 13305
+	provinces = {
+		1009 1156 3857 4014 4159 7059 7147 10074 12047 13256 
 	}
-
-	local_supplies=0.0 
+	manpower = 3836571
+	buildings_max_level_factor = 1.000
+	state_category = city
+	local_supplies = 0.000
 }

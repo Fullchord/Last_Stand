@@ -175,9 +175,8 @@ country_event = {
 		name = britain.7.a
 		ai_chance = { factor = 60 }
 		GER = {
-			send_embargo = ROOT
-			custom_effect_tooltip = embargo_relation_tt
-		}
+				add_opinion_modifier = { target = ROOT modifier = embargo } 
+			}
 	}
 	option = {
 		name = britain.7.b
@@ -236,9 +235,6 @@ country_event = {
 		tag = ENG
 		has_war = yes
 		has_government = democratic
-		NOT = {
-			has_completed_focus = uk_scandinavian_focus
-		}
 		POL = { has_capitulated = yes }
 		OR = {
 			has_global_flag = fall_of_france
@@ -261,7 +257,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 2
+		days = 4
 	}
 
 	immediate = { set_country_flag = chamberlain_resigned }
@@ -272,6 +268,7 @@ country_event = {
 		retire_character = ENG_neville_chamberlain
 		add_stability = 0.1
 		add_war_support = 0.1
+
 	}
 }
 
@@ -294,7 +291,7 @@ country_event = {
 			character = ENG_neville_chamberlain
 			ruling_only = yes
 		}
-	}
+	}	
 
 	mean_time_to_happen = {
 		days = 30
@@ -304,23 +301,29 @@ country_event = {
 
 	option = {
 		name = britain.10.a
-		ai_chance = { factor = 80 }
-		promote_character = ENG_winston_churchill
-		retire_character = ENG_neville_chamberlain
-	}
-	option = {
-		name = britain.10.b
-		ai_chance = { factor = 20 }
-		retire_character = ENG_neville_chamberlain
+		kill_country_leader = yes
 		create_country_leader = {
-			name = "Lord Edward Halifax"
-			desc = "POLITICS_EDWARD_HALIFAX_DESC"
-			picture = "Portrait_Britain_Edward_Halifax.dds"
+			name = "Winston Churchill"
+			desc = "POLITICS_WINSTON_CHURCHILL_DESC"
+			picture = GFX_portrait_Winston_Churchill
 			expire = "1965.1.1"
 			ideology = conservatism
 			traits = {
-				viceroy_emeritus
-				cautious_arbiter
+				british_bulldog
+			}
+		}
+	}
+	option = {
+		name = britain.10.b
+		kill_country_leader = yes
+		create_country_leader = {
+			name = "Lord Edward Halifax"
+			desc = "POLITICS_EDWARD_HALIFAX_DESC"
+			picture = GFX_portrait_Lord_Edward_Halifax
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				
 			}
 		}
 	}
@@ -487,7 +490,7 @@ country_event = {
 				YUG = {
 					add_opinion_modifier = { target = FRA modifier = western_betrayal }
 					country_event = { id = yugoslavia.5 hours = 6 }
-				}
+				}			
 			}
 			if = {
 				limit = { 
@@ -533,7 +536,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = YUG
-					generator = { 102 956 853 }
+					generator = { 853 102 }
 				}
 			}
 		}
@@ -557,7 +560,7 @@ country_event = {
 		YUG = {
 			add_opinion_modifier = { target = ENG modifier = offered_support }
 		}
-	}
+	}	
 }
 
 # France leaves the Allies
@@ -584,21 +587,24 @@ country_event = {
 	desc = britain.16.d
 	picture = GFX_report_event_europe_funeral
 	
-	trigger = {
-		tag = ENG
-		date > 1936.1.19
-	}
+	# trigger = {
+	# 	tag = ENG
+	# 	date > 1936.1.19
+	# 	has_start_date < 1936.01.02
+	# }	
 
-	fire_only_once = yes
+	# fire_only_once = yes
 
-	mean_time_to_happen = { days = 7 }
+	# mean_time_to_happen = { days = 7 }
+
+	is_triggered_only = yes
 
 	immediate = {
 		hidden_effect = {
 			set_country_flag = ENG_king_died
 			remove_ideas = george_v
 			add_ideas = ENG_king_edward
-		}
+		}		
 	}
 	
 	option = {
@@ -651,32 +657,46 @@ country_event = {
 	desc = britain.18.d
 	picture = GFX_report_event_fascist_gathering
 	
-	is_triggered_only = yes
+	trigger = {
+		tag = ENG
+		has_idea = ENG_george_vi
+		has_government = fascism
+		NOT = { has_dlc = "Man the Guns" }
+	}
 	
 	fire_only_once = yes
 
+	mean_time_to_happen = { days = 14 }
+	
+	immediate = {
+		hidden_effect = {
+			remove_ideas = ENG_george_vi		
+		}
+	}
+
 	option = {
 		name = britain.18.a
-		remove_ideas = ENG_george_vi
+		effect_tooltip = {
+			remove_ideas = ENG_george_vi	
+		}
 		create_country_leader = {
 			name = "Edward VIII"
 			desc = "POLITICS_EDWARD_EDWARD_DESC"
-			picture = "Portrait_Britain_Edward_VIII.dds"
+			picture = GFX_portrait_Edward_VIII
 			expire = "1965.1.1"
 			ideology = fascism_ideology
 			traits = {
-				inexperienced_imperialist
-				r56_trait_opposed_to_communism
+				inexperienced_imperialist				
 			}
 		}
 	}
 
 	option = {
 		name = britain.18.b	
-		swap_ideas = {
-			remove_idea = ENG_george_vi
-			add_idea = ENG_king_edward_fascism
-		} 
+		effect_tooltip = {
+			remove_ideas = ENG_george_vi	
+		}
+		add_ideas = ENG_king_edward_fascism
 	}
 }
 
@@ -693,7 +713,7 @@ country_event = {
 		name = britain.19.a
 		effect_tooltip = {
 			RAJ = {
-				add_ideas = RAJ_subhas_chanda_bose
+				add_ideas = RAJ_azad_hind
 			}
 		}
 		custom_effect_tooltip = ENG_RAJ_azad_hind_tooltip 
@@ -730,11 +750,11 @@ country_event = {
 			if = {
 				limit = {
 					RAJ = {
-						has_idea = RAJ_subhas_chanda_bose
+						has_idea = RAJ_azad_hind
 					}
 				}
 				RAJ = {
-					remove_ideas = RAJ_subhas_chanda_bose
+					remove_ideas = RAJ_azad_hind
 				}
 			}
 		}
@@ -750,6 +770,7 @@ country_event = {
 				country_event = { id = britain.23 }
 			}
 		}
+		
 		if = {
 			limit = {
 				RAJ = {
@@ -771,6 +792,7 @@ country_event = {
 			}
 		}
 	}
+
 }
 
 country_event = {
@@ -797,26 +819,38 @@ country_event = {
     desc = britain.22.d
     picture = GFX_report_event_royal_parade
  
-    fire_only_once = yes
+    # fire_only_once = yes
  
-    trigger = {
-        original_tag = ENG
-        has_government = democratic
-        has_idea = ENG_george_vi
-        date > 1937.5.27
-        NOT = { has_country_flag = baldwin_resigned }
-    }
+    # trigger = {
+    #     original_tag = ENG
+    #     has_government = democratic
+    #     has_idea = ENG_george_vi
+    #     date > 1937.5.27
+    #     has_start_date < 1936.01.02
+    #     NOT = { has_country_flag = baldwin_resigned }
+    # }
 
-    mean_time_to_happen = {
-        days = 7
-    }
+    # mean_time_to_happen = {
+    #     days = 7
+    # }
 
-    option = {
+	is_triggered_only = yes
+
+	option = {
         name = britain.22.a
         retire_country_leader = yes
-		promote_character = ENG_neville_chamberlain
+		create_country_leader = {
+        	name = "Neville Chamberlain"
+        	desc = "POLITICS_NEVILLE_CHAMBERLAIN_DESC"
+			picture = GFX_portrait_Neville_Chamberlain
+        	expire = "1965.1.1"
+        	ideology = conservatism
+        	traits = {
+        		chamberlain_appeaser rearmer
+        	}
+		}
         set_country_flag = baldwin_resigned
-      }
+	}
 }
 
 #RAJ gets to choose sides in Indian civil war
@@ -838,9 +872,6 @@ country_event = {
 			}
 		}
 		name = britain.23.a
-		hidden_effect = {
-			civil_war_anti_exploiter_punitive_action_r56 = yes
-		}		
 		start_civil_war = {
 				ideology = fascism
 				size = 0.5
@@ -849,9 +880,6 @@ country_event = {
 	#side with fascists
 	option = {
 		name = britain.23.b
-		hidden_effect = {
-			civil_war_anti_exploiter_punitive_action_r56 = yes
-		}		
 		start_civil_war = {
 				ruling_party = fascism
 				ideology = neutrality
@@ -867,16 +895,25 @@ country_event = {
 		}
 	}
 }
+
 # Shadow Scheme Factories
 country_event = {
     id = britain.24
     title = britain.24.t
     desc = britain.24.d
     picture = GFX_report_event_generic_factory
-
-	is_triggered_only = yes
  
     fire_only_once = yes
+ 
+    trigger = {
+        original_tag = ENG
+        has_completed_focus = shadow_scheme_focus
+        has_war = yes
+    }
+
+    mean_time_to_happen = {
+        days = 7
+    }
 
     option = {
         name = britain.24.a
@@ -895,6 +932,7 @@ country_event = {
 				level = 2
 				instant_build = yes
 			}
+			set_state_flag = shadow_scheme_2AF
 		}
 		random_owned_controlled_state = {
 			limit = {
@@ -911,248 +949,7 @@ country_event = {
 				level = 2
 				instant_build = yes
 			}
+			set_state_flag = shadow_scheme_2AF
 		}
     }
-}
-
-# 
-country_event = {
-	id = britain.25
-	title = britain.25.t
-	desc = britain.25.d
-	picture = GFX_report_event_degaulle_churchill
-
-	is_triggered_only = yes
-	
-	option = {
-		name = britain.25.a
-		FROM = {
-			add_to_faction = ROOT
-			add_ai_strategy = {
-				type = alliance
-				id = "FRA"
-				value = 200
-			}
-			country_event = { id = britain.26 }
-		}
-		hidden_effect = {
-			news_event = { id = news.175 }
-		}
-	}
-	
-	option = {
-		name = britain.25.b
-		ai_chance = { factor = 0 }
-		FROM = { 
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = FRA_go_with_britain_reject
-			}
-			country_event = { id = britain.27 }
-		}
-		hidden_effect = {
-			news_event = { id = news.176 }
-		}
-	}
-}
-
-country_event = {
-	id = britain.26
-	title = britain.26.t
-	desc = britain.26.d
-	picture = GFX_report_event_generic_sign_treaty2
-
-	is_triggered_only = yes
-	
-	option = {
-		name = britain.26.a
-		
-	}
-}
-
-country_event = {
-	id = britain.27
-	title = britain.27.t
-	desc = britain.27.d
-	picture = GFX_report_event_french_british_officers
-
-	is_triggered_only = yes
-	
-	option = {
-		name = britain.27.a
-		
-	}
-}
-
-
-#country_event = {
-#	id = britain.31
-#	title = britain.31.t
-#	desc = britain.31.d
-#	picture = GFX_report_event_soviet_german_soldier_handshake
-#
-#	is_triggered_only = yes
-#	
-#	option = {
-#		name = soviet.92.a
-#		ENG = { add_to_faction = ALB }
-#		ALB = {
-#			add_ai_strategy = {
-#				type = alliance
-#				id = "ENG"
-#				value = 200
-#			}
-#		}
-#		hidden_effect = {
-#			news_event = { hours = 6 id = news.335 }
-#		}
-#	}
-#	option = {
-#		name = soviet.92.b
-#		ai_chance = { factor = 0 }
-#		ALB = {
-#			add_opinion_modifier = {
-#				target = SOV
-#				modifier = medium_decrease
-#			}
-#		}
-#	}
-#}
-
-country_event = { # Britain seeks diplomatic reconciliation with the USSR
-	id = britain.28
-	title = britain.28.t
-	desc = britain.28.d
-	picture = GFX_report_event_french_british_officers
-
-	is_triggered_only = yes
-	
-	option = { # Yes
-		name = britain.28.a
-		ENG = {
-			country_event = { id = britain.29 hours = 6 }
-		}
-		
-	}
-	option = { # No
-		name = britain.28.b
-		ENG = {
-			country_event = { id = britain.30 hours = 6 }
-		}
-		
-	}
-}
-
-country_event = { # 
-	id = britain.29
-	title = britain.29.t
-	desc = britain.29.d
-	picture = GFX_report_event_stalin_02
-
-	is_triggered_only = yes
-	
-	option = { #
-		name = britain.29.a
-		
-	}
-}
-
-country_event = { # 
-	id = britain.30
-	title = britain.30.t
-	desc = britain.30.d
-	picture = GFX_report_event_stalin_01
-
-	is_triggered_only = yes
-	
-	option = {
-		name = britain.30.a
-		
-	}
-}
-
-
-country_event = {
-	id = britain.54
-	title = TBE_imperial_conference_note.title
-	desc = TBE_imperial_conference_note.desc
-	picture = GFX_report_event_imperial_conference
-
-	is_triggered_only = yes
-
-	
-	# Ok
-	option = {
-		name = TBE_imperial_conference_note.a
-		trigger = {
-			tag = ENG
-		}
-		activate_mission = TBE_imperial_conference_decision
-		set_country_flag = { flag = ENG_imperial_conference_timer_flag value = 1 days = 60 }
-	}
-
-	# Ok
-	option = {
-		name = TBE_imperial_conference_note.b
-		trigger = {
-			NOT = { tag = ENG }
-		}
-	}
-}
-#### COMMONWEALTH SECONDMENTS EVENT START ####
-country_event = {
-    id = britain.36
-    title = britain.36.t
-    desc = britain.36.d
-    picture = GFX_report_event_parliament_and_whitehall
- 
-    is_triggered_only = yes
-
-    option = {
-    	name = britain.36.a
-		unlock_decision_tooltip = { decision = ENG_commonwealth_scientific_cooperation show_effect_tooltip = yes }
-		if = {
-			limit = {
-				NOT = {
-					tag = ENG
-				}
-			}
-			every_country = {
-				limit = {
-					is_subject_of = ROOT
-				}
-				country_event = {
-					id = britain.36 days = 2
-				}
-			}
-		}	
-		country_event = {
-			id = britain.37 days = 2
-		}
-    }
-}
-country_event = {
-	id = britain.38
-	title = britain.38.title
-	desc = britain.38.desc
-	picture = GFX_report_event_uk_aerospace_company
-
-	is_triggered_only = yes
-	
-	option = {
-		name = britain.38.a
-		effect_tooltip = {
-			every_owned_state = {
-				limit = {
-					has_state_flag = GBR_supported_local_industry_flag
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
 }

@@ -53,7 +53,6 @@ country_event = {
 			transfer_state = 76
 			transfer_state = 83
 			transfer_state = 84
-			transfer_state = 82
 		}
 		hidden_effect = {
 			country_event = { days = 1 id = news.16 }
@@ -93,7 +92,6 @@ country_event = {
 		add_state_claim = 76
 		add_state_claim = 83
 		add_state_claim = 84
-		add_state_claim = 82
 		hidden_effect = {
 			country_event = { days = 1 id = news.18 }
 		}
@@ -111,109 +109,6 @@ country_event = {
 	
 	option = {
 		name = hungary.6.a
-		HUN = {
-			transfer_state = 45
-			transfer_state = 764
-		}
-	}
-}
-
-country_event = { # 3 events to make the recruitement of hungarian loyalists generals really dynamic
-	id = hungary.7
-	title = hungary.7.t
-	desc = hungary.7.desc
-	picture = GFX_report_event_force_publique #change
-	hidden = yes
-	trigger = {
-		has_decision = HUN_try_to_reconcile_with_horthy_loyalists 
-	}
-	mean_time_to_happen = {
-		days = 7
-	}	
-	fire_only_once = yes
-	option = {
-		name = hungary.7.a	#Accept
-		ai_chance = {
-			factor = 100
-		}
-		country_event = { id = hungary.8 days = 7 }
-		random_list = {
-			30 = { }
-			70 = {
-				FAK = {
-					random_unit_leader  = {
-						limit = {
-							NOT = {
-								has_id = 5602
-							}
-							has_unit_leader_flag = hungarian_rebel
-						} 
-						set_nationality = ROOT 
-					}					
-				}	
-			}
-		}		
-	}
-}
-country_event = { # 3 events to make the recruitement of Dutch generals really dynamic
-	id = hungary.8
-	title = hungary.8.t
-	desc = hungary.8.desc
-	picture = GFX_report_event_force_publique #change
-	
-	is_triggered_only = yes
-	fire_only_once = yes
-	hidden = yes
-	option = {
-		name = hungary.8.a	#Accept
-		ai_chance = {
-			factor = 100
-		}
-		country_event = { id = hungary.9 days = 7 }
-		random_list = {
-			30 = { }
-			70 = {
-				FAK = {
-					random_unit_leader  = {
-						limit = {
-							NOT = {
-								has_id = 5602
-							}							
-							has_unit_leader_flag = hungarian_rebel
-						} 
-						set_nationality = ROOT 
-					}					
-				}	
-			}
-		}				
-	}
-}
-country_event = { # 3 events to make the recruitement of Dutch generals really dynamic
-	id = hungary.9
-	title = hungary.9.t
-	desc = hungary.9.desc
-	picture = GFX_report_event_force_publique #change
-	
-	is_triggered_only = yes
-	fire_only_once = yes
-	hidden = yes
-	option = {
-		name = hungary.9.a	#Accept
-		ai_chance = {
-			factor = 100
-		}
-		random_list = {
-			30 = { }
-			70 = {
-				FAK = {
-					random_unit_leader  = {
-						limit = {						
-							has_unit_leader_flag = hungarian_rebel
-						} 
-						set_nationality = ROOT
-					}					
-				}	
-			}
-		}		
+		HUN = { transfer_state = 45 }
 	}
 }

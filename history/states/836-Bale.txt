@@ -2,6 +2,8 @@ state = {
 	id = 836 # Bale
 	name = "STATE_836"
 	manpower = 800000
+	resources = {
+	}
 	
 	state_category = pastoral
 
@@ -21,35 +23,25 @@ state = {
 		
 		buildings = {
 			# infrastructure = 1
-			13297 = {
-				bunker = 1
-			}
 		}
 		# Gaba
 		victory_points = { 
 			10775 1
 		}
-		# Gode
-		victory_points = { 
-			4995 1 
-		}
 		
-		owner = ITA
+		owner = ETH
 		add_core_of = ETH
-		
+		add_core_of = ETH
+		add_core_of = ETH
 
 		1936.6.1 = {
 			owner = ITA
 			controller = ITA
 		}
-
-		ITA = {	#Frontlines as of 1st of January 1936
-			set_province_controller = 4995
-		} #Wehib Pasha reported the Italian advancment on Jan. 1st to be around the same size as the 4995 province funny enough. He fell back to prepared fall back lines outside of Gaba. - Spicyalfredo
 	}
 
 	provinces = {
-		4995 10775 13297
+ 		4995 10775 13248
  	}
 
 	local_supplies = 0.0 

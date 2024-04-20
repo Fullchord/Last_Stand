@@ -30,18 +30,7 @@ unit_medals = {
 	
 	iron_cross_second_class = {
 		
-		available = {
-			OR = {
-				should_have_german_medals_trigger = yes
-				AND = {
-					original_tag = ROM
-					is_in_faction_with = GER
-					GER = {
-						has_government = fascism
-					}
-				}
-			} 
-		}
+		available = { should_have_german_medals_trigger = yes }
 		frame = 1
 		icon = "GFX_medal_icon_ger"
 		
@@ -63,18 +52,7 @@ unit_medals = {
 	
 	knights_cross = {
 		
-		available = {
-			OR = {
-				should_have_german_medals_trigger = yes
-				AND = {
-					original_tag = ROM
-					is_in_faction_with = GER
-					GER = {
-						has_government = fascism
-					}
-				}
-			} 
-		}
+		available = { should_have_german_medals_trigger = yes }
 		frame = 2
 		icon = "GFX_medal_icon_ger"
 		
@@ -92,18 +70,7 @@ unit_medals = {
 	
 	knights_cross_oak_leaves = {
 		
-		available = {
-			OR = {
-				should_have_german_medals_trigger = yes
-				AND = {
-					original_tag = ROM
-					is_in_faction_with = GER
-					GER = {
-						has_government = fascism
-					}
-				}
-			} 
-		}
+		available = { should_have_german_medals_trigger = yes }
 		frame = 3
 		icon = "GFX_medal_icon_ger"
 		
@@ -122,18 +89,7 @@ unit_medals = {
 	
 	knights_cross_swords_and_diamonds = {
 		
-		available = {
-			OR = {
-				should_have_german_medals_trigger = yes
-				AND = {
-					original_tag = ROM
-					is_in_faction_with = GER
-					GER = {
-						has_government = fascism
-					}
-				}
-			} 
-		}
+		available = { should_have_german_medals_trigger = yes }
 		frame = 4
 		icon = "GFX_medal_icon_ger"
 		
@@ -263,10 +219,7 @@ unit_medals = {
 	
 	order_of_the_red_banner = {
 		
-		available = { 
-			should_have_soviet_medals_trigger = yes 
-			has_government = communism
-		}
+		available = { should_have_soviet_medals_trigger = yes }
 		frame = 3
 		icon = "GFX_medal_icon_sov"
 		
@@ -284,10 +237,7 @@ unit_medals = {
 	
 	hero_of_the_soviet_union = {
 		
-		available = { 
-			should_have_soviet_medals_trigger = yes
-			has_government = communism 
-		}
+		available = { should_have_soviet_medals_trigger = yes }
 		frame = 4
 		icon = "GFX_medal_icon_sov"
 		
@@ -302,50 +252,7 @@ unit_medals = {
 		}
 		
 	}
-	SOV_order_of_saint_george = {
-		
-		available = { 
-			should_have_soviet_medals_trigger = yes
-			NOT = {
-				has_government = communism
-			} 
-		}
-		frame = 3
-		icon = "GFX_medal_icon_default"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			army_org_factor = 0.1
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}	
-	SOV_order_of_saint_andrew = {
-		
-		available = { 
-			should_have_soviet_medals_trigger = yes
-			NOT = {
-				has_government = communism
-			} 
-		}
-		frame = 1
-		icon = "GFX_medal_icon_default"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			army_strength_factor = 0.075
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}		
+	
 	### ENG
 	
 	dispatches_oak_leaves = {
@@ -459,7 +366,7 @@ unit_medals = {
 		
 	}
 	
-	order_of_liberation = { #if possible make the order of liberation unique and choose a new medal to reduce fuel cost, link it with the free French focus tree?
+	order_of_liberation = {
 		
 		available = { should_have_french_medals_trigger = yes }
 		frame = 3
@@ -546,7 +453,7 @@ unit_medals = {
 		
 		unit_modifiers = {
 			supply_consumption_factor = -0.1
-			#army_defence_factor = -0.05
+			army_defence_factor = -0.05
 		}
 		
 		one_time_effect = {
@@ -854,7 +761,7 @@ unit_medals = {
 	
 	### Generic Democratic
 	
-	democratic_gallantry = { #australian The Medal for Gallantry was introduced in 1991
+	democratic_gallantry = {
 		
 		available = { 
 			has_government = democratic 
@@ -901,9 +808,6 @@ unit_medals = {
 		available = { 
 			has_government = democratic
 			should_have_any_unique_medals_trigger = no	
-			NOT = {
-				original_tag = CZE
-			}
 		}
 		frame = 3
 		icon = "GFX_medal_icon_democratic"
@@ -920,34 +824,12 @@ unit_medals = {
 		}
 		
 	}
-	CZE_war_cross = {
-		
-		available = { 
-			original_tag = CZE
-		}
-		frame = 3
-		icon = "GFX_medal_icon_democratic"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			army_defence_factor = 0.07
-			recon_factor = 0.1
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}	
+	
 	democratic_lion = {
 		
 		available = { 
 			has_government = democratic
 			should_have_any_unique_medals_trigger = no
-			NOT = {
-				original_tag = CZE
-			}
 		}
 		frame = 4
 		icon = "GFX_medal_icon_democratic"
@@ -963,26 +845,7 @@ unit_medals = {
 		}
 		
 	}
-	CZE_military_order_of_the_white_lion = {
-		
-		available = { 
-			original_tag = CZE
-		}
-		frame = 4
-		icon = "GFX_medal_icon_democratic"
 	
-		cost = @cost
-		
-		unit_modifiers = {
-			experience_loss_factor = -0.20
-			supply_consumption_factor = -0.3
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}
 	### Generic Communist
 	
 	communist_service_medal = {
@@ -1119,9 +982,6 @@ unit_medals = {
 		
 		available = { 
 			has_government = fascism
-			NOT = {
-				original_tag = ROM
-			}
 			should_have_any_unique_medals_trigger = no
 		}
 		frame = 3
@@ -1139,30 +999,7 @@ unit_medals = {
 		}
 		
 	}
-	ROM_order_of_michael_the_brave = {
-		
-		available = { 
-			original_tag = ROM
-			NOT = {
-				has_government = communism
-			}
-		}
-		frame = 3
-		icon = "GFX_medal_icon_fascism"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			armor_factor = 0.1
-			recon_factor = 0.1
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}	
-
+	
 	fascism_heroism = {
 		
 		available = { 
@@ -1183,7 +1020,7 @@ unit_medals = {
 		}
 		
 	}
-
+	
 	### Generic Neutrality
 	
 	neutral_bravery = {
@@ -1257,8 +1094,8 @@ unit_medals = {
 			has_government = neutrality
 			should_have_any_unique_medals_trigger = no
 		}
-		frame = 2
-		icon = "GFX_medal_icon_r56_generic"
+		frame = 4
+		icon = "GFX_medal_icon_default"
 	
 		cost = @cost
 		
@@ -1272,77 +1109,7 @@ unit_medals = {
 		}
 		
 	}
-	POL_virtuti_militari = {
-		
-		available = { 
-			OR = {
-				original_tag = POL
-				has_cosmetic_tag = PLC_UNIFIED
-			}
-			 
-		}
-		frame = 4
-		icon = "GFX_medal_icon_default"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			experience_loss_factor = -0.2
-			army_defence_factor = 0.05
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}
-
-	blue_order = {
-		
-		available = { 
-			should_have_any_unique_medals_trigger = no 
-			NOT = {
-				has_government = communism
-			}
-		}
-		frame = 4
-		icon = "GFX_medal_icon_r56_generic"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			equipment_capture_factor = 0.1
-			army_morale_factor = 0.05
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}		
-	azure_cross = {
-		
-		available = { 
-			should_have_any_unique_medals_trigger = no 
-			NOT = {
-				has_government = communism
-			}
-		}
-		frame = 3
-		icon = "GFX_medal_icon_r56_generic"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			cas_damage_reduction = 0.2
-			dig_in_speed_factor = 0.15
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}		
+	
 	### Unique
 	
 	yug_extreme_bravery = {
@@ -1366,489 +1133,4 @@ unit_medals = {
 		
 	}
 	
-	GER_pour_le_merite = {
-		
-		available = { 
-			has_cosmetic_tag = GER_german_empire
-			OR = {
-				has_government = neutrality
-				has_government = democratic
-			}
-			should_have_german_medals_trigger = yes
-		}
-		frame = 2
-		icon = "GFX_medal_icon_default"
-	
-		cost = @cost
-		
-		unit_modifiers = {
-			army_morale_factor = 0.1
-			army_defence_factor = 0.05
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}	
-	BEL_war_cross = {
-		
-		available = { 
-			should_have_belgian_medals_trigger = yes 
-		}		
-		frame = 3
-		icon = "GFX_medal_icon_bel"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			max_dig_in = 5
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}		
-	BEL_order_of_the_crown = {
-		
-		available = { 
-			should_have_belgian_medals_trigger = yes
-			NOT = { has_government = communism } 
-		}
-		frame = 4
-		icon = "GFX_medal_icon_bel"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			breakthrough_factor = 0.075
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}	
-	BEL_order_of_leopold_ii = {
-		
-		available = { 
-			should_have_belgian_medals_trigger = yes
-			NOT = { has_government = communism } 
-		}
-		frame = 1
-		icon = "GFX_medal_icon_bel"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			experience_loss_factor = -0.25
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}		
-	BEL_order_of_leopold = {
-		
-		available = { 
-			should_have_belgian_medals_trigger = yes
-			NOT = { has_government = communism } 
-		}
-		frame = 2
-		icon = "GFX_medal_icon_bel"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			supply_consumption_factor = -0.15
-			army_morale_factor = 0.1
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}
-
-	BEL_order_of_the_red_flag = {
-		
-		available = { 
-			should_have_belgian_medals_trigger = yes 
-			has_government = communism
-		}
-		frame = 2
-		icon = "GFX_medal_icon_communism" 
-	
-		cost = @cost
-		
-		unit_modifiers = {
-			army_attack_factor = 0.05
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}
-	BEL_order_of_the_golden_spurs = {
-		
-		available = { 
-			should_have_belgian_medals_trigger = yes
-			OR = {
-				has_government = communism
-				has_government = fascism
-			} 
-			
-		}
-		frame = 2
-		icon = "GFX_medal_icon_fascism" 
-	
-		cost = @cost
-		
-		unit_modifiers = {
-			experience_loss_factor = -0.2
-			army_morale_factor = 0.05
-		}
-
-	#	unit_modifiers = {
-	#		max_dig_in = 5
-	#	}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}	
-	BEL_order_of_the_red_star = {
-		
-		available = { 
-			should_have_belgian_medals_trigger = yes 
-			has_government = communism
-		}
-		frame = 4
-		icon = "GFX_medal_icon_communism" 
-	
-		cost = @cost
-		
-		unit_modifiers = {
-			army_fuel_consumption_factor = -0.075
-			supply_consumption_factor = -0.075
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}
-
-	HUN_medal_of_bravery = { #Literally a picture of Horthy
-		
-		available = { 
-		#	has_country_leader = {
-		#		ruling_only = yes 
-		#		character = HUN_miklos_horthy
-		#	}
-			should_have_hungarian_medals_trigger = yes
-			NOT = { has_government = communism }  
-		}
-		frame = 1 #real pic of it
-		icon = "GFX_medal_icon_fascism"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			army_org_factor = 0.1
-			breakthrough_factor = 0.02
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}
-	HUN_signum_laudis = { 
-		
-		available = { 
-			should_have_hungarian_medals_trigger = yes
-			NOT = { has_government = communism }  
-		}
-		frame = 3
-		icon = "GFX_medal_icon_democratic"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			recon_factor = 0.15
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}
-	HUN_order_of_saint_stephen = { #Royal Hungarian Order of Saint Stephen
-		
-		available = { 
-			should_have_hungarian_medals_trigger = yes 
-			NOT = { has_government = communism } 
-		}
-		frame = 4
-		icon = "GFX_medal_icon_fascism"		
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			equipment_capture_factor = 0.1
-			army_morale_factor = 0.075
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}	
-	HUN_order_of_merit = {
-		
-		available = { 
-			should_have_hungarian_medals_trigger = yes 
-			NOT = { has_government = communism } 
-		}
-		frame = 2
-		icon = "GFX_medal_icon_default"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			max_dig_in_factor = 0.1
-			recon_factor_while_entrenched = 0.1
-		}
-
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}
-	HUN_order_of_merit_of_hungarian_freedom = { #Order of Merit of Hungarian Freedom
-		
-		available = { 
-			should_have_hungarian_medals_trigger = yes 
-			has_government = communism 
-		}
-		frame = 4
-		icon = "GFX_medal_icon_communism"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			army_morale_factor = 0.15
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}	
-	HUN_hero_of_the_hungarian_peoples_republic = { #Hero of the Hungarian People's Republic
-		
-		available = { 
-			should_have_hungarian_medals_trigger = yes 
-			has_government = communism 
-		}
-		frame = 4
-		icon = "GFX_medal_icon_sov"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			army_org_factor = 0.15
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}	
-	HUN_order_of_the_red_banner = {
-		
-		available = { 
-			should_have_hungarian_medals_trigger = yes 
-			has_government = communism 
-		}
-		frame = 3
-		icon = "GFX_medal_icon_sov"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			army_strength_factor = 0.075
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}	
-	HUN_outstanding_service_medal = { # Outstanding Service Medal
-		
-		available = { 
-			should_have_hungarian_medals_trigger = yes 
-			has_government = communism 
-		}
-		frame = 1
-		icon = "GFX_medal_icon_sov"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			supply_consumption_factor = -0.1
-			army_defence_factor = 0.05
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}	
-	PRU_medal_founder_of_independence = { # medalla de la BSFI Meritorious Society Founders of Independence
-		
-		available = { 
-			should_have_peruvian_medals_trigger = yes 
-		}
-		frame = 1
-		icon = "GFX_medal_icon_pru"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			supply_consumption_factor = -0.1
-			army_defence_factor = 0.05
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}
-	PRU_medal_winners_of_the_pedrera = { #	winners of The Pedrera
-		
-		available = { 
-			should_have_peruvian_medals_trigger = yes 
-		}
-		frame = 2
-		icon = "GFX_medal_icon_pru"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			army_strength_factor = 0.075
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}	
-
-
-	PRU_military_order_of_ayacucho = { #  n°3  Orden Militar de Ayacucho 
-		
-		available = { 
-			should_have_peruvian_medals_trigger = yes 
-		}
-		frame = 3
-		icon = "GFX_medal_icon_pru"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			experience_loss_factor = -0.2
-			army_morale_factor = 0.05
-		}
-
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}			 
-	PRU_order_of_the_sun = { # n°4 "GFX_medal_icon_PRU" Orden del Sol 
-		
-		available = { 
-			should_have_peruvian_medals_trigger = yes 
-		}
-		frame = 4
-		icon = "GFX_medal_icon_pru"
-		
-		cost = @cost
-		
-		unit_modifiers = {
-			breakthrough_factor = 0.075
-		}
-
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}
-	
-	TUR_order_of_distinction = {
-		
-		available = {
-			original_tag = TUR
-			OR = {
-				has_cosmetic_tag = TUR_PROVISIONARY
-				has_cosmetic_tag = OTT_UNIFIED
-				has_cosmetic_tag = OTT_SULTANATE
-			} 
-			
-			NOT = {
-				has_government = communism
-			}
-		}
-		frame = 1 #looks a bit the same
-		icon = "GFX_medal_icon_pru"
-	
-		cost = @cost
-		
-		unit_modifiers = {
-			breakthrough_factor = 0.075
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}
-	TUR_order_of_osmanieh = {
-		
-		available = {
-			original_tag = TUR
-			OR = {
-				has_cosmetic_tag = TUR_PROVISIONARY
-				has_cosmetic_tag = OTT_UNIFIED
-				has_cosmetic_tag = OTT_SULTANATE
-			} 
-			
-			NOT = {
-				has_government = communism
-			}
-		}
-		frame = 3 #
-		icon = "GFX_medal_icon_communism"
-	
-		cost = @cost
-		
-		unit_modifiers = {
-			army_morale_factor = 0.1
-			army_defence_factor = 0.05
-		}
-		
-		one_time_effect = {
-			add_divisional_commander_xp = 100
-		}
-		
-	}					
 }

@@ -3562,7 +3562,7 @@ country_event = { #yes
 
 		name = AAT_Sweden.31.a
 		FROM = {
-			transfer_state = 1024
+			transfer_state = 910
 			country_event = { id = AAT_Sweden.32 hours = 6 }
 			set_country_flag = SWE_DEN_gave_bornholm
 		}
@@ -3593,7 +3593,7 @@ country_event = { #yes
 				create_wargoal = {
 					type = take_state_focus
 					target = PREV
-					generator = { 1024 } # optional 
+					generator = { 910 } # optional 
 				}
 			}
 		}
@@ -3611,7 +3611,7 @@ country_event = { #BOrnhom is accepted
 	option = {
 		name = AAT_Sweden.32.a
 		effect_tooltip = {
-			1024 = {
+			910 = {
 				set_state_owner_to = ROOT 
 			}
 		}
@@ -3630,7 +3630,7 @@ country_event = { #Bornhom is rejected
 		create_wargoal = {
 			type = take_state_focus
 			target = FROM
-			generator = { 1024 } # optional 
+			generator = { 910 } # optional 
 		}
 	}
 }
@@ -3683,7 +3683,7 @@ country_event = { #yes
 
 			modifier = {
 
-				1024 = {
+				910 = {
 					is_owned_and_controlled_by = FROM
 				}
 
@@ -3978,7 +3978,7 @@ country_event = {
 
 			modifier = {
 
-				1024 = {
+				910 = {
 					is_owned_and_controlled_by = FROM
 				}
 
@@ -4954,6 +4954,7 @@ country_event = {
 		start_civil_war = {
 			ideology = communism #SPLITTING TAG
 			size = party_popularity@communism
+			states = { 918 666 917 140 139 138 917 913 }
 			hidden_effect = {
 				country_event = {
 					id = AAT_Sweden_flashpoints.55
@@ -5035,6 +5036,11 @@ country_event = {
 				division = "name = \"Workers Militia Division\" division_template = \"Workers Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.7 start_manpower_factor = 0.7"
 				owner = ROOT
 			}
+
+			create_unit = {
+				division = "name = \"Workers Militia Division\" division_template = \"Workers Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.7 start_manpower_factor = 0.7"
+				owner = ROOT
+			}
 		}
 	}
 }
@@ -5080,6 +5086,10 @@ country_event = {
 		}
 		set_capital = {
 			state = 124
+		}
+
+		124 = {
+			add_extra_state_shared_building_slots = 4
 		}
 
 		add_victory_points = {
@@ -5139,6 +5149,8 @@ country_event = {
 				civilian = { large =GFX_portrait_SWE_gustaf_v_patches }
 			}
 		}
+
+
 		hidden_effect = {
 			add_popularity = {
 				ideology = neutrality
@@ -5150,6 +5162,135 @@ country_event = {
 				long_name = SWE_kings_party_long
 			}
 
+			every_other_country = {
+				limit = {
+					original_tag = SWE
+					NOT = {
+						has_country_leader = {
+							character = SWE_king_gustaf_v
+							ruling_only = yes
+						}
+					}
+				}
+
+				add_equipment_to_stockpile = { 
+					type = infantry_equipment_0
+					amount = 3000 
+					producer = THIS
+				}
+				random_owned_controlled_state = {
+					limit = {
+						NOT = { state = 124 }
+					}
+					prioritize = { 140 138 139 918 913 } #optional: to pick those states first if they fulfill the limit
+					create_unit = {
+						division = "name = \"Workers Militia Division\" division_template = \"Workers Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.7 start_manpower_factor = 0.7"
+						owner = PREV
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+
+				random_owned_controlled_state = {
+					limit = {
+						NOT = { state = 124 }
+					}
+					prioritize = { 140 138 139 918 913 } #optional: to pick those states first if they fulfill the limit
+					create_unit = {
+						division = "name = \"Workers Militia Division\" division_template = \"Workers Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.7 start_manpower_factor = 0.7"
+						owner = PREV
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+
+				random_owned_controlled_state = {
+					limit = {
+						NOT = { state = 124 }
+					}
+					prioritize = { 140 138 139 918 913 } #optional: to pick those states first if they fulfill the limit
+					create_unit = {
+						division = "name = \"Workers Militia Division\" division_template = \"Workers Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.7 start_manpower_factor = 0.7"
+						owner = PREV
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+
+				random_owned_controlled_state = {
+					limit = {
+						NOT = { state = 124 }
+					}
+					prioritize = { 140 138 139 918 } #optional: to pick those states first if they fulfill the limit
+					create_unit = {
+						division = "name = \"Workers Militia Division\" division_template = \"Workers Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.7 start_manpower_factor = 0.7"
+						owner = PREV
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "name = \"Workers Militia Division\" division_template = \"Workers Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.7 start_manpower_factor = 0.7"
+						owner = PREV
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+
+				random_owned_controlled_state = {
+					limit = {
+						NOT = { state = 124 }
+					}
+					prioritize = { 140 138 139 918 913 } #optional: to pick those states first if they fulfill the limit
+					create_unit = {
+						division = "name = \"Workers Militia Division\" division_template = \"Workers Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.7 start_manpower_factor = 0.7"
+						owner = PREV
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+
+				random_owned_controlled_state = {
+					limit = {
+						NOT = { state = 124 }
+					}
+					prioritize = { 140 138 139 918 } #optional: to pick those states first if they fulfill the limit
+					create_unit = {
+						division = "name = \"Workers Militia Division\" division_template = \"Workers Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.7 start_manpower_factor = 0.7"
+						owner = PREV
+					}
+				}
+
+				random_owned_controlled_state = {
+					limit = {
+						NOT = { state = 124 }
+					}
+					prioritize = { 913 140 138 139 918 } #optional: to pick those states first if they fulfill the limit
+					create_unit = {
+						division = "name = \"Workers Militia Division\" division_template = \"Workers Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.7 start_manpower_factor = 0.7"
+						owner = PREV
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+
+				random_owned_controlled_state = {
+					limit = {
+						NOT = { state = 124 }
+					}
+					prioritize = { 913 140 138 139 918 } #optional: to pick those states first if they fulfill the limit
+					create_unit = {
+						division = "name = \"Workers Militia Division\" division_template = \"Workers Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.7 start_manpower_factor = 0.7"
+						owner = PREV
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+
+				random_owned_controlled_state = {
+					limit = {
+						NOT = { state = 124 }
+					}
+					prioritize = { 913 140 138 139 918 } #optional: to pick those states first if they fulfill the limit
+					create_unit = {
+						division = "name = \"Workers Militia Division\" division_template = \"Workers Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.7 start_manpower_factor = 0.7"
+						owner = PREV
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+
+			}
 			random_list = {
 				12.5 = {
 					SWE_king_gustaf_v = {
@@ -7817,7 +7958,7 @@ country_event = {
 				FIN_woldemar_hagglund = { set_nationality = SWE }
 				FIN_aarne_juutilainen = { set_nationality = SWE }
 				FIN_karl_oesch = { set_nationality = SWE } 
-				FIN_wiljo_tuompo = { set_nationality = SWE }
+				FIN_wiljo_einar_tuompo = { set_nationality = SWE }
 			}
 			else_if = {
 				limit = {
@@ -7833,7 +7974,7 @@ country_event = {
 				limit = {
 					original_tag = NOR
 				}
-				NOR_jacob_hvinden_haug = { set_nationality = SWE }
+				NOR_jacob_hivden_haug = { set_nationality = SWE }
 				NOR_jacob_ager_laurantzon = { set_nationality = SWE }
 
 			}

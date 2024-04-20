@@ -143,8 +143,8 @@ GER_naval_interest_trigger = {
 				has_war_with = JAP
 			}
 		}
-		has_completed_focus = GER_u_boat_effort_r56
-		has_completed_focus = GER_u_boat_effort_vanilla
+		has_completed_focus = GER_plan_z
+		has_completed_focus = GER_rebuild_the_high_seas_fleet
 	}
 }
 
@@ -226,7 +226,7 @@ going_war_with_SOV = {
 	or = {
 		has_war_with = SOV
 		focus_progress = {
-			focus = GER_soviet_invasion
+			focus = GER_ussr_war_goal
 			progress > 0.01
 		}
 		is_justifying_wargoal_against = SOV

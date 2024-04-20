@@ -152,7 +152,7 @@ ideas = {
 
 		######## FAKE NS FOR BOOKMARKS
 
-		FIN_finnish_army_fake = { #Only used for 1939 bookmark (dynamic modifiers don't show up there)
+		FIN_finnish_army_fake = { #Only used for tooltip when adding the DM in focus
 			name = FIN_finnish_army
 
 			removal_cost = -1
@@ -581,7 +581,6 @@ ideas = {
 			
 			modifier = {
 				conscription_factor = 0.1
-				production_speed_buildings_factor = 0.10
 				custom_modifier_tooltip = FIN_lotta_svard_support_battalions_bonus_tt
 			}
 		}

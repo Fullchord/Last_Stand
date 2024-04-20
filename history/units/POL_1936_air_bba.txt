@@ -28,7 +28,7 @@ instant_effect = {
 		equipment = {
 			type = small_plane_airframe_0
 			creator = "POL"
-			version_name = "PZL P.24"
+			version_name = "PZL P.11"
 		}
 		requested_factories = 1
 		progress = 0.20

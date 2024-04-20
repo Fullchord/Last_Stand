@@ -21,6 +21,14 @@ state = {
 			6087 1
 		}
 
+		victory_points = { #Tornio
+			11125 1
+		}
+
+		victory_points = { #Inari
+			6142 1
+		}
+
 		buildings = {
 			infrastructure = 1
 		}
@@ -29,7 +37,7 @@ state = {
 			limit = {
 				has_dlc = "Arms Against Tyranny"
 			}
-			add_core_of = SMI
+			add_core_of = FIN
 		}
 	}
 

@@ -29,7 +29,7 @@
 #				}
 #			}
 #		}
-############ NEEDS TO ADD R56 GAME RULES SUPPORT #############################################
+
 # This specifically overrides the rule check as to whether or not you can guarantee other ideologies
 DIPLOMACY_GUARANTEE_ENABLE_TRIGGER_OVERRIDES_GAME = {
 	NOT = {
@@ -99,6 +99,7 @@ DIPLOMACY_REVOKE_GUARANTEE_ENABLE_TRIGGER = {
 		}
 	}
 }
+
 DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 	if = {
 		limit = {
@@ -159,6 +160,7 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			NOT = { FROM = { tag = SRL } }
 			NOT = { FROM = { tag = MLD } }
 			NOT = { FROM = { tag = FIJ } }
+			NOT = { FROM = { tag = BRM } }
 			NOT = { FROM = { tag = SUD } }
 			NOT = { FROM = { tag = SOM } }
 			NOT = { FROM = { tag = UGA } }
@@ -197,7 +199,6 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			NOT = { FROM = { tag = TRA } }
 		}
 	}
-
 	if = {
 		limit = {
 			OR = {
@@ -210,1265 +211,26 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 					option = PEACE_ONLY
 				}
 			}
-			OR = {
-				original_tag = ROM
-				original_tag = HUN
-			}
+			has_dlc = "By Blood Alone"
+			original_tag = ETH
 		}
 		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_TRANSYLVANIA_TOOLTIP
-			NOT = { FROM = { tag = TRA } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				has_game_rule = {
-					rule = allow_release_nations
-					option = FREE
-				}
-				has_game_rule = {
-					rule = allow_release_nations
-					option = PEACE_ONLY
-				}
-			}
-			FROM = { tag = DNZ }
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_POLAND_DANZIG_TOOLTIP
-			NOT = { FROM = { tag = DNZ } }
-		}
-	}
-#	if = {
-#		limit = {
-#			OR = {
-#				has_game_rule = {
-#					rule = allow_release_nations
-#					option = FREE
-#				}
-#				has_game_rule = {
-#					rule = allow_release_nations
-#					option = PEACE_ONLY
-#				}
-#				has_game_rule = {
-#					rule = sov_fragmentation_status
-#					option = SOV_COSSACK_CORES
-#				}				
-#			}
-#			OR = {
-#				FROM = { original_tag = DON }
-#				FROM = { original_tag = KUB }
-#			}
-#		}
-#		custom_trigger_tooltip = {
-#			tooltip = RULE_ALLOW_RELEASE_NATIONS_COSSACK_TOOLTIP
-#			NOT = {
-#				FROM = { tag = DON }
-#				FROM = { tag = KUB }
-#			}
-#		}
-#	}
-	if = {
-		limit = {
-			OR = {
-				has_game_rule = {
-					rule = allow_release_nations
-					option = FREE
-				}
-				has_game_rule = {
-					rule = allow_release_nations
-					option = PEACE_ONLY
-				}
-			}
-			OR = {
-				original_tag = POL
-				original_tag = GER
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_POLAND_KASHUBIA_TOOLTIP
-			NOT = { FROM = { tag = KSH } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				has_game_rule = {
-					rule = allow_release_nations
-					option = FREE
-				}
-				has_game_rule = {
-					rule = allow_release_nations
-					option = PEACE_ONLY
-				}
-			}
-			OR = {
-				original_tag = POL
-				original_tag = GER
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_POLAND_SILESIA_TOOLTIP
-			NOT = { FROM = { tag = SIL } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				has_game_rule = {
-					rule = allow_release_nations
-					option = FREE
-				}
-				has_game_rule = {
-					rule = allow_release_nations
-					option = PEACE_ONLY
-				}
-			}
-			has_dlc = "Death or Dishonor"
-			original_tag = ITA
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_ITALY_TOOLTIP
-			NOT = { FROM = { tag = YUG } }
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = FREE
-			}
-			has_dlc = "La Resistance"
-			original_tag = SPR
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_SPAIN_TOOLTIP
-			has_global_flag = scw_over
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = FREE
-			}
-			has_dlc = "La Resistance"
-			original_tag = SPR
-			has_completed_focus = SPR_masters_of_our_own_fate
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_ANARCHIST_SPAIN_TOOLTIP
-			NOT = { original_tag = SPR }
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = FREE
-			}
-			original_tag = SOV
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_SOVIET_TOOLTIP
-			or = {
-				has_completed_focus = SOV_autonomous_soviet_republics
-				has_completed_focus = SOV_dissolve_the_treaty_agreement_nsb
-			}
-			
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = PEACE_ONLY
-			}
-			OR = {
-				NOT = { has_dlc = "Man the Guns" }
-				NOT = { original_tag = ENG }
-			}
-			OR = {
-				NOT = { has_dlc = "La Resistance" }
-				NOT = { original_tag = SPR }
-		}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_PEACE_ONLY_TOOLTIP
-			has_war = no
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = PEACE_ONLY
-			}
-			has_dlc = "Man the Guns"
-			original_tag = ENG
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_PEACE_ONLY_TOOLTIP
-			has_war = no
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_BRITAIN_TOOLTIP
-			NOT = { FROM = { tag = MLT } }
-			NOT = { FROM = { tag = CYP } }
-			NOT = { FROM = { tag = PAL } }
-			NOT = { FROM = { tag = ISR } }
-			NOT = { FROM = { tag = JOR } }
-			NOT = { FROM = { tag = EGY } }
-			NOT = { FROM = { tag = KUW } }
-			NOT = { FROM = { tag = QAT } }
-			NOT = { FROM = { tag = UAE } }
-			NOT = { FROM = { tag = BLZ } }
-			NOT = { FROM = { tag = BAH } }
-			NOT = { FROM = { tag = JAM } }
-			NOT = { FROM = { tag = TRI } }
-			NOT = { FROM = { tag = BAS } }
-			NOT = { FROM = { tag = GYA } }
-			NOT = { FROM = { tag = SRL } }
-			NOT = { FROM = { tag = MLD } }
-			NOT = { FROM = { tag = FIJ } }
-			NOT = { FROM = { tag = SUD } }
+			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_ETHIOPIA_TOOLTIP
 			NOT = { FROM = { tag = SOM } }
-			NOT = { FROM = { tag = UGA } }
-			NOT = { FROM = { tag = KEN } }
-			NOT = { FROM = { tag = TZN } }
-			NOT = { FROM = { tag = ZAM } }
-			NOT = { FROM = { tag = MLW } }
-			NOT = { FROM = { tag = ZIM } }
-			NOT = { FROM = { tag = BOT } }
-			NOT = { FROM = { tag = NGA } }
-			NOT = { FROM = { tag = GHA } }
-			NOT = { FROM = { tag = SIE } }
-			NOT = { FROM = { tag = GAM } }
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = PEACE_ONLY
-			}
-			has_dlc = "La Resistance"
-			original_tag = SPR
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_PEACE_ONLY_TOOLTIP
-			has_war = no
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_SPAIN_TOOLTIP
-			has_global_flag = scw_over
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = PEACE_ONLY
-			}
-			original_tag = SOV
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_PEACE_ONLY_TOOLTIP
-			has_war = no
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_SOVIET_TOOLTIP
-			or = {
-				has_completed_focus = SOV_autonomous_soviet_republics
-				has_completed_focus = SOV_dissolve_the_treaty_agreement_nsb
-			}
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = FREE
-			}
-			has_dlc = "Battle for the Bosporus"
-			OR = { 
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_KURDISTAN_TOOLTIP
-			NOT = { FROM = { tag = KUR } }
-		}
-	}
-	#Rt56 Add-ons
-
-
-	-- NO RELEASING NATIONS THAT DO NOT EXIST ON GAME START (EACH NATION WRITTEN OUT INDIVIDUALLY)
-
-
-
-
-
-
-
-
-
-
-
-
-
-	if = {
-		limit = {
-			original_tag = ROOT
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_CSA_TOOLTIP #US constitution has no exit clause
-			NOT = { FROM = { tag = CSA } }
-		}
-	}
-	if = {
-		limit = {
-			original_tag = ROOT
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_CSA_TOOLTIP #LOL
-			NOT = { FROM = { tag = USA } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_SZK_TOOLTIP
-			NOT = { FROM = { tag = SZK } } 
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_RUT_TOOLTIP 
-			NOT = { FROM = { tag = RUT } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_BAH_TOOLTIP 
-			NOT = { FROM = { tag = BAH } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_NGA_TOOLTIP 
-			NOT = { FROM = { tag = NGA } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_PNG_TOOLTIP 
-			NOT = { FROM = { tag = PNG } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_SAM_TOOLTIP 
-			NOT = { FROM = { tag = SAM } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_BRD_TOOLTIP 
-			NOT = { FROM = { tag = BRD } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_HAW_TOOLTIP 
-			NOT = { FROM = { tag = HAW } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_CRC_TOOLTIP 
-			NOT = { FROM = { tag = CRC } }
-		}
-	}if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_GUM_TOOLTIP 
-			NOT = { FROM = { tag = GUM } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_FIJ_TOOLTIP 
-			NOT = { FROM = { tag = FIJ } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_YEM_TOOLTIP 
-			NOT = { FROM = { tag = YEM } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_ALG_TOOLTIP 
-			NOT = { FROM = { tag = ALG } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_CYP_TOOLTIP 
-			NOT = { FROM = { tag = CYP } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_MLI_TOOLTIP 
-			NOT = { FROM = { tag = MLI } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_PUE_TOOLTIP 
-			NOT = { FROM = { tag = PUE } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_RWA_TOOLTIP 
-			NOT = { FROM = { tag = RWA } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_ZIM_TOOLTIP 
-			NOT = { FROM = { tag = ZIM } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_SUD_TOOLTIP 
-			NOT = { FROM = { tag = SUD } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_SOL_TOOLTIP 
-			NOT = { FROM = { tag = SOL } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_ERI_TOOLTIP 
+			NOT = { FROM = { tag = HAR } }
+			NOT = { FROM = { tag = TIG } }
+			NOT = { FROM = { tag = AFA } }
+			NOT = { FROM = { tag = BEG } }
+			NOT = { FROM = { tag = GBA } }
+			NOT = { FROM = { tag = SID } }
+			NOT = { FROM = { tag = ORO } }
+			NOT = { FROM = { tag = QEM } }
 			NOT = { FROM = { tag = ERI } }
 		}
 	}
 	if = {
 		limit = {
 			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_GRL_TOOLTIP 
-			NOT = { FROM = { tag = GRL } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_AFA_TOOLTIP 
-			NOT = { FROM = { tag = AFA } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_LBA_TOOLTIP 
-			NOT = { FROM = { tag = LBA } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_AZR_TOOLTIP 
-			NOT = { FROM = { tag = AZR } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_BEG_TOOLTIP 
-			NOT = { FROM = { tag = BEG } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_FLA_TOOLTIP 
-			NOT = { FROM = { tag = FLA } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_GBA_TOOLTIP 
-			NOT = { FROM = { tag = GBA } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_HYD_TOOLTIP 
-			NOT = { FROM = { tag = HYD } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_HYD_TOOLTIP 
-			NOT = { FROM = { tag = ANG } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_PAK_TOOLTIP 
-			NOT = { FROM = { tag = PAK } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_KSH_TOOLTIP 
-			NOT = { FROM = { tag = KSH } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_MOL_TOOLTIP 
-			NOT = { FROM = { tag = MOL } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_MNT_TOOLTIP 
-			NOT = { FROM = { tag = MNT } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_SID_TOOLTIP 
-			NOT = { FROM = { tag = SID } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_SWK_TOOLTIP 
-			NOT = { FROM = { tag = SWK } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_QEM_TOOLTIP 
-			NOT = { FROM = { tag = QEM } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_KAR_TOOLTIP 
-			NOT = { FROM = { tag = KAR } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_NMB_TOOLTIP 
-			NOT = { FROM = { tag = NMB } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_QBC_TOOLTIP 
-			NOT = { FROM = { tag = QBC } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_SMI_TOOLTIP 
-			NOT = { FROM = { tag = SMI } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_WLL_TOOLTIP 
-			NOT = { FROM = { tag = WLL } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_AHV_TOOLTIP 
-			NOT = { FROM = { tag = AHV } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_SLR_TOOLTIP 
-			NOT = { FROM = { tag = SLR } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_JOR_TOOLTIP 
-			NOT = { FROM = { tag = JOR } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_KOR_TOOLTIP 
-			NOT = { FROM = { tag = KOR } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_FSM_TOOLTIP 
-			NOT = { FROM = { tag = FSM } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROOT
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_SOM_TOOLTIP 
-			NOT = { FROM = { tag = SOM } }
-		}
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
--- PUPPET RELEASING SECTION OVER
-#################################################################################################################
-
-
-	
-	if = {
-		limit = {
-			original_tag = EGY
-			NOT = {
-				has_completed_focus = EGY_permit_regional_elections
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_SUDAN_TOOLTIP
-			NOT = { FROM = { tag = SUD } }
-			NOT = { FROM = { tag = SSU } }
-		}
-	}
-	if = {
-		limit = {
-			AND = {
-				OR = {
-					has_game_rule = {
-						rule = allow_release_nations
-						option = FREE
-					}
-					has_game_rule = {
-						rule = allow_release_nations
-						option = PEACE_ONLY
-					}
-				}
-					any_country = {
-						has_country_flag = able_to_be_released
-					}
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_TOOLTIP
-			###SOVIETS
-			NOT = { FROM = { tag =BLR }}
-			NOT = { FROM = { tag =BEL }}
-			NOT = { FROM = { tag =NEN }}
-			NOT = { FROM = { tag =KOM }}
-			NOT = { FROM = { tag =MEL }}
-			NOT = { FROM = { tag =CHU }}
-			NOT = { FROM = { tag =TAT }}
-			NOT = { FROM = { tag =UDM }}
-			NOT = { FROM = { tag =BSK }}
-			NOT = { FROM = { tag =OVO }}
-			NOT = { FROM = { tag =YAM }}
-			NOT = { FROM = { tag =KAZ }}
-			NOT = { FROM = { tag =VGE }}
-			NOT = { FROM = { tag =DON }}
-			NOT = { FROM = { tag =KAL }}
-			NOT = { FROM = { tag =DAG }}
-			NOT = { FROM = { tag =CIN }}
-			NOT = { FROM = { tag =NOA }}
-			NOT = { FROM = { tag =KBK }}
-			NOT = { FROM = { tag =ABK }}
-			NOT = { FROM = { tag =GEO }}
-			NOT = { FROM = { tag =AZR }}
-			NOT = { FROM = { tag =KAZ }}
-			NOT = { FROM = { tag =KKP }}
-			NOT = { FROM = { tag =KHI }}
-			NOT = { FROM = { tag =TMS }}
-			NOT = { FROM = { tag =BUK }}
-			NOT = { FROM = { tag =UZB }}
-			NOT = { FROM = { tag =TAJ }}
-			NOT = { FROM = { tag =KYR }}
-			NOT = { FROM = { tag =ALT }}
-			NOT = { FROM = { tag =KHA }}
-			NOT = { FROM = { tag =OVO }}
-			NOT = { FROM = { tag =YAM }}
-			NOT = { FROM = { tag =TAY }}
-			NOT = { FROM = { tag =BYA }}
-			NOT = { FROM = { tag =YAK }}
-			NOT = { FROM = { tag =FER }}
-			NOT = { FROM = { tag =GUK }}
-			NOT = { FROM = { tag =CKK }}
-			NOT = { FROM = { tag =VLA }}
-			NOT = { FROM = { tag = CRI }}
-			###ENGLAND
-			NOT = { FROM = { tag = MLT } }
-			NOT = { FROM = { tag = CYP } }
-			NOT = { FROM = { tag = JOR } }
-			NOT = { FROM = { tag = KUW } }
-			NOT = { FROM = { tag = QAT } }
-			NOT = { FROM = { tag = UAE } }
-			NOT = { FROM = { tag = BLZ } }
-			NOT = { FROM = { tag = BAH } }
-			NOT = { FROM = { tag = JAM } }
-			NOT = { FROM = { tag = TRI } }
-			NOT = { FROM = { tag = BAS } }
-			NOT = { FROM = { tag = GYA } }
-			NOT = { FROM = { tag = SRL } }
-			NOT = { FROM = { tag = MLD } }
-			NOT = { FROM = { tag = FIJ } }
-			NOT = { FROM = { tag = SUD } }
-			NOT = { FROM = { tag = SOM } }
-			NOT = { FROM = { tag = UGA } }
-			NOT = { FROM = { tag = KEN } }
-			NOT = { FROM = { tag = TZN } }
-			NOT = { FROM = { tag = ZAM } }
-			NOT = { FROM = { tag = MLW } }
-			NOT = { FROM = { tag = ZIM } }
-			NOT = { FROM = { tag = BOT } }
-			NOT = { FROM = { tag = NGA } }
-			NOT = { FROM = { tag = GHA } }
-			NOT = { FROM = { tag = SIE } }
-			NOT = { FROM = { tag = GAM } }
-			####ITALY
-			NOT = { FROM = { tag = LBA } }
-			NOT = { FROM = { tag = SAD } }
-			NOT = { FROM = { tag = SIE } }
-			NOT = { FROM = { tag = COR } }
-			NOT = { FROM = { tag = SIC } }
-			NOT = { FROM = { tag = TTS } }
-			NOT = { FROM = { tag = PAP } }
-			NOT = { FROM = { tag = TOS } }
-			NOT = { FROM = { tag = SLV } }
-			NOT = { FROM = { tag = CRO } }
-			NOT = { FROM = { tag = BOS } }
-			NOT = { FROM = { tag = SER } }
-			NOT = { FROM = { tag = HRZ } }
-			NOT = { FROM = { tag = MNT } }
-			NOT = { FROM = { tag = TRA } }
-			NOT = { FROM = { tag = MAC } }
-			NOT = { FROM = { tag = SZK } }
-			NOT = { FROM = { tag = GHA } }
-			NOT = { FROM = { tag = SIE } }
-			####ETHIOPIA
-			NOT = { FROM = { tag =TIG }}
-			NOT = { FROM = { tag =AFA }}
-			NOT = { FROM = { tag =QEM }}
-			NOT = { FROM = { tag =BEG }}
-			NOT = { FROM = { tag =ORO }}
-			NOT = { FROM = { tag =BEG }}
-			NOT = { FROM = { tag =GBA }}
-			NOT = { FROM = { tag =SID }}
-			NOT = { FROM = { tag =DJI }}
-			####INDIA
-			NOT = { FROM = { tag =BAN } }
-			NOT = { FROM = { tag =HYD } }
-			###MIDDLE EAST
-			NOT = { FROM = { tag = BHR }}
-			NOT = { FROM = { tag = LEB } }
-			NOT = { FROM = { tag = KUR } }
-			###AFRICA
-			NOT = { FROM = { tag = TUN } }
-			NOT = { FROM = { tag = MOR } }
-			NOT = { FROM = { tag = WES } }
-			NOT = { FROM = { tag = ANG } }
-			NOT = { FROM = { tag = MZB } }
-			###ASIA
-			NOT = { FROM = { tag = CAM } }
-			NOT = { FROM = { tag = LAO } }
-			NOT = { FROM = { tag = FSM } }
-			NOT = { FROM = { tag = FJI } }
-			NOT = { FROM = { tag = TML } }
-			NOT = { FROM = { tag = SGP } }
-			NOT = { FROM = { tag = SWK } }
-			###SPAIN
-			NOT = { FROM = { tag = CNR } }
-			NOT = { FROM = { tag = CAT } }
-			###NA
-			NOT = { FROM = { tag = NFL } }
-			NOT = { FROM = { tag = CSA } }
-			NOT = { FROM = { tag = CRC } }
-			###BELGIUM
-			NOT = { FROM = { tag = FLA } }
-			NOT = { FROM = { tag = WLL } }
-			###
-			NOT = { FROM = { tag = KSH } }
-			NOT = { FROM = { tag = GRL } }
-		}
-	}
-	####BLOCKED FROM RELEASING
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = BLOCKED
-			}
-			OR = {
-				NOT = { original_tag = ENG }
-			}
-			OR = {
-				NOT = { original_tag = JAP }
-			}
-			OR = {
-				NOT = { original_tag = FRA }
-			}
-			OR = {
-				NOT = { original_tag = SOV }
-			}
-			OR = {
-				NOT = { 
-					any_country = {
-					has_country_flag = able_to_be_released
-					}   
-				}
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_BLOCKED_TOOLTIP
-			always = no
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = BLOCKED
-			}
-			has_dlc = "Man the Guns"
-			any_country = {
-				has_country_flag = able_to_be_released
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_NATIONS_TO_RELEASED
-			OR = {
-				FROM = { any_country = { has_country_flag = able_to_be_released } }
-			}
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = BLOCKED
-			}
-			has_dlc = "Man the Guns"
-			original_tag = ENG
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_NATIONS_TO_RELEASED
-			OR = {
-				FROM = { tag = ISR }
-				FROM = { tag = SCO }
-				FROM = { tag = PAL }
-			}
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = BLOCKED
-			}
-			has_dlc = "Man the Guns"
-			original_tag = JAP
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_NATIONS_TO_RELEASED
-			FROM = { tag = KOR }
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = BLOCKED
-			}
-			has_dlc = "Man the Guns"
-			original_tag = FRA
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_NATIONS_TO_RELEASED
-			OR = {
-				FROM = { tag = ALG }
-				FROM = { tag = SYR }
-			}
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = BLOCKED
-			}
-			has_dlc = "Man the Guns"
-			original_tag = SOV
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_NATIONS_TO_RELEASED
-			OR = {
-				FROM = { tag = ARM }
-				FROM = { tag = UKR }
-				FROM = { tag = KAZ }
-			}
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = FREE
-			}
-			OR = {
-				NOT = { has_dlc = "Man the Guns" }
-				NOT = { original_tag = ENG }
-			}
-			OR = {
-				NOT = { has_dlc = "La Resistance" }
-				NOT = { original_tag = SPR }
-			}
-			OR = {
-				NOT = { has_dlc = "Death or Dishonor" }
-				AND = {
-					NOT = { original_tag = ROM }
-					NOT = { original_tag = YUG }
-				}
-			}
-			NOT = { original_tag = SOV }
-		}
-		always = yes
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = FREE
-			}
-			has_dlc = "Man the Guns"
-			original_tag = ENG
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_BRITAIN_TOOLTIP
-			NOT = { FROM = { tag = MLT } }
-			NOT = { FROM = { tag = CYP } }
-			NOT = { FROM = { tag = PAL } }
-			NOT = { FROM = { tag = ISR } }
-			NOT = { FROM = { tag = JOR } }
-			NOT = {
-				AND = {
-					FROM = { tag = EGY }
-					is_ironman = no
-				}
-			}
-			NOT = { FROM = { tag = KUW } }
-			NOT = { FROM = { tag = QAT } }
-			NOT = { FROM = { tag = UAE } }
-			NOT = { FROM = { tag = BLZ } }
-			NOT = { FROM = { tag = BAH } }
-			NOT = { FROM = { tag = JAM } }
-			NOT = { FROM = { tag = TRI } }
-			NOT = { FROM = { tag = BAS } }
-			NOT = { FROM = { tag = GYA } }
-			NOT = { FROM = { tag = SRL } }
-			NOT = { FROM = { tag = MLD } }
-			NOT = { FROM = { tag = FIJ } }
-			NOT = { FROM = { tag = SUD } }
-			NOT = { FROM = { tag = SOM } }
-			NOT = { FROM = { tag = UGA } }
-			NOT = { FROM = { tag = KEN } }
-			NOT = { FROM = { tag = TZN } }
-			NOT = { FROM = { tag = ZAM } }
-			NOT = { FROM = { tag = MLW } }
-			NOT = { FROM = { tag = ZIM } }
-			NOT = { FROM = { tag = BOT } }
-			NOT = { FROM = { tag = NGA } }
-			NOT = { FROM = { tag = GHA } }
-			NOT = { FROM = { tag = SIE } }
-			NOT = { FROM = { tag = GAM } }
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = FREE
-			}
-			has_dlc = "Death or Dishonor"
-			original_tag = YUG
-			NOT = { has_completed_focus = YUG_reunite_the_kingdom }
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_YUGOSLAVIA_TOOLTIP
-			NOT = { FROM = { tag = SER } }
-			NOT = { FROM = { tag = SLV } }
-			NOT = { FROM = { tag = CRO } }
-			NOT = { FROM = { tag = MNT } }
-			NOT = { FROM = { tag = KOS } }
-			NOT = { FROM = { tag = BOS } }
-			NOT = { FROM = { tag = HRZ } }
-			NOT = { FROM = { tag = MAC } }
-			NOT = { FROM = { tag = TRA } }
-		}
-	}
-
-	if = {
-		limit = {
-			OR = {
 				has_game_rule = {
 					rule = allow_release_nations
 					option = FREE
@@ -1507,35 +269,31 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			NOT = { FROM = { tag = DNZ } }
 		}
 	}
-#	if = {
-#		limit = {
-#			OR = {
-#				has_game_rule = {
-#					rule = allow_release_nations
-#					option = FREE
-#				}
-#				has_game_rule = {
-#					rule = allow_release_nations
-#					option = PEACE_ONLY
-#				}
-#				has_game_rule = {
-#					rule = sov_fragmentation_status
-#					option = SOV_COSSACK_CORES
-#				}				
-#			}
-#			OR = {
-#				FROM = { original_tag = DON }
-#				FROM = { original_tag = KUB }
-#			}
-#		}
-#		custom_trigger_tooltip = {
-#			tooltip = RULE_ALLOW_RELEASE_NATIONS_COSSACK_TOOLTIP
-#			NOT = {
-#				FROM = { tag = DON }
-#				FROM = { tag = KUB }
-#			}
-#		}
-#	}
+	if = {
+		limit = {
+			OR = {
+				has_game_rule = {
+					rule = allow_release_nations
+					option = FREE
+				}
+				has_game_rule = {
+					rule = allow_release_nations
+					option = PEACE_ONLY
+				}
+			}
+			OR = {
+				FROM = { original_tag = DON }
+				FROM = { original_tag = KUB }
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_RELEASE_NATIONS_COSSACK_TOOLTIP
+			NOT = {
+				FROM = { tag = DON }
+				FROM = { tag = KUB }
+			}
+		}
+	}
 	if = {
 		limit = {
 			OR = {
@@ -1594,10 +352,77 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			}
 			has_dlc = "Death or Dishonor"
 			original_tag = ITA
+			FROM = { tag = YUG }
 		}
 		custom_trigger_tooltip = {
 			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_ITALY_TOOLTIP
 			NOT = { FROM = { tag = YUG } }
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				has_game_rule = {
+					rule = allow_release_nations
+					option = FREE
+				}
+				has_game_rule = {
+					rule = allow_release_nations
+					option = PEACE_ONLY
+				}
+			}
+			original_tag = ITA
+			OR = {
+				FROM = { tag = ETH }
+				FROM = { tag = HAR }
+				FROM = { tag = TIG }
+				FROM = { tag = AFA }
+				FROM = { tag = BEG }
+				FROM = { tag = GBA }
+				FROM = { tag = SID }
+				FROM = { tag = ORO }
+				FROM = { tag = QEM }
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_ETHIOPIA_COMPLIANCE_TOOLTIP
+			NOT = { FROM = { tag = ETH } }
+			NOT = { FROM = { tag = HAR } }
+			NOT = { FROM = { tag = TIG } }
+			NOT = { FROM = { tag = AFA } }
+			NOT = { FROM = { tag = BEG } }
+			NOT = { FROM = { tag = GBA } }
+			NOT = { FROM = { tag = SID } }
+			NOT = { FROM = { tag = ORO } }
+			NOT = { FROM = { tag = QEM } }
+			NOT = {
+				all_of_scopes = {
+					array = ITA_initial_ethiopian_states
+					compliance > 70
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				has_game_rule = {
+					rule = allow_release_nations
+					option = FREE
+				}
+				has_game_rule = {
+					rule = allow_release_nations
+					option = PEACE_ONLY
+				}
+			}
+			has_dlc = "By Blood Alone"
+			original_tag = ITA
+			FROM = { tag = PAP }
+			has_completed_focus = ITA_seek_papal_support
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_RELEASE_NATIONS_ITALY_PAP_TOOLTIP
+			NOT = { FROM = { tag = PAP } }
 		}
 	}
 	if = {
@@ -1639,11 +464,7 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 		}
 		custom_trigger_tooltip = {
 			tooltip = RULE_ALLOW_RELEASE_NATIONS_SOVIET_TOOLTIP
-			or = {
-				has_completed_focus = SOV_autonomous_soviet_republics
-				has_completed_focus = SOV_dissolve_the_treaty_agreement_nsb
-			}
-			
+			has_completed_focus = SOV_autonomous_soviet_republics
 		}
 	}
 	if = {
@@ -1699,6 +520,7 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			NOT = { FROM = { tag = SRL } }
 			NOT = { FROM = { tag = MLD } }
 			NOT = { FROM = { tag = FIJ } }
+			NOT = { FROM = { tag = BRM } }
 			NOT = { FROM = { tag = SUD } }
 			NOT = { FROM = { tag = SOM } }
 			NOT = { FROM = { tag = UGA } }
@@ -1746,10 +568,7 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 		}
 		custom_trigger_tooltip = {
 			tooltip = RULE_ALLOW_RELEASE_NATIONS_SOVIET_TOOLTIP
-			or = {
-				has_completed_focus = SOV_autonomous_soviet_republics
-				has_completed_focus = SOV_dissolve_the_treaty_agreement_nsb
-			}
+			has_completed_focus = SOV_autonomous_soviet_republics
 		}
 	}
 	if = {
@@ -1771,341 +590,16 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 			NOT = { FROM = { tag = KUR } }
 		}
 	}
-	#Rt56 Add-ons
-	if = {
-		limit = {
-			original_tag = USA
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_CSA_TOOLTIP #US constitution has no exit clause
-			NOT = { FROM = { tag = CSA } }
-		}
-	}
-	if = {
-		limit = {
-			original_tag = CSA
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_CSA_TOOLTIP #LOL
-			NOT = { FROM = { tag = USA } }
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROM
-				original_tag = HUN
-				original_tag = TRA
-				original_tag = SOV
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_SZK_TOOLTIP
-			NOT = { FROM = { tag = SZK } } 
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				original_tag = ROM
-				original_tag = SOV
-				original_tag = POL
-				original_tag = UKR
-				original_tag = HUN
-				original_tag = GER
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_RUT_TOOLTIP 
-			NOT = { FROM = { tag = RUT } }
-		}
-	}
-	if = {
-		limit = {
-			original_tag = EGY
-			NOT = {
-				has_completed_focus = EGY_permit_regional_elections
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_SUDAN_TOOLTIP
-			NOT = { FROM = { tag = SUD } }
-			NOT = { FROM = { tag = SSU } }
-		}
-	}
-	if = {
-		limit = {
-			AND = {
-				OR = {
-					has_game_rule = {
-						rule = allow_release_nations
-						option = FREE
-					}
-					has_game_rule = {
-						rule = allow_release_nations
-						option = PEACE_ONLY
-					}
-				}
-					any_country = {
-						has_country_flag = able_to_be_released
-					}
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_RELEASE_NATIONS_NOT_TRANSYLVANIA_TOOLTIP
-			###SOVIETS
-			NOT = { FROM = { tag =BLR }}
-			NOT = { FROM = { tag =BEL }}
-			NOT = { FROM = { tag =NEN }}
-			NOT = { FROM = { tag =KOM }}
-			NOT = { FROM = { tag =MEL }}
-			NOT = { FROM = { tag =CHU }}
-			NOT = { FROM = { tag =TAT }}
-			NOT = { FROM = { tag =UDM }}
-			NOT = { FROM = { tag =BSK }}
-			NOT = { FROM = { tag =OVO }}
-			NOT = { FROM = { tag =YAM }}
-			NOT = { FROM = { tag =KAZ }}
-			NOT = { FROM = { tag =VGE }}
-			NOT = { FROM = { tag =DON }}
-			NOT = { FROM = { tag =KAL }}
-			NOT = { FROM = { tag =DAG }}
-			NOT = { FROM = { tag =CIN }}
-			NOT = { FROM = { tag =NOA }}
-			NOT = { FROM = { tag =KBK }}
-			NOT = { FROM = { tag =ABK }}
-			NOT = { FROM = { tag =GEO }}
-			NOT = { FROM = { tag =AZR }}
-			NOT = { FROM = { tag =KAZ }}
-			NOT = { FROM = { tag =KKP }}
-			NOT = { FROM = { tag =KHI }}
-			NOT = { FROM = { tag =TMS }}
-			NOT = { FROM = { tag =BUK }}
-			NOT = { FROM = { tag =UZB }}
-			NOT = { FROM = { tag =TAJ }}
-			NOT = { FROM = { tag =KYR }}
-			NOT = { FROM = { tag =ALT }}
-			NOT = { FROM = { tag =KHA }}
-			NOT = { FROM = { tag =OVO }}
-			NOT = { FROM = { tag =YAM }}
-			NOT = { FROM = { tag =TAY }}
-			NOT = { FROM = { tag =BYA }}
-			NOT = { FROM = { tag =YAK }}
-			NOT = { FROM = { tag =FER }}
-			NOT = { FROM = { tag =GUK }}
-			NOT = { FROM = { tag =CKK }}
-			NOT = { FROM = { tag =VLA }}
-			NOT = { FROM = { tag = CRI }}
-			###ENGLAND
-			NOT = { FROM = { tag = MLT } }
-			NOT = { FROM = { tag = CYP } }
-			NOT = { FROM = { tag = JOR } }
-			NOT = { FROM = { tag = KUW } }
-			NOT = { FROM = { tag = QAT } }
-			NOT = { FROM = { tag = UAE } }
-			NOT = { FROM = { tag = BLZ } }
-			NOT = { FROM = { tag = BAH } }
-			NOT = { FROM = { tag = JAM } }
-			NOT = { FROM = { tag = TRI } }
-			NOT = { FROM = { tag = BAS } }
-			NOT = { FROM = { tag = GYA } }
-			NOT = { FROM = { tag = SRL } }
-			NOT = { FROM = { tag = MLD } }
-			NOT = { FROM = { tag = FIJ } }
-			NOT = { FROM = { tag = SUD } }
-			NOT = { FROM = { tag = SOM } }
-			NOT = { FROM = { tag = UGA } }
-			NOT = { FROM = { tag = KEN } }
-			NOT = { FROM = { tag = TZN } }
-			NOT = { FROM = { tag = ZAM } }
-			NOT = { FROM = { tag = MLW } }
-			NOT = { FROM = { tag = ZIM } }
-			NOT = { FROM = { tag = BOT } }
-			NOT = { FROM = { tag = NGA } }
-			NOT = { FROM = { tag = GHA } }
-			NOT = { FROM = { tag = SIE } }
-			NOT = { FROM = { tag = GAM } }
-			####ITALY
-			NOT = { FROM = { tag = LBA } }
-			NOT = { FROM = { tag = SAD } }
-			NOT = { FROM = { tag = SIE } }
-			NOT = { FROM = { tag = COR } }
-			NOT = { FROM = { tag = SIC } }
-			NOT = { FROM = { tag = TTS } }
-			NOT = { FROM = { tag = PAP } }
-			NOT = { FROM = { tag = TOS } }
-			NOT = { FROM = { tag = SLV } }
-			NOT = { FROM = { tag = CRO } }
-			NOT = { FROM = { tag = BOS } }
-			NOT = { FROM = { tag = SER } }
-			NOT = { FROM = { tag = HRZ } }
-			NOT = { FROM = { tag = MNT } }
-			NOT = { FROM = { tag = TRA } }
-			NOT = { FROM = { tag = MAC } }
-			NOT = { FROM = { tag = SZK } }
-			NOT = { FROM = { tag = GHA } }
-			NOT = { FROM = { tag = SIE } }
-			####ETHIOPIA
-			NOT = { FROM = { tag =TIG }}
-			NOT = { FROM = { tag =AFA }}
-			NOT = { FROM = { tag =QEM }}
-			NOT = { FROM = { tag =BEG }}
-			NOT = { FROM = { tag =ORO }}
-			NOT = { FROM = { tag =BEG }}
-			NOT = { FROM = { tag =GBA }}
-			NOT = { FROM = { tag =SID }}
-			NOT = { FROM = { tag =DJI }}
-			####INDIA
-			NOT = { FROM = { tag =BAN } }
-			NOT = { FROM = { tag =HYD } }
-			###MIDDLE EAST
-			NOT = { FROM = { tag = BHR }}
-			NOT = { FROM = { tag = LEB } }
-			NOT = { FROM = { tag = KUR } }
-			###AFRICA
-			NOT = { FROM = { tag = TUN } }
-			NOT = { FROM = { tag = MOR } }
-			NOT = { FROM = { tag = WES } }
-			NOT = { FROM = { tag = ANG } }
-			NOT = { FROM = { tag = MZB } }
-			###ASIA
-			NOT = { FROM = { tag = CAM } }
-			NOT = { FROM = { tag = LAO } }
-			NOT = { FROM = { tag = FSM } }
-			NOT = { FROM = { tag = FJI } }
-			NOT = { FROM = { tag = TML } }
-			NOT = { FROM = { tag = SGP } }
-			NOT = { FROM = { tag = SWK } }
-			###SPAIN
-			NOT = { FROM = { tag = CNR } }
-			NOT = { FROM = { tag = CAT } }
-			###NA
-			NOT = { FROM = { tag = NFL } }
-			NOT = { FROM = { tag = CSA } }
-			NOT = { FROM = { tag = CRC } }
-			###BELGIUM
-			NOT = { FROM = { tag = FLA } }
-			NOT = { FROM = { tag = WLL } }
-			###
-			NOT = { FROM = { tag = KSH } }
-			NOT = { FROM = { tag = GRL } }
-		}
-	}
-	####BLOCKED FROM RELEASING
 	if = {
 		limit = {
 			has_game_rule = {
 				rule = allow_release_nations
 				option = BLOCKED
-			}
-			OR = {
-				NOT = { original_tag = ENG }
-			}
-			OR = {
-				NOT = { original_tag = JAP }
-			}
-			OR = {
-				NOT = { original_tag = FRA }
-			}
-			OR = {
-				NOT = { original_tag = SOV }
-			}
-			OR = {
-				NOT = { 
-					any_country = {
-					has_country_flag = able_to_be_released
-					}   
-				}
 			}
 		}
 		custom_trigger_tooltip = {
 			tooltip = RULE_ALLOW_RELEASE_NATIONS_BLOCKED_TOOLTIP
 			always = no
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = BLOCKED
-			}
-			has_dlc = "Man the Guns"
-			any_country = {
-				has_country_flag = able_to_be_released
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_NATIONS_TO_RELEASED
-			OR = {
-				FROM = { any_country = { has_country_flag = able_to_be_released } }
-			}
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = BLOCKED
-			}
-			has_dlc = "Man the Guns"
-			original_tag = ENG
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_NATIONS_TO_RELEASED
-			OR = {
-				FROM = { tag = ISR }
-				FROM = { tag = SCO }
-				FROM = { tag = PAL }
-			}
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = BLOCKED
-			}
-			has_dlc = "Man the Guns"
-			original_tag = JAP
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_NATIONS_TO_RELEASED
-			FROM = { tag = KOR }
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = BLOCKED
-			}
-			has_dlc = "Man the Guns"
-			original_tag = FRA
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_NATIONS_TO_RELEASED
-			OR = {
-				FROM = { tag = ALG }
-				FROM = { tag = SYR }
-			}
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = allow_release_nations
-				option = BLOCKED
-			}
-			has_dlc = "Man the Guns"
-			original_tag = SOV
-		}
-		custom_trigger_tooltip = {
-			tooltip = RULE_ALLOW_NATIONS_TO_RELEASED
-			OR = {
-				FROM = { tag = ARM }
-				FROM = { tag = UKR }
-				FROM = { tag = KAZ }
-			}
 		}
 	}
 }
@@ -2651,6 +1145,14 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 					tag = SPC
 					has_completed_focus = SPR_regional_defense_council_of_aragon
 				}
+				NOT = { 
+					AND = {
+						tag = ETH 
+						ETH = {
+							has_completed_focus = ETH_support_spain
+						}
+					}
+				}
 			}
 			custom_trigger_tooltip = {
 				tooltip = RULE_VOLUNTEERS_NOT_ANARCHISTS_TT
@@ -2674,6 +1176,14 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 				FROM = {
 					tag = SPC
 					has_completed_focus = SPR_regional_defense_council_of_aragon
+				}
+				NOT = { 
+					AND = {
+						tag = ETH 
+						ETH = {
+							has_completed_focus = ETH_support_spain
+						}
+					}
 				}
 			}
 			custom_trigger_tooltip = {
@@ -2955,6 +1465,16 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 				}
 			}
 		}
+		#else_if = { #Can only send Volunteers to Ethiopia while having the National Spirit to do so)
+		#	limit = {
+		#		has_dlc = "By Blood Alone"
+		#		has_idea = ETH_support_for_ethiopia_idea
+		#	}
+		#	custom_trigger_tooltip = {
+		#		tooltip = RULE_VOLUNTEERS_ETHIOPIA_ONLY_ONE_TT
+		#		FROM = { tag = ETH } 
+		#	}
+		#}
 		else = {
 			always = yes
 		}
@@ -2973,10 +1493,18 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 		if = {
 			limit = {
 				NOT = { tag = SPC }
+				NOT = { 
+					AND = {
+						tag = ETH 
+						ETH = {
+							has_completed_focus = ETH_support_spain
+						}
+					}
+				}
 				FROM = {
 					tag = SPC
 					has_completed_focus = SPR_regional_defense_council_of_aragon
-				}
+	}
 			}
 			custom_trigger_tooltip = {
 				tooltip = RULE_VOLUNTEERS_NOT_ANARCHISTS_TT
@@ -2996,7 +1524,98 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 			always = no
 		}
 	}
-	
+}
+
+game_weight_can_add_fascist = {
+	GER = {
+		AND = {
+			OR = {
+				check_variable = { fascist_game_weight < democratic_game_weight }
+				check_variable = { fascist_game_weight = democratic_game_weight }
+			}
+		}
+		AND = {
+			OR = {
+				check_variable = { fascist_game_weight < unaligned_game_weight }
+				check_variable = { fascist_game_weight = unaligned_game_weight }
+			}
+		}
+		AND = {
+			OR = {
+				check_variable = { fascist_game_weight < communist_game_weight }
+				check_variable = { fascist_game_weight = communist_game_weight }
+			}
+		}
+	}
+}
+
+game_weight_can_add_democratic = {
+	GER = {
+		AND = {
+			OR = {
+				check_variable = { democratic_game_weight < fascist_game_weight }
+				check_variable = { democratic_game_weight = fascist_game_weight }
+			}
+		}
+		AND = {
+			OR = {
+				check_variable = { democratic_game_weight < unaligned_game_weight }
+				check_variable = { democratic_game_weight = unaligned_game_weight }
+			}
+		}
+		AND = {
+			OR = {
+				check_variable = { democratic_game_weight < communist_game_weight }
+				check_variable = { democratic_game_weight = communist_game_weight }
+			}
+		}
+	}
+}
+
+game_weight_can_add_unaligned = {
+	GER = {
+		AND = {
+			OR = {
+				check_variable = { unaligned_game_weight < fascist_game_weight }
+				check_variable = { unaligned_game_weight = fascist_game_weight }
+			}
+		}
+		AND = {
+			OR = {
+				check_variable = { unaligned_game_weight < democratic_game_weight }
+				check_variable = { unaligned_game_weight = democratic_game_weight }
+			}
+		}
+		AND = {
+			OR = {
+				check_variable = { unaligned_game_weight < communist_game_weight }
+				check_variable = { unaligned_game_weight = communist_game_weight }
+			}
+		}
+	}
+}
+
+game_weight_can_add_communist = {
+	GER = {
+		AND = {
+			OR = {
+				check_variable = { communist_game_weight < fascist_game_weight }
+				check_variable = { communist_game_weight = fascist_game_weight }
+			}
+		}
+		AND = {
+			OR = {
+				check_variable = { communist_game_weight < democratic_game_weight }
+				check_variable = { communist_game_weight = democratic_game_weight }
+			}
+		}
+		AND = {
+			OR = {
+				check_variable = { communist_game_weight < unaligned_game_weight }
+				check_variable = { communist_game_weight = unaligned_game_weight }
+			}
+		}
+	}
 }
 
 DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
@@ -3013,50 +1632,8 @@ DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
 			always = no
 		}
 	}
-	if = {
-		limit = {
-			FROM = {
-				tag = IRQ
-				NOT = { has_country_flag = IRQ_british_occupation_flag }
-			}
-			
-		}
-		custom_trigger_tooltip = {
-			tooltip = IRQ_british_occupation_diplo_tt
-			always = no
-		}
-	}
-	if = {			#Poland cannot call in allies for the first two months of the war with USSR due to the shock of MR pact
-		limit = {
-			FROM = {
-				tag = POL
-				OR = {
-					is_government_in_exile = yes 
-					has_idea = POL_shock_from_surprised_attack_idea
-				}
-			}
-			
-		}
-		custom_trigger_tooltip = {
-			tooltip = POL_surprise_attack_shock_idea_CALL
-			always = no
-		}
-	}
 }
 DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
-	if = {
-		limit = {
-			ROOT = {
-				tag = IRQ
-				NOT = { has_country_flag = IRQ_british_occupation_flag }
-			}
-			
-		}
-		custom_trigger_tooltip = {
-			tooltip = IRQ_british_occupation_diplo_tt
-			always = no
-		}
-	}
 	if = { # TODO_TA make more generic trigger
 		limit = {
 			NOT = { has_global_flag = ethiopia_recognized_flag }
@@ -3067,21 +1644,6 @@ DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
 		}
 		custom_trigger_tooltip = {
 			tooltip = LON_NON_INTERFERENCE_RESOLUTION_CALL
-			always = no
-		}
-	}
-	if = {			#Poland cannot call in allies for the first two months of the war with USSR due to the shock of MR pact
-		limit = {
-			ROOT = {
-				tag = POL
-				OR = {
-					is_government_in_exile = yes
-					has_idea = POL_shock_from_surprised_attack_idea
-				}
-			}
-		}
-		custom_trigger_tooltip = {
-			tooltip = POL_surprise_attack_shock_idea_JOIN
 			always = no
 		}
 	}

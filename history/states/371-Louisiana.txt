@@ -10,27 +10,20 @@ state={
 		oil=44 # was: 66
 	}
 
-	history={
+history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
 		owner = USA
 		buildings = {
 			infrastructure = 3 #was: 5
 			industrial_complex = 2
-			fuel_silo = 1 #added for obvious reasons
 			air_base = 5
 			7552 = {
-				naval_base = 7
+				naval_base = 5
 
 			}
 		}
 		add_core_of = USA
 		victory_points = {
-			7552 20
-		}
-		victory_points = {
-			1453 5
-		}
-		victory_points = {
-			12401 1
+			7552 10 
 		}
 
 	}

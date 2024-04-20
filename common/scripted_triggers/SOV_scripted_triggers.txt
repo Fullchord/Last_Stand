@@ -797,7 +797,7 @@ SOV_is_military_offensive_main_objective = {
 		state = 3 #BERNE (SWITZERLAND)
 		state = 64 #BERLIN (BRANDENBURG)
 		state = 55 #FRANKFURT (HESSEN)
-		state = 58 #HAMBURG (HOLSTEIN)
+		state = 58 #HAMBURG (SCHLESWIG-HOLSTEIN)
 		state = 111 #HELSINKI (UUSIMAA)
 		state = 141 #STOCKHOLM (SVEALAND)
 		state = 110 #OSLO (OSTLANDET)
@@ -981,7 +981,7 @@ SOV_target_capital_is_on_unlocked_continent_uprisings = {
 					OR = {
 						is_on_continent = north_america
 						is_on_continent = south_america
-						is_on_continent = australia
+						is_on_continent = oceania
 					}
 				}
 			}
@@ -1239,16 +1239,5 @@ SOV_we_want_to_send_ultimatums = {
 			original_tag = EST
 		}
 		NOT = { has_country_flag = SOV_ultimatum_sent_flag }
-	}
-}
-
-SOV_puppet_is_in_comecon = { #r56
-	OR = {
-		has_idea = SOV_common_economic_space_puppet_default
-		has_idea = SOV_common_economic_space_puppet_industrialization
-		has_idea = SOV_common_economic_space_puppet_military
-		has_idea = SOV_comecon_puppet_default
-		has_idea = SOV_comecon_puppet_industrialization
-		has_idea = SOV_comecon_puppet_military
 	}
 }

@@ -67,14 +67,10 @@ country_event = {
 		if = {
 			limit = {
 				OR = {
-					AND = {
-						106 = { is_owned_by = YUG }
-						803 = { is_owned_by = YUG }
-					}
-					AND = {
-						106 = { is_owned_by = GER }
-						803 = { is_owned_by = GER }
-					}
+					106 = { is_owned_by = YUG }
+					106 = { is_owned_by = GER }
+					803 = { is_owned_by = YUG }
+					803 = { is_owned_by = GER }
 				}
 			}
 			transfer_state = 106

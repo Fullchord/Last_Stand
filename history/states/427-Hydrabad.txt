@@ -9,18 +9,13 @@ state={
 		chromium=6 # was: 8
 	}
 
-	history={
+history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
 		owner = RAJ
-		add_core_of = RAJ
-		add_core_of = HYD
 		victory_points = {
-			8087 5
-		}
-		victory_points = {
-			1359 3
+			8087 1
 		}
 		buildings = {
-			infrastructure = 2 #was 3
+			infrastructure = 2
 			industrial_complex = 1
 			air_base = 3
 		}

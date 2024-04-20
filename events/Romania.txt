@@ -15,12 +15,11 @@ country_event = {
 	
 	option = { # Accept demands
 		name = romania.1.a
-		save_event_target_as = bessarabia_ultimatum_victim
-		set_country_flag = bessarabia_ultimatum_victim		
 		ai_chance = {
 			factor = 90
 			modifier = { # Don't accept if in a faction that can protect them
 				factor = 0
+				has_war_with = FROM
 				NOT = { is_in_faction_with = FROM }
 				OR = {
 					any_other_country = {
@@ -40,7 +39,7 @@ country_event = {
 			}
 		}
 		FROM = {
-			country_event = { days = 1 id = soviet.4 }	
+			country_event = { days = 1 id = soviet.4 }
 		}
 		set_country_flag = bessarabia_ceded
 	}
@@ -54,8 +53,14 @@ country_event = {
 				is_in_faction = yes
 				NOT = { is_in_faction_with = FROM }
 			}
+
+			modifier = {
+				add = 100
+				has_war_with = FROM
+			}
 			modifier = {
 				is_historical_focus_on = yes
+				NOT = {has_war_with = FROM}
 				factor = 0
 			}
 			modifier = {

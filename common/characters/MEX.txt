@@ -1,44 +1,4 @@
 characters={
-
-	MEX_lazaro_cardenas={
-		name=MEX_lazaro_cardenas
-		portraits={
-			army={
-				large="gfx/leaders/MEX/Portrait_Mexico_Cardenas_General.dds"
-				small="GFX_idea_MEX_lazaro_cardenas"
-			}
-			civilian={
-				large="gfx/leaders/MEX/Portrait_MEX_Lazaro_Cardenas.dds"
-				small="GFX_idea_MEX_lazaro_cardenas"
-			}
-		}
-		field_marshal={
-			traits={ politically_connected media_personality inspirational_leader }
-			visible = {
-				NOT = {
-					has_government = fascism
-				}
-			}
-			skill=3
-			attack_skill=2
-			defense_skill=4
-			planning_skill=2
-			logistics_skill=3
-			legacy_id=712
-		}
-		country_leader={
-			ideology=moderatism
-			traits = {
-				political_dancer
-				staunch_constitutionalist
-				dislikes_germany
-				r56_trait_opposed_to_fascism
-			}
-			expire="1965.1.1"
-			id=-1
-		}
-	}
-
 	MEX_salvador_abascal={
 		name=MEX_salvador_abascal
 		portraits={
@@ -49,7 +9,7 @@ characters={
 		country_leader={
 			ideology=falangism
 			traits={ fascist_militia_leader }
-			expire="1965.1.1"
+			expire="1965.1.1.1"
 			id=-1
 		}
 	}
@@ -83,7 +43,7 @@ characters={
 			}
 			army={
 				large="GFX_portrait_MEX_jesus_degollado_guizar" #Can become unit leader later (General or Field Marshal)
-				small = "gfx/interface/ideas/idea_MEX_jesus_degollado_guizar.dds"
+				small = GFX_portrait_MEX_jesus_degollado_guizar_small
 			}
 		}
 	}
@@ -98,24 +58,7 @@ characters={
 		country_leader={
 			ideology=leninism
 			traits={ devoted_trotskyist }
-			expire="1965.1.1"
-			id=-1
-		}
-	}
-
-	MEX_manuel_gomez_morin={
-		name=MEX_manuel_gomez_morin
-		portraits={
-			civilian={
-				large="gfx/leaders/MEX/Portrait_Mexico_Manuel_Gomez_Morin.dds" #Can become country leader later (Conservatism)
-			}
-		}
-		country_leader={
-			ideology=conservatism
-			traits = {
-				r56_trait_opposed_to_fascism
-			}
-			expire="1965.1.1"
+			expire="1965.1.1.1"
 			id=-1
 		}
 	}
@@ -124,7 +67,7 @@ characters={
 		name=MEX_valentin_campa
 		portraits={
 			civilian={
-				large="gfx/leaders/South America/Portrait_South_America_Generic_4.dds" #Can become country leader later (Communism -> Leninism)
+				large=GFX_portrait_MEX_valentin_campa #Can become country leader later (Communism -> Leninism)
 			}
 		}
 	}
@@ -133,20 +76,8 @@ characters={
 		name=MEX_francisco_mugica
 		portraits={
 			civilian={
-				large="gfx/leaders/MEX/Portrait_Mexico_Francisco_J_Munica.dds" #Can become country leader (Non-aligned -> Moderatism) (Democratic -> Socialism) (Communism -> Marxism)
+				large="GFX_portrait_MEX_francisco_mugica" #Can become country leader (Non-aligned -> Moderatism) (Democratic -> Socialism) (Communism -> Marxism)
 			}
-			army={
-				large="gfx/leaders/MEX/Portrait_Mexico_Francisco_J_Munica.dds"
-			}
-		}
-		corps_commander = {
-			traits = { war_hero trickster swamp_fox }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 2
-			legacy_id = 1822
 		}
 	}
 
@@ -156,6 +87,33 @@ characters={
 			civilian={
 				large="GFX_portrait_MEX_Luis_Maria_Martinez" #Can become country leader (Democratic -> Socialism)
 			}
+		}
+	}
+
+	MEX_lazaro_cardenas={
+		name=MEX_lazaro_cardenas
+		portraits={
+			army={
+				large=GFX_portrait_MEX_lazaro_cardenas
+				small=GFX_portrait_MEX_lazaro_cardenas_small
+			}
+			civilian={
+				large=GFX_portrait_MEX_lazaro_cardenas
+			}
+		}
+		field_marshal={
+			traits={ politically_connected }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=712
+		}
+		country_leader={
+			ideology=moderatism
+			expire="1965.1.1.1"
+			id=-1
 		}
 	}
 
@@ -177,82 +135,6 @@ characters={
 		portraits={
 			civilian={
 				large="GFX_portrait_MEX_juan_andreu" #Can become country leader (Fascism -> Fascism)
-			}
-		}
-	}
-
-	MEX_andres_figeroa = {
-		name=MEX_andres_figeroa
-		portraits={
-			army={
-				large="gfx/leaders/South America/Portrait_South_America_Generic_3.dds"
-				small="GFX_idea_generic_army_south_america_3"
-			}
-		}
-		advisor={
-			cost = 100
-			slot = high_command
-			idea_token = MEX_andres_figeroa
-			ledger = army
-			allowed = {
-				original_tag = MEX
-			}
-			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
-			}
-			traits = {
-				army_regrouping_2
-			}
-		}
-		corps_commander = {
-			traits = { politically_connected infantry_officer }
-			skill = 3
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 3
-			legacy_id = 1828
-		}
-	}
-
-	MEX_juan_andreu_almazan={
-		name=MEX_juan_andreu_almazan
-		portraits={
-			army={
-				large="gfx/leaders/MEX/r56_portrait_Mexico_Juan_Andreu_Almazan.dds"
-				small="GFX_portrait_MEX_heliodoro_charis_small" #This is really a generic portrait
-			}
-		}
-		corps_commander={
-			traits={ infantry_officer }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 2
-			legacy_id=1826
-			visible = {
-				if = {
-					limit = {
-						NOT = {
-							has_global_flag = mex_mtg_focus_tree
-						}
-					}
-					NOT = {
-						OR = {
-							has_country_flag = juan_is_dead
-							has_country_flag = juan_loses
-						}
-					}
-				}
 			}
 		}
 	}
@@ -281,11 +163,11 @@ characters={
 		portraits={
 			army={
 				large="GFX_portrait_MEX_gildardo_magana"
-				small="gfx/interface/ideas/idea_MEX_gildardo_magana.dds"
+				small=GFX_portrait_MEX_gildardo_magana_small
 			}
 		}
 		corps_commander={
-			traits={ hill_fighter media_personality }
+			traits={ media_personality }
 			skill=3
 			attack_skill=2
 			defense_skill=2
@@ -300,7 +182,7 @@ characters={
 		portraits={
 			army={
 				large="GFX_portrait_MEX_manuel_perez_trevino"
-				small="gfx/interface/ideas/idea_mex_manuel_perez_trevino.dds"
+				small=GFX_portrait_MEX_manuel_perez_trevino_small
 			}
 		}
 		advisor={
@@ -366,48 +248,10 @@ characters={
 			traits={ politically_connected }
 			skill=3
 			attack_skill=3
-			defense_skill=3
-			planning_skill=2
+			defense_skill=2
+			planning_skill=3
 			logistics_skill=2
 			legacy_id=704
-		}
-	}
-
-	MEX_jesus_agustin_castro_rivera={
-		name="Jesus Agustin Castro Rivera"
-		portraits={
-			army={
-				small="GFX_Portrait_South_America_Generic_land_2"
-				large="gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
-			}
-		}
-		corps_commander={
-			traits={ war_hero cavalry_officer trait_cautious }
-			skill=2
-			attack_skill=2
-			defense_skill=1
-			planning_skill=2
-			logistics_skill=1
-			legacy_id=1836
-		}
-	}
-
-	MEX_maximino_avila_camacho={
-		name=MEX_maximino_avila_camacho
-		portraits={
-			army={
-				large="gfx/leaders/MEX/r56_portrait_MEX_Manuel_Avila_Camacho.dds"
-				small="GFX_Portrait_South_America_Generic_land_2"
-			}
-		}
-		corps_commander={
-			traits={ war_hero unpopular }
-			skill=2
-			attack_skill=2
-			defense_skill=2
-			planning_skill=2
-			logistics_skill=1
-			legacy_id=1840
 		}
 	}
 
@@ -416,12 +260,12 @@ characters={
 		portraits={
 			civilian={
 				large="GFX_portrait_MEX_avila_civil" #Can become country leader (Non-Aligned -> Oligarchism) (Democratic -> Conservatism)
-				small="gfx/interface/ideas/idea_mex_manuel_avila.dds" # TODO_Manu: THIS IS A CIVILIAN PORTRAIT FOR HIS POLITICAL ADVISOR ROLE -> Need code support for civilian-small
+				small=GFX_portrait_MEX_manuel_avila_camacho_small # TODO_Manu: THIS IS A CIVILIAN PORTRAIT FOR HIS POLITICAL ADVISOR ROLE -> Need code support for civilian-small
 			}
 			army={
 				large="GFX_portrait_MEX_avila_military"
 				#small="gfx/interface/ideas/idea_MEX_avila_military.dds" THIS IS A MILITARY PORTRAIT FOR PROMOTED MILITARY ADVISOR -> Need code support for civilian-small (for the other portrait)
-				small="gfx/interface/ideas/idea_mex_manuel_avila.dds" # TODO_Manu: THIS IS A CIVILIAN PORTRAIT FOR HIS POLITICAL ADVISOR ROLE -> Need code support for civilian-small
+				small=GFX_portrait_MEX_manuel_avila_camacho_small # TODO_Manu: THIS IS A CIVILIAN PORTRAIT FOR HIS POLITICAL ADVISOR ROLE -> Need code support for civilian-small
 			}
 		}
 		advisor={
@@ -475,19 +319,8 @@ characters={
 			allowed = {
 				original_tag = MEX
 			}
-			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
-			}
 			traits = {
-				navy_fleet_logistics_3
+				navy_chief_reform_3
 			}
 			cost = 200
 			ai_will_do = {
@@ -520,17 +353,6 @@ characters={
 			allowed = {
 				original_tag = MEX
 			}
-			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
-			}
 			traits = {
 				navy_chief_decisive_battle_1
 			}
@@ -541,8 +363,8 @@ characters={
 		}
 
 		navy_leader={
-			traits={ navy_media_personality cuts_corners }
-			skill = 1
+			traits={ navy_media_personality }
+			skill=1
 			attack_skill=1
 			defense_skill=1
 			maneuvering_skill=1
@@ -551,46 +373,12 @@ characters={
 		}
 	}
 
-	MEX_juan_guillermo_villasana = {
-		name="Juan Guillermo Villasana"
-		portraits={
-			army={
-				small=gfx/interface/ideas/mex/idea_mexico_juan_villasana.dds
-			}
-		}
-		advisor={
-			slot = air_chief
-			idea_token = MEX_juan_guillermo_villasana
-			allowed = {
-				original_tag = MEX
-			}
-			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
-			}
-			traits = {
-				air_chief_safety_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
-
 	MEX_manuel_sanchez={ #Empty FICTIOUS leader -> Can become unit leader later
 		name=MEX_manuel_sanchez
 		portraits={
 			army={
 				large="GFX_Portrait_South_America_Generic_land_2"
-				small="gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
+				small=GFX_portrait_MEX_manuel_sanchez_small
 			}
 		}
 	}
@@ -599,8 +387,8 @@ characters={
 		name=MEX_alberto_gorostieta_vega
 		portraits={
 			army={
-				large="gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
-				small="gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
+				large=GFX_portrait_MEX_alberto_gorostieta_vega
+				small=GFX_portrait_MEX_alberto_gorostieta_vega_small
 			}
 		}
 	}
@@ -609,8 +397,8 @@ characters={
 		name=MEX_dionisio_navarro_anguiano
 		portraits={
 			army={
-				large="gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
-				small="gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
+				large=GFX_portrait_MEX_dionisio_navarro_anguiano
+				small=GFX_portrait_MEX_dionisio_navarro_anguiano_small
 			}
 		}
 	}
@@ -634,58 +422,8 @@ characters={
 			allowed = {
 				original_tag = MEX
 			}
-			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
-			}
 			traits = {
 				military_theorist
-			}
-		}
-	}
-
-	MEX_alfonso_tabon={
-		name="Alfonso Tabon"
-		portraits={
-			army={
-				small="GFX_idea_generic_air_south_america_1"
-			}
-		}
-		advisor={
-			cost = 150
-			slot = theorist
-			idea_token = MEX_alfonso_tabon
-			ledger = air
-			allowed = {
-				original_tag = MEX
-			}
-			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
-			}
-			traits = {
-				assault_avaition
-			}
-			ai_will_do = {
-				factor = 0
-				modifier = {
-					has_tech = force_rotation
-					add = 1
-				}
 			}
 		}
 	}
@@ -705,17 +443,7 @@ characters={
 			allowed = {
 				original_tag = MEX
 			}
-			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
-			}
+			
 			traits = {
 				air_warfare_theorist
 			}
@@ -729,7 +457,7 @@ characters={
 		name=MEX_saturnino_cedillo
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_mex_saturnino_cedillo.dds"
+				small=GFX_portrait_MEX_saturnino_cedillo_small
 				large="GFX_portrait_MEX_saturnino_cedillo" #Can become unit leader
 			}
 			civilian={
@@ -743,9 +471,6 @@ characters={
 			allowed = {
 				original_tag = MEX
 				has_dlc = "Man the Guns"
-			}
-			visible = {
-				has_global_flag = mex_mtg_focus_tree
 			}
 			available = {
 				has_completed_focus = MEX_focus_support_general_cedillo
@@ -766,7 +491,7 @@ characters={
 		name=MEX_matias_santos_ramos
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_mex_matias_santos_ramos.dds"
+				small=GFX_portrait_MEX_matias_santos_ramos_small
 			}
 		}
 		advisor={
@@ -774,17 +499,6 @@ characters={
 			idea_token = MEX_matias_santos_ramos
 			allowed = {
 				original_tag = MEX
-			}
-			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
 			}
 			traits = {
 				army_chief_defensive_2
@@ -800,7 +514,7 @@ characters={
 		name=MEX_gilberto_limon
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_mex_gilberto_r_limon.dds"
+				small=GFX_portrait_MEX_gilberto_limon_small
 			}
 		}
 		advisor={
@@ -808,17 +522,6 @@ characters={
 			idea_token = MEX_gilberto_limon
 			allowed = {
 				original_tag = MEX
-			}
-			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
 			}
 			traits = {
 				army_chief_drill_2
@@ -834,7 +537,7 @@ characters={
 		name=MEX_leon_trotsky
 		portraits={
 			civilian = {
-				large = "gfx/leaders/SOV/r56_portrait_SOV_Leon_Trotsky.dds"
+				large = GFX_portrait_MEX_leon_trotsky
 				#small="GFX_idea_SOV_lev_trotsky"
 			}
 			army={
@@ -907,19 +610,8 @@ characters={
 			allowed = {
 				original_tag = MEX
 			}
-			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
-			}
 			traits = {
-				air_air_combat_training_3
+				air_chief_reform_3
 			}
 			cost = 200
 			ai_will_do = {
@@ -933,7 +625,7 @@ characters={
 		portraits={
 			army={
 				small="GFX_portrait_MEX_luis_farell_small"
-				large="gfx/leaders/MEX/portrait_mex_luis_farell.dds"
+				large="GFX_portrait_MEX_luis_farell"
 			}
 		}
 		advisor={
@@ -941,17 +633,6 @@ characters={
 			idea_token = MEX_luis_farell
 			allowed = {
 				original_tag = MEX
-			}
-			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
 			}
 			traits = {
 				air_chief_ground_support_2
@@ -963,7 +644,7 @@ characters={
 		}
 		
 		corps_commander={
-			traits={ war_hero organizer }
+			traits={ war_hero }
 			skill=3
 			attack_skill=4
 			defense_skill=1
@@ -992,17 +673,6 @@ characters={
 			allowed = {
 				original_tag = MEX
 			}
-			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
-			}
 			traits = {
 				air_strategic_bombing_2
 			}
@@ -1017,7 +687,7 @@ characters={
 		name=MEX_pablo_macias
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_mex_pablo_macias.dds"
+				small=GFX_portrait_MEX_pablo_macias_small
 			}
 		}
 		advisor={
@@ -1026,17 +696,6 @@ characters={
 			ledger = army
 			allowed = {
 				original_tag = MEX
-			}
-			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
 			}
 			traits = {
 				army_regrouping_2
@@ -1052,8 +711,8 @@ characters={
 		name=MEX_jose_gonzalo_escobar
 		portraits={
 			army={
-				small="GFX_idea_MEX_jose_gonzalo_escobar"
-				large = "gfx/leaders/MEX/portrait_mex_jose_gonzalo_escobar.dds" #Can become unit leader
+				small=GFX_portrait_MEX_jose_gonzalo_escobar_small
+				large = "GFX_portrait_MEX_jose_gonzalo_escobar" #Can become unit leader
 			}
 		}
 		advisor={
@@ -1062,17 +721,10 @@ characters={
 			ledger = army
 			allowed = {
 				original_tag = MEX
+				has_dlc = "Man the Guns"
 			}
 			available = {
-				if = {
-					limit = {
-						has_global_flag = mex_mtg_focus_tree
-					}
-					has_completed_focus = MEX_focus_purge_the_bureaucracy
-				}
-				NOT = {	#was anti-maximato rebeller
-					has_government = fascism
-				}
+				has_completed_focus = MEX_focus_purge_the_bureaucracy
 			}
 			traits = {
 				army_cavalry_3
@@ -1088,7 +740,7 @@ characters={
 		name=MEX_hector_meixueiro
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_mex_hector_meicueiro.dds"
+				small=GFX_portrait_MEX_hector_meixueiro_small
 			}
 		}
 		advisor={
@@ -1097,17 +749,6 @@ characters={
 			ledger = navy
 			allowed = {
 				original_tag = MEX
-			}
-			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
 			}
 			traits = {
 				navy_naval_air_defense_2
@@ -1119,40 +760,6 @@ characters={
 		}
 	}
 
-	MEX_gustavo_l_gonzalez={
-		name=MEX_gustavo_l_gonzalez
-		portraits={
-			army={
-				small="GFX_generic_army_europe_3"
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = MEX_gustavo_l_gonzalez
-			ledger = air
-			allowed = {
-				original_tag = MEX
-			}
-			available = {
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
-				}
-			}
-			traits = {
-				air_close_air_support_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
 
 	### POLITICAL ADVISORS ###	
 	
@@ -1163,7 +770,7 @@ characters={
 		portraits={
 			army={
 				large="GFX_portrait_MEX_vicente_lombardo" #Can become unit leader later
-				small="gfx/interface/ideas/idea_mex_vicente_lombardo.dds"
+				small=GFX_portrait_MEX_vicente_lombardo_small
 			}
 			civilian = {
 				large="GFX_portrait_MEX_vicente_lombardo" #Can become country leader (Communism -> Marxism)
@@ -1191,35 +798,6 @@ characters={
 					}
 				}
 			}
-
-			ai_will_do = {
-				factor = 0
-				modifier = {
-					OR = {
-						AND = {
-							has_idea = MEX_ejido_worker_militias
-							has_government = communism
-						}
-						
-						has_idea = MEX_left_wing_paramilitaries
-					}
-					
-					NOT = {
-						OR = {
-							AND = {
-								is_puppet = yes
-								NOT = {
-									has_government = communism
-								}
-							}
-							communism > 0.7
-							communism < 0.15
-						}						
-					}
-					add = 5
-				}				
-			}
-
 			traits = {
 				ambitious_union_boss 
 			}
@@ -1230,7 +808,7 @@ characters={
 		name=MEX_jose_vasconcelos
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_mex_jose_vasconcelos.dds"
+				small=GFX_portrait_MEX_jose_vasconcelos_small
 			}
 		}
 		advisor={
@@ -1243,7 +821,6 @@ characters={
 				if = {
 					limit = {
 						has_dlc = "Man the Guns"
-						has_focus_tree = mexico_focus_tree
 					}
 					has_completed_focus = MEX_focus_the_gold_shirts 
 				}
@@ -1259,31 +836,6 @@ characters={
 			traits = {
 				syncretic_revanchist 
 			}
-
-			ai_will_do = {
-				factor = 0
-				modifier = {
-					OR = {
-						has_idea = MEX_legion_of_christ
-						has_idea = MEX_triumph_of_synarchism
-						has_idea = MEX_right_wing_paramilitaries
-					}
-					
-					NOT = {
-						OR = {
-							AND = {
-								is_puppet = yes
-								NOT = {
-									has_government = fascism
-								}
-							}
-							fascism > 0.7
-							fascism < 0.15
-						}						
-					}
-					add = 5
-				}				
-			}			
 		}
 	}
 
@@ -1291,7 +843,7 @@ characters={
 		name=MEX_bartolome_garcia_correa
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_mex_bartolome_garcia_correa.dds"
+				small=GFX_portrait_MEX_bartolome_garcia_correa_small
 			}
 		}
 		advisor={
@@ -1326,7 +878,7 @@ characters={
 		name=MEX_aaron_saenz
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_mex_aaron_saenz_garza.dds"
+				small=GFX_portrait_MEX_aaron_saenz_small
 			}
 		}
 		advisor={
@@ -1380,7 +932,7 @@ characters={
 		name=MEX_luis_montes_de_oca
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_mex_luis_montes_de_oca.dds"
+				small=GFX_portrait_MEX_luis_montes_de_oca_small
 			}
 		}
 		advisor={
@@ -1393,18 +945,9 @@ characters={
 			available = {
 				if = {
 					limit = {
-						has_global_flag = mex_mtg_focus_tree
+						has_dlc = "Man the Guns"
 					}
 					has_completed_focus = MEX_focus_liberalize_the_banking_sector 
-				}
-				if = {
-					limit = {
-						NOT = { has_global_flag = mex_mtg_focus_tree }
-					}
-					OR = {
-						has_completed_focus = MEX_purge_callistas
-						has_completed_focus = MEX_empower_the_caudillos
-					}
 				}
 			}
 			traits = {
@@ -1417,7 +960,7 @@ characters={
 		name=MEX_alberto_pani
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_mex_alberto_pani.dds"
+				small=GFX_portrait_MEX_alberto_pani_small
 			}
 		}
 		advisor={
@@ -1430,17 +973,9 @@ characters={
 			available = {
 				if = {
 					limit = {
-						has_global_flag = mex_mtg_focus_tree
+						has_dlc = "Man the Guns"
 					}
 					has_completed_focus = MEX_focus_agricultural_credit_bank 
-				}
-				if = {
-					limit = {
-						NOT = {
-							has_global_flag = mex_mtg_focus_tree
-						}
-					}
-					has_completed_focus = MEX_cleanse_the_cabinet
 				}
 			}
 			traits = {
@@ -1467,7 +1002,7 @@ characters={
 			available = {
 				if = {
 					limit = {
-						has_global_flag = mex_mtg_focus_tree
+						has_dlc = "Man the Guns"
 					}
 					has_completed_focus = MEX_focus_triumph_over_the_cristeros 
 				}

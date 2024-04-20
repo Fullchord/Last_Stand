@@ -5,21 +5,9 @@ state={
 		rubber=12 # was: 16
 	}
 
-	history={
-		owner = INS
-		add_core_of = INS
-		victory_points = {
-			4273 1 
-		}
-		victory_points = {
-			10175 1
-		}
-		victory_points = {
-			12234 1
-		}
-		victory_points = {
-			1355 3
-		}
+history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
+		owner = HOL
+		add_core_of = SWE
 		buildings = {
 			infrastructure = 2
 			1355 = {

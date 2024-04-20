@@ -5,7 +5,7 @@ state={
 		tungsten=24.000
 	}
 
-	history={
+history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
 		owner = AST
 		buildings = {
 			infrastructure = 3
@@ -27,9 +27,6 @@ state={
 		}
 		victory_points = {
 			7566 1 
-		}
-		victory_points = {
-			10460 1
 		}
 		add_core_of = AST
 

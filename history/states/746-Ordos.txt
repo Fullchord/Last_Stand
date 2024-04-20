@@ -5,22 +5,29 @@ state={
 		1959 3427 4960 4986 10451 10854 12706 
 	}
 	state_category = pastoral
-	resources={
-		steel= 4 #split a bit of siyuan iron resource
-	}	
 	
-	history= {
+	
+	history=
+{ 1936.1.1.13 = { owner = WST add_core_of = WST }
 		owner = CHI
 		add_core_of = CHI
+		add_core_of = SHX
+		add_core_of = SHX
+		add_core_of = SHX
 		
 		buildings = {
-			infrastructure = 1 #was 2
+			infrastructure = 1
 		}
-		victory_points = {
-			3427 2
+
+		1938.10.25 = {
+			controller = JAP
 		}
-		victory_points = {
-			10854 1
+		
+		1939.1.1 = {
+			
+			owner = PRC
+			controller = MEN
+
 		}
 	}
 	manpower=500000

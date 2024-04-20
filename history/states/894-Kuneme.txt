@@ -1,7 +1,7 @@
 state={
 	id=894
 	name="STATE_894"
-	manpower = 49300
+	manpower = 69300
 	state_category = wasteland
 
 	history={
@@ -12,11 +12,11 @@ state={
 		}
 		
 		add_core_of = SAF
-		add_core_of = NMB
+		add_core_of = SAF
 
 	}
 	provinces={
-		10978 12921 
+		10957 10978 12921 
 	}
 	
 	buildings_max_level_factor=1.000

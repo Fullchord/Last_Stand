@@ -2981,65 +2981,6 @@ country_event = {
 
 	}
 	
-	option = { #Refuse
-		name = bftb_bulgaria_rearmament.1.a
-
-		ai_chance = {
-			base = 1
-			modifier = {
-				factor = 100
-				has_opinion = {
-					target = BUL
-					value < 0
-				}
-			}
-			modifier = {
-				factor = 100
-				BUL = {
-					is_in_faction_with = GER
-				}
-				NOT = {
-					GER = {
-						is_in_faction_with = ROOT
-					}
-				}
-			}
-			modifier = { #Support IMRO is not cool bro
-				factor = 10
-				BUL = { has_completed_focus = BUL_support_macedonian_organizations }
-			}
-			modifier = { #Your coop with IMRO is just too much
-				factor = 10
-				BUL = { has_idea = BUL_imro_05 }
-			}
-			modifier = {
-				factor = 5
-				BUL_has_some_sort_of_bogdan_filov = yes
-			}
-		}
-
-		BUL = { country_event = { id = bftb_bulgaria_rearmament.2 hours = 16 random_hours = 8 } }
-		custom_effect_tooltip = bftb_bulgaria_rearmament.1_refuse_tt
-	}
-
-	option = { #Demands NAP with (at least) one balkan nation
-		name = bftb_bulgaria_rearmament.1.b
-
-		ai_chance = {
-			base = 5
-			modifier = {
-				factor = 5
-				is_historical_focus_on = yes
-			}
-			modifier = {
-				factor = 2
-				BUL_has_some_sort_of_bogdan_filov = yes
-			}
-		}
-
-		BUL = { country_event = { id = bftb_bulgaria_rearmament.3 hours = 16 random_hours = 8 } }
-		custom_effect_tooltip = bftb_bulgaria_rearmament.1_nap_tt
-	}
 
 	option = { #Accept
 		name = bftb_bulgaria_rearmament.1.c
@@ -3105,7 +3046,15 @@ country_event = {
 
 		BUL = { country_event = { id = bftb_bulgaria_rearmament.6 hours = 16 random_hours = 8 } }
 		effect_tooltip = { 
-			BUL = { remove_ideas = BUL_army_restrictions }
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				BUL = { remove_ideas = BUL_army_restrictions_aat }
+			}
+			else = {
+				BUL = { remove_ideas = BUL_army_restrictions }
+			}
 		}
 	}
 }
@@ -3164,7 +3113,15 @@ country_event = {
 		name = bftb_bulgaria_rearmament.4.a
 
 		effect_tooltip = {
-			remove_ideas = BUL_army_restrictions
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				remove_ideas = BUL_army_restrictions_aat
+			}
+			else = {
+				remove_ideas = BUL_army_restrictions
+			}
 		}
 	}
 }
@@ -3182,7 +3139,15 @@ country_event = {
 		name = bftb_bulgaria_rearmament.5.a
 
 		effect_tooltip = {
-			BUL = { remove_ideas = BUL_army_restrictions }
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				remove_ideas = BUL_army_restrictions_aat
+			}
+			else = {
+				remove_ideas = BUL_army_restrictions
+			}
 		}
 	}
 }
@@ -3199,7 +3164,15 @@ country_event = {
 	option = { #Ok
 		name = bftb_bulgaria_rearmament.6.a
 		
-		remove_ideas = BUL_army_restrictions
+		if = {
+			limit = {
+				has_dlc = "Arms Against Tyranny"
+			}
+			remove_ideas = BUL_army_restrictions_aat
+		}
+		else = {
+			remove_ideas = BUL_army_restrictions
+		}
 		clr_country_flag = BUL_rearmament_flag
 
 		add_opinion_modifier = {
@@ -3218,71 +3191,6 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = { #Refuse
-		name = bftb_bulgaria_rearmament.7.a
-
-		ai_chance = {
-			base = 5
-			modifier = {
-				factor = 5
-				has_opinion = {
-					target = BUL
-					value < 0
-				}
-			}
-			modifier = {
-				factor = 5
-				has_opinion = {
-					target = BUL
-					value < 50
-				}
-			}
-			modifier = {
-				factor = 5
-				NOT = { has_government = BUL }
-			}
-			modifier = {
-				factor = 10
-				BUL = { has_completed_focus = BUL_bulgarian_irredentism }
-			}
-			modifier = {
-				factor = 100
-				BUL = {
-					OR = {
-						has_war_with = ENG
-						AND = {
-							is_in_faction = yes
-							NOT = { is_in_faction_with = ROOT }
-						}	
-					}
-				}
-			}
-			modifier = { #Support IMRO is not cool bro
-				factor = 10
-				BUL = {	has_completed_focus = BUL_support_macedonian_organizations }
-			}
-			modifier = { #Your coop with IMRO is just too much
-				factor = 15
-				BUL = { has_idea = BUL_imro_05 }
-			}
-			modifier = {
-				factor = 5
-				BUL_has_some_sort_of_bogdan_filov = yes
-			}
-		}
-
-		effect_tooltip = {
-			BUL = {
-				add_opinion_modifier = {
-					target = ROOT
-					modifier = BUL_refused_to_lift_arms_restrictions
-				}
-			}
-		}
-
-		BUL = { country_event = { id = bftb_bulgaria_rearmament.8 hours = 8 random_hours = 4 } }
-		custom_effect_tooltip = bftb_bulgaria_rearmament.1_refuse_tt
-	}
 
 	option = { #Accept
 		name = bftb_bulgaria_rearmament.7.b
@@ -3367,7 +3275,15 @@ country_event = {
 		}
 		BUL = { country_event = { id = bftb_bulgaria_rearmament.6 hours = 8 random_hours = 4 } }
 		effect_tooltip = { 
-			BUL = { remove_ideas = BUL_army_restrictions }
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				BUL = { remove_ideas = BUL_army_restrictions_aat }
+			}
+			else = {
+				BUL = { remove_ideas = BUL_army_restrictions }
+			}
 			BUL = {
 				add_opinion_modifier = {
 					target = ROOT
@@ -3450,7 +3366,15 @@ country_event = {
 		}
 
 		effect_tooltip = { 
-			BUL = { remove_ideas = BUL_army_restrictions }
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				BUL = { remove_ideas = BUL_army_restrictions_aat }
+			}
+			else = {
+				BUL = { remove_ideas = BUL_army_restrictions }
+			}
 		}
 	}
 
@@ -3474,7 +3398,15 @@ country_event = {
 		}
 
 		effect_tooltip = { 
-			BUL = { remove_ideas = BUL_army_restrictions }
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				BUL = { remove_ideas = BUL_army_restrictions_aat }
+			}
+			else = {
+				BUL = { remove_ideas = BUL_army_restrictions }
+			}
 		}
 		add_political_power = -75
 		create_wargoal = {
@@ -3634,20 +3566,28 @@ country_event = {
 					NOT = { tag = FROM }
 					NOT = { has_country_flag = BUL_industrial_investments_in_bulgaria_flag }
 				}
-				send_embargo = FROM
-				custom_effect_tooltip = embargo_relation_tt
+				add_opinion_modifier = {
+					target = FROM
+					modifier = embargo
+				}
 				FROM = {
-					send_embargo = PREV
-					custom_effect_tooltip = embargo_relation_tt
+					add_opinion_modifier = {
+						target = PREV
+						modifier = embargo
+					}
 				}
 			}
 		}
 		else = {
-			send_embargo = FROM
-			custom_effect_tooltip = embargo_relation_tt
+			add_opinion_modifier = {
+				target = FROM
+				modifier = embargo
+			}
 			FROM = {
-				send_embargo = ROOT
-				custom_effect_tooltip = embargo_relation_tt
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = embargo
+				}
 			}
 		}
 		FROM = {
@@ -3724,13 +3664,17 @@ country_event = {
 			}
 			modifier = {
 				factor = 2.5
-				tag = ENG
-				BUL_has_some_sort_of_bogdan_filov = yes
+				AND = {
+					tag = ENG
+					BUL_has_some_sort_of_bogdan_filov = yes
+				}
 			}
 			modifier = {
 				factor = 0.25
-				tag = GER
-				BUL_has_some_sort_of_bogdan_filov = yes
+				AND = {
+					tag = GER
+					BUL_has_some_sort_of_bogdan_filov = yes
+				}
 			}
 		}
 
@@ -3762,20 +3706,28 @@ country_event = {
 					NOT = { tag = FROM }
 					NOT = { has_country_flag = BUL_industrial_investments_in_bulgaria_flag }
 				}
-				send_embargo = FROM
-				custom_effect_tooltip = embargo_relation_tt
+				add_opinion_modifier = {
+					target = FROM
+					modifier = embargo
+				}
 				FROM = {
-					send_embargo = PREV
-					custom_effect_tooltip = embargo_relation_tt
+					add_opinion_modifier = {
+						target = PREV
+						modifier = embargo
+					}
 				}
 			}
 		}
 		else = {
-			send_embargo = FROM
-			custom_effect_tooltip = embargo_relation_tt
+			add_opinion_modifier = {
+				target = FROM
+				modifier = embargo
+			}
 			FROM = {
-				send_embargo = ROOT
-				custom_effect_tooltip = embargo_relation_tt
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = embargo
+				}
 			}
 		}
 		FROM = {
@@ -3844,13 +3796,17 @@ country_event = {
 			}
 			modifier = {
 				factor = 2
-				tag = ENG
-				BUL_has_some_sort_of_bogdan_filov = yes
+				AND = {
+					tag = ENG
+					BUL_has_some_sort_of_bogdan_filov = yes
+				}
 			}
 			modifier = {
 				factor = 0.5
-				tag = GER
-				BUL_has_some_sort_of_bogdan_filov = yes
+				AND = {
+					tag = GER
+					BUL_has_some_sort_of_bogdan_filov = yes
+				}
 			}
 		}
 
@@ -3870,11 +3826,15 @@ country_event = {
 				NOT = { tag = FROM }
 				NOT = { has_country_flag = BUL_industrial_investments_in_bulgaria_flag }
 			}
-			send_embargo = FROM
-			custom_effect_tooltip = embargo_relation_tt
+			add_opinion_modifier = {
+				target = FROM
+				modifier = embargo
+			}
 			FROM = {
-				send_embargo = PREV
-				custom_effect_tooltip = embargo_relation_tt
+				add_opinion_modifier = {
+					target = PREV
+					modifier = embargo
+				}
 			}
 		}
 		remove_from_faction = FROM
@@ -4172,37 +4132,38 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			GER = { country_event = bftb_bulgarian_claims.5 }
-			if = {
-				limit = {
-					any_state = {
-						OR = {
-							is_controlled_by = GER
-							controller = {
-								is_in_faction_with = GER
-								NOT = { tag = BUL }
-								NOT = { owns_state = PREV } #Not owner (it should be actually occupating the state -> Also prevents the issue in YUG with IMRO removing the core)
-								NOT = { PREV = { is_core_of = PREV } }
-							}
+		
+		if = {
+			limit = {
+				any_state = {
+					OR = {
+						is_controlled_by = GER
+						controller = {
+							is_in_faction_with = GER
+							NOT = { tag = BUL }
+							NOT = { owns_state = PREV } #Not owner (it should be actually occupating the state -> Also prevents the issue in YUG with IMRO removing the core)
+							NOT = { PREV = { is_core_of = PREV } }
 						}
 					}
-				}
-				every_state = {
-					limit = {
-						has_state_flag = BUL_bulgarian_claim_warranted_flag
-						OR = {
-							is_controlled_by = GER
-							controller = {
-								is_in_faction_with = GER
-								NOT = { tag = BUL }
-								NOT = { owns_state = PREV } #Not owner (it should be actually occupating the state -> Also prevents the issue in YUG with IMRO removing the core)
-								NOT = { PREV = { is_core_of = PREV } }
-							}
-						}
-					}
-					controller = { country_event = bftb_bulgarian_claims.6 }
-					remove_dynamic_modifier = { modifier = bulgarian_territorial_expansion_arranged }
 				}
 			}
+			every_state = {
+				limit = {
+					has_state_flag = BUL_bulgarian_claim_warranted_flag
+					OR = {
+						is_controlled_by = GER
+						controller = {
+							is_in_faction_with = GER
+							NOT = { tag = BUL }
+							NOT = { owns_state = PREV } #Not owner (it should be actually occupating the state -> Also prevents the issue in YUG with IMRO removing the core)
+							NOT = { PREV = { is_core_of = PREV } }
+						}
+					}
+				}
+				controller = { country_event = bftb_bulgarian_claims.6 }
+				remove_dynamic_modifier = { modifier = bulgarian_territorial_expansion_arranged }
+			}
+		}
 		}
 	}
 
@@ -4225,7 +4186,6 @@ country_event = {
 					}
 				}		
 			}
-			clr_state_flag = BUL_bulgarian_claim_warranted_flag #stop retaking these states after losing wars for them
 			BUL = {
 				transfer_state = PREV
 				hidden_effect = {
@@ -4485,10 +4445,20 @@ country_event = {
 		set_country_flag = BUL_german_aircraft_donation_flag
 
 		GER = {
-			send_equipment = {
-				type = fighter_equipment
-				amount = 12
-				target = ROOT
+			if = {
+				limit = { NOT = { has_dlc = "By Blood Alone" } }
+				send_equipment = {
+					type = fighter_equipment_1
+					amount = 12
+					target = ROOT
+				}
+			}
+			else = {
+				send_equipment = {
+					type = small_plane_airframe
+					amount = 12
+					target = ROOT
+				}
 			}
 		}
 		if = {
@@ -4544,7 +4514,7 @@ country_event = {
 				}
 			}
 			send_equipment = {
-				type = fighter_equipment
+				type = small_plane_airframe
 				amount = 12
 				target = ROOT
 			}
@@ -4604,7 +4574,7 @@ country_event = {
 		}
 
 		add_political_power = 50
-		remove_ideas = BUL_georgi_ivanov_kyoseivanov_bftb
+		remove_ideas = BUL_georgi_ivanov_kyoseivanov
 		add_ideas = BUL_bogdan_filov
 		GER = {
 			add_opinion_modifier = { 
@@ -4659,7 +4629,7 @@ country_event = {
 			}
 			BUL = {
 				add_political_power = 50
-				remove_ideas = BUL_georgi_ivanov_kyoseivanov_bftb
+				remove_ideas = BUL_georgi_ivanov_kyoseivanov
 				add_ideas = BUL_bogdan_filov
 			}
 		}
@@ -5143,7 +5113,7 @@ country_event = {
 			modifier = {
 				factor = 2
 				stockpile_ratio = { 
-	  				archetype = fighter_equipment
+	  				archetype = small_plane_airframe
 	  				ratio < 0.76
 	  			}
 			}
@@ -5170,7 +5140,7 @@ country_event = {
 
 		trigger = {
 			var:BUL_aircraft_seller = {
-				has_tech = naval_bomber1
+				has_tech = naval_bomber1 #this won't work for BBA, because we can not guarantee that the sender country has a naval bomber design
 			}
 		}
 
@@ -5195,12 +5165,14 @@ country_event = {
 
 		trigger = {
 			var:BUL_aircraft_seller = {
-				has_tech = early_bomber
-				has_tech = iw_medium_airframe
+				OR = {
+					has_tech = early_bomber
+					has_tech = iw_medium_airframe
+				}
 			}
 		}
 
-		set_variable = { BUL_aircraft_type = token:tac_bomber_equipment }
+		set_variable = { BUL_aircraft_type = token:medium_plane_airframe }
 		var:BUL_aircraft_seller = { set_country_flag = BUL_producing_tactical_bombers_for_bulgaria_flag }
 		custom_effect_tooltip = bftb_bulgaria_equipment_purchases.4.c_tt
 	}
@@ -7919,14 +7891,14 @@ country_event = {
 					limit = {
 						any_country = {
 							BUL_is_balkan_nation = yes
-							country_exists = yes
+							exists = yes
 							PREV = { is_core_of = THIS }
 						}
 					}
 					random_country = {
 						limit = {
 							BUL_is_balkan_nation = yes
-							country_exists = yes
+							exists = yes
 							PREV = { is_core_of = THIS }
 						}
 						transfer_state = PREV
@@ -8463,10 +8435,6 @@ country_event = {
 				country_event = bftb_bulgaria_fate_of_the_balkans.10
 			}
 		}
-		add_autonomy_score = {
-			value = 300
-			localization = BUL_transferred_bulgarian_state_autonomy_desc
-		}
 	}
 
 	option = { # Refuse
@@ -8575,6 +8543,10 @@ country_event = {
 				hidden_effect = {
 					set_state_controller = FROM.FROM
 				}
+				add_autonomy_score = {
+					value = 300
+					localization = BUL_transferred_bulgarian_state_autonomy_desc
+				}
 			}
 		}
 		hidden_effect = {
@@ -8618,6 +8590,12 @@ country_event = {
 		transfer_state = FROM.FROM.FROM
 		hidden_effect = {
 			set_state_controller = FROM.FROM.FROM
+		}
+		FROM = {
+			add_autonomy_score = {
+				value = 300
+				localization = BUL_transferred_bulgarian_state_autonomy_desc
+			}
 		}
 	}
 }

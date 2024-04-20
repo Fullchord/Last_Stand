@@ -1,8 +1,5 @@
-#####---------------------------------------------------------------------> edited by Greatexperiment
-
-ability = {
+ability = {	
 	CHI_force_attack = {
-	
 		name = ABILITY_FORCE_ATTACK
 		desc = ABILITY_FORCE_ATTACK_DESC
 		icon = GFX_ability_chi_force_attack
@@ -14,9 +11,8 @@ ability = {
 		allowed = {
 			is_leading_army_group = no
 			is_border_war = no
-			
 			OWNER = {				
-				has_completed_focus = KMT_dare_to_die_corps
+				has_completed_focus = CHI_dare_to_die_corps
 			}
 		}
 		
@@ -25,7 +21,6 @@ ability = {
 		
 		one_time_effect = {
 			add_temporary_buff_to_units = {
-			
 				combat_offense = 0.25
 				combat_breakthrough = 0.25
 				org_damage_multiplier = -1.0
@@ -41,17 +36,16 @@ ability = {
 		
 		ai_will_do = {
 			factor = -1
-			
 			modifier = {
 				FROM = {
 					has_war_support > 0.1
 					command_power > 1.0
 				}
-				
 				check_variable = { num_units_offensive_combats > 6 }
+				
+				set_temp_variable = { temp = avg_offensive_combat_status }
 				check_variable = { temp > 0.45 }
 				check_variable = { ai_random > temp }
-				set_temp_variable = { temp = avg_offensive_combat_status }
 				
 				add = 2
 			}

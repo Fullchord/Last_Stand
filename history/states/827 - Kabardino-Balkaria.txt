@@ -1,4 +1,3 @@
-
 state = {
 	id = 827
 	name = "STATE_827"
@@ -12,6 +11,7 @@ state = {
 			infrastructure = 2
 
 		}
+		add_core_of = SOV
 		add_core_of = SOV
 		victory_points = {
 			11614 1

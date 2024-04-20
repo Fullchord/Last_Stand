@@ -5,7 +5,7 @@ ideas = {
 
 		NOR_complacent_cabinet_ns = {
 			allowed = {
-				NOR_AAT = yes 
+				NOR = yes 
 			}
 
 			allowed_civil_war = {

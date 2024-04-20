@@ -28,6 +28,9 @@ country_event = {
 				transfer_state = 545
 				transfer_state = 546
 				transfer_state = 547
+				transfer_state = 903
+				transfer_state = 904
+				transfer_state = 905
 				transfer_state = 548
 				transfer_state = 771
 				transfer_state = 770
@@ -101,7 +104,6 @@ country_event = {
 		if = {
 			limit = { 
 				ZIM = { exists = no }
-				ENG = { has_full_control_of_state = 545 } 
 			}
 			transfer_state = 545
 		}
@@ -117,7 +119,6 @@ country_event = {
 		if = {
 			limit = { 
 				BOT = { exists = no }
-				ENG = { has_full_control_of_state = 542 } 
 			}
 			transfer_state = 542
 		}
@@ -133,7 +134,6 @@ country_event = {
 		if = {
 			limit = { 
 				ZAM = { exists = no }
-				ENG = { has_full_control_of_state = 771 } 
 			}
 			transfer_state = 771
 		}
@@ -149,7 +149,6 @@ country_event = {
 		if = {
 			limit = { 
 				MLW = { exists = no }
-				ENG = { has_full_control_of_state = 770 } 
 			}
 			transfer_state = 770
 		}
@@ -165,7 +164,6 @@ country_event = {
 		if = {
 			limit = { 
 				TZN = { exists = no }
-				ENG = { has_full_control_of_state = 546 } 
 			}
 			transfer_state = 546
 		}
@@ -181,30 +179,11 @@ country_event = {
 		if = {
 			limit = { 
 				KEN = { exists = no }
-				ENG = { has_full_control_of_state = 547 } 
 			}
 			transfer_state = 547
-		}
-		if = {
-			limit = { 
-				KEN = { exists = no }
-				ENG = { has_full_control_of_state = 905 } 
-			}
-			transfer_state = 905
-		}
-		if = {
-			limit = { 
-				KEN = { exists = no }
-				ENG = { has_full_control_of_state = 903 } 
-			}
 			transfer_state = 903
-		}
-		if = {
-			limit = { 
-				KEN = { exists = no }
-				ENG = { has_full_control_of_state = 904 } 
-			}
 			transfer_state = 904
+			transfer_state = 905
 		}
 		if = {
 			limit = { 
@@ -218,7 +197,6 @@ country_event = {
 		if = {
 			limit = { 
 				UGA = { exists = no }
-				ENG = { has_full_control_of_state = 548 } 
 			}
 			transfer_state = 548
 		}
@@ -264,8 +242,7 @@ country_event = {
 		name = tfv_south_africa.4.a
 		if = {
 			limit = { 
-				BOT = { exists = no }
-				ENG = { has_full_control_of_state = 542 } 	
+				BOT = { exists = no }	
 			}
 			release = BOT
 			ENG = {
@@ -274,8 +251,7 @@ country_event = {
 		}
 		if = {
 			limit = { 
-				ZIM = { exists = no }
-				ENG = { has_full_control_of_state = 545 }
+				ZIM = { exists = no }	
 			}
 			release = ZIM
 			ENG = {
@@ -284,8 +260,7 @@ country_event = {
 		}
 		if = {
 			limit = { 
-				ZAM = { exists = no }
-				ENG = { has_full_control_of_state = 771 } 
+				ZAM = { exists = no }	
 			}
 			release = ZAM
 			ENG = {
@@ -295,7 +270,6 @@ country_event = {
 		if = {
 			limit = { 
 				MLW = { exists = no }	
-				ENG = { has_full_control_of_state = 770 } 
 			}
 			release = MLW
 			ENG = {
@@ -303,9 +277,8 @@ country_event = {
 			}
 		}
 		if = {
-			limit = {
+			limit = { 
 				TZN = { exists = no }	
-				ENG = { has_full_control_of_state = 546 } 
 			}
 			release = TZN
 			ENG = {
@@ -315,7 +288,6 @@ country_event = {
 		if = {
 			limit = { 
 				KEN = { exists = no } 
-				ENG = { has_full_control_of_state = 547 }
 			}
 			release = KEN			
 			ENG = { 
@@ -324,14 +296,14 @@ country_event = {
 		}
 		if = {
 			limit = { 
-				UGA = { exists = no }
-				ENG = { has_full_control_of_state = 548 } 	
+				UGA = { exists = no }	
 			}
 			release = UGA
 			ENG = {
 				puppet = UGA
 			}
 		}
+		SAF = { transfer_state = 542 }
 		hidden_effect = {
 			news_event = { id = news.261 hours = 6 }
 			}
@@ -1047,7 +1019,7 @@ country_event = {
 				has_government = fascism 
 				add = -50
 			}
-		}
+		}  
 		
 		effect_tooltip = {
 			
@@ -1330,12 +1302,18 @@ country_event = {
 		}
 			ANG = { 
 				if = {
-				limit = { 
-					SAF = { controls_state = 540 } 
-						}
-					transfer_state = 540
+					limit = { 
+						SAF = { 
+							controls_state = 540 
+							controls_state = 891 
+							controls_state = 892 
+						} 
 					}
+					transfer_state = 540
+					transfer_state = 891
+					transfer_state = 892
 				}
+			}
 			SAF = { puppet = ANG }
 			set_country_flag = SAF_released_ANG
 	}
@@ -1348,9 +1326,15 @@ country_event = {
 		ANG = { 
 			if = {
 				limit = { 
-					SAF = { controls_state = 540 } 
+					SAF = { 
+						controls_state = 540 
+						controls_state = 891 
+						controls_state = 892 
+					} 
 				}
 				transfer_state = 540
+				transfer_state = 891
+				transfer_state = 892
 			}
 			hidden_effect = {
 				set_politics = {
@@ -1383,12 +1367,18 @@ country_event = {
 		}
 			MZB = { 
 				if = {
-				limit = { 
-					SAF = { controls_state = 544 } 
-						}
-					transfer_state = 544
+					limit = { 
+						SAF = { 
+							controls_state = 544 							
+							controls_state = 896 							
+							controls_state = 897 							
+						} 
 					}
+					transfer_state = 544
+					transfer_state = 896
+					transfer_state = 897
 				}
+			}
 			SAF = { puppet = MZB }
 			set_country_flag = SAF_released_MZB
 	}
@@ -1401,9 +1391,15 @@ country_event = {
 			MZB = { 
 				if = {
 					limit = { 
-						SAF = { controls_state = 544 } 
+						SAF = { 
+							controls_state = 544
+							controls_state = 896 							
+							controls_state = 897 
+						} 
 					}
 					transfer_state = 544
+					transfer_state = 896
+					transfer_state = 897
 				}
 				hidden_effect = {
 					set_politics = {
@@ -1441,22 +1437,21 @@ country_event = {
 						SAF = { 
 							controls_state = 295 
 							controls_state = 538 
-							controls_state = 718
-							controls_state = 718
-							controls_state = 890
-							controls_state = 888
-							controls_state = 889
-						} 
+							controls_state = 718 
+							controls_state = 888 
+							controls_state = 889 
+							controls_state = 890 
+							} 
+
+						}
+							transfer_state = 295
+							transfer_state = 538
+							transfer_state = 718
+							transfer_state = 888
+							transfer_state = 889
+							transfer_state = 890
 					}
-					transfer_state = 295 
-					transfer_state = 538 
-					transfer_state = 718
-					transfer_state = 718
-					transfer_state = 890
-					transfer_state = 888
-					transfer_state = 889
 				}
-			}
 			SAF = { puppet = COG }
 			set_country_flag = SAF_released_COG
 	}
@@ -1470,21 +1465,21 @@ country_event = {
 				if = {
 					limit = { 
 						SAF = { 
-							owns_state = 295 
-							owns_state = 538 
-							owns_state = 718
-							owns_state = 890
-							owns_state = 888
-							owns_state = 889
+							controls_state = 295 
+							controls_state = 538 
+							controls_state = 718 
+							controls_state = 888 
+							controls_state = 889 
+							controls_state = 890
 							} 
 
 						}
-						transfer_state = 295 
-						transfer_state = 538 
+						transfer_state = 295
+						transfer_state = 538
 						transfer_state = 718
-						transfer_state = 890
 						transfer_state = 888
 						transfer_state = 889
+						transfer_state = 890
 					}
 				hidden_effect = {
 					set_politics = {
@@ -1585,10 +1580,16 @@ country_event = {
 				limit = { 
 					SAF = { 
 						controls_state = 547
+						controls_state = 903
+						controls_state = 904
+						controls_state = 905
 						} 
 
 					}
 						transfer_state = 547
+						transfer_state = 903
+						transfer_state = 904
+						transfer_state = 905
 					}
 				}
 			SAF = { puppet = KEN }
@@ -1605,10 +1606,16 @@ country_event = {
 					limit = { 
 						SAF = { 
 							controls_state = 547 
+							controls_state = 903
+							controls_state = 904
+							controls_state = 905
 							} 
 
 						}
 						transfer_state = 547
+						transfer_state = 903
+						transfer_state = 904
+						transfer_state = 905
 					}
 				hidden_effect = {
 					set_politics = {
@@ -1980,17 +1987,25 @@ country_event = {
 		SUD = { 
 			if = {
 				limit = { 
-					SAF = {
-						controls_state = 903
+					SAF = { 
 						controls_state = 549
 						controls_state = 551
 						controls_state = 767
+						controls_state = 883
+						controls_state = 884
+						controls_state = 885
+						controls_state = 886
+						controls_state = 887
 					} 
 				}
-				transfer_state = 903
 				transfer_state = 549
 				transfer_state = 551
 				transfer_state = 767
+				transfer_state = 883
+				transfer_state = 884
+				transfer_state = 885
+				transfer_state = 886
+				transfer_state = 887
 			}
 		}
 		SAF = { puppet = SUD }
@@ -2005,16 +2020,24 @@ country_event = {
 			if = {
 				limit = {
 					SAF = {
-						controls_state = 903
 						controls_state = 549
 						controls_state = 551
 						controls_state = 767
+						controls_state = 883
+						controls_state = 884
+						controls_state = 885
+						controls_state = 886
+						controls_state = 887
 					}
 				}
-				transfer_state = 903
 				transfer_state = 549
 				transfer_state = 551
 				transfer_state = 767
+				transfer_state = 883
+				transfer_state = 884
+				transfer_state = 885
+				transfer_state = 886
+				transfer_state = 887
 			}
 			hidden_effect = {
 				set_politics = {
@@ -2053,6 +2076,7 @@ country_event = {
 						controls_state = 457
 						controls_state = 447
 						controls_state = 452
+						controls_state = 446
 						controls_state = 907
 						controls_state = 453
 					} 
@@ -2062,6 +2086,7 @@ country_event = {
 				transfer_state = 457
 				transfer_state = 447
 				transfer_state = 452
+				transfer_state = 446
 				transfer_state = 907
 				transfer_state = 453
 			}
@@ -2083,6 +2108,7 @@ country_event = {
 						controls_state = 457
 						controls_state = 447
 						controls_state = 452
+						controls_state = 446
 						controls_state = 907
 						controls_state = 453
 					}
@@ -2092,6 +2118,7 @@ country_event = {
 				transfer_state = 457
 				transfer_state = 447
 				transfer_state = 452
+				transfer_state = 446
 				transfer_state = 907
 				transfer_state = 453
 			}
@@ -3198,10 +3225,14 @@ country_event = {
 					SAF = { 
 						controls_state = 556
 						controls_state = 782
+						controls_state = 898
+						controls_state = 899
 					} 
 				}
 				transfer_state = 556
 				transfer_state = 782
+				transfer_state = 898
+				transfer_state = 899
 			}
 		}
 		SAF = { puppet = MLI }
@@ -3218,10 +3249,14 @@ country_event = {
 					SAF = {
 						controls_state = 556
 						controls_state = 782
+						controls_state = 898
+						controls_state = 899
 					}
 				}
 				transfer_state = 556
 				transfer_state = 782
+				transfer_state = 898
+				transfer_state = 899
 			}
 			hidden_effect = {
 				set_politics = {
@@ -3702,14 +3737,12 @@ country_event = {
 						controls_state = 459
 						controls_state = 460
 						controls_state = 513
-						controls_state = 933
 						controls_state = 514
 					} 
 				}
 				transfer_state = 459
 				transfer_state = 460
 				transfer_state = 513
-				transfer_state = 933
 				transfer_state = 514
 			}
 		}
@@ -3728,14 +3761,12 @@ country_event = {
 						controls_state = 459
 						controls_state = 460
 						controls_state = 513
-						controls_state = 933
 						controls_state = 514
 					}
 				}
 				transfer_state = 459
 				transfer_state = 460
 				transfer_state = 513
-				transfer_state = 933
 				transfer_state = 514
 			}
 			hidden_effect = {

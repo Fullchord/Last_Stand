@@ -95,7 +95,7 @@ news_event = {
 		desc = {
 			text = bba_news.5.desc_owns_454
 			trigger = {
-				1016 = {
+				454 = {
 					is_owned_by = ETH
 				}
 			}				
@@ -103,7 +103,7 @@ news_event = {
 		desc = {
 			text = bba_news.5.desc_does_not_own_454
 			trigger = {
-				1016 = {
+				454 = {
 					NOT = { is_owned_by = ETH}
 				}
 			}
@@ -157,7 +157,8 @@ news_event = {
 	desc = bba_news.7.desc
 			
 	picture = GFX_news_event_italian_tank_desert
-
+	
+	major = yes
 	is_triggered_only = yes
 
 	option = {
@@ -188,6 +189,7 @@ news_event = {
 			
 	picture = GFX_news_event_filov_with_mussolini
 	
+	major = yes
 	is_triggered_only = yes
 
 	option = {
@@ -331,7 +333,6 @@ news_event = {
 
 	option = {
 		name = bba_news.105.a
-		ITA_vittorio_emanuele_iii = { add_country_leader_trait = king_of_albania }
 	}
 }
 
@@ -351,13 +352,13 @@ news_event = {
 		has_character = ITA_prince_umberto
 		has_character = ITA_vittorio_emanuele_iii
 		date > 1947.12.27
-		NOT = { #Check if the King has been deposed
-			has_country_flag = ITA_deposed_the_king 
+		NOT = {
+			has_country_flag = ITA_king_deposed_flag 
 		}
 	}
 
 	mean_time_to_happen = {
-		days = 250	#was 30, if he dies in 1948, then please, make a longer trigger!
+		days = 30
 		modifier = {
 			factor = 2
 			date > 1948.02.01
@@ -366,16 +367,8 @@ news_event = {
 
 	option = {
 		name = bba_news.106.a
-
-		if = { #Double check that the Vittorio is in fact King and country leader
-			limit = {
-				has_country_leader = {
-					character = ITA_vittorio_emanuele_iii
-					ruling_only = yes
-				}
-			}
-			ITA_promote_umberto_to_country_leader = yes
-		}
+		
+		ITA_promote_umberto_to_country_leader = yes
 		
 		hidden_effect = {
 			set_country_flag = ITA_vittorio_emmanuele_dead_flag

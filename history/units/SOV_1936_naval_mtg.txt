@@ -1,4 +1,4 @@
-﻿ 
+﻿
 units= {
 
 	##### NAVAL UNITS #####
@@ -15,9 +15,12 @@ units= {
 			ship = { name = "Petrovskiy" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Fidonisi Class" } } }
 			ship = { name = "Shaumyan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Fidonisi Class" } } }
 			# 2ya Flotiliya Esmintsev
-			ship = { name = "Karl Marx" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Fidonisi Class" } } }
+			ship = { name = "Izyaslav" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Fidonisi Class" } } }
 			ship = { name = "Kalinin" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Fidonisi Class" } } }
-
+		}	
+		task_force = {	
+			name = "Severnyy Podvodniy Flot"
+			location = 3134 # Murmansk
 			# 5iy Podvodniy Flot
 			ship = { name = "D-1" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series I Debakrist" } } }			
 			ship = { name = "D-2" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series I Debakrist" } } }			
@@ -25,8 +28,17 @@ units= {
 			ship = { name = "D-4" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series I Debakrist" } } }			
 			ship = { name = "D-5" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series I Debakrist" } } }			
 			ship = { name = "D-6" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series I Debakrist" } } }			
-
-			ship = { name = "Ofournet" pride_of_the_fleet = yes definition = battleship equipment = { ship_hull_heavy_1 = { amount = 1 owner = SOV version_name = "Marat Class" } } }
+		}
+	}
+	
+	### Baltic Fleet -- Leningrad
+	fleet = {
+		name = "Baltiyskiy Flot"
+		naval_base = 3151 # Leningrad
+		task_force = {				
+			name = "Baltiyskiy Flot"
+			location = 3151 # Leningrad
+			ship = { name = "Marat" pride_of_the_fleet = yes definition = battleship equipment = { ship_hull_heavy_1 = { amount = 1 owner = SOV version_name = "Marat Class" } } }
 			ship = { name = "Oktyabrskaya Revolutsiya" definition = battleship equipment = { ship_hull_heavy_1 = { amount = 1 owner = SOV version_name = "Marat Class" } } }
 			ship = { name = "Marti" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = SOV version_name = "Marti Class" } } }
 			# 3ya Flotiliya Esmintsev
@@ -40,7 +52,10 @@ units= {
 			ship = { name = "Voykov" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Orfey Class" } } }		
 			ship = { name = "Rykov" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Orfey Class" } } }		
 			ship = { name = "Karl Libknekht" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Orfey Class" } } }		
-
+		}	
+		task_force = {	
+			name = "Baltiyskiy Podvodniy Flot"
+			location = 3151 # Leningrad
 			ship = { name = "B-2" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series I Debakrist" } } }			
 			ship = { name = "L-55" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series I Debakrist" } } }			
 			# 1iy Podvodniy Flot
@@ -69,23 +84,29 @@ units= {
 			ship = { name = "Shch-204" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series V Shchuka" } } }			
 			ship = { name = "Shch-309" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series V Shchuka" } } }			
 			# 16iy  Podvodniy Flot
-			ship = { name = "L-1" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
-			ship = { name = "L-2" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
-			ship = { name = "L-3" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
+			ship = { name = "L-1" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
+			ship = { name = "L-2" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
+			ship = { name = "L-3" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
+		}
+	}
 
+	### Black Sea Fleet -- Sevastopol
+	fleet = {
+		name = "Chernomorskiy Flot"
+		naval_base = 3686 # Sevastopopl
+		task_force = {				
+			name = "Chernomorskiy Flot"
+			location = 3686 # Sevastopopl
 			ship = { name = "Parizhskaya Kommuna" definition = battleship equipment = { ship_hull_heavy_1 = { amount = 1 owner = SOV version_name = "Marat Class" } } }
-			ship = { name = "Krasni Kavkaz" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = SOV version_name = "Krasni Kavkaz Class" } } }
+			ship = { name = "Krasni Kavkaz" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = SOV version_name = "Chervona Ukraina Class" } } }
 			ship = { name = "Krasny Krym" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = SOV version_name = "Chervona Ukraina Class" } } }
 			ship = { name = "Chervona Ukraina" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = SOV version_name = "Chervona Ukraina Class" } } }
 			ship = { name = "Komintern" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = SOV version_name = "Komintern Class" } } }
 			ship = { name = "Bug" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Bug Class" } } }
-			ship = { definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Uragan Class" } } }
-			ship = { definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Uragan Class" } } }
-			ship = { definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Uragan Class" } } }
-			ship = { definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Uragan Class" } } }
-			ship = { definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Uragan Class" } } }
-			ship = { definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Uragan Class" } } }
-
+		}	
+		task_force = {	
+			name = "Chernomorskiy Podvodniy Flot"
+			location = 3686 # Sevastopopl
 			# 9iy Podvodniy Flot
 			ship = { name = "Shch-121" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series V Shchuka" } } }			
 			ship = { name = "Shch-122" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series V Shchuka" } } }			
@@ -98,20 +119,26 @@ units= {
 			ship = { name = "A-4" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "AG Class" } } }
 			ship = { name = "A-5" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "AG Class" } } }
 			# 17iy  Podvodniy Flot
-			ship = { name = "L-4" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
-			ship = { name = "L-5" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
-			ship = { name = "L-6" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
+			ship = { name = "L-4" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
+			ship = { name = "L-5" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
+			ship = { name = "L-6" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
+		}	
+	}
 
+	### Pacific Fleet -- Vladivostok
+	fleet = {
+		name = "Tikhookeanskiy Flot"
+		naval_base = 957 # Vladivostok
+		task_force = {				
+			name = "Tikhookeanskiy Flot"
+			location = 957 # Vladivostok
 			# 8ya Flotiliya Esmintsev
 			ship = { name = "Uritskiy" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Orfey Class" } } }
 			ship = { name = "Stalin" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Orfey Class" } } }
-			ship = { definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Uragan Class" } } }
-			ship = { definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Uragan Class" } } }
-			ship = { definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Uragan Class" } } }
-			ship = { definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Uragan Class" } } }
-			ship = { definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Uragan Class" } } }
-			ship = { definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Uragan Class" } } }
-
+		}	
+		task_force = {	
+			name = "Tihookyeanskiy Podvodniy Flot"
+			location = 957 # Vladivostok
 			# 10iy Podvodniy Flot
 			ship = { name = "Shch-101" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series V Shchuka" } } }			
 			ship = { name = "Shch-102" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series V Shchuka" } } }			
@@ -127,12 +154,10 @@ units= {
 			ship = { name = "Shch-111" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series V Shchuka" } } }			
 			ship = { name = "Shch-112" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series V Shchuka" } } }			
 			# 18iy  Podvodniy Flot
-			ship = { name = "L-7" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
-			ship = { name = "L-8" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
-			ship = { name = "L-9" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
-
-			ship = { name = "Baghirov" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = SOV version_name = "Orfey Class" } } }
-		}
+			ship = { name = "L-7" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
+			ship = { name = "L-8" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
+			ship = { name = "L-9" definition = submarine equipment = { ship_hull_submarine_2 = { amount = 1 owner = SOV version_name = "Series II Leninets" } } }			
+		}		
 	}
 } 
 
@@ -165,17 +190,28 @@ instant_effect = {
 		progress = 0.60
 		amount = 2
 	}
+	#CA Kirov Class (Kirov)
 	add_equipment_production = {
 		equipment = {
-			type = ship_hull_light_1
+			type = ship_hull_cruiser_2
 			creator = "SOV"
-			version_name = "Uragan Class"
+			version_name = "Kirov Class"
 		}
 		requested_factories = 1
-		progress = 0
-		amount = 6
+		progress = 0.10
+		amount = 1
 	}
-	
+	#CA Kirov Class (Voroshilov)
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "SOV"
+			version_name = "Kirov Class"
+		}
+		requested_factories = 1
+		progress = 0.10
+		amount = 1
+	}
 	# SS: Shchuka class (x29) ("Shch-125" "Shch-205" "Shch-206" "Shch-207" "Shch-310" "Shch-311" "Shch-126" "Shch-127" "Shch-128" "Shch-129" "Shch-130" "Shch-131" "Shch-132" "Shch-133" 
 	#		"Shch-134" "Shch-208" "Shch-312" "Shch-313" "Shch-314" "Shch-315" "Shch-316" "Shch-317" "Shch-318" "Shch-319" "Shch-320" "Shch-321" "Shch-322" "Shch-323" "Shch-324")
 	# SS: Stalinets class (x5) ("P-1" "P-2" "P-3" "S-1" "S-2")

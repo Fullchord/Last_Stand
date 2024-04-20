@@ -31,8 +31,10 @@ country_event = {
 	# We can ill afford another crisis - give the British direct control
 	option = {
 		trigger = {
-			is_in_faction_with = ENG
-			NOT = { is_in_faction_with = USA }
+			AND = {
+				is_in_faction_with = ENG
+				NOT = { is_in_faction_with = USA }
+			}
 		}
 		name = mtg_netherlands.1.c
 		effect_tooltip = {
@@ -175,7 +177,7 @@ country_event = {
 					basic_ship_hull_heavy = 1
 					antiair2 = 1
 					improved_fire_control_system = 1
-					basic_dp_light_battery = 1
+					improved_dp_light_battery = 1
 				}
 				create_equipment_variant = {
 					name = "Design 1047 Battlecruiser"
@@ -187,11 +189,11 @@ country_event = {
 						fixed_ship_fire_control_system_slot = ship_fire_control_system_2
 						fixed_ship_radar_slot = empty
 						fixed_ship_engine_slot = heavy_ship_engine_2
-						fixed_ship_secondaries_slot = dp_ship_secondaries_1
+						fixed_ship_secondaries_slot = dp_ship_secondaries_2
 						fixed_ship_armor_slot = ship_armor_bb_1
 						front_1_custom_slot = ship_heavy_battery_1
 						mid_1_custom_slot = ship_anti_air_2
-						mid_2_custom_slot = dp_ship_secondaries_1
+						mid_2_custom_slot = dp_ship_secondaries_2
 						rear_1_custom_slot = ship_heavy_battery_1
 					}
 				}
@@ -225,7 +227,7 @@ country_event = {
 			basic_ship_hull_heavy = 1
 			antiair2 = 1
 			improved_fire_control_system = 1
-			basic_dp_light_battery = 1
+			improved_dp_light_battery = 1
 		}
 		create_equipment_variant = {
 			name = "Design 1047 Battlecruiser"
@@ -237,11 +239,11 @@ country_event = {
 				fixed_ship_fire_control_system_slot = ship_fire_control_system_2
 				fixed_ship_radar_slot = empty
 				fixed_ship_engine_slot = heavy_ship_engine_2
-				fixed_ship_secondaries_slot = dp_ship_secondaries_1
+				fixed_ship_secondaries_slot = dp_ship_secondaries_2
 				fixed_ship_armor_slot = ship_armor_bb_1
 				front_1_custom_slot = ship_heavy_battery_1
 				mid_1_custom_slot = ship_anti_air_2
-				mid_2_custom_slot = dp_ship_secondaries_1
+				mid_2_custom_slot = dp_ship_secondaries_2
 				rear_1_custom_slot = ship_heavy_battery_1
 			}
 		}
@@ -299,15 +301,10 @@ country_event = {
 		effect_tooltip = {
 			JAP = {
 				transfer_state = 672
-				transfer_state = 974
 				transfer_state = 335
 				transfer_state = 334
-				transfer_state = 977
-				transfer_state = 978
 				transfer_state = 673
-				transfer_state = 975
 				transfer_state = 667
-				transfer_state = 976
 			}
 			add_offsite_building = { type = arms_factory level = 8 }
 		}
@@ -323,79 +320,38 @@ country_event = {
 					country_exists = INS
 					INS = { is_subject_of = HOL }
 					672 = { is_owned_and_controlled_by = INS }
-					974 = { is_owned_and_controlled_by = INS }
 					335 = { is_owned_and_controlled_by = INS }
 					334 = { is_owned_and_controlled_by = INS }
-					977 = { is_owned_and_controlled_by = INS }
-					978 = { is_owned_and_controlled_by = INS }
 					673 = { is_owned_and_controlled_by = INS }
-					975 = { is_owned_and_controlled_by = INS }
 					667 = { is_owned_and_controlled_by = INS }
-					976 = { is_owned_and_controlled_by = INS }
 				}
 				INS = {
 					give_resource_rights = { receiver = JAP state = 672 }
-					give_resource_rights = { receiver = JAP state = 974 }
 					give_resource_rights = { receiver = JAP state = 335 }
 					give_resource_rights = { receiver = JAP state = 334 }
-					give_resource_rights = { receiver = JAP state = 977 }
-					give_resource_rights = { receiver = JAP state = 978 }
 					give_resource_rights = { receiver = JAP state = 673 }
-					give_resource_rights = { receiver = JAP state = 975 }
 					give_resource_rights = { receiver = JAP state = 667 }
-					give_resource_rights = { receiver = JAP state = 976 }
 				}
 			}
 			else_if = {
 				limit = {
 					672 = { is_owned_and_controlled_by = HOL }
-					974 = { is_owned_and_controlled_by = HOL }
 					335 = { is_owned_and_controlled_by = HOL }
 					334 = { is_owned_and_controlled_by = HOL }
-					977 = { is_owned_and_controlled_by = HOL }
-					978 = { is_owned_and_controlled_by = HOL }
 					673 = { is_owned_and_controlled_by = HOL }
-					975 = { is_owned_and_controlled_by = HOL }
 					667 = { is_owned_and_controlled_by = HOL }
-					976 = { is_owned_and_controlled_by = HOL }
 				}
 				give_resource_rights = { receiver = JAP state = 672 }
-				give_resource_rights = { receiver = JAP state = 974 }
 				give_resource_rights = { receiver = JAP state = 335 }
 				give_resource_rights = { receiver = JAP state = 334 }
-				give_resource_rights = { receiver = JAP state = 977 }
-				give_resource_rights = { receiver = JAP state = 978 }
 				give_resource_rights = { receiver = JAP state = 673 }
-				give_resource_rights = { receiver = JAP state = 975 }
 				give_resource_rights = { receiver = JAP state = 667 }
-				give_resource_rights = { receiver = JAP state = 976 }
 			}
 		}
 		effect_tooltip = {
 			add_offsite_building = { type = arms_factory level = 4 }
 		}
 		JAP = { country_event = { id = mtg_netherlands.13 hours = 6 } }
-	}
-	option = { #What about an alliance
-		trigger = {
-			NOT = { #Cant swap factions if both have non-puppet members
-				AND = {
-					any_allied_country = {
-						is_subject = no
-					}
-					JAP = {
-						any_allied_country = {
-							is_subject = no
-							NOT = {
-								tag = SIA #we dont care about them lol
-							}
-						}
-					}
-				}
-			}
-		}
-		name = mtg_netherlands.11.c
-		JAP = { country_event = { id = mtg_netherlands.80 hours = 6 } }
 	}
 }
 
@@ -413,15 +369,10 @@ country_event = {
 		name = mtg_netherlands.12.a
 		effect_tooltip = {
 			transfer_state = 672
-			transfer_state = 974
 			transfer_state = 335
 			transfer_state = 334
-			transfer_state = 977
-			transfer_state = 978
 			transfer_state = 673
-			transfer_state = 975
 			transfer_state = 667
-			transfer_state = 976
 			FROM = { add_offsite_building = { type = arms_factory level = 6 } }
 		}
 		FROM = { country_event = { id = mtg_netherlands.23 } }
@@ -456,55 +407,35 @@ country_event = {
 					country_exists = INS
 					INS = { is_subject_of = HOL }
 					672 = { is_owned_and_controlled_by = INS }
-					974 = { is_owned_and_controlled_by = INS }
 					335 = { is_owned_and_controlled_by = INS }
 					334 = { is_owned_and_controlled_by = INS }
-					977 = { is_owned_and_controlled_by = INS }
-					978 = { is_owned_and_controlled_by = INS }
 					673 = { is_owned_and_controlled_by = INS }
-					975 = { is_owned_and_controlled_by = INS }
 					667 = { is_owned_and_controlled_by = INS }
-					976 = { is_owned_and_controlled_by = INS }
 				}
 				INS = {
 					give_resource_rights = { receiver = JAP state = 672 }
-					give_resource_rights = { receiver = JAP state = 974 }
 					give_resource_rights = { receiver = JAP state = 335 }
 					give_resource_rights = { receiver = JAP state = 334 }
-					give_resource_rights = { receiver = JAP state = 977 }
-					give_resource_rights = { receiver = JAP state = 978 }
 					give_resource_rights = { receiver = JAP state = 673 }
-					give_resource_rights = { receiver = JAP state = 975 }
 					give_resource_rights = { receiver = JAP state = 667 }
-					give_resource_rights = { receiver = JAP state = 976 }
 				}
 			}
 			else_if = {
 				limit = {
 					FROM = {
 						672 = { is_owned_and_controlled_by = HOL }
-						974 = { is_owned_and_controlled_by = HOL }
 						335 = { is_owned_and_controlled_by = HOL }
 						334 = { is_owned_and_controlled_by = HOL }
-						977 = { is_owned_and_controlled_by = HOL }
-						978 = { is_owned_and_controlled_by = HOL }
 						673 = { is_owned_and_controlled_by = HOL }
-						975 = { is_owned_and_controlled_by = HOL }
 						667 = { is_owned_and_controlled_by = HOL }
-						976 = { is_owned_and_controlled_by = HOL }
 					}
 				}
 				FROM = {
 					give_resource_rights = { receiver = JAP state = 672 }
-					give_resource_rights = { receiver = JAP state = 974 }
 					give_resource_rights = { receiver = JAP state = 335 }
 					give_resource_rights = { receiver = JAP state = 334 }
-					give_resource_rights = { receiver = JAP state = 977 }
-					give_resource_rights = { receiver = JAP state = 978 }
 					give_resource_rights = { receiver = JAP state = 673 }
-					give_resource_rights = { receiver = JAP state = 975 }
 					give_resource_rights = { receiver = JAP state = 667 }
-					give_resource_rights = { receiver = JAP state = 976 }
 				}
 			}
 			FROM = { add_offsite_building = { type = arms_factory level = 4 } }
@@ -566,8 +497,6 @@ country_event = {
 	option = {
 		name = mtg_netherlands.15.a
 		BEL = { country_event = { id = mtg_netherlands.18 } }
-		FLA = { country_event = { id = mtg_netherlands.18 } }
-		WLL = { country_event = { id = mtg_netherlands.18 } }
 		LUX = { country_event = { id = mtg_netherlands.18 } }
 		FROM = { country_event = { id = mtg_netherlands.16 days = 1 random_days = 3 } }
 	}
@@ -592,44 +521,21 @@ country_event = {
 	# Hurrah
 	option = {
 		name = mtg_netherlands.16.a
-		#BEL = {
-		#	every_unit_leader = {
-		#		set_nationality = ROOT
-		#	}
-		#}
-		if = {
-			limit = {
-				country_exists = BEL
-			}		
-			annex_country = {
-			    target = BEL
-			    transfer_troops = yes
+		BEL = {
+			every_unit_leader = {
+				set_nationality = ROOT
 			}
 		}
-		if = {
-			limit = {
-				country_exists = FLA
-			}		
-			annex_country = {
-			    target = FLA
-			    transfer_troops = yes
-			}
+		annex_country = {
+		    target = BEL
+		    transfer_troops = yes
 		}
-		if = {
-			limit = {
-				country_exists = WLL
-			}		
-			annex_country = {
-			    target = WLL
-			    transfer_troops = yes
-			}
-		}				
 		#ENG = { end_exile = BEL }
-		#LUX = {
-		#	every_unit_leader = {
-		#		set_nationality = ROOT
-		#	}
-		#}
+		LUX = {
+			every_unit_leader = {
+				set_nationality = ROOT
+			}
+		}
 		annex_country = {
 		    target = LUX
 		    transfer_troops = yes
@@ -764,6 +670,12 @@ country_event = {
 	# Oh, well then...
 	option = {
 		name = mtg_netherlands.21.a
+		effect_tooltip = {
+			add_timed_idea = {
+				idea = HOL_curtail_colonial_autonomy_subject
+				days = 545
+			}
+		}
 	}
 }
 
@@ -797,15 +709,10 @@ country_event = {
 		name = mtg_netherlands.23.a
 		FROM = {
 			transfer_state = 672
-			transfer_state = 974
 			transfer_state = 335
 			transfer_state = 334
-			transfer_state = 977
-			transfer_state = 978
 			transfer_state = 673
-			transfer_state = 975
 			transfer_state = 667
-			transfer_state = 976
 		}
 		add_offsite_building = { type = arms_factory level = 6 }
 		hidden_effect = { news_event = { id = mtg_news.48 days = 1 } }
@@ -829,52 +736,32 @@ country_event = {
 				country_exists = INS
 				INS = { is_subject_of = HOL }
 				672 = { is_owned_and_controlled_by = INS }
-				974 = { is_owned_and_controlled_by = INS }
 				335 = { is_owned_and_controlled_by = INS }
 				334 = { is_owned_and_controlled_by = INS }
-				977 = { is_owned_and_controlled_by = INS }
-				978 = { is_owned_and_controlled_by = INS }
 				673 = { is_owned_and_controlled_by = INS }
-				975 = { is_owned_and_controlled_by = INS }
 				667 = { is_owned_and_controlled_by = INS }
-				976 = { is_owned_and_controlled_by = INS }
 			}
 			INS = {
 				give_resource_rights = { receiver = JAP state = 672 }
-				give_resource_rights = { receiver = JAP state = 974 }
 				give_resource_rights = { receiver = JAP state = 335 }
 				give_resource_rights = { receiver = JAP state = 334 }
-				give_resource_rights = { receiver = JAP state = 977 }
-				give_resource_rights = { receiver = JAP state = 978 }
 				give_resource_rights = { receiver = JAP state = 673 }
-				give_resource_rights = { receiver = JAP state = 975 }
 				give_resource_rights = { receiver = JAP state = 667 }
-				give_resource_rights = { receiver = JAP state = 976 }
 			}
 		}
 		else_if = {
 			limit = {
 				672 = { is_owned_and_controlled_by = HOL }
-				974 = { is_owned_and_controlled_by = HOL }
 				335 = { is_owned_and_controlled_by = HOL }
 				334 = { is_owned_and_controlled_by = HOL }
-				975 = { is_owned_and_controlled_by = HOL }
-				977 = { is_owned_and_controlled_by = HOL }
-				978 = { is_owned_and_controlled_by = HOL }
 				673 = { is_owned_and_controlled_by = HOL }
 				667 = { is_owned_and_controlled_by = HOL }
-				976 = { is_owned_and_controlled_by = HOL }
 			}
 			give_resource_rights = { receiver = JAP state = 672 }
-			give_resource_rights = { receiver = JAP state = 974 }
 			give_resource_rights = { receiver = JAP state = 335 }
 			give_resource_rights = { receiver = JAP state = 334 }
-			give_resource_rights = { receiver = JAP state = 977 }
-			give_resource_rights = { receiver = JAP state = 978 }
 			give_resource_rights = { receiver = JAP state = 673 }
-			give_resource_rights = { receiver = JAP state = 975 }
 			give_resource_rights = { receiver = JAP state = 667 }
-			give_resource_rights = { receiver = JAP state = 976 }
 		}
 		add_offsite_building = { type = arms_factory level = 4 }
 		hidden_effect = { news_event = { id = mtg_news.49 days = 1 } }
@@ -905,15 +792,10 @@ country_event = {
 		effect_tooltip = {
 			JAP = {
 				transfer_state = 672
-				transfer_state = 974
 				transfer_state = 335
 				transfer_state = 334
-				transfer_state = 977
-				transfer_state = 978
 				transfer_state = 673
-				transfer_state = 975
 				transfer_state = 667
-				transfer_state = 976
 			}
 			add_offsite_building = { type = arms_factory level = 8 }
 		}
@@ -932,52 +814,32 @@ country_event = {
 					country_exists = INS
 					INS = { is_subject_of = HOL }
 					672 = { is_owned_and_controlled_by = INS }
-					974 = { is_owned_and_controlled_by = INS }
 					335 = { is_owned_and_controlled_by = INS }
 					334 = { is_owned_and_controlled_by = INS }
-					977 = { is_owned_and_controlled_by = INS }
-					978 = { is_owned_and_controlled_by = INS }
 					673 = { is_owned_and_controlled_by = INS }
-					975 = { is_owned_and_controlled_by = INS }
 					667 = { is_owned_and_controlled_by = INS }
-					976 = { is_owned_and_controlled_by = INS }
 				}
 				INS = {
 					give_resource_rights = { receiver = JAP state = 672 }
-					give_resource_rights = { receiver = JAP state = 974 }
 					give_resource_rights = { receiver = JAP state = 335 }
 					give_resource_rights = { receiver = JAP state = 334 }
-					give_resource_rights = { receiver = JAP state = 977 }
-					give_resource_rights = { receiver = JAP state = 978 }
 					give_resource_rights = { receiver = JAP state = 673 }
-					give_resource_rights = { receiver = JAP state = 975 }
 					give_resource_rights = { receiver = JAP state = 667 }
-					give_resource_rights = { receiver = JAP state = 976 }
 				}
 			}
 			else_if = {
 				limit = {
 					672 = { is_owned_and_controlled_by = HOL }
-					974 = { is_owned_and_controlled_by = HOL }
 					335 = { is_owned_and_controlled_by = HOL }
 					334 = { is_owned_and_controlled_by = HOL }
-					977 = { is_owned_and_controlled_by = HOL }
-					978 = { is_owned_and_controlled_by = HOL }
 					673 = { is_owned_and_controlled_by = HOL }
-					975 = { is_owned_and_controlled_by = HOL }
 					667 = { is_owned_and_controlled_by = HOL }
-					976 = { is_owned_and_controlled_by = HOL }
 				}
 				give_resource_rights = { receiver = JAP state = 672 }
-				give_resource_rights = { receiver = JAP state = 974 }
 				give_resource_rights = { receiver = JAP state = 335 }
 				give_resource_rights = { receiver = JAP state = 334 }
-				give_resource_rights = { receiver = JAP state = 977 }
-				give_resource_rights = { receiver = JAP state = 978 }
 				give_resource_rights = { receiver = JAP state = 673 }
-				give_resource_rights = { receiver = JAP state = 975 }
 				give_resource_rights = { receiver = JAP state = 667 }
-				give_resource_rights = { receiver = JAP state = 976 }
 			}
 		}
 		effect_tooltip = {
@@ -1528,15 +1390,9 @@ country_event = {
 					original_tag = ENG
 				}
 				GER = {
-					OR = {
-						focus_progress = {
-							focus = GER_around_maginot
-							progress > 0
-						}
-						focus_progress = {
-							focus = GER_around_maginot_vanilla
-							progress > 0
-						}
+					focus_progress = {
+						focus = GER_around_maginot
+						progress > 0
 					}
 				}
 				NOT = { HOL = { has_completed_focus = HOL_cave_to_the_germans } }
@@ -1757,15 +1613,9 @@ country_event = {
 					original_tag = ENG
 				}
 				GER = {
-					OR = {
-						focus_progress = {
-							focus = GER_around_maginot
-							progress > 0
-						}
-						focus_progress = {
-							focus = GER_around_maginot_vanilla
-							progress > 0
-						}
+					focus_progress = {
+						focus = GER_around_maginot
+						progress > 0
 					}
 				}
 				NOT = { HOL = { has_completed_focus = HOL_cave_to_the_germans } }
@@ -1973,15 +1823,9 @@ country_event = {
 					original_tag = ENG
 				}
 				GER = {
-					OR = {
-						focus_progress = {
-							focus = GER_around_maginot
-							progress > 0
-						}
-						focus_progress = {
-							focus = GER_around_maginot_vanilla
-							progress > 0
-						}
+					focus_progress = {
+						focus = GER_around_maginot
+						progress > 0
 					}
 				}
 				NOT = { HOL = { has_completed_focus = HOL_cave_to_the_germans } }
@@ -2587,7 +2431,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 2
+		days = 4
 	}
 	
 	# We will invest
@@ -2625,7 +2469,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 2
+		days = 4
 	}
 	
 	# We will invest
@@ -2740,7 +2584,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 2
+		days = 4
 	}
 	
 	immediate = {
@@ -2780,7 +2624,7 @@ country_event = {
 	desc = mtg_netherlands.69.d
 	picture = GFX_report_event_hol_polderen
 
-	
+	fire_only_once = no
 	
 	trigger = {
 		has_global_flag = HOL_inundation_lines_flooded
@@ -2912,7 +2756,7 @@ country_event = {
 	desc = mtg_netherlands.70.d
 	picture = GFX_report_event_german_troops
 
-	
+	fire_only_once = no
 	
 	trigger = {
 		original_tag = HOL
@@ -3117,7 +2961,7 @@ country_event = {
 					}
 					promote_leader = yes
 					}
-				}
+				}				
 			}
 		}
 	}
@@ -3146,7 +2990,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 2
+		days = 4
 	}
 	
 	# OK
@@ -3207,26 +3051,29 @@ country_event = {
 						has_government = neutrality
 					}
 					load_focus_tree = { tree = german_focus keep_completed = no }
-					unlock_national_focus = GER_rally_the_monarchists
-					unlock_national_focus = GER_a_new_reich
-					unlock_national_focus = GER_consolidate_new_reich
-					unlock_national_focus = GER_restore_the_empire
-					unlock_national_focus = GER_begin_depression_recovery
-					unlock_national_focus = GER_appoint_economic_positions
-					unlock_national_focus = GER_volksgemeinschaft 
+					unlock_national_focus = GER_oppose_hitler
+					unlock_national_focus = GER_secure_the_new_state
+					unlock_national_focus = GER_revive_the_kaiserreich
+					unlock_national_focus = GER_return_of_the_kaiser
+					unlock_national_focus = GER_focus_on_the_true_enemy
+					unlock_national_focus = GER_four_year_plan
+					unlock_national_focus = GER_west_wall
+					unlock_national_focus = GER_atlantikwall 
+					unlock_national_focus = GER_ostwall
+					unlock_national_focus = GER_grosraumwirtschaft
+					unlock_national_focus = GER_align_romania
+					unlock_national_focus = GER_align_hungary
+					unlock_national_focus = GER_autarky
 					unlock_national_focus = GER_autobahn
-					unlock_national_focus = GER_steelworks_issues
-					unlock_national_focus = GER_deutsche_arbeitsfront
-					unlock_national_focus = GER_privatize_reichsbahn
-					unlock_national_focus = GER_nationalize_resource_industries
-					unlock_national_focus = GER_volkswagen
-					unlock_national_focus = GER_finish_reinhardt
-					unlock_national_focus = GER_nationalize_aviation_industry
-					unlock_national_focus = GER_gott_mit_uns
-					unlock_national_focus = GER_establish_imperial_german_army
-					unlock_national_focus = GER_european_claims
-					unlock_national_focus = GER_african_claims
-					unlock_national_focus = GER_asian_claims
+					unlock_national_focus = GER_german_war_economy
+					unlock_national_focus = GER_coal_liquidization
+					unlock_national_focus = GER_synthetic_rubber
+					unlock_national_focus = GER_hermann_goring_werke
+					unlock_national_focus = GER_kdf_wagen
+					complete_national_focus = GER_extra_tech_slot
+					unlock_national_focus = GER_air_innovation
+					unlock_national_focus = GER_army_innovation
+					unlock_national_focus = GER_soviet_treaty
 				}
 			}
 		}
@@ -3308,9 +3155,6 @@ country_event = {
 				}
 				add_core_of = ROOT
 			}
-			#add_ideas = generic_recent_political_unification
-			#add_ideas = generic_recent_army_unification
-			#add_ideas = generic_recent_economic_unification	
 			hidden_effect = { news_event = { id = mtg_news.64 days = 1 } }
 		}
 	}
@@ -3328,89 +3172,5 @@ country_event = {
 	# Unfortunate
 	option = {
 		name = unfortunate
-	}
-}
-
-# Japan/HOL alliance
-country_event = {
-	id = mtg_netherlands.80
-	title = mtg_netherlands.80.t
-	desc = mtg_netherlands.80.d
-	picture = GFX_report_event_generic_sign_treaty1
-
-	is_triggered_only = yes
-	
-	# Accept
-	option = {
-		name = mtg_netherlands.80.a
-		ai_chance = {
-			base = 5
-			modifier = {
-				factor = 2
-				has_government = fascism #we're interested in that region!
-			}
-			modifier = { #We are afraid of your enemies!
-				factor = 0
-				NOT = {
-					has_government = fascism
-				}
-				HOL = {
-					has_war_with = SOV
-				}
-			}
-			modifier = { #Don't drag us into your wars!
-				factor = 0
-				has_war_with = SOV
-				HOL = {
-					any_enemy_country = {
-						is_major = yes
-						NOT = {
-							has_war_with = JAP
-						}
-					}
-				}
-			}			
-		}
-		if = {
-			limit = { #Create new alliance
-				is_in_faction = no
-				HOL = {
-					is_in_faction = no
-				}
-			}
-			HOL = { 
-				create_faction = HOL_JAP_new_faction
-				add_to_faction = JAP
-			}
-		}
-		else_if = { #might break in rare scenarios
-			limit = { #Japan in empty alliance
-				all_allied_country = {
-					OR = {
-						is_subject = yes
-						tag = SIA #we dont care about them lol
-					}
-				}
-			}
-			HOL = {
-				if = {
-					limit = {
-						is_faction_leader = no
-					}
-					create_faction = HOL_JAP_new_faction
-				}
-				add_to_faction = JAP
-			}
-		}
-		else = { #Join Japan's alliance instead
-			add_to_faction = HOL
-		}
-	}
-	# Decline
-	option = {
-		name = mtg_netherlands.80.b
-		ai_chance = {
-			base = 5
-		}
 	}
 }

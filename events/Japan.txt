@@ -20,41 +20,17 @@ country_event = {
   			type = annex_everything
   			target = CHI
   		}
-		CHI = {
-			if = {
-				limit = {
-					NOT = {
-						has_completed_focus = KMT_national_def_propaganda
-						has_completed_focus = KMT_focus_on_our_own_army
-						has_completed_focus = KMT_incorporate_warlord_forces
-					}
-				}
-				add_timed_idea = {
-					idea = JAP_caught_off_gruad
-					days = 70
-				}
-			}
-		}
-  		if = {
-			limit = {
-				OR = {
-					MEN = { is_puppet_of = CHI }
-					MEN = { is_puppet = no }
-				}			
-			}	
-			create_wargoal = {
-  				type = annex_everything
-  				target = MEN
-  			}
-		}
-  		
+  		create_wargoal = {
+  			type = annex_everything
+  			target = SHX
+  		}
 		hidden_effect = {
-			news_event = { days = 5 id = news.1 }
+			country_event = { days = 5 id = news.1 }
 		}
 		USA = { set_country_flag = { flag = USA_china_window days = 60 value = 1 } }
 		if = {
 			limit = {
-				has_country_leader = { character = JAP_emperor_hirohito }
+				has_country_leader = { id = 700 ruling_only = yes }
 			}
 			remove_country_leader_trait = imperial_sanction
 		}
@@ -76,7 +52,7 @@ country_event = {
 			set_truce = { target = FROM days = 180 }
 		}
 		hidden_effect = {
-			news_event = { days = 5 id = news.2 }
+			country_event = { days = 5 id = news.2 }
 		}
 		if = {
 			limit = {
@@ -118,19 +94,10 @@ country_event = {
 				transfer_state = 743
 			}
 		}
-		if = {
-			limit = {
-				MEN = { is_subject_of = FROM }
-				611 = { is_controlled_by = MEN }	
-			}
-			JAP = { 
-				transfer_state = 611
-			}
-		}
 		add_state_claim = 613
 		if = {
 			limit = {
-				has_country_leader = { character = JAP_emperor_hirohito }
+				has_country_leader = { id = 700 ruling_only = yes }
 			}
 			remove_country_leader_trait = imperial_sanction
 		}
@@ -235,12 +202,12 @@ country_event = {
 			}
 		}
 		army_experience = 15
-		add_tech_bonus = {
-			name = japan.4.t #test_the_ussr_focus
-			bonus = 1.0
+		add_doctrine_cost_reduction = {
+			name = japan.4.t
+			cost_reduction = 0.35
 			uses = 1
 			category = cat_grand_battle_plan
-		}		
+		}
 		SOV = {
 			country_event = { id = soviet.3 }
 		}
@@ -260,7 +227,7 @@ country_event = {
 		name = japan.5.a
 		add_war_support = 0.05
 		hidden_effect = {
-			news_event = { days = 5 id = news.9 }
+			country_event = { days = 5 id = news.9 }
 		}
 	}
 }
@@ -287,7 +254,6 @@ country_event = {
 						CONTROLLER = {
 							OR = {
 								original_tag = FRA
-								original_tag = FRI
 								is_subject_of = FRA
 								is_subject_of = VIC
 							}
@@ -302,7 +268,6 @@ country_event = {
 						CONTROLLER = {
 							OR = {
 								original_tag = FRA
-								original_tag = FRI
 								is_subject_of = FRA
 								is_subject_of = VIC
 							}
@@ -313,86 +278,10 @@ country_event = {
 			}
 			if = {
 				limit = {
-					924 = {
-						CONTROLLER = {
-							OR = {
-								original_tag = FRA
-								original_tag = FRI
-								is_subject_of = FRA
-								is_subject_of = VIC
-							}
-						}
-					}
-				}
-				transfer_state = 924
-			}
-			if = {
-				limit = {
-					925 = {
-						CONTROLLER = {
-							OR = {
-								original_tag = FRA
-								original_tag = FRI
-								is_subject_of = FRA
-								is_subject_of = VIC
-							}
-						}
-					}
-				}
-				transfer_state = 925
-			}
-			if = {
-				limit = {
-					926 = {
-						CONTROLLER = {
-							OR = {
-								original_tag = FRA
-								original_tag = FRI
-								is_subject_of = FRA
-								is_subject_of = VIC
-							}
-						}
-					}
-				}
-				transfer_state = 926
-			}
-			if = {
-				limit = {
-					927 = {
-						CONTROLLER = {
-							OR = {
-								original_tag = FRA
-								original_tag = FRI
-								is_subject_of = FRA
-								is_subject_of = VIC
-							}
-						}
-					}
-				}
-				transfer_state = 927
-			}
-			if = {
-				limit = {
-					928 = {
-						CONTROLLER = {
-							OR = {
-								original_tag = FRA
-								original_tag = FRI
-								is_subject_of = FRA
-								is_subject_of = VIC
-							}
-						}
-					}
-				}
-				transfer_state = 928
-			}
-			if = {
-				limit = {
 					671 = {
 						CONTROLLER = {
 							OR = {
 								original_tag = FRA
-								original_tag = FRI
 								is_subject_of = FRA
 								is_subject_of = VIC
 							}
@@ -407,7 +296,6 @@ country_event = {
 						CONTROLLER = {
 							OR = {
 								original_tag = FRA
-								original_tag = FRI
 								is_subject_of = FRA
 								is_subject_of = VIC
 							}
@@ -422,7 +310,6 @@ country_event = {
 						CONTROLLER = {
 							OR = {
 								original_tag = FRA
-								original_tag = FRI
 								is_subject_of = FRA
 								is_subject_of = VIC
 							}
@@ -436,7 +323,29 @@ country_event = {
 	}
 }
 
-
+# French Reject Demands
+country_event = {
+	id = japan.7
+	title = japan.7.t
+	desc = japan.7.d
+	picture = GFX_report_event_japanese_soldiers_03
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.7.a
+		create_wargoal = {
+			type = take_state
+			target = FROM
+			generator = {
+				286 741 670 671 728
+			}
+		}
+		hidden_effect = {
+			country_event = { days = 5 id = news.6 }
+		}
+	}
+}
 
 # Germany Agrees to Withdraw Falkenhausen
 country_event = {
@@ -470,21 +379,21 @@ country_event = {
 }
 
 # USA condemns our war 
-#country_event = {
-#	id = japan.10
-#	title = japan.10.t
-#	desc = japan.10.d
-#	picture = GFX_report_event_FDR_speech
-#	
-#	is_triggered_only = yes
-#	
-#	option = {
-#		name = japan.10.a
-#		USA = { 
-#			add_opinion_modifier = { target = JAP modifier = condemn_aggression }
-#		}
-#	}
-#}
+country_event = {
+	id = japan.10
+	title = japan.10.t
+	desc = japan.10.d
+	picture = GFX_report_event_FDR_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.10.a
+		USA = { 
+			add_opinion_modifier = { target = JAP modifier = condemn_aggression }
+		}
+	}
+}
 
 # Pressure Siam to become a puppet
 country_event = {
@@ -614,7 +523,7 @@ country_event = {
 					popularity = -0.05
 				}
 				else = {
-					add_ideas = RAJ_subhas_chanda_bose_tfv 
+					add_ideas = RAJ_azad_hind 
 					ENG = {
 						country_event = { id = britain.19 }
 					}
@@ -625,83 +534,49 @@ country_event = {
 }
 
 # China event from Japan: Become puppet or not
-#country_event = {
-#	id = japan.16
-#	title = japan.16.t
-#	desc = japan.16.d
-#	picture = GFX_report_event_asian_politicians
-#	
-#	is_triggered_only = yes
-#	
-#	#Accept - become puppet
-#	option = {
-#		name = japan.16.a
-#		ai_chance = {
-#			factor = 60
-#			modifier = {
-#				factor = 0
-#				strength_ratio = {
-#					tag = JAP
-#					ratio > 0.10
-#				}
-#			#	CHI_is_on_historical_plan_trigger = yes
-#			}
-#		}
-#		JAP = { 
-#			country_event = { id = japan.17 }
-#			effect_tooltip = { puppet = CHI }
-#		}
-#	}
-#
-#	option = {
-#		name = japan.16.b
-#		ai_chance = { factor = 40 }
-#		JAP = { 
-#			country_event = { id = japan.18 }
-#			effect_tooltip = {
-#				if = {
-#					limit = {
-#						JAP = {	is_ai = yes }
-#					}
-#					else = {
-#						create_wargoal = {
-#							type = take_state
-#							target = CHI
-#							generator = owned_states
-#						}
-#					}
-#					declare_war_on = {
-#						type = take_state
-#						target = CHI
-#						generator = owned_states
-#					}
-#					every_other_country = {
-#						limit = {
-#							is_puppet_of = ROOT
-#						}
-#						add_to_war = {
-#							targeted_alliance = ROOT
-#							enemy = CHI
-#						}
-#					}
-#					if = {
-#						limit = {
-#							PGR = {
-#								is_puppet_of = CHI
-#							}
-#						}
-#						PGR = {
-#							add_to_war = {
-#								targeted_alliance = CHI
-#								enemy = JAP
-#							}
-#						}
-#					}
-#				}
-#			}
-#		}
-#	}
-#}
+country_event = {
+	id = japan.16
+	title = japan.16.t
+	desc = japan.16.d
+	picture = GFX_report_event_asian_politicians
+	
+	is_triggered_only = yes
+	
+	#Accept - become puppet
+	option = {
+		name = japan.16.a
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 0
+				strength_ratio = {
+					tag = JAP
+					ratio > 0.10
+				}
+				CHI_is_on_historical_plan_trigger = yes
+			}
+		}
+		JAP = { 
+			country_event = { id = japan.17 }
+			effect_tooltip = { puppet = CHI }
+		}
+	}
+
+	option = {
+		name = japan.16.b
+		ai_chance = { factor = 40 }
+		JAP = { 
+			country_event = { id = japan.18 }
+			effect_tooltip = {
+				create_wargoal = {
+					type = take_state
+					target = CHI
+					generator = owned_states
+				}
+			}
+		}
+	}
+}
 
 # China accepts and is puppeted
 country_event = {

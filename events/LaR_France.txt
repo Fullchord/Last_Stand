@@ -8,7 +8,6 @@
 
 
 add_namespace = lar_congress_of_paris
-add_namespace = lar_worker_shortage
 
 #opening event for France - set up claims, pass on to Italy
 country_event = {
@@ -21,16 +20,10 @@ country_event = {
 	option = {
 		name = lar_congress_of_paris.1.a
 		add_state_claim = 558
-		add_state_claim = 900
-		add_state_claim = 901
-		add_state_claim = 902
 		add_state_claim = 274
 		add_state_claim = 700
 		add_state_claim = 701
 		add_state_claim = 538
-		add_state_claim = 890
-		add_state_claim = 888
-		add_state_claim = 889
 		add_state_claim = 718
 		add_state_claim = 768
 		add_state_claim = 769
@@ -340,8 +333,8 @@ country_event = {
 	trigger = {
 		original_tag = FRA
 		NOT = {
-			has_completed_focus = FRA_root_out_communism
-			has_completed_focus = FRA_law_against_combat_groups
+			has_completed_focus = FRA_ban_communism
+			has_completed_focus = FRA_ban_the_leagues
 		}
 		not = { has_idea = FRA_political_violence }
 		has_stability < 0.5
@@ -1138,22 +1131,12 @@ country_event = {
 			}
 			annex_country = { target = CAM }
 		}
-		if = {
-			limit = {
-				FRI = {
-					exists = yes
-					is_subject_of = ROOT
-				}
-			}
-			annex_country = { target = FRI }
-		}
 		every_owned_state = {
 			limit = {
 				OR = {
 					is_core_of = VIN
 					is_core_of = LAO
 					is_core_of = CAM
-					is_core_of = FRI
 				}
 			}
 			add_core_of = ROOT
@@ -1416,9 +1399,6 @@ country_event = {
 			transfer_state = 670
 			transfer_state = 671
 			transfer_state = 741
-			transfer_state = 924
-			transfer_state = 925
-			transfer_state = 926
 		}
 	}
 }
@@ -1728,6 +1708,8 @@ country_event = {
 					state = 557
 					state = 272
 					state = 556
+					state = 898
+					state = 899
 					state = 780
 					state = 779
 					state = 778
@@ -1759,6 +1741,8 @@ country_event = {
 						state = 557
 						state = 272
 						state = 556
+						state = 898
+						state = 899
 						state = 780
 						state = 779
 						state = 778
@@ -1880,7 +1864,14 @@ country_event = {
 	option = {
 		name = lar_compensate_italy.1.a #agree
 		ai_chance = {
-			factor = 100
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					ITA_is_monarchist_ai = yes
+					ITA_is_alt_fascist_grandi_ai = yes
+				}
+			}
 		}
 		FRA = {
 			country_event = lar_compensate_italy.2
@@ -1894,7 +1885,7 @@ country_event = {
 	option = {
 		name = lar_compensate_italy.1.b #refuse
 		ai_chance = {
-			factor = 0
+			base = 1
 		}
 		FRA = {
 			country_event = lar_compensate_italy.3
@@ -2152,33 +2143,16 @@ country_event = {
 			country_event = lar_spheres_of_influence.2
 		}
 		effect_tooltip = {
-			ROOT = {#they
+			ROOT = {
+				add_state_claim = 8
 				add_state_claim = 7
 				add_state_claim = 35
 				add_state_claim = 36
-				add_state_claim =  965
-				#add_to_faction = FROM
+				add_to_faction = FROM
 			}
 			FROM = {
-				add_state_claim = 8
 				add_state_claim = 34
 				add_state_claim = 6
-				if = {
-					limit = {
-						42 = {
-							is_claimed_by = ROOT
-						}
-					}
-					remove_state_claim = 42
-				}
-				if = {
-					limit = {
-						51 = {
-							is_claimed_by = ROOT
-						}
-					}
-					remove_state_claim = 51
-				}
 			}
 		}
 	}
@@ -2190,7 +2164,7 @@ country_event = {
 		}
 		FROM = {
 			country_event = lar_spheres_of_influence.3
-			set_global_flag = lar_germany_refused_spheres
+			set_country_flag = lar_germany_refused_spheres
 		}
 	}
 }
@@ -2204,40 +2178,20 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = lar_spheres_of_influence.2.a #agree
+		ai_chance = {
+			factor = 100
+		}
 		FROM = {
+			add_state_claim = 8
 			add_state_claim = 7
 			add_state_claim = 35
 			add_state_claim = 36
-			add_state_claim =  965
-			#add_to_faction = ROOT
-			diplomatic_relation = {
-				country = ROOT
-				relation = non_aggression_pact
-				active = yes
-			}			
+			add_to_faction = ROOT
 		}
 		ROOT = {
-			add_state_claim = 8
 			add_state_claim = 34
 			add_state_claim = 6
-			if = {
-				limit = {
-					42 = {
-						is_claimed_by = ROOT
-					}
-				}
-				remove_state_claim = 42
-			}
-			if = {
-				limit = {
-					51 = {
-						is_claimed_by = ROOT
-					}
-				}
-				remove_state_claim = 51
-			}
 		}
-		set_global_flag = FRA_GER_sphere_of_influence_agreement
 		hidden_effect = {
 			news_event = { id = lar_news.7 days = 3 random_days = 7 }
 		}
@@ -2252,13 +2206,15 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = lar_spheres_of_influence.3.a #agree
+		ai_chance = {
+			factor = 80
+		}
 		add_state_claim = 34
 		add_state_claim = 6
 		add_state_claim = 8
 		add_state_claim = 7
 		add_state_claim = 35
 		add_state_claim = 36
-		add_state_claim =  965
 	}
 }
 
@@ -2369,58 +2325,15 @@ country_event = {
 		name = lar_split_belgium.1.a #agree
 		ai_chance = {
 			factor = 40
-			modifier = {
-				tag = WLL
-				factor = 10
-			}
-			modifier = {
-				tag = FLA
-				factor = 10
-			}			
 		}
 		FRA = {
 			country_event = lar_split_belgium.2
 		}
-		if = {
-			limit = {
-				original_tag = BEL
+		effect_tooltip = {
+			FRA = {
+				puppet = PREV
+				transfer_state = 34
 			}
-			#BEL = {
-			#	release = FLA
-			#}
-			FLA = {
-				set_state_owner = 6
-				set_state_controller = 6
-			}			
-			FLA = {
-				change_tag_from = BEL
-			}
-			GER = {
-				puppet = FLA
-			}
-			transfer_state = 34
-			GER = {
-				transfer_state = 965
-				add_state_core = 965
-			}						
-		}
-		if = {
-			limit = {
-				original_tag = WLL
-			}
-			transfer_state = 34
-			GER = {
-				transfer_state = 965
-				add_state_core = 965
-			}						
-		}
-		if = {
-			limit = {
-				original_tag = FLA
-			}
-			GER = {
-				puppet = FLA
-			}					
 		}
 	}
 
@@ -2453,17 +2366,8 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
-				
-		effect_tooltip = {
-			transfer_state = 34
-			GER = {
-				transfer_state = 965
-				add_state_core = 965
-				puppet = FLA
-			}	
-		}
-		
-
+		puppet = FROM
+		transfer_state = 34
 	}
 }
 #response event for France - Belgium refuses
@@ -2579,7 +2483,19 @@ country_event = {
 	option = {
 		name = lar_concessions_to_italy.4.a #agree
 		ai_chance = {
-			factor = 80
+			base = 5
+			modifier = {
+				add = 75
+				OR = {
+					ITA_is_alt_fascist_grandi_ai = yes
+					ITA_is_christian_democracy_ai = yes
+					ITA_is_socialist_ai = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				is_in_faction = yes
+			}
 		}
 		set_global_flag = ITA_agrees_ENG_FRA_concessions
 		effect_tooltip = {
@@ -2599,7 +2515,13 @@ country_event = {
 	option = {
 		name = lar_concessions_to_italy.4.b #no deal
 		ai_chance = {
-			factor = 20
+			base = 20
+			modifier = {
+				factor = 0
+				ITA_is_alt_fascist_grandi_ai = no
+				ITA_is_christian_democracy_ai = no
+				ITA_is_socialist_ai = no
+			}
 		}
 		FROM = {
 			country_event = lar_concessions_to_italy.7
@@ -2967,7 +2889,7 @@ country_event = {
 		ai_chance = {
 			factor = 60
 			modifier = {
-				FRA = { has_completed_focus = FRA_radicalize_front }
+				FRA = { has_completed_focus = FRA_form_the_popular_front }
 				factor = 0.2
 			}
 		}
@@ -3078,234 +3000,14 @@ country_event = {
 			factor = 50
 		}
 		hidden_effect = { news_event = { id = lar_news.4 days = 3 random_days = 5 } }
-
 		every_state = { #take over core french territory that is being held by Germany
 			limit = {
 				is_core_of = ROOT
 				NOT = { state = 28 } #Elsass-Lothringen ist deutsch!
-				 
-
-				if = {
-					limit = {
-						735 = {
-							CONTROLLER = {
-								OR = {
-									original_tag = ITA
-									original_tag = SWI
-								}
-								is_in_faction_with = FROM
-							}
-						}						
-					}
-					NOT = {
-						state = 735
-					}
-				}
-				if = { #Savoy is Italian
-					limit = {
-						735 = {
-							CONTROLLER = {
-								original_tag = ITA
-								is_in_faction_with = FROM
-							}
-						}						
-					}
-					NOT = {
-						state = 735
-					}
-				}
-				
-				if = { #Corsican is Italian/corsican, but they all agree that Corsica Nazione is not legitimate
-					limit = {
-						1 = {
-							CONTROLLER = {
-								OR = {
-									original_tag = COR
-									original_tag = SAD
-									original_tag = SIC
-									original_tag = ITA
-									original_tag = CAT
-									original_tag = SPR
-									original_tag = AUS
-									original_tag = ADU
-									original_tag = GRE
-									original_tag = CZE
-									original_tag = YUG
-									original_tag = TUR
-									original_tag = MOR
-									original_tag = ALG
-									original_tag = TUN
-									original_tag = EGY
-									original_tag = LBA
-								}
-								
-								is_in_faction_with = FROM
-							}
-						}						
-					}
-					NOT = {
-						state = 1
-					}
-				}				
-
-				if = { #Nord Pas de Calais is rightful Benelux Clay.
-					limit = {
-						29 = {
-							CONTROLLER = {
-								OR = {
-									original_tag = FLA
-									original_tag = WLL
-									original_tag = BEL
-									original_tag = HOL
-									original_tag = LUX
-								}
-								
-								is_in_faction_with = FROM
-							}
-						}						
-					}
-					NOT = {
-						state = 29
-					}
-				}
-
-				if = { #Champagne is not rightful Benelux Clay... but we will keep it.
-					limit = {
-						18 = {
-							CONTROLLER = {
-								OR = {
-									original_tag = FLA
-									original_tag = WLL
-									original_tag = BEL
-									original_tag = HOL
-									original_tag = LUX
-								}
-								
-								is_in_faction_with = FROM
-							}
-						}						
-					}
-					NOT = {
-						state = 18
-					}
-				}
-				if = { #Franche Compté is rightful Burgundian Clay.
-					limit = {
-						17 = {
-							CONTROLLER = {
-								OR = {
-									original_tag = FLA
-									original_tag = WLL
-									original_tag = BEL
-									original_tag = HOL
-									original_tag = LUX
-								}
-								
-								is_in_faction_with = FROM
-							}
-						}						
-					}
-					NOT = {
-						state = 17
-					}
-				}
-				if = { #Burgundy is rightful Burgundian Clay.
-					limit = {
-						27 = {
-							CONTROLLER = {
-								OR = {
-									original_tag = FLA
-									original_tag = WLL
-									original_tag = BEL
-									original_tag = HOL
-									original_tag = LUX
-								}
-								
-								is_in_faction_with = FROM
-							}
-						}						
-					}
-					NOT = {
-						state = 27
-					}
-				}								
-				if = { #Champagne is not rightful Benelux Clay... but we will keep it.
-					limit = {
-						18 = {
-							CONTROLLER = {
-								OR = {
-									original_tag = FLA
-									original_tag = WLL
-									original_tag = BEL
-									original_tag = HOL
-									original_tag = LUX
-								}
-								
-								is_in_faction_with = FROM
-							}
-						}						
-					}
-					NOT = {
-						state = 18
-					}
-				}
-				if = { #Basque country belongs to Euskadi.
-					limit = {
-						806 = {
-							CONTROLLER = {
-								OR = {
-									original_tag = NAV
-									original_tag = SPR
-									original_tag = CAT
-									original_tag = ADU
-									original_tag = POR
-								}
-								
-								is_in_faction_with = FROM
-							}
-						}						
-					}
-					NOT = {
-						state = 806
-					}
-				}
-				if = { #Toulouse country belongs to Euskadi apparently...
-					limit = {
-						31 = {
-							CONTROLLER = {
-								OR = {
-									original_tag = NAV
-									original_tag = SPR
-									original_tag = CAT
-									original_tag = ADU
-									original_tag = POR
-								}
-								
-								is_in_faction_with = FROM
-							}
-						}						
-					}
-					NOT = {
-						state = 31
-					}
-				}				
-				if = {
-					limit = { #Brittany can into map apparition!
-						14 = {
-							OWNER = {
-								original_tag = BRI
-								is_in_faction_with = FROM
-							}
-						}						
-					}
-					NOT = {
-						state = 14
-					}
-				}
+				NOT = { state = 735 } #Savoy is Italian
 				OR = {
 					is_controlled_by = FROM
 					CONTROLLER = {
-						is_ai = yes
 						is_in_faction_with = FROM 
 					}
 				}
@@ -3318,12 +3020,12 @@ country_event = {
 			}
 			FROM = { add_to_faction = ROOT }
 		}
-		load_focus_tree = french_focus
-		unlock_national_focus = FRA_far_right_leagues
-		unlock_national_focus = FRA_front_liberte
-		unlock_national_focus = FRA_support_ppf
-		unlock_national_focus = FRA_diplomatic_freedom
-		set_country_flag = FRA_vichy_occupation_ended
+		#load_focus_tree = french_focus
+		#unlock_national_focus = VIC_revive_the_national_bloc
+		#unlock_national_focus = VIC_utilize_the_leagues
+		#unlock_national_focus = VIC_national_regeneration
+		#unlock_national_focus = VIC_diplomatic_freedom
+		#unlock_national_focus = VIC_towards_a_new_europe
 	}
 }
 
@@ -3336,28 +3038,31 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
-		name = lar_end_the_occupation.3.a #let's talk to Free France
-		ai_chance = {
-			factor = 50
-		}
-		random_other_country = {
-			limit = { 
-				original_tag = FRA 
-				has_government = democratic
-			}
-			country_event = lar_end_the_occupation.4
-			effect_tooltip = { annex_country = { target = VIC transfer_troops = yes } }
-		}
-	}
+	#option = {
+	#	name = lar_end_the_occupation.3.a #let's talk to Free France
+	#	ai_chance = {
+	#		factor = 50
+	#	}
+	#	random_other_country = {
+	#		limit = { 
+	#			original_tag = FRA 
+	#			has_government = democratic
+	#		}
+	#		country_event = lar_end_the_occupation.4
+	#		effect_tooltip = { annex_country = { target = VIC transfer_troops = yes } }
+	#	}
+	#}
 	option = {
 		name = lar_end_the_occupation.3.b #fine, we'll do it ourselves
 		ai_chance = {
 			factor = 50
 		}
-		load_focus_tree = french_focus
-		unlock_national_focus = FRA_far_right_leagues
-		unlock_national_focus = FRA_cagoule_coup
+		#load_focus_tree = french_focus
+		#unlock_national_focus = FRA_revive_the_national_bloc
+		#unlock_national_focus = FRA_utilize_the_leagues
+		#unlock_national_focus = FRA_national_regeneration
+		#unlock_national_focus = FRA_diplomatic_freedom
+		#unlock_national_focus = FRA_latin_entente
 	}
 }
 
@@ -3424,12 +3129,10 @@ country_event = {
 		FRA = {
 			annex_country = { target = VIC transfer_troops = yes }
 			load_focus_tree = french_focus
-			unlock_national_focus = FRA_status_quo
-			unlock_national_focus = FRA_social_reforms
-			unlock_national_focus = FRA_support_daladier
-			unlock_national_focus = FRA_reynaud_economic_reforms
-			unlock_national_focus = FRA_rearmament_policy
-			unlock_national_focus = FRA_go_with_britain
+			unlock_national_focus = FRA_revive_the_national_bloc
+			unlock_national_focus = FRA_laissez_faire
+			unlock_national_focus = FRA_protect_the_rights_of_man
+			unlock_national_focus = FRA_review_foreign_policy		
 		}
 	}
 }
@@ -3449,8 +3152,11 @@ country_event = {
 			factor = 80
 		}
 		load_focus_tree = french_focus
-		unlock_national_focus = FRA_far_right_leagues
-		unlock_national_focus = FRA_cagoule_coup
+		unlock_national_focus = FRA_revive_the_national_bloc
+		unlock_national_focus = FRA_utilize_the_leagues
+		unlock_national_focus = FRA_national_regeneration
+		unlock_national_focus = FRA_diplomatic_freedom
+		unlock_national_focus = FRA_latin_entente
 	}
 }
 
@@ -3468,33 +3174,9 @@ country_event = {
 	title = lar_low_stability_civil_war.1.t
 	desc = lar_low_stability_civil_war.1.desc
 	picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	is_triggered_only = yes
 
-	trigger = {
-		tag = FRA
-		OR = {
-			has_war = no
-			AND = {
-				SPR_scw_in_progress = yes
-				any_enemy_country = {
-					original_tag = SPR #civil war still fires if in intervention in Spain
-				}
-			}
-		}
-		has_stability < 0.25
-		communism > 0.15
-		not = { 				
-			FRA = {
-				OR = {
-					has_completed_focus = FRA_radicalize_front
-					has_completed_focus = FRA_status_quo
-					has_government = communism	
-				}
-				
-			} 
-		}
-	}
-	mean_time_to_happen = { days = 180 }
-	fire_only_once = yes
 	option = {
 		name = lar_low_stability_civil_war.1.a #agree
 		ai_chance = {
@@ -3514,29 +3196,9 @@ country_event = {
 	desc = lar_low_stability_civil_war.2.desc
 	picture = GFX_report_event_spain_civil_war_soldiers
 
-	trigger = {
-		tag = FRA
-		OR = {
-			has_war = no
-			AND = {
-				SPR_scw_in_progress = yes
-				any_enemy_country = {
-					original_tag = SPR #civil war still fires if in intervention in Spain
-				}
-			}
-		}
-		has_stability < 0.25
-		fascism > 0.15
-		NOT = {
-			has_government = fascism
-		}
-		OR = {
-			has_completed_focus = FRA_radicalize_front
-			has_completed_focus = FRA_status_quo
-		}
-	}
-	mean_time_to_happen = { days = 180 }
+	is_triggered_only = yes
 	fire_only_once = yes
+	
 	option = {
 		name = lar_low_stability_civil_war.2.a #agree
 		ai_chance = {
@@ -3557,79 +3219,80 @@ country_event = {
 
 
 #events to notify player that they are having worker issues
-# add_namespace = lar_worker_shortage
+add_namespace = lar_worker_shortage
 
-  #country switched to extensive conscription while on full employment
-  country_event = {
- 	 id = lar_worker_shortage.1
- 	 title = lar_worker_shortage.1.t
- 	 desc = lar_worker_shortage.1.desc
- 	 picture = GFX_report_event_generic_factory
- 	 trigger = {
- 		 tag = FRA
- 		 has_idea = FRA_full_employment
- 		 not = { has_idea = FRA_worker_shortage }
- 		 OR = {
- 			 has_idea = extensive_conscription
- 			 has_idea = service_by_requirement
- 			 has_idea = all_adults_serve
- 			 has_idea = scraping_the_barrel
- 		 }
- 	 }
- 	 mean_time_to_happen = { days = 20 }
+#country switched to extensive conscription while on full employment
+country_event = {
+	id = lar_worker_shortage.1
+	title = lar_worker_shortage.1.t
+	desc = lar_worker_shortage.1.desc
+	picture = GFX_report_event_generic_factory
 
- 	 immediate = {
- 		 hidden_effect = {
- 			 swap_ideas = {
- 				 remove_idea = FRA_full_employment
- 				 add_idea = FRA_worker_shortage
- 			 }
- 		 }
- 	 }
-	  
- 	 option = {
- 		 name = lar_worker_shortage.1.a #agree
- 		 ai_chance = {
- 			 factor = 80
- 		 }
- 		 effect_tooltip = { #actual effect in immediate so player can not avoid by waiting it out, tooltip here to tell player what is happening
- 			 swap_ideas = {
- 				 remove_idea = FRA_full_employment
- 				 add_idea = FRA_worker_shortage
- 			 }
- 		 }
- 	 }
-  }
+	trigger = {
+		tag = FRA
+		has_idea = FRA_full_employment
+		not = { has_idea = FRA_worker_shortage }
+		OR = {
+			has_idea = extensive_conscription
+			has_idea = service_by_requirement
+			has_idea = all_adults_serve
+			has_idea = scraping_the_barrel
+		}
+	}
+	mean_time_to_happen = { days = 20 }
+	
+	immediate = {
+		hidden_effect = {
+			swap_ideas = {
+				remove_idea = FRA_full_employment
+				add_idea = FRA_worker_shortage
+			}
+		}
+	}
 
-  #country demobilizes while having worker shortage
-  country_event = {
- 	 id = lar_worker_shortage.2
- 	 title = lar_worker_shortage.2.t
- 	 desc = lar_worker_shortage.2.desc
- 	 picture = GFX_report_event_france_tank_production
+	option = {
+		name = lar_worker_shortage.1.a #agree
+		ai_chance = {
+			factor = 80
+		}
+		effect_tooltip = { #actual effect in immediate so player can not avoid by waiting it out, tooltip here to tell player what is happening
+			swap_ideas = {
+				remove_idea = FRA_full_employment
+				add_idea = FRA_worker_shortage
+			}
+		}
+	}
+}
 
- 	 trigger = {
- 		 tag = FRA
- 		 has_idea = FRA_worker_shortage
- 		 not = { has_idea = FRA_full_employment }
- 		 OR = {
- 			 has_idea = limited_conscription
- 			 has_idea = disarmed_nation
- 			 has_idea = volunteer_only
- 		 }
- 	 }
- 	 mean_time_to_happen = { days = 20 }
- 	 option = {
- 		 name = lar_worker_shortage.2.a #agree
- 		 ai_chance = {
- 			 factor = 80
- 		 }
- 		 swap_ideas = {
- 			 remove_idea = FRA_worker_shortage
- 			 add_idea = FRA_full_employment
- 		 }
- 	 }
-  }
+#country demobilizes while having worker shortage
+country_event = {
+	id = lar_worker_shortage.2
+	title = lar_worker_shortage.2.t
+	desc = lar_worker_shortage.2.desc
+	picture = GFX_report_event_france_tank_production
+
+	trigger = {
+		tag = FRA
+		has_idea = FRA_worker_shortage
+		not = { has_idea = FRA_full_employment }
+		OR = {
+			has_idea = limited_conscription
+			has_idea = disarmed_nation
+			has_idea = volunteer_only
+		}
+	}
+	mean_time_to_happen = { days = 20 }
+	option = {
+		name = lar_worker_shortage.2.a #agree
+		ai_chance = {
+			factor = 80
+		}
+		swap_ideas = {
+			remove_idea = FRA_worker_shortage
+			add_idea = FRA_full_employment
+		}
+	}
+}
 
  ##  ###  #   #  ##     ###  #  # ###   ##  #  #  ##   ## ###  ## 
 #  # #  # ## ## #       #  # #  # #  # #  # #  # #  # #   #   #   
@@ -3639,7 +3302,7 @@ country_event = {
 
 add_namespace = lar_arms_purchases
 
-#intial event for US/UK - FROM wants to buy weapons
+#intial event for US - France wants to buy weapons
 country_event = {
 	id = lar_arms_purchases.1
 	title = lar_arms_purchases.1.t
@@ -3649,9 +3312,12 @@ country_event = {
 	option = {
 		name = lar_arms_purchases.1.a #agree
 		ai_chance = {
-			factor = 60
+			factor = 40
 		}
-		FROM = {
+		trigger = {
+			USA_can_sell_weapons_trigger = yes
+		}
+		FRA = {
 			country_event = lar_arms_purchases.2
 		}
 		army_experience = 10
@@ -3660,21 +3326,13 @@ country_event = {
 	option = {
 		name = lar_arms_purchases.1.b #refuse
 		ai_chance = {
-			factor = 1
+			factor = 60
 			modifier = {
-				AND = {
-					FROM = { has_war = yes }
-					NOT = {
-						OR = {
-							has_war_together_with = FROM
-							has_completed_focus = USA_lend_lease_act
-						}
-					}
-				}
-				factor = 0.1
+				FRA = { has_war = yes }
+				factor = 0.5
 			}
 		}
-		FROM = {
+		FRA = {
 			country_event = lar_arms_purchases.3
 		}
 	}
@@ -3684,22 +3342,7 @@ country_event = {
 country_event = {
 	id = lar_arms_purchases.2
 	title = lar_arms_purchases.2.t
-	desc = {
-        trigger = {
-            FROM = {
-				original_tag = USA
-			}
-        }
-        text = lar_arms_purchases.2.desc
-    }
-	desc = {
-        trigger = {
-            FROM = {
-				original_tag = ENG
-			}
-        }
-        text = lar_arms_purchases.2.eng.desc
-    }
+	desc = lar_arms_purchases.2.desc
 	picture = GFX_report_event_merchant_ship_01
 	is_triggered_only = yes
 	option = {
@@ -3707,17 +3350,7 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
-		if = {
-			limit = {
-				FROM = {
-					original_tag = USA
-				}
-			}
-			set_country_flag = FRA_arms_purchases_permitted
-		}
-		else = {
-			set_country_flag = SOV_arms_purchases_permitted
-		}
+		set_country_flag = FRA_arms_purchases_permitted
 	}
 }
 #response event for France - US refuse
@@ -3761,32 +3394,7 @@ country_event = {
 		else_if = {
 			limit = { has_government = democratic }
 			set_variable = { volunteer_strength = FRA.party_popularity@democratic }
-			#Since war_support is targeted poorly, had to add those checks
-			if = {
-				limit = {
-					FRA = {
-						has_war_support > 0.5 #somehow manages to get
-					}
-				}
-				multiply_variable = { volunteer_strength = 0.6 } #special modifier to reduce impact of democratic support
-			}
-			if = {
-				limit = {
-					FRA = {
-						has_war_support < 0.5
-						has_war_support > 0.2
-					}
-				}
-				multiply_variable = { volunteer_strength = 0.3 } #special modifier to reduce impact of democratic support
-			}
-			if = {
-				limit = {
-					FRA = {
-						has_war_support < 0.2
-					}
-				}
-				multiply_variable = { volunteer_strength = 0.15 } #special modifier to reduce impact of democratic support
-			}
+			multiply_variable = { volunteer_strength = 0.5 } #special modifier to reduce impact of democratic support [no longer war support, or we reach 0 often, also it is HIDDEN]
 		}
 		else_if = {
 			limit = { has_government = neutrality }
@@ -4033,24 +3641,24 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		random_list = {
-			90 = { country_event = lar_appeal_to_overseas_territories.2 } #indochina remains with Vichy
-			10 = { country_event = lar_appeal_to_overseas_territories.3 } #indochina switches sides
+			85 = { country_event = lar_appeal_to_overseas_territories.2 } #indochina remains with Vichy
+			15 = { country_event = lar_appeal_to_overseas_territories.3 } #indochina switches sides
 		}
 		random_list = {
-			95 = { country_event = { id = lar_appeal_to_overseas_territories.4 days = 3 } } #syria remains with Vichy
-			5 = { country_event = { id = lar_appeal_to_overseas_territories.5 days = 3 } } #syria switches sides
+			80 = { country_event = { id = lar_appeal_to_overseas_territories.4 days = 3 } } #syria remains with Vichy
+			20 = { country_event = { id = lar_appeal_to_overseas_territories.5 days = 3 } } #syria switches sides
 		}
 		random_list = {
-			0 = { country_event = { id = lar_appeal_to_overseas_territories.6 days = 8 } } #central africa remains with Vichy
-			100 = { country_event = { id = lar_appeal_to_overseas_territories.7 days = 8 } } #central africa switches sides
+			80 = { country_event = { id = lar_appeal_to_overseas_territories.6 days = 8 } } #central africa remains with Vichy
+			20 = { country_event = { id = lar_appeal_to_overseas_territories.7 days = 8 } } #central africa switches sides
 		}
 		random_list = {
-			95 = { country_event = { id = lar_appeal_to_overseas_territories.8 days = 12 } } #western africa remains with Vichy
-			5 = { country_event = { id = lar_appeal_to_overseas_territories.9 days = 12 } } #western africa switches sides
+			90 = { country_event = { id = lar_appeal_to_overseas_territories.8 days = 12 } } #western africa remains with Vichy
+			10 = { country_event = { id = lar_appeal_to_overseas_territories.9 days = 12 } } #western africa switches sides
 		}
 		random_list = {
-			85 = { country_event = { id = lar_appeal_to_overseas_territories.10 days = 16 } } #madagascar remains with Vichy
-			15 = { country_event = { id = lar_appeal_to_overseas_territories.11 days = 16 } } #madagascar switches sides
+			70 = { country_event = { id = lar_appeal_to_overseas_territories.10 days = 16 } } #madagascar remains with Vichy
+			30 = { country_event = { id = lar_appeal_to_overseas_territories.11 days = 16 } } #madagascar switches sides
 		}
 		random_list = {
 			95 = { country_event = { id = lar_appeal_to_overseas_territories.12 days = 20 } } #north africa remains with Vichy
@@ -4153,7 +3761,6 @@ country_event = {
 		}
 		VIC = { country_event = LaR_france_vichy_notification_events.3 }
 		FRA_transfer_central_africa_effect = yes
-		set_capital = { state = 772 }
 	}
 }
 # western africa remains with Vichy France
@@ -4362,19 +3969,19 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	immediate = {
-		#  if = {
-		# 	 limit = { has_idea = FRA_inefficient_economy_2 }
-		# 	 swap_ideas = {
-		# 		 remove_idea = FRA_inefficient_economy_2
-		# 		 add_idea = FRA_inefficient_economy_1
-		# 	 }
-		#  }
-		#  else_if = {
-		# 	 limit = {
-		# 		 has_idea = FRA_inefficient_economy_1
-		# 	 }
-		# 	 remove_ideas = FRA_inefficient_economy_1
-		#  }
+		if = {
+			limit = { has_idea = FRA_inefficient_economy_2 }
+			swap_ideas = {
+				remove_idea = FRA_inefficient_economy_2
+				add_idea = FRA_inefficient_economy_1
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = FRA_inefficient_economy_1
+			}
+			remove_ideas = FRA_inefficient_economy_1
+		}
 	}
 	option = {
 		
@@ -4517,8 +4124,8 @@ country_event = {
 add_namespace = lar_fra_join_the_ententes
 
  ###  ##  ### #  #     ### #  # ###     ### #  # ### ### #  # ### ###  ## 
-	# #  #  #  ## #      #  #  # #       #   ## #  #  #   ## #  #  #   #   
-	# #  #  #  # ##      #  #### ##      ##  # ##  #  ##  # ##  #  ##   #  
+   # #  #  #  ## #      #  #  # #       #   ## #  #  #   ## #  #  #   #   
+   # #  #  #  # ##      #  #### ##      ##  # ##  #  ##  # ##  #  ##   #  
 #  # #  #  #  #  #      #  #  # #       #   #  #  #  #   #  #  #  #     # 
  ##   ##  ### #  #      #  #  # ###     ### #  #  #  ### #  #  #  ### ##  
 
@@ -4572,12 +4179,6 @@ country_event = {
 			country_event = lar_fra_join_the_ententes.4
 		}
 		add_to_faction = FROM
-		every_other_country = {
-			limit = {
-				is_subject_of = FROM
-			}
-			ROOT = { add_to_faction = PREV }
-		}
 	}
 }
 
@@ -4641,12 +4242,6 @@ country_event = {
 			factor = 100
 		}
 		add_to_faction = FROM
-		every_other_country = {
-			limit = {
-				is_subject_of = FROM
-			}
-			ROOT = { add_to_faction = PREV }
-		}
 	}
 }
 

@@ -21,23 +21,18 @@ country_event = {
 		FROM = {
 			transfer_state = 550
 			transfer_state = 559
-		}
-		every_country = {
-			limit = {
-				is_in_faction_with = ITA
-				has_war_with = ETH
-			}
-			white_peace = ETH
+			transfer_state = 844
+			white_peace = ITA
 		}
 		if = {
 			limit = {
-				has_war_with = AFA
+				NOT = { has_completed_focus = ITA_solid_progress }
+				NOT = { has_completed_focus = ITA_struggle_in_ethiopia }
 			}
-			white_peace = {
-				tag = AFA
-			}
-		}	
-		set_country_flag = r56_ITA_vanquish_ethiopia_failed
+			complete_national_focus = ITA_struggle_in_ethiopia
+		}
+		ITA_manage_italian_defeat_in_ethiopia_effect = yes
+
 		add_popularity = {
 			ideology = fascism
 			popularity = -0.25

@@ -17,7 +17,7 @@ FRA_instigate_workers_revolution_britain = { ### 1/25
 		}
 	}
 	visible = {
-		has_completed_focus = FRA_intervention_committee
+		has_completed_focus = FRA_carry_the_revolution_north
 		FROM = {
 			tag = ENG
 		}
@@ -130,11 +130,6 @@ FRA_instigate_workers_revolution_britain = { ### 1/25
 				tooltip = intelligency_agency_resistance_boost_tt
 			}
 		}
-		ROOT = {
-			country_event = {
-				id = lar_operative_event.7
-			}
-		}		
 	}
 	
 	# This is where all the separate phases are defined
@@ -171,7 +166,7 @@ FRA_instigate_workers_revolution_italy = { ### 1/25
 		original_tag = FRA
 	}
 	available = { 
-		has_completed_focus = FRA_intervention_committee
+		has_completed_focus = FRA_carry_the_revolution_south
 		ITA = {
 			NOT = {
 				has_war_with = ROOT
@@ -179,7 +174,7 @@ FRA_instigate_workers_revolution_italy = { ### 1/25
 		}
 	}
 	visible = {
-		has_completed_focus = FRA_intervention_committee
+		has_completed_focus = FRA_carry_the_revolution_south
 		FROM = {
 			tag = ITA
 			NOT = { has_government = communism }
@@ -227,11 +222,6 @@ FRA_instigate_workers_revolution_italy = { ### 1/25
 		ITA = {
 			add_popularity = { ideology = communism popularity = 0.25 }
 		}
-		ROOT = {
-			country_event = {
-				id = lar_operative_event.7
-			}
-		}			
 	}
 	# outcome is an effect that runs when the operation has completed
 	outcome_extra_execute = { # SCOPE_OPERATION
@@ -302,7 +292,7 @@ FRA_instigate_workers_revolution_spain = { ### 1/25
 		original_tag = FRA
 	}
 	available = { 
-		has_completed_focus = FRA_intervention_committee
+		has_completed_focus = FRA_carry_the_revolution_west
 		SPR = {
 			NOT = {
 				has_war_with = ROOT
@@ -311,7 +301,7 @@ FRA_instigate_workers_revolution_spain = { ### 1/25
 		}
 	}
 	visible = {
-		has_completed_focus = FRA_intervention_committee
+		has_completed_focus = FRA_carry_the_revolution_west
 		FROM = {
 			tag = SPR
 			NOT = { has_government = communism }
@@ -357,11 +347,6 @@ FRA_instigate_workers_revolution_spain = { ### 1/25
 	outcome_extra_chance = 0.25
 	outcome_execute = {
 		SPR = { add_popularity = { ideology = communism popularity = 0.25 } }
-		ROOT = {
-			country_event = {
-				id = lar_operative_event.7
-			}
-		}			
 	}
 	# outcome is an effect that runs when the operation has completed
 	outcome_extra_execute = { # SCOPE_OPERATION
@@ -432,7 +417,7 @@ FRA_instigate_workers_revolution_germany = { ### 1/25
 		original_tag = FRA
 	}
 	available = { 
-		has_completed_focus = FRA_intervention_committee
+		has_completed_focus = FRA_carry_the_revolution_east
 		GER = {
 			NOT = {
 				has_war_with = ROOT
@@ -440,7 +425,7 @@ FRA_instigate_workers_revolution_germany = { ### 1/25
 		}
 	}
 	visible = {
-		has_completed_focus = FRA_intervention_committee
+		has_completed_focus = FRA_carry_the_revolution_east
 		FROM = {
 			tag = GER
 			NOT = { has_government = communism }
@@ -486,11 +471,6 @@ FRA_instigate_workers_revolution_germany = { ### 1/25
 	outcome_extra_chance = 0.25
 	outcome_execute = {
 		GER = { add_popularity = { ideology = communism popularity = 0.25 } }
-		ROOT = {
-			country_event = {
-				id = lar_operative_event.7
-			}
-		}		
 	}
 	# outcome is an effect that runs when the operation has completed
 	outcome_extra_execute = { # SCOPE_OPERATION
@@ -567,7 +547,6 @@ FRA_coup_in_north_africa = { ### 1/50
 			controls_state = 462
 			controls_state = 459
 			controls_state = 513
-			controls_state = 933
 			controls_state = 460
 			controls_state = 458
 			controls_state = 665
@@ -587,7 +566,6 @@ FRA_coup_in_north_africa = { ### 1/50
 			state = 462
 			state = 459
 			state = 513
-			state = 933
 			state = 460
 			state = 458
 			state = 665
@@ -619,7 +597,6 @@ FRA_coup_in_north_africa = { ### 1/50
 					state = 462
 					state = 459
 					state = 513
-					state = 933
 					state = 460
 					state = 458
 					state = 665
@@ -644,7 +621,6 @@ FRA_coup_in_north_africa = { ### 1/50
 					state = 462
 					state = 459
 					state = 513
-					state = 933
 					state = 460
 					state = 458
 					state = 665
@@ -657,11 +633,6 @@ FRA_coup_in_north_africa = { ### 1/50
 				transfer_state = PREV
 			}
 		}
-		ROOT = {
-			country_event = {
-				id = lar_operative_event.7
-			}
-		}			
 	}
 	
 	# This is where all the separate phases are defined
@@ -774,11 +745,6 @@ FRA_coup_in_syria = { ### 1/50
 				transfer_state = PREV
 			}
 		}
-		ROOT = {
-			country_event = {
-				id = lar_operative_event.7
-			}
-		}			
 	}
 	
 	# This is where all the separate phases are defined
@@ -823,11 +789,6 @@ FRA_coup_in_indochina = { ### 1/50
 			state = 670
 			state = 286
 			state = 741
-			state = 924
-			state = 925
-			state = 926
-			state = 927
-			state = 928
 		}
 	}
 	visible = { 
@@ -837,11 +798,6 @@ FRA_coup_in_indochina = { ### 1/50
 			controls_state = 670
 			controls_state = 286
 			controls_state = 741
-			controls_state = 924
-			controls_state = 925
-			controls_state = 926
-			controls_state = 927
-			controls_state = 928
 		}
 	}
 	available = {
@@ -873,11 +829,6 @@ FRA_coup_in_indochina = { ### 1/50
 					state = 670
 					state = 286
 					state = 741
-					state = 924
-					state = 925
-					state = 926
-					state = 927
-					state = 928
 				}
 				CONTROLLER = {
 					not = { tag = ROOT }
@@ -899,11 +850,6 @@ FRA_coup_in_indochina = { ### 1/50
 					state = 670
 					state = 286
 					state = 741
-					state = 924
-					state = 925
-					state = 926
-					state = 927
-					state = 928
 				}
 				CONTROLLER = {
 					not = { tag = ROOT }
@@ -913,11 +859,6 @@ FRA_coup_in_indochina = { ### 1/50
 				transfer_state = PREV
 			}
 		}
-		ROOT = {
-			country_event = {
-				id = lar_operative_event.7
-			}
-		}			
 	}
 	
 	# This is where all the separate phases are defined
@@ -1035,11 +976,6 @@ FRA_coup_in_central_africa = { ### 1/50
 				transfer_state = PREV
 			}
 		}
-		ROOT = {
-			country_event = {
-				id = lar_operative_event.7
-			}
-		}			
 	}
 	
 	# This is where all the separate phases are defined
@@ -1083,6 +1019,8 @@ FRA_coup_in_west_africa = { ### 1/50
 			state = 557
 			state = 272
 			state = 556
+			state = 898
+			state = 899
 			state = 780
 			state = 779
 			state = 778
@@ -1098,6 +1036,8 @@ FRA_coup_in_west_africa = { ### 1/50
 			controls_state = 557
 			controls_state = 272
 			controls_state = 556
+			controls_state = 898
+			controls_state = 899
 			controls_state = 780
 			controls_state = 779
 			controls_state = 778
@@ -1125,6 +1065,8 @@ FRA_coup_in_west_africa = { ### 1/50
 					state = 557
 					state = 272
 					state = 556
+					state = 898
+					state = 899
 					state = 780
 					state = 779
 					state = 778
@@ -1154,6 +1096,8 @@ FRA_coup_in_west_africa = { ### 1/50
 					state = 557
 					state = 272
 					state = 556
+					state = 898
+					state = 899
 					state = 780
 					state = 779
 					state = 778
@@ -1168,11 +1112,6 @@ FRA_coup_in_west_africa = { ### 1/50
 				transfer_state = PREV
 			}
 		}
-		ROOT = {
-			country_event = {
-				id = lar_operative_event.7
-			}
-		}		
 	}
 	
 	# This is where all the separate phases are defined
@@ -1247,13 +1186,7 @@ FRA_coup_in_madagascar = { ### 1/50
 	# outcome is an effect that runs when the operation has completed
 	outcome_execute = { # SCOPE_OPERATION
 		VIC = { country_event = LaR_france_vichy_notification_events.12 }
-		ROOT = {
-			 transfer_state = 543 
-			 country_event = {
-				id = lar_operative_event.7
-			}		
-		}
-			
+		ROOT = { transfer_state = 543 }
 	}
 	
 	# This is where all the separate phases are defined
