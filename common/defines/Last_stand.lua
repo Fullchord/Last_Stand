@@ -1,4 +1,4 @@
-
+NDefines.NFocus.FOCUS_POINT_DAYS = 3.5
 --Convoy Prio
 
 NDefines.NNavy.NAVAL_INVASION_PRIORITY = 1								-- Default convoy priority for naval invasions
