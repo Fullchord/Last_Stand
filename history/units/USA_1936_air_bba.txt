@@ -19,7 +19,7 @@ air_wings = {
 	}
 
 	### 2 USAAF Wing -- Norfolk
-	362 = { 
+	378 = { 
 		# 1st Pursuit Group 
 		# 8th Pursuit Group 
 		small_plane_airframe_0 =  {
@@ -42,7 +42,7 @@ air_wings = {
 	}
 
 	### 3 USAAF Wing -- Louisiana
-	371 = { 
+	378 = { 
 		# 20th Pursuit Group 
 		small_plane_airframe_0 =  {
 			owner = "USA" 
@@ -58,7 +58,7 @@ air_wings = {
 	}
 
 	### 18th Composite Wing -- Hawaii
-	629 = { 
+	378 = { 
 		# 18th Pursuit Group 
 		small_plane_airframe_0 =  {
 			owner = "USA" 
@@ -74,7 +74,7 @@ air_wings = {
 	}
 
 	### 19th Composite Wing -- Panama Canal
-	685 = { 
+	378 = { 
 		# 16th Pursuit Group 
 		small_plane_airframe_0 =  {
 			owner = "USA" 
@@ -99,7 +99,7 @@ air_wings = {
 #	}
 
 	### USN Atlantic Naval Patrol Division -- Norfolk
-	362 = { 
+	378 = { 
 		# Naval Patrol Wing 3 
 		medium_plane_airframe_0 =  {
 			owner = "USA" 

@@ -65,7 +65,7 @@ focus_tree = {
 		prerequisite = { focus = BUL_acquire_modern_tools }
 		icon = GFX_goal_generic_construction
 		relative_position_id = BUL_acquire_modern_tools
-		x = -9
+		x = -11
 		y = 1
 		cost = 10
 
@@ -109,7 +109,7 @@ focus_tree = {
 		prerequisite = { focus = BUL_improve_the_road_system }
 		icon = GFX_goal_generic_intelligence_exchange
 		relative_position_id = BUL_improve_the_road_system
-		x = -4
+		x = -2
 		y = 1
 		cost = 10
 		mutually_exclusive = { focus = BUL_invigorate_national_industry }
@@ -180,7 +180,7 @@ focus_tree = {
 		prerequisite = { focus = BUL_improve_the_road_system }
 		icon = GFX_focus_generic_industry_1
 		relative_position_id = BUL_improve_the_road_system
-		x = -2
+		x = 0
 		y = 1
 		cost = 10
 		mutually_exclusive = { focus = BUL_attract_foreign_capitals }
@@ -451,7 +451,7 @@ focus_tree = {
 		prerequisite = { focus = BUL_improve_the_road_system }
 		icon = GFX_goal_generic_construct_infrastructure
 		relative_position_id = BUL_improve_the_road_system
-		x = 1
+		x = 3
 		y = 2
 		cost = 5
 
@@ -734,7 +734,7 @@ focus_tree = {
 			air_experience = 15
 			add_doctrine_cost_reduction = {
 				name = BUL_pilot_training_program
-			    cost_reduction = 0.65
+			    cost_reduction = 0.50
 			    uses = 2
 			    category = air_doctrine
 			}
@@ -821,7 +821,19 @@ focus_tree = {
 		cost = 10
 
 		available = {
-			NOT = { has_idea = BUL_army_restrictions }
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				NOT = {
+					has_idea = BUL_army_restrictions_aat
+				}
+			}
+			else = {
+				NOT = {
+					has_idea = BUL_army_restrictions
+				}
+			}
 		}
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
@@ -1024,6 +1036,7 @@ focus_tree = {
 			}
 		}
 	}
+
 	focus = {
 		id = BUL_darzhavna_voenna_fabrika
 
@@ -1141,44 +1154,53 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
 			effect_tooltip = {
-				if = {
-					limit = {
-						country_exists = GER
-						NOT = { has_war_with = GER }
-						GER = { BUL_is_valid_subject = yes }
-					}
-					activate_targeted_decision = { target = GER decision = BUL_military_agreements }
+				IF = {
+					limit = { has_dlc = "Arms Against Tyranny"}
+					unlock_decision_category_tooltip = foreign_mio_decisions_category
 				}
-				if = {
-					limit = {
-						country_exists = ENG
-						NOT = { has_war_with = ENG }
-						ENG = { BUL_is_valid_subject = yes }
+				ELSE = {
+					if = {
+						limit = {
+							country_exists = GER
+							NOT = { has_war_with = GER }
+							GER = { BUL_is_valid_subject = yes }
+						}
+						activate_targeted_decision = { target = GER decision = BUL_military_agreements }
 					}
-					activate_targeted_decision = { target = ENG decision = BUL_military_agreements }
-				}
-				if = {
-					limit = {
-						country_exists = SOV
-						NOT = { has_war_with = SOV }
-						SOV = { BUL_is_valid_subject = yes }
+					if = {
+						limit = {
+							country_exists = ENG
+							NOT = { has_war_with = ENG }
+							ENG = { BUL_is_valid_subject = yes }
+						}
+						activate_targeted_decision = { target = ENG decision = BUL_military_agreements }
 					}
-					activate_targeted_decision = { target = SOV decision = BUL_military_agreements }
-				}
-				if = {
-					limit = {
-						country_exists = ITA
-						NOT = { has_war_with = ITA }
-						ITA = { BUL_is_valid_subject = yes }
+					if = {
+						limit = {
+							country_exists = SOV
+							NOT = { has_war_with = SOV }
+							SOV = { BUL_is_valid_subject = yes }
+						}
+						activate_targeted_decision = { target = SOV decision = BUL_military_agreements }
 					}
-					activate_targeted_decision = { target = ITA decision = BUL_military_agreements }
+					if = {
+						limit = {
+							country_exists = ITA
+							NOT = { has_war_with = ITA }
+							ITA = { BUL_is_valid_subject = yes }
+						}
+						activate_targeted_decision = { target = ITA decision = BUL_military_agreements }
+					}
 				}
 			}
 			hidden_effect = {
-				activate_targeted_decision = { target = GER decision = BUL_military_agreements }
-				activate_targeted_decision = { target = ENG decision = BUL_military_agreements }
-				activate_targeted_decision = { target = SOV decision = BUL_military_agreements }
-				activate_targeted_decision = { target = ITA decision = BUL_military_agreements }
+				IF = {
+					limit = { NOT = { has_dlc = "Arms Against Tyranny"} }
+					activate_targeted_decision = { target = GER decision = BUL_military_agreements }
+					activate_targeted_decision = { target = ENG decision = BUL_military_agreements }
+					activate_targeted_decision = { target = SOV decision = BUL_military_agreements }
+					activate_targeted_decision = { target = ITA decision = BUL_military_agreements }
+				}
 			}
 		}
 	}
@@ -1297,7 +1319,26 @@ focus_tree = {
 				}
 				add_ideas = BUL_prussia_of_the_balkans_01
 			}
-			BUL_replace_national_aircraft_designer = yes
+
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				every_military_industrial_organization = {
+					limit = {
+						OR = {
+							is_military_industrial_organization = BUL_dar_organization
+							is_military_industrial_organization = BUL_kaproni_bulgarski_organization
+							is_military_industrial_organization = BUL_dvf_organization
+							is_military_industrial_organization = BUL_dvf_sopot_organization
+						}
+					}
+					complete_mio_trait = BUL_mio_trait_prussia_of_the_balkans
+				}
+			}
+			else = {
+				BUL_replace_national_aircraft_designer = yes
+			}
 		}
 	}
 
@@ -1691,6 +1732,157 @@ focus_tree = {
 	}
 
 	focus = {
+		id = BUL_supremacy_on_the_bosporus
+
+		prerequisite = { focus = BUL_defensive_lines focus = BUL_reinforce_naval_bases }
+		icon = GFX_focus_BUL_supremacy_on_the_bosporus
+		relative_position_id = BUL_defensive_lines
+		x = 1
+		y = 1
+		cost = 10
+
+		available = {
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				NOT = {
+					has_idea = BUL_army_restrictions_aat
+				}
+			}
+			else = {
+				NOT = {
+					has_idea = BUL_army_restrictions
+				}
+			}
+			OR = {
+				AND = {
+					BUL = {
+						has_full_control_of_state = 341 #EDIRNE
+						has_full_control_of_state = 797 #ISTANBUL
+					}
+				}
+				AND = {
+					is_faction_leader = yes
+					any_country = {
+						is_in_faction_with = ROOT
+						has_full_control_of_state = 341 #EDIRNE
+						has_full_control_of_state = 797 #ISTANBUL
+					}
+				}
+				any_country = {
+					is_subject_of = ROOT
+					has_full_control_of_state = 341 #EDIRNE
+					has_full_control_of_state = 797 #ISTANBUL
+				}
+			}
+		}
+		
+		completion_reward = {
+			797 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+				if = {
+					limit = { BUL = { has_tech = radio_detection } }
+					add_building_construction = {
+						type = radar_station
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			341 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+				#Fortifications in Edirne
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 11842
+				}
+				#Fortifications in Edirne's Naval Base
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 849
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+					province = 849
+				}
+			}
+			add_timed_idea = {
+				idea = BUL_supremacy_on_the_bosporus
+				days = 365
+			}
+			if = {
+				limit = {
+					any_country = {
+						OR = {
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}			
+						has_full_control_of_state = 341 #EDIRNE
+						has_full_control_of_state = 797 #ISTANBUL
+					}
+				}
+				random_country = {
+					limit = {
+						OR = {
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}	
+						has_full_control_of_state = 341 #EDIRNE
+						has_full_control_of_state = 797 #ISTANBUL
+					}
+					add_timed_idea = {
+						idea = BUL_supremacy_on_the_bosporus
+						days = 365
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
 		id = BUL_national_submarine_production
 
 		prerequisite = { focus = BUL_a_black_sea_fleet }
@@ -1895,7 +2087,18 @@ focus_tree = {
 			    category = cl_tech
 			    category = ca_tech
 			}
-			BUL_replace_national_naval_designer = yes
+
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				mio:BUL_varna_naval_dockyard_organization = {
+					complete_mio_trait = BUL_mio_trait_an_aegean_sea_fleet
+				}
+			}
+			else = {
+				BUL_replace_national_naval_designer = yes
+			}
 
 			custom_effect_tooltip = BUL_an_aegean_sea_fleet_tt
 			every_controlled_state = {
@@ -2002,8 +2205,7 @@ focus_tree = {
 		id = BUL_power_to_the_tsar
 
 		icon = GFX_focus_BUL_power_to_the_tsar
-		relative_position_id = BUL_oppose_the_royal_dictatorship
-		x = 36
+		x = 35
 		y = 0
 		cost = 10
 		mutually_exclusive = { focus = BUL_oppose_the_royal_dictatorship }
@@ -2038,7 +2240,7 @@ focus_tree = {
 		prerequisite = { focus = BUL_power_to_the_tsar focus = BUL_oppose_the_royal_dictatorship }
 		icon = GFX_focus_BUL_condemn_macedonian_organizations
 		relative_position_id = BUL_power_to_the_tsar
-		x = -3
+		x = -2
 		y = 1
 		cost = 5
 		mutually_exclusive = { focus = BUL_support_macedonian_organizations }
@@ -2067,9 +2269,13 @@ focus_tree = {
 				}
 			}
 
+
 			if = {
 				limit = {
-					has_idea = BUL_army_restrictions
+					OR = {
+						has_idea = BUL_army_restrictions_aat
+						has_idea = BUL_army_restrictions
+					}
 				}
 				custom_effect_tooltip = BUL_condemn_macedonian_organizations_rearmament_tt
 			}
@@ -2147,7 +2353,10 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					has_idea = BUL_army_restrictions
+					OR = {
+						has_idea = BUL_army_restrictions_aat
+						has_idea = BUL_army_restrictions
+					}
 				}
 				custom_effect_tooltip = BUL_support_macedonian_organizations_rearmament_tt
 			}
@@ -2229,7 +2438,7 @@ focus_tree = {
 		prerequisite = { focus = BUL_power_to_the_tsar }
 		icon = GFX_focus_generic_monarchy_1
 		relative_position_id = BUL_power_to_the_tsar
-		x = -4
+		x = -3
 		y = 2
 		cost = 10
 
@@ -2257,7 +2466,7 @@ focus_tree = {
 	focus = {
 		id = BUL_restrained_paramilitary_organizations
 
-		prerequisite = { focus = BUL_the_tsars_regime focus = BUL_democratic_principles }
+		prerequisite = { focus = BUL_the_tsars_regime }
 		icon = GFX_goal_demand_sudetenland
 		relative_position_id = BUL_the_tsars_regime
 		x = -1
@@ -2293,7 +2502,7 @@ focus_tree = {
 	focus = {
 		id = BUL_ban_far_right_organizations
 
-		prerequisite = { focus = BUL_the_tsars_regime focus = BUL_democratic_principles }
+		prerequisite = { focus = BUL_the_tsars_regime }
 		icon = GFX_focus_eng_move_to_secure_the_dominions
 		relative_position_id = BUL_restrained_paramilitary_organizations
 		x = -2
@@ -2393,7 +2602,7 @@ focus_tree = {
 		prerequisite = { focus = BUL_the_tsars_regime focus = BUL_appoint_right_wing_ministers }
 		icon = GFX_focus_BUL_promote_bulgarian_nationalism
 		relative_position_id = BUL_the_tsars_regime
-		x = 4
+		x = 3
 		y = 2
 		cost = 10
 
@@ -2415,7 +2624,7 @@ focus_tree = {
 		prerequisite = { focus = BUL_the_tsars_regime focus = BUL_appoint_right_wing_ministers }
 		icon = GFX_focus_spr_crush_the_revolution
 		relative_position_id = BUL_the_tsars_regime
-		x = 5
+		x = 4
 		y = 1
 		cost = 5
 
@@ -3445,7 +3654,7 @@ focus_tree = {
 		prerequisite = { focus = BUL_power_to_the_tsar }
 		icon = GFX_focus_generic_diplomatic_treaty
 		relative_position_id = BUL_power_to_the_tsar
-		x = 4
+		x = 5
 		y = 2
 		cost = 10
 

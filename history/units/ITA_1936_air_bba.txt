@@ -6,7 +6,7 @@
 air_wings = { 
 	### ITALY ###
 	# 1a Squadra Aerea - SQA1 (Milan)
-	158 = { 
+	849 = { 
 		# 2a Divisione Aerea 'Borea'
 		small_plane_airframe_0 = { 
 			amount = 80 
@@ -28,7 +28,7 @@ air_wings = {
 	} 
 
 	# 3a Squadra Aerea - SQA3 (Rome)
-	2 = { 
+	849 = { 
 		# 5a Divisione Aerea 'Eolo'
 		medium_plane_airframe_0 = { 
 			amount = 64 
@@ -44,7 +44,7 @@ air_wings = {
 	} 
 
 	# 2a Squadra Aerea - SQA2 (Palermo)
-	115 = { 
+	849 = { 
 		# 1a Divisione Aerea 'Aquila'
 		small_plane_airframe_0 = { 
 			amount = 80 
@@ -70,7 +70,7 @@ air_wings = {
 	} 
 
 	# Aeronautica della Sardegna - ASAR (Cagliari)
-	114 = { 
+	849 = { 
 		# 10a Brigata Aerea 'Marte'
 		medium_plane_airframe_1 = { 
 			amount = 24 
@@ -81,7 +81,7 @@ air_wings = {
 
 	### AFRICA ###
 	# Aeronautica della Libia (Tripoli)
-	448 = { 
+	849 = { 
 		# 14a Brigata Aerea 'Rex'
 		small_plane_airframe_0 = { 
 			amount = 20 
@@ -97,7 +97,7 @@ air_wings = {
 	} 
 
 	# Aeronautica dell'Africa Orientale (Eritrea)
-	550 = { 
+	849 = { 
 		small_plane_airframe_0 = { 
 			amount = 40 
 			owner = "ITA" 

@@ -1,13 +1,13 @@
 state = {
 	id = 508
 	name = "STATE_508" # Tucuman
-    manpower = 1
+	manpower = 1141311
 	
 	state_category = town
 
 	history = {
 
-        owner = WST
+		owner = WST
 		add_core_of = ARG
 
 		buildings = {
@@ -15,13 +15,13 @@ state = {
 			industrial_complex = 1
 		}
 		
+		victory_points = {
+			8216 5 
+		}
 
-
-
-
-
-
-
+		victory_points = {
+			13309 2 
+		}
 
 	}
 

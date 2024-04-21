@@ -1,0 +1,500 @@
+scripted_gui = {
+	tool_open = {
+		context_type = player_context
+		window_name = "hosttool_open_container"
+		visible = {
+			has_country_flag = host
+		}
+		effects = {
+			tool_open_click = {
+				if = {
+					limit = { ROOT = { NOT = { has_country_flag = hosttool_enabled } } }
+					ROOT = { set_country_flag = hosttool_enabled }
+				}
+				else = {
+					ROOT = { clr_country_flag = hosttool_enabled }
+				}
+			}
+		}
+		triggers = {
+			tool_open_click_enabled = {
+				always = yes
+			}
+		}
+	}
+	
+	hosttool_container = {
+		context_type = selected_state_context	
+		window_name = "hosttool_container"	
+		visible = {
+			ROOT = {
+				has_country_flag = host
+				has_country_flag = hosttool_enabled
+			}
+		}	
+		effects = {
+
+			#	████████╗ ██████╗ ██████╗ ███╗   ███╗██╗██████╗ 
+			#	╚══██╔══╝██╔═══██╗██╔══██╗████╗ ████║██║██╔══██╗
+			#	   ██║   ██║   ██║██████╔╝██╔████╔██║██║██║  ██║
+			#	   ██║   ██║   ██║██╔═══╝ ██║╚██╔╝██║██║██║  ██║
+			#	   ██║   ╚██████╔╝██║     ██║ ╚═╝ ██║██║██████╔╝
+			#	   ╚═╝    ╚═════╝ ╚═╝     ╚═╝     ╚═╝╚═╝╚═════╝ 
+
+			cheat1_click = {
+				if = {
+					limit={ ROOT = { has_country_flag = cheating } }
+					set_variable={ ROOT.selected_cheat=1 }
+					ROOT={ clr_country_flag=cheating }
+				}
+				else={ ROOT={ set_country_flag=cheating } }
+			}
+			cheat2_click={
+				set_variable={Root.selected_cheat=2}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat3_click={
+				set_variable={Root.selected_cheat=3}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat4_click={
+				set_variable={Root.selected_cheat=4}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat5_click={
+				set_variable={Root.selected_cheat=5}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat6_click={
+				set_variable={Root.selected_cheat=6}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat7_click={
+				set_variable={Root.selected_cheat=7}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat8_click={
+				set_variable={Root.selected_cheat=8}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat9_click={
+				set_variable={Root.selected_cheat=9}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat10_click={
+				set_variable={Root.selected_cheat=10}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat11_click={
+				set_variable={Root.selected_cheat=11}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat12_click={
+				set_variable={Root.selected_cheat=12}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat13_click={
+				set_variable={Root.selected_cheat=13}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat14_click={
+				set_variable={Root.selected_cheat=14}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat15_click={
+				set_variable={Root.selected_cheat=15}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat16_click={
+				set_variable={Root.selected_cheat=16}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat17_click={
+				set_variable={Root.selected_cheat=17}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat18_click={
+				set_variable={Root.selected_cheat=18}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat19_click={
+				set_variable={Root.selected_cheat=19}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat20_click={
+				set_variable={Root.selected_cheat=20}
+				ROOT={clr_country_flag=cheating}
+			}
+			cheat21_click={
+				set_variable={Root.selected_cheat=21}
+				ROOT={clr_country_flag=cheating}
+			}
+
+			add_cheat_click = {
+				set_variable = { ROOT.taker = this}
+				var:taker = {
+					owner={
+						set_variable={Root.target_country = this}
+						if={limit={check_variable={Root.selected_cheat=1}} generic_bonus_1 = yes }
+						if={limit={check_variable={Root.selected_cheat=2}} generic_bonus_3 = yes }
+						if={limit={check_variable={Root.selected_cheat=3}} generic_bonus_2y = yes }
+						if={limit={check_variable={Root.selected_cheat=4}} generic_bonus_999 = yes }
+						if={limit={check_variable={Root.selected_cheat=5}} add_political_power = 50 }
+						if={limit={check_variable={Root.selected_cheat=6}} add_offsite_building = { type = arms_factory level = 1 }}
+						if={limit={check_variable={Root.selected_cheat=7}} add_offsite_building = { type = arms_factory level = -1 }}
+						if={limit={check_variable={Root.selected_cheat=8}} add_offsite_building = { type = industrial_complex level = 1 }}
+						if={limit={check_variable={Root.selected_cheat=9}} add_offsite_building = { type = industrial_complex level = -1 }}
+						if={limit={check_variable={Root.selected_cheat=10}} army_experience = 100 }
+						if={limit={check_variable={Root.selected_cheat=11}} air_experience = 100 }
+						if={limit={check_variable={Root.selected_cheat=12}} navy_experience = 100 }
+						if={limit={check_variable={Root.selected_cheat=13}} add_stability = 0.1 }
+						if={limit={check_variable={Root.selected_cheat=14}} add_war_support = 0.1 }
+						if={limit={check_variable={Root.selected_cheat=15}} capital_scope = { add_resource = { type = aluminum amount = 5}} }
+						if={limit={check_variable={Root.selected_cheat=16}} capital_scope = { add_resource = { type = rubber amount = 5}} }
+						if={limit={check_variable={Root.selected_cheat=17}} capital_scope = { add_resource = { type = tungsten amount = 5}} }
+						if={limit={check_variable={Root.selected_cheat=18}} capital_scope = { add_resource = { type = steel amount = 5}} }
+						if={limit={check_variable={Root.selected_cheat=19}} capital_scope = { add_resource = { type = chrominum amount = 5}} }
+						if={limit={check_variable={Root.selected_cheat=20}} capital_scope = { add_resource = { type = oil amount = 5}} }
+						if={limit={check_variable={Root.selected_cheat=21}} every_country = { add_equipment_to_stockpile= { type = convoy_1  amount = 1 }} }
+					}
+				}
+				GER={
+					set_variable={this.target_country=Root.target_country}
+					set_variable={this.selected_cheat=Root.selected_cheat}
+					news_event={id=hosttool.1}
+				}
+				clear_variable = ROOT.taker
+			}
+			
+			#	██████╗  ██████╗ ████████╗
+			#	██╔══██╗██╔═══██╗╚══██╔══╝
+			#	██████╔╝██║   ██║   ██║   
+			#	██╔══██╗██║   ██║   ██║   
+			#	██████╔╝╚██████╔╝   ██║   
+			#	╚═════╝  ╚═════╝    ╚═╝   
+			
+			observer_click = {
+				owner = {
+					set_temp_variable = { ROOT.marks = this }
+					URG = { change_tag_from = var:marks }
+				}	
+			}
+			whitepeace_click = {
+				owner = {
+					set_temp_variable = { ROOT.marks = this }
+					var:marks = {
+						declare_war_on = { target = VEN type = annex_everything }
+						every_enemy_country = { white_peace = PREV }
+					}
+				}
+			}
+			
+			
+			addpp_click = {
+				owner = {
+					set_temp_variable = { ROOT.marks = this }
+					var:marks = {
+						add_political_power = 50
+						news_event = { id = hosttool.4 }
+					}
+				}
+			}
+			mill_add_click = {
+				owner = {
+					news_event = { id = hosttool.2 days = 0}
+					add_offsite_building = { type = arms_factory level = 1 }
+				}
+			}
+			civ_add_click = {
+				owner = {
+					news_event = { id = hosttool.3 days = 0}
+					add_offsite_building = { type = industrial_complex level = 1 }
+				}
+			}
+			xp_add_army_click = {
+				owner = {
+					set_temp_variable = { ROOT.marks = this }
+					var:marks = {
+						army_experience = 50
+						news_event = { id = hosttool.5 }
+					}
+				}
+			}
+			xp_add_air_click = {
+				owner = {
+					set_temp_variable = { ROOT.marks = this }
+					var:marks = {
+						air_experience = 50
+						news_event = { id = hosttool.6 }
+					}
+				}
+			}
+			hotjoin_click  = {
+								owner={
+									news_event = { id = hosttool.8 } 
+									add_timed_idea = {
+											idea = hotjoin_reminder
+											days= 5
+										}
+								}
+								every_country = {
+									if ={
+										limit = {is_playable_country = yes}
+										add_timed_idea = {
+											idea = hotjoin_eff
+											days= 10
+										}
+									}
+								}	
+			}
+			pingtool_click = {
+				every_state = {
+					limit = { non_damaged_building_level  = { building = anti_air_building  level > 5 } }
+					remove_building  = { type = anti_air_building level = 1 }
+				}
+				every_state = {
+					limit = { non_damaged_building_level = { building = infrastructure  level > 5 } }
+					remove_building  = { type = infrastructure level = 1 }
+				}
+			}
+			hosttool_helpbutton_click = {
+				ROOT = { country_event = { id = hosttool.69 } }
+			}
+			
+			#	███████╗████████╗████████╗
+			#	██╔════╝╚══██╔══╝╚══██╔══╝
+			#	███████╗   ██║      ██║   
+			#	╚════██║   ██║      ██║   
+			#	███████║   ██║      ██║   
+			#	╚══════╝   ╚═╝      ╚═╝   
+			
+		
+			clear_all_markings_click = {
+				ROOT = {
+					for_each_scope_loop={
+						array=marked_states
+						clear_variable=mark_status
+					}
+					clear_array=marked_states
+				}
+			}
+			
+			add_cores_click = {
+				owner={
+					set_temp_variable = { ROOT.taker = this}
+					for_each_loop={
+						array=ROOT.marked_states
+						value=state
+						var:state={add_core_of=var:taker}
+					}
+					ROOT = {
+						for_each_scope_loop={
+							array=marked_states
+							clear_variable=mark_status
+						}
+						clear_array=marked_states
+						clear_variable=first_marked_state
+					}
+				}
+			}
+
+			award_states_click = {
+
+				owner={
+					for_each_loop={
+						array=ROOT.marked_states
+						value=state
+						transfer_state = state
+					}
+									for_each_loop={
+						array=ROOT.marked_states
+						value=state
+						var:state={add_core_of=var:taker}
+					}
+					ROOT = {
+						for_each_scope_loop={
+							array=marked_states
+							clear_variable=mark_status
+						}
+						clear_array=marked_states
+					}
+				}
+			}
+			
+		
+			annex_country_click = {
+				owner={ set_variable = { ROOT.taker = this}}
+				var:ROOT.marked_states^0={owner={set_variable={ROOT.target=this}}}
+				if={
+					limit={
+						check_variable={ROOT.target=ROOT.taker}
+					}
+				}
+				else={
+					var:ROOT.target={
+						var:ROOT.taker={
+							annex_country={	target=PREV	transfer_troops=yes	}
+							every_state = { 
+								limit = { 
+									is_core_of = var:ROOT.target
+									is_controlled_by = var:ROOT.taker
+								} 
+								set_compliance = 100
+							}
+						}
+					}
+				}
+					
+				ROOT = {
+					for_each_scope_loop={
+						array=marked_states
+						clear_variable=mark_status
+					}
+					clear_array=marked_states
+					clear_variable=target
+					clear_variable=taker
+					clear_variable=first_marked_state
+				}
+			}
+
+			toogle_mark_click = {
+				if={
+					limit={check_variable={mark_status=0}}
+					set_variable={mark_status=2}
+					add_to_array={ROOT.marked_states=THIS}
+				}
+				else={
+					clear_variable=mark_status
+					remove_from_array={ROOT.marked_states=THIS}
+				}
+				set_variable={ROOT.first_marked_state=ROOT.marked_states^0}
+			}
+
+			#	██████╗ ██████╗  ██████╗ ██████╗     ███████╗██╗██╗  ██╗███████╗██████╗ 
+			#	██╔══██╗██╔══██╗██╔═══██╗██╔══██╗    ██╔════╝██║╚██╗██╔╝██╔════╝██╔══██╗
+			#	██████╔╝██████╔╝██║   ██║██║  ██║    █████╗  ██║ ╚███╔╝ █████╗  ██████╔╝
+			#	██╔═══╝ ██╔══██╗██║   ██║██║  ██║    ██╔══╝  ██║ ██╔██╗ ██╔══╝  ██╔══██╗
+			#	██║     ██║  ██║╚██████╔╝██████╔╝    ██║     ██║██╔╝ ██╗███████╗██║  ██║
+			#	╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═════╝     ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+			
+			prod_reset_click = {
+				set_variable = { ROOT.prod_effi = 30 }
+				set_variable = { ROOT.prod_type = 0 }
+			}
+			prod_effi_minus_click = { add_to_variable = { ROOT.prod_effi = -10 } }
+			prod_effi_plus_click = { add_to_variable = { ROOT.prod_effi = 10 } }
+			prod_type_minus_click = { add_to_variable = { ROOT.prod_type = -1 } }
+			prod_type_plus_click = { add_to_variable = { ROOT.prod_type = 1 } }
+			prod_create_click = {
+				owner = {
+					news_event = { id = hosttool.7 }
+					meta_effect = {
+						text = {
+							add_equipment_production = {
+								equipment = {
+									type = [PROD_TYPEE]
+								}
+								efficiency = [PROD_EFFI]
+								requested_factories = 150
+								# progress = 0.1
+								# amount = 1
+							}
+						}
+						PROD_TYPEE = "[ROOT.prod_type]"
+						PROD_EFFI = ROOT.prod_effi
+					}
+				}
+			}
+			prod_create_variant_click = {
+				owner = {
+					news_event = { id = hosttool.7 }
+					meta_effect = {
+						text = {
+							add_equipment_production = {
+								equipment = {
+									type = [PROD_TYPEE]
+									version_name = "prodfix"
+								}
+								efficiency = [PROD_EFFI]
+								requested_factories = 150
+								progress = 0.1
+								amount = 1
+							}
+						}
+						PROD_TYPEE = "[ROOT.prod_type]"
+						PROD_EFFI = ROOT.prod_effi
+					}
+				}
+			}
+
+
+		}
+		properties = {
+			toogle_mark={ frame = mark_status }
+		}
+		
+		triggers = {
+			observer_click_enabled = { owner = { is_ai=no } }
+
+			add_cheat_click_enabled = {check_variable={Root.selected_cheat>0}}
+
+			cheat1_visible={}
+			cheat2_visible={ROOT={has_country_flag=cheating}}
+			cheat3_visible={ROOT={has_country_flag=cheating}}
+			cheat4_visible={ROOT={has_country_flag=cheating}}
+			cheat5_visible={ROOT={has_country_flag=cheating}}
+			cheat6_visible={ROOT={has_country_flag=cheating}}
+			cheat7_visible={ROOT={has_country_flag=cheating}}
+			cheat8_visible={ROOT={has_country_flag=cheating}}
+			cheat9_visible={ROOT={has_country_flag=cheating}}
+			cheat10_visible={ROOT={has_country_flag=cheating}}
+			cheat11_visible={ROOT={has_country_flag=cheating}}
+			cheat12_visible={ROOT={has_country_flag=cheating}}
+			cheat13_visible={ROOT={has_country_flag=cheating}}
+			cheat14_visible={ROOT={has_country_flag=cheating}}
+			cheat15_visible={ROOT={has_country_flag=cheating}}
+			cheat16_visible={ROOT={has_country_flag=cheating}}
+			cheat17_visible={ROOT={has_country_flag=cheating}}
+			cheat18_visible={ROOT={has_country_flag=cheating}}
+			cheat19_visible={ROOT={has_country_flag=cheating}}
+			cheat20_visible={ROOT={has_country_flag=cheating}}
+			cheat21_visible={ROOT={has_country_flag=cheating}}
+
+			cheat1_text_visible={}
+			cheat2_text_visible={ROOT={has_country_flag=cheating}}
+			cheat3_text_visible={ROOT={has_country_flag=cheating}}
+			cheat4_text_visible={ROOT={has_country_flag=cheating}}
+			cheat5_text_visible={ROOT={has_country_flag=cheating}}
+			cheat6_text_visible={ROOT={has_country_flag=cheating}}
+			cheat7_text_visible={ROOT={has_country_flag=cheating}}
+			cheat8_text_visible={ROOT={has_country_flag=cheating}}
+			cheat9_text_visible={ROOT={has_country_flag=cheating}}
+			cheat10_text_visible={ROOT={has_country_flag=cheating}}
+			cheat11_text_visible={ROOT={has_country_flag=cheating}}
+			cheat12_text_visible={ROOT={has_country_flag=cheating}}
+			cheat13_text_visible={ROOT={has_country_flag=cheating}}
+			cheat14_text_visible={ROOT={has_country_flag=cheating}}
+			cheat15_text_visible={ROOT={has_country_flag=cheating}}
+			cheat16_text_visible={ROOT={has_country_flag=cheating}}
+			cheat17_text_visible={ROOT={has_country_flag=cheating}}
+			cheat18_text_visible={ROOT={has_country_flag=cheating}}
+			cheat19_text_visible={ROOT={has_country_flag=cheating}}
+			cheat20_text_visible={ROOT={has_country_flag=cheating}}
+			cheat21_text_visible={ROOT={has_country_flag=cheating}}
+
+			annex_country_click_enabled = {	check_variable = { ROOT.marked_states^num > 0 }	}
+			award_states_click_enabled = {	check_variable = { ROOT.marked_states^num > 0 }	}
+			
+			clear_all_markings_click_enabled = { check_variable = { ROOT.marked_states^num > 0 } }	
+			add_cores_click_enabled = { check_variable = { ROOT.marked_states^num > 0 }	}
+
+			prod_create_enabled = {
+				check_variable = { ROOT.prod_effi > 0.10 }
+				check_variable = { ROOT.prod_effi < 1.40 }
+				check_variable = { ROOT.prod_type > -1 }
+				check_variable = { ROOT.prod_type < 50 } #HMMTODO fix exact
+			}
+		}
+        
+	}
+}

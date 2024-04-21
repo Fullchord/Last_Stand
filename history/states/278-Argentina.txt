@@ -1,13 +1,13 @@
 state = {
 	id = 278
 	name = "STATE_278" # Pampas
-    manpower = 1
+	manpower = 5596366
 	
 	state_category = large_city
 
 	history = {
 
-        owner = WST
+		owner = WST
 		add_core_of = ARG
 
 		buildings = {
@@ -29,13 +29,13 @@ state = {
 			}
 		}
 		
+		victory_points = {
+			12364 15 
+		}
 
-
-
-
-
-
-
+		victory_points = {
+			7621 2 
+		}
 
 	}
 

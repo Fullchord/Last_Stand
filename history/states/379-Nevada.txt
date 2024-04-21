@@ -12,7 +12,7 @@ state={
 		aluminium=25 # was: 44
 	}
 
-history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
+	history={
 		owner = USA
 		buildings = {
 			infrastructure = 2

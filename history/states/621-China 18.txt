@@ -2,12 +2,12 @@ state={
 	id=621
 	name="STATE_621"
 
-history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
+	history={
 		owner = CHI
+		add_core_of = SHX
 		add_core_of = CHI
-		add_core_of = SHX
-		add_core_of = SHX
-		add_core_of = SHX
+		add_core_of = PRC
+		add_core_of = MEN
 		buildings = {
 			infrastructure = 1
 			industrial_complex = 1
@@ -19,7 +19,7 @@ history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
 				level = 1
 
 			}
-			owner = PRC
+			owner = CHI
 			controller = MEN
 
 		}

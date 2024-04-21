@@ -1,0 +1,32 @@
+### #  # ### ### #  ### ###   ##  ### ###  ##  #  #
+ #  ## # #    #  #   #  #  # #  #  #   #  #  # ## #
+ #  # ## ##   #  #   #  ###  ####  #   #  #  # # ##
+ #  #  # #    #  #   #  #  # #  #  #   #  #  # #  #
+### #  # #   ### ### #  #  # #  #  #  ###  ##  #  #
+
+#Category only allowed for is_potentially_communist_china
+#Category visible when PRC_infiltration focus is completed
+
+#INFILTRATE_STATE_AI_WILL_DO <ID>
+#INFILTRATE_JAP_STATE_AI_WILL_DO <ID>
+
+
+@INFILTRATION_INF_EQ_COST = -500
+@DAYS_REMOVE_INFILTRATE_STATE = 30
+
+PRC_infiltrate_nationalist_areas = { 
+
+# 283
+# 597
+# 598
+# 607
+# 608
+# 614
+# 615
+# 621
+# 744
+# 746
+
+	PRC_uprising = {
+}
+}

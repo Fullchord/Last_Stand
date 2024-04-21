@@ -12,6 +12,7 @@ state={
 	}
 
 	history={
+	add_extra_state_shared_building_slots = 7
 		victory_points = {
 			10203 1
 		}
@@ -24,13 +25,16 @@ state={
 		owner = GRE
 		buildings = {
 			infrastructure = 2
-			industrial_complex = 1
+			industrial_complex = 3
+			arms_factory = 1
+			dockyard = 4
 			air_base = 3
 			9805 = {
 				naval_base = 1
 			}
 		}
 		add_core_of = GRE
+		add_claim_by = ITA
 	}
 
 	provinces = {

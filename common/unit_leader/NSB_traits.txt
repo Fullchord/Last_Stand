@@ -132,7 +132,14 @@ leader_traits = {
 			factor = 0
 		}
 
+		attack_skill = 0
+		defense_skill = 0
 		
+		modifier = {
+			custom_modifier_tooltip = SOV_cowed_by_stalin_trait_tt
+			army_morale_factor = 0
+			land_reinforce_rate = 0
+		}
 	}
 
 	trait_SOV_cowed_by_stalin_navy = {
@@ -148,7 +155,12 @@ leader_traits = {
 			factor = 0
 		}
 
+		attack_skill = -2
+		defense_skill = -2
 		
+		modifier = {
+			naval_retreat_chance = -0.25
+		}
 	}
 
 	trait_SOV_determined = {

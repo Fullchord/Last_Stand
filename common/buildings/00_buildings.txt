@@ -37,7 +37,7 @@ buildings = {
 		base_cost_conversion = 9000
 		general_production = 1
 		icon_frame = 1
-		max_level = 20
+		max_level = 50
 		shares_slots = yes
 		value = 5
 		infrastructure_construction_effect = yes
@@ -57,7 +57,7 @@ buildings = {
 
 	supply_node = {
 		show_on_map = 1
-		base_cost = 20000
+		base_cost = 6500
 		provincial = yes
 		disabled_in_dmz = yes
 		icon_frame = 15

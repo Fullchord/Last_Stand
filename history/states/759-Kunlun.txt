@@ -7,11 +7,11 @@ state={
 	manpower=70000
 	buildings_max_level_factor=1.000
 	state_category = wasteland
-history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
+	history={
 		owner = CHI
+		add_core_of = SIK
 		add_core_of = CHI
-		add_core_of = SIK
-		add_core_of = SIK
+		add_core_of = PRC
 		buildings = {
 			infrastructure = 1
 

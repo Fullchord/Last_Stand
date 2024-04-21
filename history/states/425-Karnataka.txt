@@ -10,7 +10,7 @@ state={
 		chromium=10 # was: 20
 	}
 
-history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
+	history={
 		owner = RAJ
 		victory_points = {
 			8011 1

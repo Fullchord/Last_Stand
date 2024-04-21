@@ -5,6 +5,7 @@ state={
 
 	history={
 		owner = EST
+		add_extra_state_shared_building_slots = 11
 		victory_points = {
 			4640 1 #Narva
 		}
@@ -13,8 +14,11 @@ state={
 		}
 		buildings = {
 			infrastructure = 3 #was: 5
+			industrial_complex = 10
+			arms_factory = 1
 			4640 = {
 				naval_base = 1
+				
 
 			}
 

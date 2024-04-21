@@ -1,0 +1,1175 @@
+on_actions = {
+	on_capitulation = {
+	effect = {
+		grapemod_capitulations_on_actions = yes
+	}
+		}
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						tag = GRE
+					}
+				}
+				ITA = {
+				transfer_state = 185
+			}
+			}
+			}
+	}
+	on_daily_GER = {
+		effect = {
+			if = {
+				limit = {
+					GER = { has_war_with = SOV }
+				}
+				victory_requierements = yes
+			}
+
+		}
+	}
+	on_monthly_SPR = {
+				effect = {
+						if = {
+							limit = {
+									date > 1939.01.01
+									}
+									every_army_leader = {
+						remove_unit_leader_trait = no_grind
+					}
+					}
+					}
+					effect = {
+						if = {
+							limit = {
+									date < 1939.01.01
+									}
+									every_army_leader = {
+						add_unit_leader_trait = no_grind
+					}
+					}
+					}
+					}
+	on_monthly_HOL = {
+		effect ={
+				if = {
+					limit = { 
+							date > 1940.11.11
+							}
+					remove_ideas = grapemod_no_ai
+					add_ideas = grapemod_no_ai_repair
+					}
+				}
+					}
+	on_monthly_USA = {
+		effect ={
+				if = {
+					limit = { 
+							date > 1941.03.03
+							}
+					add_ideas = grapemod_dday
+					}
+				}
+					}
+	on_monthly_SPR = {
+		effect ={
+				if = {
+					limit = { 
+							date > 1941.03.03
+							}
+					add_ideas = grapemod_dday
+					}
+				}
+					}
+	on_monthly = {
+		effect = {
+		every_country = {
+				limit = {
+					is_playable_country = yes
+					NOT = {
+						OR = {
+							OR = {
+								has_war = yes
+								has_idea = peace_training
+							}
+							AND = {
+								tag = SPR
+								GER = {
+									has_war = yes
+								}
+							}
+						}
+					}
+				}
+				add_ideas = peace_training
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = CAN
+						tag = USA
+						tag = ENG
+						tag = FRA
+						tag = SAF
+						tag = RAJ
+						tag = AST
+						tag = NZL
+						tag = SOV
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = ENG
+						}
+					}
+					add_operation_token = {
+						tag = ENG
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = ENG
+						token = team_army
+					}
+					add_operation_token = {
+						tag = ENG
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = ENG
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = USA
+						}
+					}
+					add_operation_token = {
+						tag = USA
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = USA
+						token = team_army
+					}
+					add_operation_token = {
+						tag = USA
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = USA
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = FRA
+						}
+					}
+					add_operation_token = {
+						tag = FRA
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = FRA
+						token = team_army
+					}
+					add_operation_token = {
+						tag = FRA
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = FRA
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = SOV
+						}
+					}
+					add_operation_token = {
+						tag = SOV
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = SOV
+						token = team_army
+					}
+					add_operation_token = {
+						tag = SOV
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = SOV
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = CAN
+						}
+					}
+					add_operation_token = {
+						tag = CAN
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = CAN
+						token = team_army
+					}
+					add_operation_token = {
+						tag = CAN
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = CAN
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = SAF
+						}
+					}
+					add_operation_token = {
+						tag = SAF
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = SAF
+						token = team_army
+					}
+					add_operation_token = {
+						tag = SAF
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = SAF
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = RAJ
+						}
+					}
+					add_operation_token = {
+						tag = RAJ
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = RAJ
+						token = team_army
+					}
+					add_operation_token = {
+						tag = RAJ
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = RAJ
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = AST
+						}
+					}
+					add_operation_token = {
+						tag = AST
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = AST
+						token = team_army
+					}
+					add_operation_token = {
+						tag = AST
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = AST
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = NZL
+						}
+					}
+					add_operation_token = {
+						tag = NZL
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = NZL
+						token = team_army
+					}
+					add_operation_token = {
+						tag = NZL
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = NZL
+						token = team_airforce
+					}
+				}
+			}
+						every_country = {
+				limit = {
+					OR = {
+						tag = GER
+						tag = ITA
+						tag = JAP
+						tag = BUL
+						tag = HUN
+						tag = ROM
+						tag = SPR
+						tag = NOR
+						tag = ALB
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = GER
+						}
+					}
+					add_operation_token = {
+						tag = GER
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = GER
+						token = team_army
+					}
+					add_operation_token = {
+						tag = GER
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = GER
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = ITA
+						}
+					}
+					add_operation_token = {
+						tag = ITA
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = ITA
+						token = team_army
+					}
+					add_operation_token = {
+						tag = ITA
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = ITA
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = BUL
+						}
+					}
+					add_operation_token = {
+						tag = BUL
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = BUL
+						token = team_army
+					}
+					add_operation_token = {
+						tag = BUL
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = BUL
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = ROM
+						}
+					}
+					add_operation_token = {
+						tag = ROM
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = ROM
+						token = team_army
+					}
+					add_operation_token = {
+						tag = ROM
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = ROM
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = HUN
+						}
+					}
+					add_operation_token = {
+						tag = HUN
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = HUN
+						token = team_army
+					}
+					add_operation_token = {
+						tag = HUN
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = HUN
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = NOR
+						}
+					}
+					add_operation_token = {
+						tag = NOR
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = NOR
+						token = team_army
+					}
+					add_operation_token = {
+						tag = NOR
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = NOR
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = JAP
+						}
+					}
+					add_operation_token = {
+						tag = JAP
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = JAP
+						token = team_army
+					}
+					add_operation_token = {
+						tag = JAP
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = JAP
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = SPR
+						}
+					}
+					add_operation_token = {
+						tag = SPR
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = SPR
+						token = team_army
+					}
+					add_operation_token = {
+						tag = SPR
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = SPR
+						token = team_airforce
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = ALB
+						}
+					}
+					add_operation_token = {
+						tag = ALB
+						token = team_civilian
+					}
+					add_operation_token = {
+						tag = ALB
+						token = team_army
+					}
+					add_operation_token = {
+						tag = ALB
+						token = team_navy
+					}
+					add_operation_token = {
+						tag = ALB
+						token = team_airforce
+					}
+				}
+			}
+			}
+			}
+	on_startup = {
+		effect = {
+			SOV = { 
+                    country_event = {
+                        id = mexico.21 # Mexico returns trotsky
+                        days = 396 # Feb 37
+                    }
+					add_timed_idea = { 
+						idea = Spain_Gold 
+						days = 600
+						}
+                }
+			SPR = {
+			every_army_leader = {
+						limit = {
+							NOT = { 
+								has_trait = no_grind
+							}
+						}
+						add_unit_leader_trait = no_grind
+					
+					}
+					}
+			SWE = {
+			add_ideas = GEN_cheaper_amphib
+			}
+			SPR = {
+			add_offsite_building = {
+			type = industrial_complex 
+			level = 25 
+			}
+			}
+			ENG = {
+				add_ideas = grapemod_airforce_recruitment
+				country_event = {
+					id = britain.16
+					days = 20
+				}
+				country_event = {
+					id = mtg_britain.1
+					days = 190
+				}
+				country_event = {
+					id = britain.22
+					days = 513
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 12200
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 9600
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 259
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_1
+					amount = 100
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis_1
+					amount = 180
+					producer = ENG
+					variant_name = "Light Tank Mk. VI"
+				}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 300
+				}
+				add_offsite_building = { 
+				type = industrial_complex 
+				level = 4
+				}
+				
+				}
+			WST = {
+					add_ideas = grapemod_no_ai
+					remove_ideas = USA_monroe_doctrine_idea
+					}
+			SWE = {
+					add_ideas = grapemod_no_ai
+					remove_ideas = USA_monroe_doctrine_idea
+					}
+			CZE = {
+					add_ideas = grapemod_no_ai
+					}
+			LUX = {
+					add_ideas = grapemod_no_ai
+					}
+			PER = {
+					add_ideas = grapemod_no_ai
+				}
+			VEN = {
+					add_ideas = grapemod_no_ai
+					remove_ideas = USA_monroe_doctrine_idea
+				}
+			CHI = {
+				add_ideas = grapemod_no_ai
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 60000
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 60000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 10
+					}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 15
+				}
+				}
+			HOL = {
+				add_ideas = grapemod_no_ai
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 15000
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 15000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 1000
+					}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 15
+				}
+				}
+			ALB = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 288
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 3
+					}
+				}
+			POL = {
+				add_ideas = grapemod_no_ai
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 15000
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 40000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 300
+					}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 20
+				}
+				}
+			BEL = {
+				add_ideas = grapemod_no_ai
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 17500
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 17500
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 1500
+					}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 15
+				}
+				}
+			GRE = {
+				add_ideas = grapemod_no_ai
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 5000
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 6150
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 200
+					}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 5
+				}
+				}
+			LIT = {
+				add_ideas = grapemod_no_ai
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 2000
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 4000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 200
+					}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 5
+				}
+				}
+			EST = {
+				add_ideas = grapemod_no_ai
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 2000
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 4000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 200
+					}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 5
+				}
+				}
+			LAT = {
+				add_ideas = grapemod_no_ai
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 2000
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 4000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 200
+					}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 5
+				}
+				}
+			YUG = {
+				add_ideas = grapemod_no_ai
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 7500
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 7500
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 1500
+					}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 15
+				}
+				}
+			AUS = {
+				add_ideas = grapemod_no_ai
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 6500
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 6500
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 400
+					}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 15
+				}
+				}
+			DEN = {
+				add_ideas = grapemod_no_ai
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 5000
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 5000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 250
+					}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 15
+				}
+				}
+			GER = {
+				add_opinion ROM
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 24900
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 891
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 607
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_1
+					amount = 349
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis_2
+					amount = 720
+					producer = GER
+					variant_name = "Panzer II Ausf. A"
+				}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 300
+				}
+			}
+			FRA = {
+				add_offsite_building = {
+				type = industrial_complex 
+				level = 5 
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 14400
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 31300
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 766
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 2500
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_1
+					amount = 217
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis_0
+					amount = 480
+					producer = FRA
+					variant_name = "FT mod. 31"
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis_0
+					amount = 240
+					producer = FRA
+					variant_name = "FT Char Cannon"
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis_1
+					amount = 480
+					producer = FRA
+					variant_name = "H-35"
+				}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 100
+				}
+				transfer_state = 713
+			}
+			JAP = {
+				add_offsite_building = {
+				type = industrial_complex
+				level = 8 
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 7700
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 31700
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 801
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 880
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_1
+					amount = 25
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis_1
+					amount = 180
+					producer = JAP
+					variant_name = "Type 95 Ha-Go"
+				}
+			}
+			USA = {
+			add_offsite_building = { 
+			type = industrial_complex level = 20 
+			}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 11100
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 344
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_1
+					amount = 106
+				}
+			}
+			HUN = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 4700
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 11
+				}
+			}
+			ROM = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 9600
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 303
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 70
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_1
+					amount = 87
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis_0
+					amount = 72
+					producer = ROM
+					variant_name = "FT Char Cannon"
+				}
+			}
+			ITA = {
+			add_ideas = grapemod_airforce_recruitment
+			add_ideas = grapemod_ita_fuel
+			add_offsite_building = { 
+			type = industrial_complex level = 10 
+			}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 4900
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 20500
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 819
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 212
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_1
+					amount = 60
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis_1
+					amount = 180
+					producer = ITA
+					variant_name = "L3/35"
+				}
+			}
+			SOV = {
+			
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 16200
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 61700
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 443
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 1600
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_1
+					amount = 814
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis_1
+					amount = 1300
+					producer = SOV
+					variant_name = "T-26TU mod. 1933"
+				}
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis_1
+					amount = 1000
+					producer = SOV
+					variant_name = "BT-5"
+				}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 300
+				}
+			}
+			BUL = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 3138
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 42
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 90
+				}
+			}
+			CAN = {
+				add_ideas = grapemod_airforce_recruitment
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 2700
+				}
+			}
+			RAJ = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 3600
+				}
+			}
+			AST = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 2300
+				}
+			}
+			NZL = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 700
+				}
+			}
+			SAF = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 815
+				}
+			}
+			FIN = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 2571
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 156
+				}
+			}
+			NOR = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 1700
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 28
+				}
+				add_equipment_to_stockpile = {
+					type = train_equipment
+					amount = 6
+				}
+			}
+			}
+		}
+	}

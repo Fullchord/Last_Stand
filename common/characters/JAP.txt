@@ -64,12 +64,12 @@ characters={
 		}
 
 		corps_commander={
-			traits={ brilliant_strategist politically_connected trickster trait_engineer organizer infantry_leader panzer_leader trickster }
+			traits={ brilliant_strategist politically_connected trickster trait_engineer organizer infantry_leader trickster }
 			skill=6
 			attack_skill=5
 			defense_skill=6
 			planning_skill=4
-			logistics_skill=4
+			logistics_skill=7
 			legacy_id=0
 		}
 	}
@@ -188,7 +188,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ career_officer infantry_officer organizer infantry_leader panzer_leader trickster }
+			traits={ career_officer infantry_officer organizer infantry_leader trickster }
 			skill=6
 			attack_skill=6
 			defense_skill=4
@@ -216,7 +216,7 @@ characters={
 			traits = {
 				army_infantry_2
 			}
-			cost = 100
+			cost = 50
 			ai_will_do = {
 				factor = 2.500
 				modifier = {
@@ -250,12 +250,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { organizer infantry_leader trait_engineer infantry_expert naval_invader commando trickster trait_mountaineer jungle_rat }
-			skill=8
+			traits = { organizer infantry_leader trait_engineer infantry_expert naval_invader commando trickster }
+			skill=6
 			attack_skill=5
 			defense_skill=2
 			planning_skill=3
-			logistics_skill=2
+			logistics_skill=8
 			legacy_id=0
 		}
 	}
@@ -307,7 +307,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ inflexible_strategist trait_reckless JAP_samurai_lineage organizer infantry_leader panzer_leader trickster }
+			traits={ inflexible_strategist trait_reckless JAP_samurai_lineage organizer infantry_leader trickster }
 			skill=4
 			attack_skill=4
 			defense_skill=4
@@ -512,12 +512,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ career_officer politically_connected fortress_buster organizer infantry_leader panzer_leader trickster }
+			traits={ career_officer politically_connected fortress_buster organizer infantry_leader trickster }
 			skill=6
 			attack_skill=4
 			defense_skill=5
 			planning_skill=5
-			logistics_skill=5
+			logistics_skill=7
 			legacy_id=0
 		}
 	}
@@ -616,21 +616,21 @@ characters={
 				original_tag = JAP
 			}
 			traits = {
-				army_logistics_2
+				army_commando_2
 			}
-			cost = 100
+			cost = 50
 			ai_will_do = {
 				factor = 3.000
 			}
 		}
 		
 		corps_commander={
-			traits = {  commando naval_invader infantry_leader infantry_expert trait_engineer hill_fighter ranger trait_mountaineer }
+			traits = {  commando naval_invader infantry_leader infantry_expert trait_engineer hill_fighter }
 			skill=7
 			attack_skill=5
 			defense_skill=1
 			planning_skill=3
-			logistics_skill=3
+			logistics_skill=8
 			legacy_id=0
 		}
 	}
@@ -1068,7 +1068,7 @@ characters={
 				original_tag = JAP
 			}
 			traits = {
-				army_chief_offensive_1
+				army_chief_offensive_2
 			}
 			cost =  50
 			ai_will_do = {
@@ -1117,9 +1117,9 @@ characters={
 				original_tag = JAP
 			}
 			traits = {
-				army_chief_morale_2
+				army_chief_reform_2
 			}
-			cost = 100
+			cost = 50
 			ai_will_do = {
 				factor = 1.000
 			}

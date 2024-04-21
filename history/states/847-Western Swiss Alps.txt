@@ -2,12 +2,12 @@
 state={
 	id=847
 	name="STATE_847"
-    manpower = 1
+	manpower = 178429
 	state_category = pastoral
 	resources={
 	}
 	history={
-        owner = WST
+		owner = WST
 		buildings = {
 			infrastructure = 1 
 			industrial_complex = 1

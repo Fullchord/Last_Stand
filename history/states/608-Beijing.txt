@@ -6,13 +6,14 @@ state={
 	
 	state_category = large_city
 
-history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
+	history={
 		owner = CHI
 		add_core_of = CHI
-		add_core_of = CHI
+		add_core_of = PRC
+	add_extra_state_shared_building_slots = 9
 		buildings = {
 			infrastructure = 3 #was: 5
-			industrial_complex = 2
+			industrial_complex = 11
 			air_base = 3
 			10068 = {
 				naval_base = 2

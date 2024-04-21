@@ -4,10 +4,10 @@ state= {
 	manpower = 11755600
 	state_category = city
 	history=
-{ 1936.1.1.13 = { owner = WST add_core_of = WST }
+	{
 		owner = CHI
 		add_core_of = CHI
-		add_core_of = CHI
+		add_core_of = PRC
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1

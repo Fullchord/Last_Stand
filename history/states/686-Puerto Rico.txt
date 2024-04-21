@@ -5,7 +5,8 @@ state={
 	
 	state_category = rural
 
-history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
+	history={
+		add_core_of = PUE
 		add_core_of = SWE
 		owner = USA
 		victory_points = {

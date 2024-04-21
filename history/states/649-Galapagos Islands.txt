@@ -2,11 +2,11 @@ state = {
 	id = 649
 	name = "STATE_649"
 	state_category = tiny_island
-    manpower = 1
+	manpower = 11532
 
 	history = {
 
-        owner = WST
+		owner = WST
 		add_core_of = ECU
 
 		buildings = {
@@ -16,9 +16,9 @@ state = {
 			}
 		}
 
-
-
-
+		victory_points = {
+			5023 1
+		}
 		
 	}
 

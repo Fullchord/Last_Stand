@@ -66,7 +66,7 @@
 	focus = {
 		id = NZL_transfer_the_new_zealand_division
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		x = 8
+		x = 16
 		y = 0
 
 		cost = 10
@@ -448,7 +448,7 @@
 	focus = {
 		id = NZL_expand_the_nzpaf
 		icon = GFX_goal_generic_air_doctrine
-		x = 18
+		x = 21
 		y = 0
 
 		cost = 10
@@ -515,6 +515,16 @@
 							producer = ENG
 						}	
 					}
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				add_equipment_subsidy = {
+					cic = 1000
+					equipment_type = medium_plane_airframe
+					seller_tags = { ENG }
 				}
 			}
 		}
@@ -739,10 +749,7 @@
 				name = NZL_modern_fighters
 				bonus = 1.0
 				uses = 1
-				technology = early_fighter
-				technology = fighter1
-				technology = fighter2
-				technology = fighter3
+				category = light_fighter
 				category = cat_heavy_fighter
 			}
 		}
@@ -794,7 +801,7 @@
 	focus = {
 		id = NZL_national_roads_board
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 12
+		x = 25
 		y = 0
 
 		cost = 10
@@ -1254,7 +1261,7 @@
 		icon = GFX_focus_wonderweapons
 		prerequisite = { focus = NZL_heavy_bombers focus = NZL_modern_fighters }
 		prerequisite = { focus = NZL_department_of_scientific_and_industrial_research }
-		x = 0
+		x = -2
 		y = 4
 		relative_position_id = NZL_national_roads_board
 
@@ -1360,7 +1367,7 @@
 	focus = {
 		id = NZL_army_reforms
 		icon = GFX_goal_generic_army_doctrines
-		x = 24
+		x = 30
 		y = 0
 
 		cost = 10
@@ -2095,6 +2102,7 @@
 		id = NZL_strengthen_the_commonwealth
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		prerequisite = { focus = NZL_the_first_labor_government }
+		mutually_exclusive = { focus = NZL_statute_of_westminster }
 		x = 0
 		y = 1
 		relative_position_id = NZL_the_first_labor_government
@@ -2128,6 +2136,8 @@
 			ENG = { add_opinion_modifier = { target = NZL modifier = NZL_strengthen_ties } }
 		}
 	}
+
+	
 
 	############################
 	# GO COMMONWEALTH SECTION ##
@@ -2231,6 +2241,9 @@
 			}
 		}
 	}
+
+	
+
 
 
 }		

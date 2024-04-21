@@ -1,0 +1,423 @@
+
+grapemod_capitulations_on_actions = {
+	if = {
+		limit = {
+			original_tag = POL
+			POL = { has_war_with = GER }
+		}
+		ENG = {
+			country_event = { id = britain.9 days = 1 }
+		}
+		SOV = {
+			transfer_state = 784
+			transfer_state = 96
+			transfer_state = 95
+			transfer_state = 94
+			transfer_state = 93
+			transfer_state = 91
+			transfer_state = 89
+			transfer_state = 97
+		}
+		POL = {
+			transfer_units_fraction = {
+						target = GER
+						size = 0
+						stockpile_ratio = 0.5
+						keep_unit_leaders_trigger = {
+							always = no
+						}
+				}
+		}
+	}
+	
+	if = {
+		limit = {
+			AND = {
+				original_tag = FRA
+				FRA = { has_war_with = GER }
+			}
+		}
+		GER = {
+			country_event = france.14
+		}
+		FRA = {
+		set_capital = {
+				state = 539
+			}
+			}
+
+		set_global_flag = fall_of_france
+	}
+
+	# Fix netherlands transfer
+	if = {
+		limit = {
+			original_tag = HOL
+			GER = { has_war_with = HOL }
+			NOT = {
+				JAP = {
+					has_war_with = HOL
+				}
+				361 = { is_owned_and_controlled_by = WST }
+			}
+		}
+		HOL = {
+			add_stability = 1.0
+			set_convoys = 300
+			transfer_state = 672
+			transfer_state = 334
+			transfer_state = 335
+			transfer_state = 667
+			transfer_state = 673
+			transfer_state = 668
+			transfer_state = 669
+			transfer_state = 309
+			transfer_state = 695
+			transfer_units_fraction = {
+					target = GER
+					size = 0
+					stockpile_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+			}
+		}
+	}
+	if = {
+		limit = {
+			original_tag = BEL
+			GER = { has_war_with = BEL }
+			NOT = {
+				361 = { is_owned_and_controlled_by = WST }
+			}
+		}
+		BEL = {
+			transfer_state = 889
+			transfer_state = 888
+			transfer_state = 295
+			transfer_state = 890
+			transfer_state = 538
+			transfer_state = 718
+			transfer_state = 768
+			transfer_state = 769
+			transfer_units_fraction = {
+					target = GER
+					size = 0
+					stockpile_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+			}
+		}
+
+	}
+
+	# Yugoslavia
+	if = {
+		limit = { 
+			original_tag = YUG 
+			ITA = { has_war_with = YUG }
+		} 
+		YUG = {
+			transfer_navy = { target = ITA }
+			transfer_units_fraction = {
+					target = ITA
+					size = 0
+					stockpile_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+			}
+		}
+
+		ITA = {
+				add_named_threat = { 
+					threat = 6.3 
+					name = grapemod_yug
+				}
+
+			add_ideas = peace_training
+			transfer_state = 103
+			transfer_state = 102
+			transfer_state = 104
+			transfer_state = 105
+			transfer_state = 109
+			transfer_state = 107
+			transfer_state = 108
+			transfer_state = 802
+			transfer_state = 804
+            transfer_state = 853
+			transfer_state = 106
+			transfer_state = 803
+			
+		}
+		BUL = {
+			
+			if = {
+				limit = { NOT = { has_idea = peace_training } }
+				add_ideas = peace_training
+			}
+		}
+		ALB = {
+			transfer_state = 802
+			add_ideas = peace_training
+		}
+		HUN = {
+			transfer_state = 764
+			transfer_state = 45
+			add_ideas = peace_training
+		}
+	} 
+	# Albania} 
+	# Greece
+	if = {
+		limit = { 
+			original_tag = GRE 
+			OR = {
+				ITA = { has_war_with = GRE }
+				BUL = { has_war_with = GRE }
+			}
+		} 
+		
+		GRE = {
+			transfer_navy = { target = ITA }
+			transfer_units_fraction = {
+					target = GER
+					size = 0
+					stockpile_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+			}
+		}
+		ITA = {
+			add_named_threat = { 
+				threat = 3.7 
+				name = ita_gre
+			}
+			annex_country = {
+				target = GRE
+				transfer_troops = no
+			}
+		}
+	} 
+	# China
+	if = {
+		limit = { 
+			original_tag = CHI
+			JAP = { has_war_with = CHI }
+		} 
+		CHI = {
+			transfer_navy = { target = JAP }
+		}
+		JAP = {
+			add_named_threat = { 
+				threat = 11.9
+				name = elwolf_chi
+			}
+			annex_country = {
+				target = CHI
+				transfer_troops = no
+			}
+		}
+	}
+
+	# Japan
+	if = {
+		limit = { 
+			original_tag = JAP
+			USA = { has_war_with = JAP }
+		} 
+		JAP = {
+			transfer_navy = { target = USA }
+		}
+		USA = {
+			annex_country = {
+				target = JAP
+				transfer_troops = no
+			}
+		}
+	}
+	if = {
+		limit = { 
+			original_tag = LUX
+			GER = { has_war_with = LUX }
+		} 
+
+		LUX = {
+			transfer_units_fraction = {
+					target = GER
+					size = 0
+					stockpile_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+			}
+		}
+	}
+	if = {
+		limit = { 
+			original_tag = DEN
+			GER = { has_war_with = DEN }
+		} 
+
+		DEN = {
+			transfer_units_fraction = {
+					target = GER
+					size = 0
+					stockpile_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+			}
+		}
+	}
+	if = {
+		limit = { 
+			original_tag = RAJ
+			JAP = { has_war_with = RAJ }
+		} 
+
+		RAJ= {
+			transfer_units_fraction = {
+					target = JAP
+					size = 0
+					stockpile_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+			}
+		}
+	}
+	if = {
+		limit = { 
+			original_tag = AST
+			JAP = { has_war_with = AST }
+		} 
+
+		AST= {
+			transfer_units_fraction = {
+					target = JAP
+					size = 0
+					stockpile_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+			}
+		}
+	}
+
+	# Soviet Union
+	if = {
+		limit = { 
+			original_tag = SOV
+			GER = { has_war_with = SOV }
+		} 
+		SOV = {
+			transfer_navy = { target = USA }
+		}
+		GER = {
+			annex_country = {
+				target = SOV
+				transfer_troops = no
+			}
+		}
+	}
+
+}
+
+
+generic_bonus_1 = {
+	add_tech_bonus = { 
+	name = "Generic 100 Bonus" bonus = 1 uses = 1
+	category = air_equipment category = industry 
+	category = artillery category = naval_equipment	
+	category = motorized_equipment   category =	armor 
+	category = electronics	category = nuclear 
+	category = land_doctrine category = infantry_weapons 
+	category = air_doctrine category = naval_doctrine   
+	category = tp_tech   category = support_tech 
+	}
+}
+
+generic_bonus_3 = {
+	add_tech_bonus = { 
+	name = "Generic 300 Bonus"  bonus = 3 uses = 1
+	category = air_equipment category = industry 
+	category = artillery category = naval_equipment	
+	category = motorized_equipment   category =	armor 
+	category = electronics	category = nuclear 
+	category = land_doctrine category = infantry_weapons 
+	category = air_doctrine category = naval_doctrine   
+	category = tp_tech   category = support_tech 
+	}
+}
+generic_bonus_2y = {
+	add_tech_bonus = { 
+	name = "Generic 2y Bonus"  ahead_reduction = 2 bonus = 1 uses = 1
+	category = air_equipment category = industry 
+	category = artillery category = naval_equipment	
+	category = motorized_equipment   category =	armor 
+	category = electronics	category = nuclear 
+	category = land_doctrine category = infantry_weapons 
+	category = air_doctrine category = naval_doctrine   
+	category = tp_tech   category = support_tech 
+	}
+}
+
+generic_bonus_999 = {
+	add_tech_bonus = { 
+	name = "Generic 99999 Bonus"  bonus = 999.99 uses = 1 
+	category = air_equipment category = industry 
+	category = artillery category = naval_equipment	
+	category = motorized_equipment   category =	armor 
+	category = electronics	category = nuclear 
+	category = land_doctrine category = infantry_weapons 
+	category = air_doctrine category = naval_doctrine   
+	category = tp_tech   category = support_tech 
+	}
+}
+
+victory_requierements = {
+	set_variable = { VICTORY_CON = 0 }
+	if = { limit = { any_country = { axis = yes controls_state = 335} } add_to_variable = { var =  VICTORY_CON value = 1 } }
+	if = { limit = { any_country = { axis = yes controls_state = 907 } } add_to_variable = { var =  VICTORY_CON value = 1 } }
+	if = { limit = { any_country = { allies = yes controls_state = 16 } } add_to_variable = { var =  VICTORY_CON value = -10 } }	
+	if = { limit = { any_country = { axis = yes controls_state = 202 } } add_to_variable = { var =  VICTORY_CON value = 1 } }
+	if = { limit = { any_country = { axis = yes controls_state = 219} } add_to_variable = { var =  VICTORY_CON value = 1 } }
+	if = { limit = { any_country = { axis = yes controls_state = 217 } } add_to_variable = { var = VICTORY_CON value = 1 } }	
+
+	
+	if = {
+		limit = { 
+			check_variable = { VICTORY_CON > 2 }
+		}
+		set_global_flag = { flag = VIC value = 1 }	
+		every_country = {
+			if ={
+				limit = {is_playable_country = yes}
+				add_timed_idea = {
+					idea = victory_con_axis
+					days= 270
+				}
+			}	
+		}	
+	}
+	if = {
+		limit = { 
+			check_variable = { VICTORY_CON < 3 }
+		}
+		set_global_flag = { flag = VIC value = 0 }	
+	}
+
+	
+}
+air_to_england = {
+	if = { limit = { tag = USA }
+		send_equipment = { equipment = small_plane_airframe amount = 100000 target = ENG }
+		send_equipment = { equipment = small_plane_cas_airframe amount = 100000 target = ENG }
+		send_equipment = { equipment = medium_plane_airframe amount = 100000 target = ENG }
+		send_equipment = { equipment = medium_plane_fighter_airframe amount = 100000 target = ENG }	
+		send_equipment = { equipment = large_plane_airframe amount = 100000 target = ENG }	
+	}
+}

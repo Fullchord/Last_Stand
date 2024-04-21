@@ -527,7 +527,7 @@
 		}
 	}
 
-		focus = {
+	focus = {
 		id = AST_z_special_unit
 		icon = GFX_goal_generic_amphibious_assault
 		prerequisite = { focus = AST_introduce_unconventional_warfare }
@@ -1435,7 +1435,7 @@
 	focus = {
 		id = AST_cockatoo_island_shipyards
 		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 10
+		x = 11
 		y = 0
 
 		cost = 5
@@ -1845,7 +1845,7 @@
 	focus = {
 		id = AST_standard_gauge_railway
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 14
+		x = 16
 		y = 0
 
 		cost = 10
@@ -1931,6 +1931,7 @@
 			NOT = {
 				controls_state = 522
 				controls_state = 519
+				controls_state = 871
 			}
 		}
 
@@ -1942,6 +1943,40 @@
 		completion_reward = {
 			build_railway = {
 				path = { 1652 2157 10983 1526 10949 8200 10969 2191 12948 5197 8165 10927 8186 }
+			}
+
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+					NOT = {state = 674}
+				}
+
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+					NOT = {state = 674}
+				}
+
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
 			}
 		}
 	}
@@ -2260,6 +2295,8 @@
 				level = 2
 				path = { 7669 1431 12104 1454 }
 			}
+
+
 		}
 	}
 
@@ -2340,7 +2377,7 @@
 	focus = {
 		id = AST_establish_advisory_war_council
 		icon = GFX_goal_generic_demand_territory
-		x = 22
+		x = 24
 		y = 0
 
 		cost = 10
@@ -2865,13 +2902,15 @@
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		complete_tooltip = {
-			518 = {
+			random_state = {
+				limit = { has_state_flag = AST_rationing_and_recycling_alu }
 				add_resource = {
 					type = aluminium
 					amount = 24
 				}
 			}
-			518 = {
+			random_state = {
+				limit = { has_state_flag = AST_rationing_and_recycling_oil }
 				add_resource = {
 					type = oil
 					amount = 12
@@ -2880,17 +2919,27 @@
 		}
 
 		completion_reward = {
-			518 = {
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes
+					NOT = { state = 674 }
+				}
 				add_resource = {
 					type = aluminium
 					amount = 24
 				}
+				set_state_flag = AST_rationing_and_recycling_alu
 			}
-			518 = {
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes
+					NOT = { state = 674 }
+				}
 				add_resource = {
 					type = oil
 					amount = 12
 				}
+				set_state_flag = AST_rationing_and_recycling_oil
 			}
 		}
 	}
@@ -3005,7 +3054,8 @@
 	focus = {
 		id = AST_support_the_policy_of_appeasement
 		icon = GFX_goal_generic_improve_relations
-		x = 28
+		mutually_exclusive = { focus = AST_never_another_gallipoli }
+		x = 30
 		y = 0
 
 		cost = 10
@@ -3065,7 +3115,7 @@
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		prerequisite = { focus = AST_support_the_policy_of_appeasement }
 		relative_position_id = AST_support_the_policy_of_appeasement
-		x = 0
+		x = -1
 		y = 1
 
 		cost = 10
@@ -3123,11 +3173,63 @@
 			}
 		}
 
+	focus = {
+		id = AST_the_singapore_strategy
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = AST_support_the_policy_of_appeasement }
+		x = 1
+		y = 1
+		relative_position_id = AST_support_the_policy_of_appeasement
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 0.2
+		}
+
+		available = {
+			is_in_faction_with = ENG
+			ENG = { has_government = ROOT }
+			MAL = {
+				is_puppet_of = ENG
+			}
+		}
+		
+		bypass = {
+			OR = {
+				NOT = {
+					OR = {
+						336 = {
+							is_owned_by = MAL
+						}
+						333 = {
+							is_owned_by = MAL
+						}
+					}
+				}
+				NOT = {
+					MAL = {
+						is_puppet_of = ENG
+					}
+				}
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			ENG = {
+				country_event = { id = tfv_australia.1 }
+			}
+		}
+	}
 
 	focus = {
 		id = AST_adopt_westminster
 		icon = GFX_goal_generic_improve_relations
-		prerequisite = { focus = AST_strengthen_ties_with_uk }
+		prerequisite = { focus = AST_strengthen_ties_with_uk focus = AST_the_singapore_strategy }
 		x = 0
 		y = 2
 		relative_position_id = AST_support_the_policy_of_appeasement
@@ -3444,5 +3546,4 @@
 			}
 		}
 	}
-
 }		

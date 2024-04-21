@@ -1,0 +1,49 @@
+ideas = {
+     hidden_ideas = {
+		hotjoin_eff = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+            picture = generic_morale_bonus
+						
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				production_factory_efficiency_gain_factor = -0.25
+			}
+
+            on_remove = {
+            }
+            cancel = { 
+            }	    
+    	}
+		hotjoin_reminder = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+            picture = generic_morale_bonus
+						
+			modifier = {
+			}
+
+            on_remove = {
+				GER = {news_event = { id = hosttool.9 }
+            }
+            cancel = { 
+
+            }	    
+    	}
+    }
+}
+}

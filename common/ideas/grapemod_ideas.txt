@@ -1,0 +1,182 @@
+ideas = {
+		country = {
+				grapemod_airforce_recruitment = {
+											picture = generic_air_bonus
+											modifier = {
+													conscription = 0.05
+														}
+												}
+				grapemod_no_ai = {
+							picture = generic_goods_red_bonus
+							modifier = {
+										industrial_capacity_factory = -1.5
+										industrial_capacity_dockyard = -1.5
+										navy_max_range_factor = -1
+										training_time_factor = 9999
+										consumer_goods_factor = 200
+										production_factory_max_efficiency_factor = -1
+										political_power_cost = 3.5
+										lend_lease_tension = 1.5
+										resistance_target = -1
+										enemy_operative_capture_chance_factor = -2
+										enemy_operative_detection_chance = -200
+										required_garrison_factor = -1
+										}
+									}
+				grapemod_no_ai_repair = {
+							picture = generic_goods_red_bonus
+							modifier = {
+										industrial_capacity_factory = -1.5
+										industrial_capacity_dockyard = -1.5
+										navy_max_range_factor = -1
+										training_time_factor = 9999
+										production_factory_max_efficiency_factor = -1
+										political_power_cost = 3.5
+										lend_lease_tension = 1.5
+										resistance_target = -1
+										enemy_operative_capture_chance_factor = -2
+										enemy_operative_detection_chance = -200
+										required_garrison_factor = -1
+										}
+									}
+				grapemod_ita_fuel = {
+								picture = generic_stockpile_fuel
+								modifier = {
+										base_fuel_gain = 1300
+											}
+									}
+				grapemod_dday = {
+								picture = generic_volunteer_expedition_bonus
+								modifier = {
+									command_power_gain = 2
+									max_command_power = 500
+									}
+								}
+				grapemod_faction_desire = {
+								picture = generic_fascism_drift_bonus
+								modifier = {
+									ai_get_ally_desire_factor = 100
+									add_ai_strategy = {
+									type = alliance
+									id = GER
+									value = 200
+										}
+									rule = {
+				can_join_opposite_factions = yes
+			}
+			
+									}
+								}
+				peace_training = {
+			allowed = {
+				always = no
+			}
+			cancel = {
+				OR = {
+					has_war = yes
+					AND = {
+						tag = SPR
+						GER = { has_war = yes }
+					}
+				}
+			}
+			removal_cost = -1
+			picture = generic_infantry_bonus
+			modifier = {
+				training_time_army_factor = -0.89
+				air_training_xp_gain_factor = 10
+				experience_gain_navy_unit_factor = 10
+				air_accidents_factor = -2
+				naval_accidents_chance = -2
+				mobilization_speed = 2
+				army_fuel_consumption_factor = -0.9
+				air_fuel_consumption_factor = -0.9
+				navy_fuel_consumption_factor = -0.9
+			}
+		}
+		grapemod_SPA_la_division_azul = {
+
+			picture = SPA_la_division_azul
+
+			allowed = {
+				original_tag = SPR
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				send_volunteer_size = 900
+				conscription = 0.03
+				send_volunteer_divisions_required = -0.75
+				send_volunteers_tension = -0.20
+				training_time_army_factor = -0.89
+				air_training_xp_gain_factor = 10
+				experience_gain_navy_unit_factor = 10
+				air_accidents_factor = -2
+				naval_accidents_chance = -2
+				mobilization_speed = 2
+				air_fuel_consumption_factor = -0.9
+				navy_fuel_consumption_factor = -0.9
+			}
+		}
+		victory_con_axis = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+			}
+            
+            picture = generic_morale_bonus
+
+            on_remove = {
+                if = {
+                    limit = {
+                        has_global_flag = { flag = VIC value = 1 }
+                    }
+                    GER = {news_event = { id = redbaron.1 } }
+                }
+            }
+            cancel = { 
+                NOT = {
+                	has_global_flag = { flag = VIC value = 1 }
+				}
+            }
+
+        }
+		}
+    hidden_ideas = {
+		Spain_Gold = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+            picture = generic_morale_bonus
+						
+			modifier = {
+			}
+
+            on_remove = {
+				add_timed_idea = { 
+					idea = SPR_seized_spanish_gold_reserves 
+					days = 365 
+				}
+				add_political_power = -25
+            }
+            cancel = { 
+            }	    
+    	}
+}
+}

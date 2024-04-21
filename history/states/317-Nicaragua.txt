@@ -8,7 +8,7 @@ state={
 	state_category = town
 
 	history={
-        owner = WST
+		owner = WST
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1
@@ -21,12 +21,12 @@ state={
 
 		}
 		add_core_of = NIC
-
-
-
-
-
-
+		victory_points = {
+			12738 3
+		}
+		victory_points = {
+			2075 1
+		}
 
 	}
 

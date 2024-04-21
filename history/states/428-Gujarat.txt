@@ -10,7 +10,7 @@ state={
 		oil=3 # was: 4
 	}
 
-history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
+	history={
 		owner = RAJ
 		victory_points = {
 			9975 1 

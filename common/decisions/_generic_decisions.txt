@@ -65,7 +65,7 @@ political_actions = {
 	improved_worker_conditions = {
 
 		icon = generic_industry
-
+		priority = 10
 		available = {
 			has_stability < 1.0
 			if = {
@@ -212,59 +212,6 @@ economy_decisions = {
 		}
 	}
 
-	restructure_supply_system = { #one time boost to get a few cheap supply hubs
-
-		icon = GFX_decision_generic_construction
-
-		visible = {
-			OR = {
-				is_major = no
-				AND = {
-					is_faction_leader = yes
-					num_of_factories < 51					#would be a minor if it wasn't for faction leader status
-				}
-				AND = {
-					tag = JAP
-					OR = {
-						SIA = {
-							is_ai = yes
-						}
-						NOT = {
-							country_exists = SIA
-						}
-					}
-				}
-				tag = ITA
-				tag = GER
-			}
-		}
-
-		fire_only_once = yes
-
-		days_remove = 120
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				num_of_factories < 30
-				factor = 0
-			}
-		}
-
-		modifier = {
-			production_speed_supply_node_factor = 3
-		}
-
-		complete_effect = {
-			set_variable = { node_goal = num_of_supply_nodes }
-			add_to_variable = { node_goal = 3 } #maximum 3 additional nodes
-		}
-
-		cancel_trigger = {
-			
-			 check_variable = { node_goal < num_of_supply_nodes } #if the number of supply nodes exceeds the old number by +3, immediately cancel
-		}
-	}
 	seize_some_trains_woo = { #repeating train seize
 
 		icon = GFX_decision_hol_draw_up_staff_plans	
@@ -570,8 +517,18 @@ propaganda_efforts = {
 		icon = generic_prepare_civil_war
 
 		available = {
-			threat > 0.25
-			has_tech = radio
+			IF = {
+				limit = {
+					tag = BRA
+				}
+				threat > 0.25
+				#has_tech = radio
+				has_completed_focus = BRA_radio_nacional
+			}
+			ELSE = {
+				threat > 0.25
+				has_tech = radio
+			}
 		}
 
 		visible = {
@@ -1846,7 +1803,7 @@ war_measures = {
 				add_war_support = GER_war_bonds_war_support_var
 			}
 		}
-  }
+    }
 	
 	diversify_special_forces = {
 
@@ -1857,15 +1814,21 @@ war_measures = {
 		}
 
 		visible = {
-			has_dlc = "Arms Against Tyranny"
-			NOT = {
-				OR = {
-					tag = ENG #has a focus
-					tag = USA #has a focus
-					tag = SOV #has a focus
-					tag = JAP #has a focus
-				}
-			} 
+			AND = {
+				is_major = yes
+				has_dlc = "Arms Against Tyranny"
+				NOT = {
+					OR = {
+						tag = ENG #has a focus
+						tag = USA #has a focus
+						tag = SOV #has a focus
+						tag = JAP #has a focus
+						tag = CHL #has a focus
+						tag = BRA #has a focus
+						tag = ARG #has a focus
+					}
+				} 
+			}
 		}
 
 		fire_only_once = yes
@@ -1891,6 +1854,7 @@ foreign_politics = {
 
 		allowed = {
             has_dlc = "Waking the Tiger"
+			always = no
         }
 
         cost = 50

@@ -1,4 +1,4 @@
-﻿focus_tree = {
+focus_tree = {
 	id = canadian_focus
 	
 	country = {
@@ -274,6 +274,37 @@
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 			build_railway = { #Vancouver - NW Canada
 				path = {
 					1408 1858 10273 4870 10548
@@ -878,9 +909,16 @@
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = CAN_great_depression_1
-				add_idea = CAN_great_depression_2		
+			if = {
+				limit = { has_idea = CAN_great_depression_1 }
+				swap_ideas = {
+					remove_idea = CAN_great_depression_1
+					add_idea = CAN_great_depression_2		
+				}
+			}
+			else_if = {
+				limit = { has_idea = CAN_great_depression_2 }
+				remove_ideas = CAN_great_depression_2
 			}
 		}
 	}
@@ -1658,7 +1696,7 @@
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
-			army_experience = 20
+			army_experience = 50
 			add_doctrine_cost_reduction = {
 				name = CAN_independent_command
 				cost_reduction = 0.5
@@ -1769,7 +1807,6 @@
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		complete_tooltip = {
-			remove_ideas = CAN_great_depression_2
 			random_state = {
 				limit = {
 					has_state_flag = CAN_war_fueled_economy_AF1
@@ -1806,7 +1843,22 @@
 		}
 
 		completion_reward = {
-			remove_ideas = CAN_great_depression_2
+			if = {
+				limit = { 
+					OR = {
+						has_idea = CAN_great_depression_1
+						has_idea = CAN_great_depression_2
+					}
+				}
+				remove_ideas = CAN_great_depression_2
+				custom_effect_tooltip = if_no_depression_get_stuff_TT
+			}
+			else = {
+				add_timed_idea = {
+					idea = CAN_booming_economy
+					days = 1095
+				}
+			}
 			random_owned_controlled_state = {
 				limit = {
 					is_in_home_area = yes
@@ -2138,7 +2190,7 @@
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
-			army_experience = 5
+			army_experience = 30
 			add_doctrine_cost_reduction = {
 				name = CAN_red_deer_training_camp
 				cost_reduction = 0.5
@@ -2311,7 +2363,7 @@
 
 	focus = {
 		id = CAN_strengthen_the_commonwealth_ties
-
+		mutually_exclusive = { focus = CAN_patriation }
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		x = 21
 		y = 0
@@ -2368,9 +2420,9 @@
 			factor = 35
 		}
 
-		#available = {
-		#	threat > 0.05
-		#}
+		available = {
+			threat > 0.05
+		}
 		
 		bypass = {
 			custom_trigger_tooltip = {
@@ -2554,7 +2606,7 @@
 	focus = {
 		id = CAN_camp_x
 		icon = GFX_goal_generic_intelligence_exchange 
-		prerequisite = { focus = CAN_montreal_laboratory_collaboration }
+		prerequisite = { focus = CAN_montreal_laboratory_collaboration focus = CAN_permanent_joint_defense_board }
 		x = 0
 		y = 2
 		relative_position_id = CAN_strengthen_the_commonwealth_ties
@@ -2662,7 +2714,7 @@
 
 		available = {
 			controls_state = 682
-			controls_state = 466
+			controls_state = 863
 			controls_state = 468
 		}
 		
@@ -2682,7 +2734,7 @@
 					amount = 20
 				}
 			}
-			466 = {
+			863 = {
 				add_resource = {
 					type = aluminium
 					amount = 8
@@ -2734,7 +2786,6 @@
 		}
 	}
 
-
 	############################
 	####### AIR SECTION ########
 	############################
@@ -2742,7 +2793,7 @@
 	focus = {
 		id = CAN_rcaf_station_borden
 		icon = GFX_goal_generic_build_airforce
-		x = 24
+		x = 25
 		y = 0
 
 		cost = 10
@@ -2841,10 +2892,7 @@
 				name = CAN_we_have_the_hurricane
 				bonus = 1.0
 				uses = 1
-				technology = early_fighter
-				technology = fighter1
-				technology = fighter2
-				technology = fighter3
+				category = light_fighter
 			}
 		}
 	}
@@ -3284,7 +3332,7 @@
 	focus = {
 		id = CAN_halifax_shipyards
 		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 28
+		x = 30
 		y = 0
 
 		cost = 10
@@ -3688,4 +3736,5 @@
 			}
 		}
 	}
+
 }		

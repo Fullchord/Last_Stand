@@ -1,7 +1,7 @@
 state = {
 	id = 951
 	name = "STATE_951"
-    manpower = 1
+	manpower = 340000
 	
 	state_category = rural
 
@@ -11,7 +11,7 @@ state = {
 
 	history = {
 
-        owner = WST
+		owner = WST
 		add_core_of = CHL
 		add_claim_by = PRU
 
@@ -21,13 +21,13 @@ state = {
 			air_base = 1
 		}
 		
+		victory_points = {
+			5131 2
+		}
 
-
-
-
-
-
-
+		victory_points = {
+			8217 1
+		}
 
 	}
 

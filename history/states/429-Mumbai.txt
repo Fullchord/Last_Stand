@@ -9,7 +9,7 @@ state={
 		#tungsten=19 # was: 26
 	}
 
-history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
+	history={
 		owner = RAJ
 		buildings = {
 			infrastructure = 2

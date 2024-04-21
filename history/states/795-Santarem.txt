@@ -5,13 +5,13 @@ state={
 		chromium=20.000 #added due to portugal setup
 	}
 	history={
-        owner = WST
-
-
-
-
-
-
+		owner = WST
+		victory_points = {
+			9869 1 
+		}
+		victory_points = {
+			924 1 
+		}
 		buildings = {
 			infrastructure = 3 #was: 6
 			industrial_complex = 2

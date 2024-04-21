@@ -61,20 +61,6 @@ division_template = {
 
 ### OOB ###
 units = {
-	##### L'Armée Belge #####
-	# I Corps d'Armée
-	division= {	# "4ème Division d'Infanterie"
-		division_name = {
-				is_name_ordered = yes
-				name_order = 4
-		}
-		location = 9574  # Hoeselt
-		division_template = "Division d'Infanterie"
-		start_experience_factor = 0.3
-		start_equipment_factor = 0.5
-
-	}
-
 }
 
 ### Starting Production ###

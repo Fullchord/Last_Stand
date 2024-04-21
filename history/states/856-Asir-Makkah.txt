@@ -4,7 +4,7 @@ state= {
 	
 	history = {
 
-        owner = WST
+		owner = WST
 		add_core_of	= SAU
 
 		buildings = {
@@ -15,15 +15,15 @@ state= {
 			}
 		}
 
+		victory_points = {
+			12883 1 
+		}
 
-
-
-
-
-
-
+		victory_points = {
+			5037 5
+		}
 	}
-    manpower = 1
+	manpower = 500000
 	state_category = pastoral
 
 	provinces = {

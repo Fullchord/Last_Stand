@@ -3,7 +3,7 @@ state={
 	name="STATE_678"
 
 	history={
-        owner = WST
+		owner = WST
 		buildings = {
 			infrastructure = 0
 

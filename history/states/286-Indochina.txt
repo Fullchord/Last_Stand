@@ -5,8 +5,8 @@ state={
 		rubber=55 # was: 94.000
 	}
 
-	history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
-		add_core_of = SWE
+	history={
+		add_core_of = SWE # VIN
 		owner = FRA
 		victory_points = {
 			4401 3 

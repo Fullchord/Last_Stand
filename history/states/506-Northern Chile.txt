@@ -1,7 +1,7 @@
 state = {
 	id = 506
 	name = "STATE_506" # Antofagasta
-    manpower = 1
+	manpower = 423605
 	
 	state_category = town
 
@@ -11,7 +11,7 @@ state = {
 
 	history = {
 
-        owner = WST
+		owner = WST
 		add_core_of = CHL
 		add_claim_by = BOL
 
@@ -25,9 +25,9 @@ state = {
 			}
 		}
 		
-
-
-
+		victory_points = {
+			12994 10
+		}
 
 	}
 

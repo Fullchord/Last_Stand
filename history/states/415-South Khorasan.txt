@@ -2,21 +2,21 @@
 state={
 	id=415
 	name="STATE_415" # Herat
-    manpower = 1
+	manpower = 1632860
 	
 	state_category = rural
 
 	history={
-        owner = WST
+		owner = WST
 		buildings = {
 			infrastructure = 1
 		}
-
-
-
-
-
-
+		victory_points = {
+			4893 1 
+		}
+		victory_points = {
+			5064 1 
+		}
 		add_core_of = AFG
 	}
 

@@ -3,7 +3,7 @@
 
 air_wings = {
 	### RAF Fighter Command ###
-	129 = { 
+	127 = { 
 		### No. 11 Fighter Command, Middlesex area -- Hawker Demons, Furys, Gloster Gauntlets
 		small_plane_airframe_0 = {
 			owner = "ENG" 
@@ -21,7 +21,7 @@ air_wings = {
 			version_name = "Hawker Fury"
 		}
 	}
-	130 = { 
+	127 = { 
 		### No. 11 Fighter Command, Essex area -- Hawker Demons, Furys, Gloster Gauntlets
 		small_plane_airframe_0 = {
 			owner = "ENG" 
@@ -42,7 +42,7 @@ air_wings = {
 			version_name = "Hawker Fury"
 		}
 	}	
-	131 = { 
+	127 = { 
 		### No. 13 Fighter Command, Newcastle -- Hawker Demons, Furys, Gloster Gauntlets
 		small_plane_airframe_0 = {
 			owner = "ENG" 
@@ -53,7 +53,7 @@ air_wings = {
 	}
 	
 	### RAF Bomber Command ###
-	125 = { 
+	127 = { 
 		### No. 1 Bomber Command, East Anglia area -- Fairey Gordons, Battles
 		small_plane_cas_airframe_0 = {
 			owner = "ENG" 
@@ -61,7 +61,7 @@ air_wings = {
 			version_name = "Fairey Gordon"
 		}
 	}
-	125 = { 
+	127 = { 
 		### No. 2 Bomber Command, East Anglia area -- HP Heyford, Harrows, AW Whitleys
 		medium_plane_airframe_0 = {
 			owner = "ENG" 
@@ -69,7 +69,7 @@ air_wings = {
 			version_name = "Handley Page Heyford"
 		}
 	}
-	126 = { 
+	127 = { 
 		### No. 3 Bomber Command, Suffolk area -- HP Heyford, Harrows, AW Whitleys
 		medium_plane_airframe_0 = {
 			owner = "ENG" 
@@ -77,7 +77,7 @@ air_wings = {
 			version_name = "Handley Page Heyford"
 		}
 	}
-	130 = { 
+	127 = { 
 		### No. 4 Bomber Command, York area -- HP Heyford, Harrows, AW Whitleys
 		medium_plane_airframe_0 = {
 			owner = "ENG" 
@@ -85,7 +85,7 @@ air_wings = {
 			version_name = "Handley Page Heyford"
 		}
 	}
-	128 = { 
+	127 = { 
 		### No. 5 Bomber Command, Lincoln area -- Fairey Gordons, Battles
 		small_plane_cas_airframe_0 = {
 			owner = "ENG" 
@@ -95,7 +95,7 @@ air_wings = {
 	}
 
 	### RAF Coastal Command
-	130 = { 
+	127 = { 
 		### No. 16 Coastal Command -- Vickers Vildebeests
 		small_plane_naval_bomber_airframe_0 = {
 			owner = "ENG" 
@@ -105,7 +105,7 @@ air_wings = {
 	}
 
 	### RAF Middle East and Africa
-	447 = { 
+	127 = { 
 		### AHQ Egypt
 		small_plane_airframe_0 = {
 			owner = "ENG" 
@@ -123,7 +123,7 @@ air_wings = {
 			version_name = "Fairey Gordon"
 		}
 	}
-	454 = { 
+	127 = { 
 		### RAF Palestine & Iraq
 		small_plane_cas_airframe_0 = {
 			owner = "ENG" 
@@ -131,7 +131,7 @@ air_wings = {
 			version_name = "Fairey Gordon"
 		}
 	}
-	659 = { 
+	127 = { 
 		### RAF Aden
 		small_plane_airframe_0 = {
 			owner = "ENG" 
@@ -146,7 +146,7 @@ air_wings = {
 	}
 
 	### RAF Far East
-	336 = { 
+	127 = { 
 		### RAF Far East
 		small_plane_naval_bomber_airframe_0 = {
 			owner = "ENG" 

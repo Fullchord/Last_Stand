@@ -1,0 +1,355 @@
+auto_tech_rush = {
+	auto_at1 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1936.04.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = anti_tank_equipment_1
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+    auto_mech = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1936.12.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = mechanized_equipment_1
+                            version = 1
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+	auto_gun2 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1938.02.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = infantry_equipment_2
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+	auto_aa2 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1938.06.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = anti_air_equipment_2
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+		auto_at2 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1938.06.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = anti_tank_equipment_2
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+		auto_amtrak = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1939.01.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = amphibious_mechanized_equipment_1
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+		auto_at3 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1940.02.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = anti_tank_equipment_3
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+			auto_aa3 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1940.02.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = anti_air_equipment_3
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+		auto_gun3 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1940.03.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = infantry_equipment_3
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+        Scout_plane = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1938.06.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = medium_plane_scout_plane_airframe_1
+                            version = 1
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+}
+USA_aid_britain = {
+        send_air_to_eng = {
+	
+		icon = GFX_decision_generic_air
+			
+			allowed = {
+		}
+		
+		available = {
+				date > 1940.09.01	
+		} 
+		fire_only_once = yes
+		visible = {
+			original_tag = USA
+		}
+		
+		complete_effect = {
+            air_to_england = yes
+		}			
+	    }
+}
+france_convoys = {
+     FRA_convoys = {
+			
+			allowed = {
+		}
+		
+		available = {
+            has_global_flag = fall_of_france
+		} 
+		fire_only_once = yes
+		visible = {
+			original_tag = FRA
+		}
+		
+		complete_effect = {
+           	add_equipment_to_stockpile ={
+                type = convoy
+                amount = 260
+		    }
+		}	
+     }		
+	    }

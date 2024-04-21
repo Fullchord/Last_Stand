@@ -6,12 +6,12 @@ state={
 	
 	state_category = rural
 
-history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
-		owner = MEX
+	history={
+		owner = WST
 		buildings = {
 			infrastructure = 2
 		}
-		add_core_of = MEX
+		
 
 		victory_points = {
 			1900 3

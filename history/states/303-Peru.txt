@@ -2,7 +2,7 @@
 state = {
 	id = 303
 	name = "STATE_303" # Lima
-    manpower = 1
+	manpower = 3563249
 	resources = {
 		oil = 14 # was: 18
 	}
@@ -11,7 +11,7 @@ state = {
 
 	history = {
 
-        owner = WST
+		owner = WST
 		add_core_of = PRU
 
 		buildings = {
@@ -27,13 +27,13 @@ state = {
 			}
 		}
 		
+		victory_points = {
+			12997 10
+		}
 
-
-
-
-
-
-
+		victory_points = {
+			2156 2
+		}
 
 	}
 

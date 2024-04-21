@@ -10,13 +10,13 @@ state={
 	}
 
 	history={
-		add_core_of = SWE
+		add_core_of = SWE # GYA
 		owner = ENG
 		victory_points = {
 			4982 1
 		}
 		buildings = {
-			infrastructure = 1
+			infrastructure = 5
 			4982 = {
 				naval_base = 1
 			}

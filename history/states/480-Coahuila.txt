@@ -10,11 +10,11 @@ state = {
 		#steel=4 sent to Mexico City
 	}
 
-history={ 1936.1.1.13 = { owner = WST add_core_of = WST }
+	history = {
 
-		owner = MEX
-		add_core_of = MEX
-		add_core_of = MEX
+		owner = WST
+		
+		add_core_of = RIG
 
 		buildings = {
 			infrastructure = 2

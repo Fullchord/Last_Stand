@@ -2,13 +2,13 @@
 state = {
 	id = 301
 	name = "STATE_301"
-    manpower = 1
+	manpower = 890100
 	
 	state_category = town
 	
 	history = {
 
-        owner = WST
+		owner = WST
 		add_core_of = PAR
 
 		buildings = {
@@ -18,13 +18,13 @@ state = {
 			air_base = 1
 		}
 		
+		victory_points = {
+			2152 10 
+		}
 
-
-
-
-
-
-
+		victory_points = {
+			12901 5 
+		}
 
 	}
 
