@@ -224,6 +224,9 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 4391;4828;impassable;-1;-1;-1;-1;-1;;pamir mountains
 4391;1703;impassable;-1;-1;-1;-1;-1;;pamir mountains
 4391;12526;impassable;-1;-1;-1;-1;-1;;pamir mountains
+1840:12536;impassable;-1;-1;-1;-1;-1;;pamir mountains
+4845;12601;impassable;-1;-1;-1;-1;-1;;pamir mountains
+10619;12601;impassable;-1;-1;-1;-1;-1;;pamir mountains
 6674;672;impassable;-1;-1;-1;-1;-1;;georgian russian caucasus border
 6674;654;impassable;-1;-1;-1;-1;-1;;georgian russian caucasus border
 9632;654;impassable;-1;-1;-1;-1;-1;;georgian russian caucasus border
