@@ -555,28 +555,7 @@ ITA_savoia_marchetti_organization = {
 		}
 	}
 
-	add_trait = {
-		token = ITA_mio_trait_remote_operated
-		name = ITA_mio_trait_remote_operated
-		icon = GFX_generic_mio_trait_icon_build_cost_ic
-		special_trait_background = yes
-		
-		position = { x=3 y=0 }  
-		relative_position_id = generic_mio_trait_bomber_specialization
-		available = {
-			FROM = { has_tech = experimental_rockets }
-		}
-		
-		#any_parent = { generic_mio_trait_narrow_build }
-		
-		limit_to_equipment_type = { mio_cat_eq_all_small_plane }
-		equipment_bonus = {
-			reliability = 0.1
-		}
-		production_bonus = {
-			production_cost_factor = -0.1
-		}
-	}
+	
 
 	add_trait = { 
 		token = ITA_mio_trait_new_industrialization_program
