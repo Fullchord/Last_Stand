@@ -4,11 +4,12 @@ equipments = {
 		year = 1933
 
 		can_be_produced = {
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				
+			NOT = {
+				has_idea = BUL_army_restrictions
+				has_idea = MPL_mandate
+				has_idea = GER_treaty_of_versailles
+				has_idea = GER_treaty_of_versailles_2
+				has_idea = GER_treaty_of_versailles_3
 			}
 		}
 
@@ -42,11 +43,9 @@ equipments = {
 		fuel_consumption = 0.05
 		build_cost_ic = 4
 		resources = {
-			aluminium = 1
+			aluminium = 2
 			rubber = 1
 		}
-
-		lend_lease_cost = 8
 
 		module_slots = {
 			fixed_main_weapon_slot = {
@@ -54,6 +53,7 @@ equipments = {
 				allowed_module_categories = {
 					fighter_weapon
 					cas_weapon
+					cas_cannon
 					nav_bomber_weapon
 					kamikaze_bomber_weapon
 				}
@@ -142,15 +142,15 @@ equipments = {
 			count < 2
 		}
 
-		module_count_limit = {
-			module = tank_buster_1
-			count < 3
-		}
+		#module_count_limit = {			# Commenting these out as you can only have one primary armament anyway.
+		#	module = tank_buster_1
+		#	count < 3
+		#}
 
-		module_count_limit = {
-			module = tank_buster_2
-			count < 2
-		}
+		#module_count_limit = {			# Commenting these out as you can only have one primary armament anyway.
+		#	module = tank_buster_2
+		#	count < 2
+		#}
 
 		module_count_limit = {
 			module = floats
@@ -232,12 +232,12 @@ equipments = {
 		maximum_speed = 425
 		air_agility = 40
 		air_defence = 9
-		weight = 4
+		weight = 5
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
 		build_cost_ic = 5
 		resources = {
-			aluminium = 2
+			aluminium = 3
 			rubber = 1
 		}
 		module_slots = {
@@ -246,6 +246,7 @@ equipments = {
 				allowed_module_categories = {
 					fighter_weapon
 					cas_weapon
+					cas_cannon
 					nav_bomber_weapon
 					kamikaze_bomber_weapon
 				}
@@ -309,12 +310,12 @@ equipments = {
 		maximum_speed = 450
 		air_agility = 45
 		air_defence = 11
-		weight = 5
+		weight = 7
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
 		build_cost_ic = 6
 		resources = {
-			aluminium = 2
+			aluminium = 3
 			rubber = 1
 		}
 		module_slots = {
@@ -323,6 +324,7 @@ equipments = {
 				allowed_module_categories = {
 					fighter_weapon
 					cas_weapon
+					cas_cannon
 					nav_bomber_weapon
 					kamikaze_bomber_weapon
 				}
@@ -413,12 +415,12 @@ equipments = {
 		maximum_speed = 475
 		air_agility = 50
 		air_defence = 12
-		weight = 6
+		weight = 9
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
 		build_cost_ic = 7
 		resources = {
-			aluminium = 2
+			aluminium = 4
 			rubber = 1
 		}
 		module_slots = {
@@ -427,6 +429,7 @@ equipments = {
 				allowed_module_categories = {
 					fighter_weapon
 					cas_weapon
+					cas_cannon
 					nav_bomber_weapon
 					kamikaze_bomber_weapon
 				}
@@ -508,7 +511,6 @@ equipments = {
 					plane_special_module_defense_turret
 				}
 			}
-
 			special_type_slot_4 = {
 				required = no
 				allowed_module_categories = {
@@ -536,7 +538,7 @@ equipments = {
 		maximum_speed = 500
 		air_agility = 55
 		air_defence = 18
-		weight = 6
+		weight = 11
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
 		build_cost_ic = 10
@@ -550,6 +552,7 @@ equipments = {
 				allowed_module_categories = {
 					fighter_weapon
 					cas_weapon
+					cas_cannon
 					nav_bomber_weapon
 					kamikaze_bomber_weapon
 				}
@@ -634,7 +637,6 @@ equipments = {
 					plane_special_module_defense_turret
 				}
 			}
-
 			special_type_slot_4 = {
 				required = no
 				allowed_module_categories = {
@@ -653,13 +655,13 @@ equipments = {
 		year = 1933
 
 		can_be_produced = {
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				
+			NOT = {
+				has_idea = BUL_army_restrictions
+				has_idea = MPL_mandate
+				has_idea = GER_treaty_of_versailles
+				has_idea = GER_treaty_of_versailles_2
+				has_idea = GER_treaty_of_versailles_3
 			}
-			
 		}
 
 		is_archetype = yes
@@ -694,7 +696,7 @@ equipments = {
 		fuel_consumption = 0.05
 		build_cost_ic = 6
 		resources = {
-			aluminium = 1
+			aluminium = 2
 			rubber = 1
 		}
 
@@ -704,6 +706,7 @@ equipments = {
 				allowed_module_categories = {
 					fighter_weapon
 					cas_weapon
+					cas_cannon
 					nav_bomber_weapon
 					kamikaze_bomber_weapon
 				}
@@ -885,12 +888,12 @@ equipments = {
 		maximum_speed = 425
 		air_agility = 35
 		air_defence = 9
-		weight = 5
+		weight = 6
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
 		build_cost_ic = 8.5
 		resources = {
-			aluminium = 2
+			aluminium = 3
 			rubber = 1
 		}
 		module_slots = {
@@ -899,6 +902,7 @@ equipments = {
 				allowed_module_categories = {
 					fighter_weapon
 					cas_weapon
+					cas_cannon
 					nav_bomber_weapon
 					kamikaze_bomber_weapon
 				}
@@ -948,6 +952,7 @@ equipments = {
 			}
 		}
 	}
+	
 	cv_small_plane_airframe_2 = { #Improved
 		abbreviation = "afc2"
 		derived_variant_name = cv_fighter_equipment_2
@@ -961,12 +966,12 @@ equipments = {
 		maximum_speed = 450
 		air_agility = 40
 		air_defence = 11
-		weight = 6
+		weight = 8
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
 		build_cost_ic = 9.5
 		resources = {
-			aluminium = 2
+			aluminium = 3
 			rubber = 1
 		}
 		module_slots = {
@@ -975,6 +980,7 @@ equipments = {
 				allowed_module_categories = {
 					fighter_weapon
 					cas_weapon
+					cas_cannon
 					nav_bomber_weapon
 					kamikaze_bomber_weapon
 				}
@@ -1064,12 +1070,12 @@ equipments = {
 		maximum_speed = 475
 		air_agility = 45
 		air_defence = 12
-		weight = 6
+		weight = 10
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
 		build_cost_ic = 11
 		resources = {
-			aluminium = 2
+			aluminium = 4
 			rubber = 1
 		}
 		module_slots = {
@@ -1078,6 +1084,7 @@ equipments = {
 				allowed_module_categories = {
 					fighter_weapon
 					cas_weapon
+					cas_cannon
 					nav_bomber_weapon
 					kamikaze_bomber_weapon
 				}
@@ -1173,12 +1180,12 @@ equipments = {
 		maximum_speed = 500
 		air_agility = 50
 		air_defence = 18
-		weight = 6
+		weight = 12
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
 		build_cost_ic = 14.5
 		resources = {
-			aluminium = 2
+			aluminium = 4
 			rubber = 1
 		}
 		module_slots = {
@@ -1187,6 +1194,7 @@ equipments = {
 				allowed_module_categories = {
 					fighter_weapon
 					cas_weapon
+					cas_cannon
 					nav_bomber_weapon
 					kamikaze_bomber_weapon
 				}
@@ -1277,13 +1285,13 @@ equipments = {
 		year = 1933
 
 		can_be_produced = {
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				
+			NOT = {
+				has_idea = BUL_army_restrictions
+				has_idea = MPL_mandate
+				has_idea = GER_treaty_of_versailles
+				has_idea = GER_treaty_of_versailles_2
+				has_idea = GER_treaty_of_versailles_3
 			}
-			
 		}
 
 		is_archetype = yes
@@ -1313,7 +1321,7 @@ equipments = {
 		fuel_consumption = 0
 		build_cost_ic = 6
 		resources = {
-			aluminium = 1
+			aluminium = 2
 			rubber = 1
 		}
 
@@ -1559,7 +1567,7 @@ equipments = {
 		naval_strike_targetting = 1
 		build_cost_ic = 8
 		resources = {
-			aluminium = 2
+			aluminium = 3
 			rubber = 1
 		}
 		module_slots = {
@@ -1690,7 +1698,7 @@ equipments = {
 		naval_strike_targetting = 1
 		build_cost_ic = 10
 		resources = {
-			aluminium = 2
+			aluminium = 4
 			rubber = 1
 		}
 		module_slots = {
@@ -1838,7 +1846,7 @@ equipments = {
 		naval_strike_targetting = 1
 		build_cost_ic = 13
 		resources = {
-			aluminium = 3
+			aluminium = 5
 			rubber = 1
 		}
 		module_slots = {
@@ -1998,7 +2006,7 @@ equipments = {
 		naval_strike_targetting = 1
 		build_cost_ic = 14
 		resources = {
-			aluminium = 3
+			aluminium = 5
 			rubber = 1
 		}
 		module_slots = {
@@ -2144,13 +2152,13 @@ equipments = {
 		year = 1933
 
 		can_be_produced = {
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				
+			NOT = {
+				has_idea = BUL_army_restrictions
+				has_idea = MPL_mandate
+				has_idea = GER_treaty_of_versailles
+				has_idea = GER_treaty_of_versailles_2
+				has_idea = GER_treaty_of_versailles_3
 			}
-			
 		}
 
 		is_archetype = yes
@@ -2179,8 +2187,8 @@ equipments = {
 		fuel_consumption = 0.16
 		build_cost_ic = 16
 		resources = {
-			aluminium = 2
-			rubber = 1
+			aluminium = 3
+			rubber = 2
 		}
 
 		lend_lease_cost = 12
@@ -2226,6 +2234,7 @@ equipments = {
 			engine_type_slot = {
 				required = yes
 				allowed_module_categories = {
+					twin_plane_engine_type
 					quad_large_plane_engine_type
 					large_plane_engine_type
 				}
@@ -2376,7 +2385,6 @@ equipments = {
 			category = plane_special_module_defense_turret
 			count < 7
 		}
-
 		default_modules = {
 			fixed_main_weapon_slot = empty
 			fixed_auxiliary_weapon_slot_1 = empty
@@ -2421,8 +2429,8 @@ equipments = {
 		naval_strike_targetting = 1
 		build_cost_ic = 18
 		resources = {
-			aluminium = 2
-			rubber = 1
+			aluminium = 3
+			rubber = 2
 		}
 		module_slots = {
 			fixed_main_weapon_slot = {
@@ -2518,7 +2526,6 @@ equipments = {
 				allowed_module_categories = {
 					plane_special_module_large
 					plane_special_module_defense_turret
-					plane_special_module_defense_turret_x2
 					plane_special_module_bomb_sights
 					plane_special_module_radio_navigation
 					plane_special_module_air_ground_radar
@@ -2532,7 +2539,6 @@ equipments = {
 				allowed_module_categories = {
 					plane_special_module_large
 					plane_special_module_defense_turret
-					plane_special_module_defense_turret_x2
 					plane_special_module_bomb_sights
 					plane_special_module_radio_navigation
 					plane_special_module_air_ground_radar
@@ -2561,8 +2567,8 @@ equipments = {
 		naval_strike_targetting = 1
 		build_cost_ic = 20
 		resources = {
-			aluminium = 2
-			rubber = 1
+			aluminium = 4
+			rubber = 2
 		}
 		module_slots = {
 			fixed_main_weapon_slot = {
@@ -2643,7 +2649,6 @@ equipments = {
 				allowed_module_categories = {
 					plane_special_module_large
 					plane_special_module_defense_turret
-					plane_special_module_defense_turret_x2
 					plane_special_module_bomb_sights
 					plane_special_module_radio_navigation
 					plane_special_module_air_ground_radar
@@ -2684,7 +2689,6 @@ equipments = {
 				allowed_module_categories = {
 					plane_special_module_large
 					plane_special_module_defense_turret
-					plane_special_module_defense_turret_x2
 					plane_special_module_bomb_sights
 					plane_special_module_radio_navigation
 					plane_special_module_air_ground_radar
@@ -2727,8 +2731,8 @@ equipments = {
 		naval_strike_targetting = 1
 		build_cost_ic = 22
 		resources = {
-			aluminium = 3
-			rubber = 1
+			aluminium = 5
+			rubber = 2
 		}
 		module_slots = {
 			fixed_main_weapon_slot = {
@@ -2893,8 +2897,8 @@ equipments = {
 		naval_strike_targetting = 1
 		build_cost_ic = 23
 		resources = {
-			aluminium = 4
-			rubber = 1
+			aluminium = 6
+			rubber = 2
 		}
 		module_slots = {
 			fixed_main_weapon_slot = {
@@ -2987,7 +2991,6 @@ equipments = {
 				required = no
 				allowed_module_categories = {
 					plane_special_module_defense_turret
-					plane_special_module_defense_turret_x2
 					plane_special_module_large
 					plane_special_module_bomb_sights
 					plane_special_module_radio_navigation
