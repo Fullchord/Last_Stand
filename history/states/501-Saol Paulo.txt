@@ -10,7 +10,7 @@ state={
 		owner = BRA
 		buildings = {
 			arms_factory = 2
-			industrial_complex = 5
+			industrial_complex = 2
 			infrastructure = 3 #was: 5
 			air_base = 4
 		}
