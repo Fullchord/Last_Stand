@@ -1121,7 +1121,7 @@ technologies = {
 	heavy_fighter1 = {
 
 		enable_equipments = {
-			heavy_fighter_equipment_1
+			heavy_fighterheavy_equipment_1
 		}
 	
 		path = {
