@@ -20,7 +20,7 @@ state={
 			aluminum_mill = 1
 			#yokohama steel mill, forgot the exact name
 			steel_mill = 1
-			industrial_complex = 4
+			industrial_complex = 1
 			arms_factory = 2
 			dockyard = 4
 			9998 = {
