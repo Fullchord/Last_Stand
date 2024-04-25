@@ -47,7 +47,7 @@ equipments = {
 		fuel_consumption = 2.4
 		supply_truck = no
 	}
-
+##guhuh
 	# ~1941
 	mechanized_equipment_1 = {
 		year = 1939
