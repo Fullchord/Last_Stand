@@ -141,7 +141,12 @@ ideas = {
 						original_tag = HUN
 						has_dlc = "Death or Dishonor"
 					}
-					
+					if = {
+						limit = {
+							has_dlc = "Arms Against Tyranny"
+						}
+						NOT = { has_idea = HUN_treaty_of_triannon_aat }
+					}
 					else = {
 						NOT = { has_idea = HUN_treaty_of_triannon }
 					}
@@ -228,6 +233,7 @@ ideas = {
 						}
 						OR = {
 							has_completed_focus = HUN_secret_rearmament
+							NOT = { has_idea = HUN_treaty_of_triannon_aat }
 						}
 					}
 					else = {
@@ -334,6 +340,7 @@ ideas = {
 						limit = {
 							has_dlc = "Arms Against Tyranny"
 						}
+						NOT = { has_idea = HUN_treaty_of_triannon_aat }
 					}
 					else = {
 						NOT = { has_idea = HUN_treaty_of_triannon }
@@ -439,6 +446,7 @@ ideas = {
 						limit = {
 							has_dlc = "Arms Against Tyranny"
 						}
+						NOT = { has_idea = HUN_treaty_of_triannon_aat }
 					}
 					else = {
 						NOT = { has_idea = HUN_treaty_of_triannon }
