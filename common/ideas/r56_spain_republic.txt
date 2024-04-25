@@ -17,7 +17,7 @@ ideas = {
 			}
 
 			modifier = { #more of a movement, org bonus. Kinda how the Nat had a brief upper hand in these areas during the start of the SCW IRL
-				army_core_attack_factor = 0.015
+				army_core_attack_factor = 0.05
 				army_speed_factor = 0.10
 				mobilization_speed = 0.10
 				planning_speed = 0.10

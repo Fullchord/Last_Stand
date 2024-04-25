@@ -17,7 +17,7 @@ ideas = {
 			level = 5
 
 			modifier = {
-				weekly_manpower = 500
+				weekly_manpower = 400
 				conscription = 0.015
 				non_core_manpower = 0.2
 				training_time_factor = 0.25
