@@ -227,12 +227,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { hill_fighter }
+			traits = { hill_fighter desert_fox }
 			skill = 3
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 1
-			logistics_skill = 4
+			attack_skill = 9
+			defense_skill = 9
+			planning_skill = 9
+			logistics_skill = 9
 			legacy_id=-1
 		}
 	}
