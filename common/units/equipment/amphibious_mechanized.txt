@@ -12,6 +12,9 @@ equipments = {
 			mechanized
 		}
 		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
 			mech_cost_upgrade
 		}
 		group_by = archetype
@@ -52,6 +55,10 @@ equipments = {
 		archetype = amphibious_mechanized_equipment
 		priority = 40
 		visual_level = 0
+		can_convert_from = {
+			mechanized_equipment_1
+			convert_cost_ic = 0.5
+		}
 	}
 
 	# ~1943
@@ -64,7 +71,10 @@ equipments = {
 		visual_level = 1
 
 		can_convert_from = {
+			mechanized_equipment_1
+			mechanized_equipment_2
 			amphibious_mechanized_equipment_1
+			convert_cost_ic = 0.5
 		}
 
 		maximum_speed = 10
