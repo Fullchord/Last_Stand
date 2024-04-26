@@ -18,7 +18,6 @@ ideas = {
 				experience_gain_army = 0.4
 				experience_gain_navy = 0.4
 				experience_gain_air = 0.4
-				training_time_factor = -0.8
 				political_power_factor = 0.25
 			}
 		}

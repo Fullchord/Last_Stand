@@ -412,6 +412,7 @@ ideas = {
 			picture = ast_all_in
 
 			modifier = {
+				global_building_slots_factor = 0.35
 				production_speed_buildings_factor = 0.15
 				industrial_capacity_factory = 0.05
 				industrial_capacity_dockyard = 0.05
