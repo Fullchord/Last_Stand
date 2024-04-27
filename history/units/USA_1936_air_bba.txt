@@ -1,4 +1,4 @@
-	
+﻿	
 	
 air_wings = {
 	### 1 USAAF Wing -- Los Angeles
@@ -19,7 +19,7 @@ air_wings = {
 	}
 
 	### 2 USAAF Wing -- Norfolk
-	362 = { 
+	378 = { 
 		# 1st Pursuit Group 
 		# 8th Pursuit Group 
 		small_plane_airframe_0 =  {
@@ -42,7 +42,7 @@ air_wings = {
 	}
 
 	### 3 USAAF Wing -- Louisiana
-	371 = { 
+	378 = { 
 		# 20th Pursuit Group 
 		small_plane_airframe_0 =  {
 			owner = "USA" 
@@ -58,7 +58,7 @@ air_wings = {
 	}
 
 	### 18th Composite Wing -- Hawaii
-	629 = { 
+	378 = { 
 		# 18th Pursuit Group 
 		small_plane_airframe_0 =  {
 			owner = "USA" 
@@ -74,7 +74,7 @@ air_wings = {
 	}
 
 	### 19th Composite Wing -- Panama Canal
-	685 = { 
+	378 = { 
 		# 16th Pursuit Group 
 		small_plane_airframe_0 =  {
 			owner = "USA" 
@@ -99,9 +99,9 @@ air_wings = {
 #	}
 
 	### USN Atlantic Naval Patrol Division -- Norfolk
-	362 = { 
+	378 = { 
 		# Naval Patrol Wing 3 
-		medium_plane_airframe_0 =  { #changed from medium as per history file change / revert back to medium because equipment not support in large frame
+		medium_plane_airframe_0 =  {
 			owner = "USA" 
 			amount = 36
 			version_name = "P2Y"
@@ -111,7 +111,7 @@ air_wings = {
 	378 = { 
 		# Naval Patrol Wing 1 
 		# Naval Patrol Wing 2 
-		medium_plane_airframe_0 =  { #changed from medium as per history file change / revert back to medium because equipment not support in large frame
+		medium_plane_airframe_0 =  {
 			owner = "USA" 
 			amount = 72
 			version_name = "P2Y"
