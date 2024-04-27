@@ -18,76 +18,6 @@
 	}
 }
 
-division_template = {
-	name = "MP"
-
-	regiments = {
-		cavalry = { x = 0 y = 0 }
-		cavalry = { x = 0 y = 1 }
-		cavalry = { x = 0 y = 2 }
-		cavalry = { x = 0 y = 3 }
-
-		cavalry = { x = 1 y = 0 }
-		cavalry = { x = 1 y = 1 }
-		cavalry = { x = 1 y = 2 }
-		cavalry = { x = 1 y = 3 }
-
-		cavalry = { x = 2 y = 0 }
-		cavalry = { x = 2 y = 1 }
-		cavalry = { x = 2 y = 2 }
-		cavalry = { x = 2 y = 3 }
-
-		cavalry = { x = 3 y = 0 }
-		cavalry = { x = 3 y = 1 }
-		cavalry = { x = 3 y = 2 }
-		cavalry = { x = 3 y = 3 }
-
-		cavalry = { x = 4 y = 0 }
-		cavalry = { x = 4 y = 1 }
-		cavalry = { x = 4 y = 2 }
-		cavalry = { x = 4 y = 3 }
-
-	}
-	support = {
-
-	}
-}
-
-division_template = {
-	name = "40W"
-
-	regiments = {
-		infantry = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		infantry = { x = 0 y = 3 }
-
-		infantry = { x = 1 y = 0 }
-		infantry = { x = 1 y = 1 }
-		infantry = { x = 1 y = 2 }
-		infantry = { x = 1 y = 3 }
-
-		infantry = { x = 2 y = 0 }
-		infantry = { x = 2 y = 1 }
-		infantry = { x = 2 y = 2 }
-		infantry = { x = 2 y = 3 }
-
-		infantry = { x = 3 y = 0 }
-		infantry = { x = 3 y = 1 }
-		infantry = { x = 3 y = 2 }
-		infantry = { x = 3 y = 3 }
-
-		infantry = { x = 4 y = 0 }
-		infantry = { x = 4 y = 1 }
-		infantry = { x = 4 y = 2 }
-		infantry = { x = 4 y = 3 }
-
-	}
-	support = {
-
-	}
-}
-
 
 units = {
 	######## LAND OOB ########
@@ -98,13 +28,12 @@ units = {
 				name_order = 1
 		}
 		location = 10265
-		division_template = "40W"	
-		start_experience_factor = 0.4
+		division_template = "Infantry Division"		
+		start_experience_factor = 0.2
 	}
 
 	######## No Naval OOB ########
 }
-
 
 instant_effect = {
 	add_equipment_production = {

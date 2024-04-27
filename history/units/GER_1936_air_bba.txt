@@ -2,7 +2,7 @@
 ### Air oob
 air_wings = {
 	### I. Luftkreiskommando -- Konigsberg ###
-	58 = { 
+	763 = { 
 		# Jagdgeschwader 232 	
 		small_plane_airframe_0 =  {		# He 51
 			owner = "GER" 
@@ -13,7 +13,7 @@ air_wings = {
 	}
 
 	### II. Luftkreiskommando -- Berlin ###
-	58 = { 
+	64 = { 
 		# Jagdgeschwader 132 'Richtofen'		
 		small_plane_airframe_0 =  {		# Ar 68
 			owner = "GER" 
@@ -48,7 +48,7 @@ air_wings = {
 	}
 
 	### III. Luftkreiskommando -- Breslau ###
-	58 = { 
+	66 = { 
 		# Kampfgeschwader 253 'General Wever'		
 		medium_plane_airframe_0 = {		# He 45 or Do 23 ?
 			owner = "GER" 
@@ -71,7 +71,7 @@ air_wings = {
 	}
 
 	### IV. Luftkreiskommando -- Kassel ###
-	58 = { 
+	57 = { 
 		# Jagdgeschwader 134 'Horst Wessel'		
 		small_plane_airframe_0 =  {		# He 51 # Ar 68
 			owner = "GER" 
@@ -101,7 +101,7 @@ air_wings = {
 	}
 
 	### V. Luftkreiskommando -- Munich ###
-	58 = { 
+	52 = { 
 		# Jagdgeschwader 136		
 		small_plane_airframe_0 =  {		# He 51
 			owner = "GER" 
