@@ -1,16 +1,40 @@
 ﻿division_template = {
-	name = "Batalhão da Selva"
+	name = "MP"
 
 	regiments = {
-		jungletroop = { x = 0 y = 0 }
-		jungletroop = { x = 0 y = 1 }
-		jungletroop = { x = 0 y = 2 }
-		jungletroop = { x = 0 y = 3 }
-		jungletroop = { x = 1 y = 0 }
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 3 }
+
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+		cavalry = { x = 1 y = 3 }
+
+		cavalry = { x = 2 y = 0 }
+		cavalry = { x = 2 y = 1 }
+		cavalry = { x = 2 y = 2 }
+		cavalry = { x = 2 y = 3 }
+
+		cavalry = { x = 3 y = 0 }
+		cavalry = { x = 3 y = 1 }
+		cavalry = { x = 3 y = 2 }
+		cavalry = { x = 3 y = 3 }
+
+		cavalry = { x = 4 y = 0 }
+		cavalry = { x = 4 y = 1 }
+		cavalry = { x = 4 y = 2 }
+		cavalry = { x = 4 y = 3 }
+
+	}
+	support = {
+
 	}
 }
+
 division_template = {
-	name = "Divisão de Infanteria"		# Infantry Division
+	name = "Divisão de Infantaria"		# Infantry Division
 	division_names_group = BRA_INF_01
 
 	regiments = {
@@ -43,86 +67,53 @@ division_template = {
 	}
 }
 
-units = {
-	##### Exército Brasileiro #####
-	division= {	# "1a Divisão de Infanteria"
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 10980 # Rio de Janiero
-		division_template = "Divisão de Infanteria"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.5
+
+
+division_template = {
+	name = "40W"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
+
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		infantry = { x = 2 y = 3 }
+
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+		infantry = { x = 3 y = 2 }
+		infantry = { x = 3 y = 3 }
+
+		infantry = { x = 4 y = 0 }
+		infantry = { x = 4 y = 1 }
+		infantry = { x = 4 y = 2 }
+		infantry = { x = 4 y = 3 }
 
 	}
-	division= {	# "2a Divisão de Infanteria"
-		division_name = {
-				is_name_ordered = yes
-				name_order = 2
-		}
-		location = 10513 # Sao Paulo
-		division_template = "Divisão de Infanteria"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.5
-
-	}
-	division= {	# "3a Divisão de Infanteria"
-		division_name = {
-				is_name_ordered = yes
-				name_order = 3
-		}
-		location = 10447 # Porto Alegre
-		division_template = "Divisão de Infanteria"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.5
-
-	}
-	division= {	# "4a Divisão de Infanteria"
-		division_name = {
-				is_name_ordered = yes
-				name_order = 4
-		}
-		location = 5168 # Recife
-		division_template = "Divisão de Infanteria"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.5
-
-	}
-	division= {	# "5a Divisão de Infanteria"
-		division_name = {
-				is_name_ordered = yes
-				name_order = 5
-		}
-		location = 8242 # Belo Horizonte
-		division_template = "Divisão de Infanteria"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.5
-
-	}
-	division= {	# "1a Divisão de Cavalaria"
-		division_name = {
-				is_name_ordered = yes
-				name_order = 1
-		}
-		location = 12853 # Belem
-		division_template = "Divisão de Cavalaria"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.5
-
-	}
-	division= {	# "2a Divisão de Cavalaria"
-		division_name = {
-				is_name_ordered = yes
-				name_order = 2
-		}
-		location = 5156 # Curitiba
-		division_template = "Divisão de Cavalaria"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.5
+	support = {
 
 	}
 }
+
+units = {
+	division= {
+		location = 10980
+		division_template = "40W"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.01
+	}
+}
+
+
 
 
 instant_effect = {
