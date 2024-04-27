@@ -36,7 +36,6 @@
  ETH_trigger_not_fulfilled:0 "£trigger_no"
  ETH_war_escalation_threat:0 "Escalation of the Italo-Ethiopian War"
  ETH_major_offensive_threat:0 "Major Offensive in the Italo-Ethiopian War"
-
  ETH_improve_country_category:0 "The Advancement of [ROOT.GetName]"
  ETH_improve_country_category_desc:0 "[ETH.GetNameDefCap] is a largely agricultural economy, farmed by subsistence farmers. In order to industrialize, we need massive investment into electrification and transport infrastructure so that more workers are able to move from farming and into the factories."
  ETH_build_local_resistance_force:0 "Build Resistance Force in [FROM.GetName]"
@@ -55,7 +54,7 @@
  ETH_coup_haile_selassie_imru_desc:0 "The democratically minded $ETH_ras_imru_haile_selassie$ has ruled the country in the emperor's absence. Undoubtedly, he is seen by the masses as the true hero of [ROOT.GetName] after leading the country in the war. Calls for a more democratic [ROOT.GetName] have been getting louder. Maybe now is the time to really create change in [ROOT.GetNameDef]."
  ETH_palace_coup_tt:0 "§Y$ETH_ras_imru_haile_selassie$§! launches a coup attempt"
  ETH_formal_request_to_host:0 "Make a formal request to the [?ETH.host_nation.GetAdjective] government."
- ETH_formal_request_to_host_desc:0 "The [?ETH.host_nation.GetAdjective] government should be approached and asked to join the war against [ITA.GetNameDef]. This will start the final part of the reconquest of our nation."
+ ETH_formal_request_to_host_desc:0 "The [?ETH.host_nation.GetAdjective] government should be approached and asked to fully support [ROOT.GetLeader] in the war against [ITA.GetNameDef]. This will start the final part of the reconquest of our nation."
  ETH_false_flag_operation_decision:0 "Launch a false flag operation"
  ETH_false_flag_operation_decision_desc:0 "In order to convince our hosts that [ITA.GetName] is not to be trusted, we need to stage an attack on a German border post, and blame it on the Italians."
  ETH_throw_grand_party_for_host:0 "Throw a lavish party"
@@ -117,6 +116,8 @@
  ETH_christmas_offensive_mission_desc:0 "Our troops are still moving forward, but we are losing momentum. Soon the energy brought on by the counterattack will have worn off."
  ETH_time_based_war_escalation_mission:0 "Gradual War Escalation"
  ETH_time_based_war_escalation_mission_desc:0 "The longer the war runs, the more concerned the world will be. For each six months that pass, since the start in October 1935, War Escalation will increase by one."
+
+ ETH_started_uprising_flag:0 "Large scale uprising underway"
 
  ETH_hold_the_north_mission:0 "Hold the North"
  ETH_hold_the_north_mission_desc:0 "The Christmas offensive managed to push the Italians back, but we failed to drive them into the sea as we had planned. They will regroup and attack with greater strength, and we must show that we can hold on to our country."
@@ -276,7 +277,7 @@
  controls_ethiopian_cores_tt:0 "Controls all [ROOT.GetAdjective] core states."
  ETH_move_capital_to_axum:0 "Move the capital to Axum"
  ETH_move_capital_to_axum_desc:0 "The ancient city of Axum should be the new capital of the Empire."
- ETH_prevents_further_capital_moves_tt:0 "Moving the Capital can only be done once"
+ ETH_prevents_further_capital_moves_tt:1 "Moving the Capital to Jerusalem prevents further moves of the Capital."
  ETH_has_moved_capital_flag:0 " Has already moved capital"
  form_empire_of_solomon:0 "Form the Empire of Solomon"
  ETH_move_capital_to_jerusalem:0 "Make Jerusalem the capital of the empire"
@@ -353,15 +354,6 @@
  threaten_member_state:0 "Intimidate [FROM.GetAdjective] leadership"
  threaten_member_state_desc:0 "We shall send a message to the leaders of [FROM.GetNameDef] that if they do not agree to deeper integration with the Organization of African Unity, there will be serious consequences to them personally..."
  threaten_member_state_tt:0 "\nThe leadership of the intimidated country will be more likely to accept integration proposals for the §G60 days§! this decision is active."
-
-############### Generic Purchase Ship ################
-
- BBA_purchase_old_ships_category:0 "Naval Procurement"
- BBA_purchase_old_ships_category_desc:0 "With the world becoming increasingly unstable, we need to expand our naval power projection capabilities. Luckily for us, some of the major navies may be willing to part with their older vessels."
- purchase_ships_eng:0 "[ENG.GetFlag] Purchase old [ENG.GetAdjective] Destroyers"
- purchase_ships_sov:0 "[SOV.GetFlag] Purchase old [SOV.GetAdjective] Battleships"
- purchase_ships_ger:0 "[GER.GetFlag] Purchase old [GER.GetAdjective] U-Boats"
- purchase_ships_usa:0 "[USA.GetFlag] Purchase old [USA.GetAdjective] Destroyers"
 
 ############################
 ########## ITALY ###########
@@ -677,14 +669,16 @@
  SWI_declare_the_alpine_union:0 "Declare the Alpine Union"
  SWI_declare_the_alpine_union_desc:0 "The will of the workers and peoples of the Alps cannot be stopped, as we continue to free territories from the yoke of the Bourgeoisie, we have gone beyond [SWI.GetNonIdeologyName] and our country should reflect that."
  SWI_ask_for_guarantees:0 "Ask [FROM.GetName] for guarantees"
-
- #replacing the fascist and democratic planes buying with something slightly more dynamic
- SWI_purchase_foreign_fighters:0 "Purchase fighters from [FROM.GetName]"
- SWI_purchase_foreign_fighters_desc:0 "The defense of the skies over [ROOT.GetName] cannot wait until we have the capacity to produce our own airforce, so in the meantime we'll have to depend on [FROM.GetName] for our fighter planes."
- SWI_purchase_foreign_cas:0 "Purchase bombers from [FROM.GetName]"
- SWI_purchase_foreign_cas_desc:0 "While our industrial capacity is still limited we must rely on [FROM.GetName] for supplying our airforce with the bombers we need to support our troops in the battlefield"
- SWI_purchase_foreign_planes_unlock_TT:0 "Unlocks decisions to purchase §YFighter and Close Air Support Planes§! from §Y[THIS.GetFlag][THIS.GetNameDef]§!"
-
+ SWI_purchase_democratic_planes_fighters:0 "Purchase fighters from [FROM.GetName]"
+ SWI_purchase_democratic_planes_fighters_desc:0 "The defense of the skies over [ROOT.GetName] cannot wait until we have the capacity to produce our own airforce, so in the meantime we'll have to depend on [FROM.GetName] for our fighter planes."
+ SWI_purchase_democratic_planes_cas:0 "Purchase bombers from [FROM.GetName]"
+ SWI_purchase_democratic_planes_cas_desc:0 "While our industrial capacity is still limited we must rely on [FROM.GetName] for supplying our airforce with the bombers we need to support our troops in the battlefield"
+ SWI_purchase_democratic_planes_unlock_TT:0 "Unlocks decisions to purchase §YFighter and Close Air Support Planes§! from §Y[?SWI.SWI_democratic_planes_seller.GetFlag][?SWI.SWI_democratic_planes_seller.GetNameDef]§!"
+ SWI_purchase_fascist_planes_fighters:0 "Purchase fighters from [FROM.GetName]"
+ SWI_purchase_fascist_planes_fighters_desc:0 "The defense of the skies over [ROOT.GetName] cannot wait until we have the capacity to produce our own airforce, so in the meantime we'll have to depend on [FROM.GetName] for our fighter planes."
+ SWI_purchase_fascist_planes_cas:0 "Purchase bombers from [FROM.GetName]"
+ SWI_purchase_fascist_planes_cas_desc:0 "While our industrial capacity is still limited we must rely on [FROM.GetName] for supplying our airforce with the bombers we need to support our troops in the battlefield"
+ SWI_purchase_fascist_planes_unlock_TT:0 "Unlocks decisions to purchase §YFighter and Close Air Support Planes§! from §Y[?SWI.SWI_biggest_fascist.GetFlag][?SWI.SWI_biggest_fascist.GetNameDef]§!"
  SWI_fund_resistance_decision:0 "Fund Resistance Groups in [SWI_FROM_or_fake_country_word]"
  SWI_oust_the_conferedation_president:1 "§Y[?SWI_confederation_president.GetName]§! gets removed as confederation president"
  SWI_backchannel_negotiations:0 "Back-channel negotiations"
@@ -918,13 +912,17 @@
 
  send_more_weapons_to_the_AOI:0 "Send more weapons to the AOI"
 
- form_country_albania_required_states_tt:0 "Controls all §YAlbanian§! states"
+ form_country_albania_required_states_tt:1 "Controls all §YAlbanian§! cores in the Mediterranean."
 
- form_country_mare_nostrum_required_states_tt:0 "Controls §YLjubljana§!, §YDalmatia§!, §YKvarner§! and §YMontenegro§!"
- form_country_mare_nostrum_turkey_required_states_tt:0 "Controls all §YTurkish§! states that border the §YMediterranean Sea§!"
- form_spqr_coastal_spain_required_states_tt:0 "Controls all §YSpanish§! states bordering the §YMediterranean Sea§!"
- form_spqr_coastal_france_required_states_tt:0 "Controls all §YFrench§! states bordering the §YMediterranean Sea§!"
- form_spqr_coastal_uk_required_states_tt:0 "Controls all §YBritish§! states bordering the §YMediterranean Sea§!"
+ form_country_mare_nostrum_required_states_tt:1 "Controls Yugoslavian cores §Y[163.GetName]§!, §Y[853.GetName]§!, §Y[103.GetName]§!, §Y[104.GetName]§!, §Y[804.GetName]§! and §Y[105.GetName]§!."
+ form_country_mare_nostrum_turkey_required_states_tt:1 "Controls all §YTurkish§! cores in the Mediterranean."
+ form_spqr_coastal_spain_required_states_tt:1 "Controls all §YSpanish§! cores in the Mediterranean."
+ form_spqr_coastal_france_required_states_tt:1 "Controls all §YFrench§! cores in the Mediterranean."
+ form_spqr_coastal_uk_required_states_tt:1 "Controls all §YBritish§! cores in the Mediterranean."
+ form_country_mare_nostrum_north_africa_required_states_tt:0 "Controls all §YNorth African§! states in the Mediterranean and all §YLibyan§! cores."
+ form_country_mare_nostrum_middle_east_required_states_tt:0 "Controls all §YMiddle East§! states in the Mediterranean."
+ form_country_mare_nostrum_greece_required_states_tt:0 "Controls all §YGreek§! cores in the Mediterranean."
+ form_mare_nostrum_coastal_uk_required_states_tt:0 "Controls states §Y[118.GetName]§!, §Y[116.GetName]§! and §Y[183.GetName]§!."
 
  form_spqr_core_mare_nostrum_states_tt:0 "Gain Cores on §Yall states§! required to take the decision"
 
