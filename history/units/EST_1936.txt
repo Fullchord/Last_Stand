@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿division_template = {
 	name = "Jalaväediviisi"				# Infantry Division	
 	division_names_group = EST_INF_01
@@ -28,3 +29,6 @@ instant_effect = {
 		efficiency = 100
 	}
 }
+=======
+﻿
+>>>>>>> parent of e12e0b61c (Revert "removed a bunch of ai shit for less lag")
