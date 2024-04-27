@@ -29,6 +29,10 @@
  LIT_promote_falange_militancy_desc:0 "The [POL.GetFascistParty] is infamous for its riotous and violent methods of demonstration. Many fascists fear the nationalist fervor of [POL.GetFascistParty], but we know this is a mere expression of the patriotism that burns in their hearts that must be supported."
  LIT_ignite_civil_war_in_POL:0 "Begin the Uprising"
  LIT_ignite_civil_war_in_POL_desc:0 "The preparations have been made. Poland will soon be a battleground not just of ideas but of valour and glory. We have done all we can to support the Falangists in Poland, all we need do now is cast the die and hope that God truly is on their side."
+
+ LIT_adopt_the_dobuzhinsky_flag_design_decision: "Adopt Dobuzhinsky's Heraldic Flag Design"
+ LIT_adopt_the_dobuzhinsky_flag_design_decision_desc: "The colors of our flag must match those of the coat of arms. No green color is present in the coat of arms, and as such it should not be present in the flag either. Thus we should adopt the proposal handed to us by Mstislav Dobuzhinsky and Vydūnas."
+
  march_through_estonia:0 "The March Through Estonia"
  march_through_estonia_desc:0 "The weak government of Konstantin Päts has silenced the cry of Estonia’s patriots for long enough. We lack the manpower to fight the Estonian armed forces alone, but perhaps by demonstrating our frustration with the dictatorship in a series of marches throughout the country, we may remind the youth of Estonia that their fathers fought for a good life for them that Päts and his cabal are denying them."
  EST_stomp_the_vaps:0 "Incoming Government Crackdown"
@@ -143,10 +147,10 @@
  POL_restore_kuban_cossacks:0 "Restore the Kuban Republic"
  POL_restore_kuban_cossacks_desc:0 "The betrayal of the Kuban cossacks was a major turning point for the Russian civil war that secured defeat for the Whites. This time, we shall ensure that the Kubans are lead by a government that will remain loyal."
  POL_add_state_to_strike:1 "Bring [From.GetName] into the strike"
- POL_expand_the_strike_name:0 "Expand the Peasant's Strike"
+ POL_expand_the_strike_name:1 "Expand the Peasants' Strike"
  POL_anti_fascist_military:0 "Anti-Fascist Military"
  POL_escelate_the_strike:1 "DEBUG: Escalate the Strike"
- POL_escelate_the_strike_desc:0 "Debug decision to quickly advance the Peasant's Strike by one stage. This decision should not be visible unless debug mode is active."
+ POL_escelate_the_strike_desc:1 "Debug decision to quickly advance the Peasants' Strike by one stage. This decision should not be visible unless debug mode is active."
  POL_expand_strikes_to_factories:0 "Expand Strikes to the Factories"
  POL_expand_strikes_to_factories_tt:0 "Allows us to bring industrialized states into the strike."
  POL_seize_equipment:0 "Seize Military Equipment"
@@ -291,6 +295,7 @@
  SOV_paranoia_inspection_cd_tt:0 "\nThis decision will be available again in §Y[?SOV_paranoia_inspection_re_enable_days] days§!."
  SOV_paranoia_calm_down_stalin_cd_tt:0 "\nThis decision will be available again in §Y[?SOV_paranoia_calm_down_stalin_re_enable_days] days§!."
  SOV_paranoia_conducting_inspection_flag:0 "Is already conducting an inspection"
+ SOV_assassinated_stalin_flag: "Stalin has been eliminated"
 
  SOV_loosen_prohibitions_in_military_academies_dec:0 "Loosen Prohibitions in Military Academies"
  SOV_loosen_prohibitions_in_military_academies_dec_desc:0 "We will loosen restrictions on research and consultation documents in our military academies so that our young officers have a wider range of learning sources to develop their skills in a less oppressive environment."
@@ -355,7 +360,7 @@
  decision_only_once_tt:0 "\nThis decision can only be activated once."
  
  decision_cost_CP_50_pp_15:0 "£command_power  §Y50§! £pol_power  §Y15§!"
- decision_cost_CP_50_pp_15_blocked:1 "£command_power  §R50§! £pol_power  §RY15§!"
+ decision_cost_CP_50_pp_15_blocked:1 "£command_power  §R50§! £pol_power  §Y15§!"
  decision_cost_CP_50_pp_15_tooltip:0 "It costs £command_power  §Y50§! £pol_power  §Y15§! to take the decision"
  
 
@@ -370,8 +375,6 @@
  SOV_promote_ideology_rallies_baltic_desc:0 "[ROOT.GetAdjective] agents will carry out political rallies throughout [FROM.GetNameDef] to promote [ROOT.GetIdeologyNameWithCaps] among the [FROM.GetAdjective] masses."
  SOV_send_ultimatum_to_country_baltic:0 "Send Ultimatum to [FROM.GetNameDef]"
  SOV_send_ultimatum_to_country_baltic_desc:0 "With an ultimatum, we will put pressure on the [FROM.GetAdjective] government to give in to our demands."
- SOV_send_ultimatum_to_baltic_countries:0 "Send Ultimatum to Baltic countries"
- SOV_send_ultimatum_to_baltic_countries_desc:0 "With an ultimatum, we will put pressure on the Baltic governments to give in to our demands."
  SOV_fight_alongside_country_comrades_baltic:0 "Fight Alongside our [FROM.GetAdjective] Comrades"
  SOV_fight_alongside_country_comrades_baltic_desc:0 "$BUL_fight_alongside_country_comrades_desc$"
  SOV_pressure_country_government_nordic:0 "$SOV_pressure_country_government_baltic$"
@@ -398,7 +401,7 @@
  SOV_send_ultimatum_to_country_middle_east_desc:0 "$SOV_send_ultimatum_to_country_baltic_desc$"
  SOV_fight_alongside_country_comrades_middle_east:0 "$SOV_fight_alongside_country_comrades_baltic$"
  SOV_fight_alongside_country_comrades_middle_east_desc:0 "$SOV_fight_alongside_country_comrades_baltic_desc$"
- SOV_ultimatum_baltic_effects_tt:0 "This event will pressure §YBaltic countries§! to be integrated into §Y[ROOT.GetNameDef]§!. (They can still refuse)"
+ SOV_ultimatum_baltic_effects_tt:0 "This event will pressure §Y[FROM.GetFlag][FROM.GetNameDefCap]§! to be integrated into §Y[ROOT.GetNameDef]§!. ([FROM.GetNameDefCap] can still refuse)"
  SOV_ultimatum_generic_effects_tt:0 "This event will pressure §Y[FROM.GetFlag][FROM.GetNameDefCap]§! to become a puppet of §Y[ROOT.GetNameDef]§! or to join the §Y[ROOT.GetFactionName]§!. ([FROM.GetNameDefCap] can still refuse)"
  SOV_pressure_government_effects_tt:0 "This event will pressure §Y[FROM.GetFlag][FROM.GetNameDefCap]§! to join the §Y[ROOT.GetFactionName]§! or to replace their current government by a §Y[ROOT.GetRulingIdeology]§! one. ([FROM.GetNameDefCap] can still refuse)"
  SOV_promote_rallies_effects_tt:0 "This event will promote §Y[GetIdeologyNameWithCaps]§! throughout §Y[FROM.GetFlag][FROM.GetNameDefCap]§! and will §Ydestabilize the country§! should the [FROM.GetAdjective] government oppose the rallies."
@@ -940,6 +943,10 @@
 
  SOV_behead_the_snake_mission:0 "$SOV_behead_the_snake$"
  SOV_behead_the_snake_mission_desc:0 "[FROM.GetLeader] is working to complete the $SOV_behead_the_snake$ focus."
+ SOV_polish_territory: "The Polish territory"
+ SOV_polish_territory_desc: "We currently control a lot of territory that were once part of the so called Polish Republic. If we were to hand some of it back, the leadership we have put in place in [POL.capital.GetCapitalVictoryPointName] would be able to use that as proof of the benefits of cooperation with [ROOT.GetNameDef]."
+ SOV_return_states_to_poland: "Return States to [POL.getname]"
+ SOV_return_states_to_poland_desc: "As a gesture of goodwill, and to demonstrate who is in charge, we should return all the territory west of [95.GetCapitalVictoryPointName] that is claimed by [POL.getNameDef] to the [POL.GetAdjective] puppet regime."
 
  fought_vaps_flag:0 "Cracked down on the Vaps"
 
