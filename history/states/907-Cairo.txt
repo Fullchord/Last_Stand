@@ -2,14 +2,13 @@ state={
 	id=907
 	name="STATE_907"
 	manpower = 6454865
-	state_category=city
+	state_category=town
 
 	history={
 		owner = ENG
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1
-			arms_factory = 1 # Egypt needs another mil
 			air_base = 5
 			
 
@@ -17,13 +16,15 @@ state={
 		victory_points = {
 			7011 20 
 		}
+		
 		victory_points = {
 			3996 5 
 		}
+		
 		victory_points = {
 			1068 3 
 		}
-		add_core_of = CYP
+		add_core_of = SWE # EGY
 
 	}
 	provinces={

@@ -10,10 +10,7 @@ state={
 			infrastructure = 1
 
 		}
-		victory_points = {
-			11145 1
-		}
-		add_core_of = CYP
+		add_core_of = SWE # KEN
 	}
 
 	provinces={

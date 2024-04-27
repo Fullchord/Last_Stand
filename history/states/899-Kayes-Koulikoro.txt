@@ -6,14 +6,11 @@ state={
 
 	history={
 		owner = FRA
-		add_core_of = ALG
+		add_core_of = SWE # MLI
 		
 		buildings = {
 			infrastructure = 2
 
-		}
-		victory_points = {
-			2012 1
 		}
 
 	}

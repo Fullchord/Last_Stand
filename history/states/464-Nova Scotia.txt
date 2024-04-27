@@ -3,21 +3,13 @@ state={
 	id=464
 	name="STATE_464"
 	manpower = 490912
-	resources={
-		steel = 40
-	}
+	
 	state_category = rural
 
 	history={
 		owner = CAN
 		victory_points = {
-			7361 4
-		}
-		victory_points = {
-			4360 1
-		}
-		victory_points = {
-			4430 1
+			7361 3
 		}
 		buildings = {
 			infrastructure = 3 #was: 5

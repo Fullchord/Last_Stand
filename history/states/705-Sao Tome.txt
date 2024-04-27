@@ -5,16 +5,12 @@ state={
 	state_category = tiny_island
 
 	history={
-		owner = POR
-		add_core_of = SAO
+		owner = WST
 		buildings = {
 			infrastructure = 1
 			13015 ={
 				naval_base = 1
 			}
-		}
-		victory_points = {
-			13015 1
 		}
 	}
 

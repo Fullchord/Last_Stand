@@ -1,5 +1,4 @@
 
-
 state={
 	id=28
 	name="STATE_28" # Alsace-Lorraine
@@ -7,8 +6,7 @@ state={
 	
 	state_category = city
 	resources={
-		steel=100 # was: 236
-		oil=1 #Pechelbronn 
+		steel=42 #was 100 # was: 236
 	}
 
 	history={
@@ -20,7 +18,7 @@ state={
 		victory_points = { 9559 10 }
 		buildings = {
 			infrastructure = 4
-			industrial_complex = 2
+			industrial_complex = 3
 			549 = {
 				bunker = 10
 
@@ -29,9 +27,8 @@ state={
 				bunker = 10
 
 			}
-			#later fortified position of Saarland, might need inundation line
 			3629 = {
-				bunker = 7
+				bunker = 10
 
 			}
 			6529 = {
@@ -55,11 +52,16 @@ state={
 
 		}
 		add_core_of = FRA
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 4
+			}
+		}
 	}
 
 	provinces={
 		549 678 1346 3629 6529 9503 9559 11502 
 	}
 
-	local_supplies=0.0 
+	local_supplies=14.0 
 }

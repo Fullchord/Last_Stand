@@ -22,30 +22,24 @@ state={
 			8001 3
 		}
 		victory_points = {
-			2089 5
-		}
-		victory_points = {
-			7977 1
-		}
-		victory_points = {
-			12726 3
+			2089 5 
 		}
 		buildings = {
-			infrastructure = 2 #was: 5
+			infrastructure = 3 #was: 5
 			arms_factory = 1
 			industrial_complex = 2 
-			air_base = 2
+			air_base = 4
 			2089 = {
 				naval_base = 1
 			}
 		}
-		add_core_of = TUR
-
+		add_core_of = SWE
+		add_claim_by = KUR
 	}
 
 	provinces={
 		78 2004 2089 2097 3795 7977 7994 8001 10876 12046 12726 12839 12855 
 	}
 
-	local_supplies=0.0 
+	local_supplies=6.0 
 }

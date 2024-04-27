@@ -10,13 +10,10 @@ state={
 	}
 
 	history={
-		owner = COG
+		owner = BEL
 		buildings = {
 			infrastructure = 1
 
-		}
-		victory_points = {
-			6027 1
 		}
 		add_core_of = COG
 
@@ -26,5 +23,7 @@ state={
 		1950 2034 2073 2154 6027 11934 12808 12847 
 	}
 	
-	local_supplies=0.000
+	buildings_max_level_factor = 1.000
+	
+	local_supplies=2.000
 }

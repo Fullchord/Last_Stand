@@ -4,11 +4,11 @@ state={
 	name="STATE_781" # Niger
 	manpower = 543817
 	
-	state_category = pastoral
+	state_category = rural
 
 	history={
 		owner = FRA
-		add_core_of = ALG
+		add_core_of = SWE # NGR
 		victory_points = {
 			2056 1
 		}

@@ -7,8 +7,7 @@ state={
 
 	history={
 		owner = SPR
-		add_core_of = Cyp
-		
+		add_core_of = WES
 		buildings = {
 			infrastructure = 1
 			8038 = {
@@ -18,9 +17,6 @@ state={
 		victory_points = {
 			8038 1
 		}
-       		victory_points = {
-               		10875 1
-       		}
 	}
 	
 	provinces={

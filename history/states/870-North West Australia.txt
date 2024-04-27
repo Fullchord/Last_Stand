@@ -10,9 +10,6 @@ state={
 		}
 		owner = AST
 		add_core_of = AST
-		victory_points = {
-			8152 1
-		}
 	}
 	state_category = wasteland
 	manpower=1000

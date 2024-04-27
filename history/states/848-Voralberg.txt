@@ -17,12 +17,9 @@ state={
 			controller = GER
 			add_core_of = GER
 		}
-		victory_points = {
-			6678 1
-		}
 	}
 	provinces={
-		6678
+		6678 6680 
 	}
 	buildings_max_level_factor=1.000
 	local_supplies=0.000

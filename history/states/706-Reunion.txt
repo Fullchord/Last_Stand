@@ -7,15 +7,12 @@ state={
 
 	history={
 		owner = FRA
-		
+		add_core_of = SWE # MAD
 		buildings = {
 			infrastructure = 2
 			13017 = {
 				naval_base = 1
 			}
-		}
-		victory_points = {
-			13017 1
 		}
 	}
 

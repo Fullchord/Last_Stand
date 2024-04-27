@@ -10,12 +10,9 @@ state={
 			infrastructure = 1
 
 		}
-		victory_points = {
-			10976 1 
-		}
 		
-		add_core_of = CYP
-		
+		add_core_of = SWE # KEN
+		add_core_of = SWE # SOM
 
 	}
 

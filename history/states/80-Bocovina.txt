@@ -5,7 +5,8 @@ state={
 	
 	state_category = rural
 	
-	history= {
+	history=
+	{
 		victory_points = {
 			577 1 
 		}
@@ -15,6 +16,7 @@ state={
 			arms_factory = 1
 		}
 		add_core_of = ROM
+		add_core_of = UKR
 	}
 	provinces={
 		577 9548

@@ -4,16 +4,14 @@ state={
 	manpower=1625	
 	state_category = tiny_island
 	
-	history= {
-		owner = MAL
+	history=
+	{
+		owner = ENG
 		buildings = {
-			infrastructure = 2 #was 3
+			infrastructure = 2
 			13005 = {
 				naval_base = 1
 			}
-		}
-		victory_points = {
-			13005 1
 		}
 	}
 	

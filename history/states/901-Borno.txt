@@ -6,12 +6,9 @@ state={
 
 	history={
 		owner = ENG
-		add_core_of = Cyp
+		add_core_of = SWE # NGA
 		buildings = {
 			infrastructure = 1
-		}
-		victory_points = {
-			4997 1
 		}
 	}  
 

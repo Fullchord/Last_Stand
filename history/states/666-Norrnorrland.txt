@@ -11,7 +11,7 @@ state = {
 	}
 
 	history={
-		owner = TUR
+		owner = SWE
 		victory_points = {
 			9108 2 
 		}
@@ -21,6 +21,10 @@ state = {
 
 		victory_points = {
 			11155 1
+		}
+
+		victory_points = {
+			9147 1
 		}
 		
 		buildings = {
@@ -32,12 +36,12 @@ state = {
 			}
 
 		}
-		add_core_of = TUR
+		add_core_of = SWE
 		if = {
 			limit = {
 				has_dlc = "Arms Against Tyranny"
 			}
-			add_core_of = TUR
+			add_core_of = SMI
 		}
 
 	}

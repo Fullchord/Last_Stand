@@ -30,15 +30,16 @@ state = {
 			8019 1 
 		}
 		victory_points = { 
-			13295 2 
+			13246 2 
 		}
 		victory_points = { 
-			13296 1 
+			13247 1 
 		}
 		
 		owner = ITA
 		add_core_of = ETH
-		
+		add_core_of = SID
+		add_core_of = ORO
 
 		1936.6.1 = {
 			owner = ITA
@@ -47,7 +48,7 @@ state = {
 	}
 
 	provinces = {
-		8019 8062 13295 13296
+ 		8019 8062 13246 13247
  	}
 
 	local_supplies = 0.0 
