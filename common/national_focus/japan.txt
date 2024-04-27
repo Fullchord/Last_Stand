@@ -5036,25 +5036,7 @@ focus_tree = {
 			remove_ideas = JAP_duplicate_research_efforts
 		}
 	}
-	focus = {
-		id = JAP_reform_airframe_production
-		icon = GFX_focus_generic_aircraft_production
-		prerequisite = { focus = JAP_unified_fighter_development focus = JAP_the_zero }
-		x = 1
-		y = 1
-		relative_position_id = JAP_unified_fighter_development
 
-		cost = 10
-
-		ai_will_do = {
-			factor = 2
-		}
-
-
-		completion_reward = {
-			add_ideas = JAP_airframe_supplies_improvements
-		}
-	}
 	focus = {
 		id = JAP_jet_prototypes
 		icon = GFX_goal_generic_air_fighter2
