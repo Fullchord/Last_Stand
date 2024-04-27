@@ -312,7 +312,7 @@ guiTypes = {
 			quadTextureSprite ="GFX_main_lobby_button"	
 			buttonText = "Lastorical Discord"
 			buttonFont = "hoi_24header"
-			web_link = "https://discord.gg/s364jYgwbM"
+			web_link = "https://discord.gg/Cre25GeP9D"
 			clicksound = click_default
 			oversound = ui_menu_over
 		}
