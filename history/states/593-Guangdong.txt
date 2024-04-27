@@ -4,16 +4,14 @@ state= {
 	manpower = 12700000
 	state_category = town
 	resources={
-		tungsten=15 # was: 20
+		tungsten=25 # was: 20 #15 changed to 25
 		steel= 15 # was: 20
 		chromium = 3 # was: 4
 	}
 
 	history= {
 		owner = CHI
-		add_core_of = GXC
 		add_core_of = CHI
-		add_core_of = PRC
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1
@@ -23,17 +21,11 @@ state= {
 				bunker = 1
 			}
 		}
-
-		1938.10.25 = {		
-			remove_core_of = GXC
-			owner = CHI
-			JAP = {
-				set_province_controller = 1202
-				set_province_controller = 4050
-				set_province_controller = 7108
-				set_province_controller = 9938
-				set_province_controller = 12095
-			} 			
+		victory_points = {
+			9938 1
+		}
+		victory_points = {
+			1120 1
 		}
 	}
 	provinces={

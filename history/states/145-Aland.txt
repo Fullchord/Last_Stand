@@ -1,25 +1,25 @@
-state=
-{
+
+state= {
 	id=145
-	name="STATE_145" #ÅLAND
-	manpower = 28139
+	name="STATE_145"
+	manpower = 27400
 	
 	state_category = small_island
 	
-	history = {
-		owner = WST
-		
-		victory_points = { #Mariehman
+	history={
+		owner = FIN
+		victory_points = {
 			9228 1
 		}
-
 		buildings = {
-			infrastructure = 2 #TODO_Manu: Was 3
+			infrastructure = 3 #was: 5
 			9228 = {
 				naval_base = 1
 			}
 		}
-		
+		add_core_of = FIN
+		add_core_of = AHV
+		set_demilitarized_zone = yes
 	}
 	
 	provinces=	{

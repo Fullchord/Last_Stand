@@ -1,14 +1,10 @@
 state={
 	id=274
 	name="STATE_274"
-	resources={
-		steel=8 
-		tungsten=8 
-		chromium=4
-	} #Maganese
+
 	history={
 		owner = ENG
-		add_core_of = SWE # GHA
+		add_core_of = Cyp
 		victory_points = {
 			10862 1 
 		}

@@ -5,9 +5,12 @@ state = {
 	state_category = pastoral
 	history = {
 		owner = ENG
-		add_core_of = SWE # SUD
+		add_core_of = CYP
 		buildings = {
 			infrastructure = 1
+		}
+		victory_points = {
+			12862 1
 		}
 	}
 	provinces = {

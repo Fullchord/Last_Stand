@@ -1,35 +1,29 @@
-state = {
-	id = 765
-	name = "STATE_765"
+
+state={
+	id=765
+	name="STATE_765"
 	manpower = 51600
 	state_category = pastoral
-
-	history = {
-		
+	resources={
+		oil= 2 # Oil moved to Bahrain
+	}
+	history={
+		add_core_of = Cyp
 		owner = ENG
-		add_core_of = SWE # QAT
-
 		victory_points = {
 			8051 1
 		}
-		victory_points = {
-			13313 2
-		}
-
 		buildings = {
-			infrastructure = 1
+			infrastructure = 1 #was 2
 			8051 = {
 				naval_base = 2
 			}
-			13313 = {
-				naval_base = 2
-			}
 		}
 	}
 
-	provinces = {
-		8051 13313
+	provinces={
+		8051
 	}
 
-	local_supplies = 0.0 
+	local_supplies=0.0 
 }

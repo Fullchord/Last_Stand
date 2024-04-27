@@ -14,8 +14,11 @@ state={
 			}
 
 		}
-		add_core_of = SWE # YEM
-		add_claim_by = SOM
+		victory_points = {
+			8000 1
+		}
+		add_core_of = Cyp
+		
 	}
 
 	provinces={

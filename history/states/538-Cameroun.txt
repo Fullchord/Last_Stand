@@ -9,10 +9,16 @@ state={
 	manpower = 1693974
 
 	history={
-		owner = BEL
+		owner = COG
 		buildings = {
 			infrastructure = 1
 
+		}
+		victory_points = {
+			10883 1
+		}
+		victory_points = {
+			10071 1
 		}
 		add_core_of = COG
 

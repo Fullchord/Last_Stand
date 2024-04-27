@@ -5,7 +5,7 @@ state={
 		chromium=20.000 #added due to portugal setup
 	}
 	history={
-		owner = WST
+		owner = POR
 		victory_points = {
 			9869 1 
 		}
@@ -24,7 +24,7 @@ state={
 	provinces={
 		844 924 3846 3886 3926 6986 9869 11768 
 	}
-	manpower=729712
+	manpower=780674
 	buildings_max_level_factor=1.000
 	state_category=rural
 

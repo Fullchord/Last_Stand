@@ -5,8 +5,11 @@ state={
 		5006 8030 10870 12768 
 	}
 	history = {
-		owner = WST
-		add_core_of = SAU
+		owner = TUR
+		add_core_of = TUR
+		victory_points = {
+			8030 1 
+		}
 	}
 	manpower=69
 	state_category=pastoral

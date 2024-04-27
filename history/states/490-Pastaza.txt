@@ -1,30 +1,27 @@
 
-state = {
-	id = 490
-	name = "STATE_490"
+state={
+	id=490
+	name="STATE_490"
 	manpower = 70020
 	
-	state_category = pastoral
+	state_category = rural
 
-	history = {
-		owner = WST #Used to be PRU but should become theirs through the Peruvian-Ecuadorian War
+	history={
+		#conquered by Peru in 1941 war
+		owner = BRA
 		buildings = {
 			infrastructure = 2
-			industrial_complex = 1
 			air_base = 1
 		}
-
-		victory_points = {
-			13289 2
+		add_core_of = BRA
+                victory_points = {
+			8149 3
 		}
-
-		add_core_of = PRU
-		add_core_of = ECU
 	}
 
-	provinces = {
-		8149 10942 13289 13290
+	provinces={
+		8149 10942 
 	}
 
-	local_supplies = 6.0 
+	local_supplies=6.0 
 }

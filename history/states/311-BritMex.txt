@@ -1,21 +1,19 @@
-state=
-{
+state= {
 	id=311
 	name="STATE_311"
 	manpower = 51000
 	
-	state_category = pastoral
-	history=
-	{
-		add_core_of = SWE # BLZ
-		owner = ENG
+	state_category = enclave
+	history={
+		add_core_of = MEX
 		victory_points = {
-			2077 1 
+			2077 1
 		}
+		owner = ENG
 		buildings = {
-			infrastructure = 2
+			infrastructure = 2 #was 3
 			2077 = {
-				naval_base = 1
+				naval_base = 2
 			}
 		}
 	}

@@ -8,6 +8,9 @@ state={
 		victory_points = {
 			6766 5 
 		}
+		victory_points = {
+			9853 1
+		}
 		buildings = {
 			infrastructure = 3
 			arms_factory = 1
@@ -15,7 +18,6 @@ state={
 			air_base = 2
 
 		}
-		add_core_of = OCC
 		add_core_of = FRA
 
 	}
