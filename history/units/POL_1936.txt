@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿
 #########################
 ## STARTING PRODUCTION ##
@@ -33,6 +32,3 @@ instant_effect = {
 	}
 
 }
-=======
-﻿
->>>>>>> parent of e12e0b61c (Revert "removed a bunch of ai shit for less lag")
