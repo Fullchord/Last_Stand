@@ -22,12 +22,14 @@
  FOCUS_FILTER_TUR_TRADITIONALISM:0 "Traditionalism"
  FOCUS_FILTER_SOV_POLITICAL_PARANOIA:0 "Political Paranoia"
  FOCUS_FILTER_PROPAGANDA:0 "Propaganda"
- FOCUS_FILTER_ARMY_XP:0 "Army Experience"
- FOCUS_FILTER_NAVY_XP:0 "Navy Experience"
- FOCUS_FILTER_AIR_XP:0 "Air Experience"
+ FOCUS_FILTER_ARMY_XP:0 "Experience: Army"
+ FOCUS_FILTER_NAVY_XP:0 "Experience: Navy"
+ FOCUS_FILTER_AIR_XP:0 "Experience: Air"
+ #BBA filters
  FOCUS_FILTER_ITA_MISSIOLINI:0 "Mussolini's Missions"
  FOCUS_FILTER_BALANCE_OF_POWER:0 "Balance of Power"
  FOCUS_FILTER_SWI_MILITARY_READINESS:0 "Military Readiness"
+ #AAT filters
  FOCUS_FILTER_POLITICAL_CHARACTER: "Political Character"
  FOCUS_FILTER_MILITARY_CHARACTER: "Military Character"
  FOCUS_FILTER_INTERNATIONAL_TRADE: "International Trade"
