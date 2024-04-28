@@ -2631,7 +2631,7 @@ focus_tree = {
 	}
 	focus = {
 		id = FRA_further_the_reforms
-		icon = GFX_goal_cuba_support_the_confederation_of_cuban_workers
+		icon = GFX_goal_constitution
 		cost = 5
 		prerequisite = {
 			focus = FRA_support_blum
