@@ -921,7 +921,7 @@ focus_tree = {
             date > 1942.06.01
         }
         x = 0
-        y = 2
+        y = 1
         cost = 10
         completion_reward = {
 
