@@ -918,7 +918,7 @@ focus_tree = {
                   has_war_with = SOV
               }
         available = {
-            date > 1942.06.01
+            date > 1943.01.01
         }
         x = 0
         y = 1
