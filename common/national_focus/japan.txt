@@ -36,9 +36,13 @@ focus_tree = {
 				}
 			}
 		}
-	
+		offset = { 
+			trigger = { has_completed_focus = JAP_purge_the_kodoha_faction }
+			x = 19
+			y = 0
+	}
 		mutually_exclusive = { focus = JAP_the_unthinkable_option focus = JAP_support_the_kodoha_faction focus = JAP_strengthen_civilian_government }
-		x = 38
+		x = 20
 		y = 0
 		
 		cost = 10
