@@ -11,6 +11,9 @@ NDefines.NDiplomacy.PEACE_SCORE_PER_PASS = 100.0
 ----------------------------------
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 30						-- Events are checked every X day per country or state (1 is ideal, but CPU heavy)
 ----------------------------------
+NDefines.NProduction.LICENSE_EQUIPMENT_SPEED_NOT_FACTION = 0
+NDefines.NProduction.LICENSE_EQUIPMENT_TECH_SPEED_PER_YEAR = 0
+NDefines.NProduction.LICENSE_EQUIPMENT_BASE_SPEED = -0.1
 NDefines.NProduction.EQUIPMENT_MODULE_ADD_XP_COST = 0					-- XP cost for adding a new equipment module in an empty slot when creating an equipment variant.
 NDefines.NProduction.EQUIPMENT_MODULE_REPLACE_XP_COST = 0				-- XP cost for replacing one equipment module with an unrelated module when creating an equipment variant.
 NDefines.NProduction.EQUIPMENT_MODULE_CONVERT_XP_COST = 0				-- XP cost for converting one equipment module to a related module when creating an equipment variant.
