@@ -2625,6 +2625,10 @@ focus_tree = {
 			factor = 4
 		}
 		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 2
+			}
 			add_ideas = FRA_increase_military_spendings
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -2846,10 +2850,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = FRA_rearmament_policy
-			add_offsite_building = {
-				type = arms_factory
-				level = 2
-			}
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
