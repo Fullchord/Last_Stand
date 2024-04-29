@@ -11,12 +11,7 @@ equipments = {
 
 		can_be_produced = {
 			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				NOT = {
-					has_idea = BUL_army_restrictions_aat
-				}
+				
 			}
 			else = {
 				NOT = {
@@ -256,12 +251,7 @@ equipments = {
 		is_buildable = no
 		can_be_produced = {
 			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				NOT = {
-					has_idea = BUL_army_restrictions_aat
-				}
+				
 			}
 			else = {
 				NOT = {
@@ -498,12 +488,7 @@ equipments = {
 		is_buildable = no
 		can_be_produced = {
 			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				NOT = {
-					has_idea = BUL_army_restrictions_aat
-				}
+			
 			}
 			else = {
 				NOT = {
@@ -739,12 +724,7 @@ equipments = {
 		is_buildable = no
 		can_be_produced = {
 			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				NOT = {
-					has_idea = BUL_army_restrictions_aat
-				}
+				
 			}
 			else = {
 				NOT = {
@@ -924,12 +904,7 @@ equipments = {
 		is_buildable = no
 		can_be_produced = {
 			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				NOT = {
-					has_idea = BUL_army_restrictions_aat
-				}
+				
 			}
 			else = {
 				NOT = {
@@ -1106,12 +1081,7 @@ equipments = {
 		is_buildable = no
 		can_be_produced = {
 			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				NOT = {
-					has_idea = BUL_army_restrictions_aat
-				}
+			
 			}
 			else = {
 				NOT = {
