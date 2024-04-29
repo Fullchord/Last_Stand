@@ -1,0 +1,48 @@
+germany 
+inf eq = 25k
+light tank = 750
+se = 900
+truck = 800
+train = 64
+###########
+france 
+inf eq = 41k
+truck = 2.6k
+se = 800
+light tank = 1.2k
+heavy tank = 12
+train = 80
+############
+england 
+inf eq = 19k
+se = 300
+light tank = 200
+train = 200
+truck = 300
+#############
+italy
+inf eq = 23k
+light tank = 400
+truck = 500
+se = 900
+train = 34
+#############
+soviets
+inf eq = 82k
+se = 900
+light tank = 2.3k
+train = 300
+truck = 1.7k
+#############
+usa
+inf eq = 19k
+se = 400
+train = 250
+truck = 300
+#############
+japan+manchu
+inf eq = 47k
+truck = 1200
+se = 1000
+train = 60
+light tank = 300
