@@ -2459,3 +2459,34 @@ if = {
 			obsolete = yes
 		}
 }
+###STOCK PILE
+add_equipment_to_stockpile = {
+
+        type = infantry_equipment_1
+
+        amount = 45000
+}
+add_equipment_to_stockpile = {
+
+        type = motorized_equipment_1 
+
+        amount = 1200
+}
+add_equipment_to_stockpile = {
+
+        type = train_equipment_1  
+
+        amount = 70
+}
+add_equipment_to_stockpile = {
+
+        type = support_equipment_1 
+
+        amount = 1000
+}
+add_equipment_to_stockpile = {
+
+     	name = "Type 95 Ha-Go"
+		type = light_tank_chassis_1
+        amount = 400
+}
