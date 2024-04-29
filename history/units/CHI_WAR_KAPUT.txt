@@ -581,6 +581,166 @@ units = {
 		start_experience_factor = 0.2
 		start_equipment_factor = 1
 	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 55
+		}
+		location = 1069
+		division_template = "Juntuán"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 56
+		}
+		location = 1069
+		division_template = "Juntuán"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 57
+		}
+		location = 1069
+		division_template = "Juntuán"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 58
+		}
+		location = 1069
+		division_template = "Juntuán"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 59
+		}
+		location = 1069
+		division_template = "Juntuán"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 60
+		}
+		location = 1069
+		division_template = "Juntuán"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 61
+		}
+		location = 9843
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+        start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 62
+		}
+		location = 9843
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+        start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 63
+		}
+		location = 9843
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+        start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 64
+		}
+		location = 9843
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+        start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 65
+		}
+		location = 9843
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+        start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 66
+		}
+		location = 9843
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+        start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 67
+		}
+		location = 11761
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+        start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 68
+		}
+		location = 11761
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+        start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 69 # nice
+		}
+		location = 11761
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+        start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 70 # nice
+		}
+		location = 11761
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 1
+        start_equipment_factor = 1
+	}
 }
 
 
