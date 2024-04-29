@@ -1,0 +1,16 @@
+on_actions = {
+	on_declare_war = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						tag = CHI
+					}
+				}
+				CHI = {
+					load_oob = "CHI_WAR_KAPUT"
+				}
+			}
+		}
+	}
+}
