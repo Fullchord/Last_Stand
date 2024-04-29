@@ -2461,7 +2461,6 @@ focus_tree = {
 				}
 				set_state_flag = HUN_boost_hungarian_aviation_industry_AF1
 			}
-			add_ideas = Hun_air_controller
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
