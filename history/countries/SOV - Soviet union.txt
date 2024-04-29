@@ -1976,3 +1976,52 @@ if = {
 		}
 	}
 }
+###STOCK PILE
+add_equipment_to_stockpile = {
+
+        type = infantry_equipment_1
+
+        amount = 72000
+}
+add_equipment_to_stockpile = {
+
+        type = infantry_equipment_0
+
+        amount = 22000
+}
+add_equipment_to_stockpile = {
+
+        type = motorized_equipment_1 
+
+        amount = 1700
+}
+add_equipment_to_stockpile = {
+
+        type = train_equipment_1  
+
+        amount = 300
+}
+add_equipment_to_stockpile = {
+
+        type = support_equipment_1 
+
+        amount = 1000
+}
+add_equipment_to_stockpile = {
+
+     	name = "BT-7"
+		type = light_tank_chassis_2
+        amount = 1000
+}
+add_equipment_to_stockpile = {
+
+       name = "BT-5"
+		type = light_tank_chassis_1
+        amount = 900
+}
+add_equipment_to_stockpile = {
+
+       name = "T-26 mod. 1933"
+		type = light_tank_chassis_1
+        amount = 1200
+}
