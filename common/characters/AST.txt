@@ -6,23 +6,9 @@ characters={
 				large=GFX_portrait_AST_john_curtin
 			}
 		}
-	#	country_leader={
-	#		ideology=socialism
-	#		expire="1965.1.1"
-	#		id=-1
-	#	}
-	}
-
-	AST_joseph_lyons={
-		name="Joseph Lyons"
-		portraits={
-			civilian={
-				large="gfx/leaders/AST/r56_portrait_AST_Joseph_Lyons.dds"
-			}
-		}
 		country_leader={
-			ideology=liberalism
-			expire="1965.1.1"
+			ideology=socialism
+			expire="1965.1.1.1"
 			id=-1
 		}
 	}
@@ -31,29 +17,17 @@ characters={
 		name=AST_eric_campbell
 		portraits={
 			civilian={
-				large="gfx/leaders/AST/r56_portrait_AST_Eric_Campbell.dds"
+				large="GFX_AST_eric_campbell"
 			}
 		}
 		country_leader={
 			ideology=fascism_ideology
-			expire="1965.1.1"
+			expire="1965.1.1.1"
 			id=-1
 		}
 	}
-	AST_jack_miles={
-		name="Jack Miles"
-		portraits={
-			civilian={
-				large="gfx/leaders/AST/r56_portrait_AST_JB_Miles.dds"
-			}
-		}
-		country_leader={
-			ideology=stalinism
-			expire="1965.1.1"
-			id=-1
-		}
-	}	
-	AST_richard_dixon={	#unrecruited
+
+	AST_richard_dixon={
 		name=AST_richard_dixon
 		portraits={
 			civilian={
@@ -62,12 +36,12 @@ characters={
 		}
 		country_leader={
 			ideology=stalinism
-			expire="1965.1.1"
+			expire="1965.1.1.1"
 			id=-1
 		}
 	}
 
-	AST_earle_page={ #unrecruited, replaced with isaac isaacs
+	AST_earle_page={
 		name=AST_earle_page
 		portraits={
 			civilian={
@@ -76,26 +50,12 @@ characters={
 		}
 		country_leader={
 			ideology=centrism
-			expire="1965.1.1"
+			expire="1965.1.1.1"
 			id=-1
 		}
 	}
 
-	AST_isaac_isaacs={ 
-		name="Isaac Isaacs"
-		portraits={
-			civilian={
-				large="gfx/leaders/AST/r56_portrait_AST_Isaac_Isaacs.dds"
-			}
-		}
-		country_leader={
-			ideology=centrism
-			expire="1965.1.1"
-			id=-1
-		}
-	}
-
-	AST_rod_hull={	#unrecruited
+	AST_rod_hull={
 		name=AST_rod_hull
 		portraits={
 			civilian={
@@ -104,7 +64,7 @@ characters={
 		}
 		country_leader={
 			ideology=despotism
-			expire="1965.1.1"
+			expire="1965.1.1.1"
 			id=-1
 		}
 	}
@@ -118,85 +78,31 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { infantry_officer }
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 2
+			skill=4
+			attack_skill=4
+			defense_skill=2
+			planning_skill=5
+			logistics_skill=2
 			legacy_id=-1
 		}
 	}
 
 	AST_thomas_blamey={
-		instance = {
-			allowed = {
-				has_dlc = "Together for Victory"
-			}
-			name=AST_thomas_blamey
-			portraits={
-				army={
-					large="GFX_AST_thomas_blamey"
-					small=GFX_portrait_AST_thomas_blamey_small
-				}
-			}
-			corps_commander={
-				traits = { decided_planner }
-				skill = 4
-				attack_skill = 4
-				defense_skill = 3
-				planning_skill = 3
-				logistics_skill = 3
-				legacy_id=-1
-			}
-			advisor={
-				cost = 100
-				slot = theorist
-				idea_token = AST_thomas_blamey
-				ledger = army
-				allowed = {
-					original_tag = AST
-				}
-				traits = {
-					military_theorist
-				}
+		name=AST_thomas_blamey
+		portraits={
+			army={
+				large="GFX_AST_thomas_blamey"
+				small=GFX_portrait_AST_thomas_blamey_small
 			}
 		}
-		instance = {
-			allowed = {
-				NOT = {
-					has_dlc = "Together for Victory"
-				}
-			}
-			name=AST_thomas_blamey
-			portraits={
-				army={
-					large="GFX_AST_thomas_blamey"
-					small="gfx/interface/ideas/idea_ENG_generic_land_3.dds" #mod seems to break GFX_ for non-DLC
-				}
-			}
-			corps_commander={
-				traits = { decided_planner }
-				skill = 4
-				attack_skill = 4
-				defense_skill = 3
-				planning_skill = 3
-				logistics_skill = 3
-				legacy_id=-1
-			}
-			advisor={
-				cost = 100
-				slot = theorist
-				idea_token = AST_thomas_blamey
-				ledger = army
-				allowed = {
-					original_tag = AST
-				}
-				traits = {
-					military_theorist
-				}
-			}
-		}	
+		corps_commander={
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
 	}
 
 	AST_henry_wynter={
@@ -208,12 +114,11 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { meticulous}
-			skill = 4
-			attack_skill = 3
-			defense_skill = 4
-			planning_skill = 3
-			logistics_skill = 3
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
 			legacy_id=-1
 		}
 	}
@@ -227,12 +132,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { hill_fighter }
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 1
-			logistics_skill = 4
+			traits={ hill_fighter }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=1
 			legacy_id=-1
 		}
 	}
@@ -246,60 +151,32 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { desert_fox}
-			skill = 3
-			attack_skill = 3
-			defense_skill = 1
-			planning_skill = 3
-			logistics_skill = 3
+			traits={ desert_fox }
+			skill=3
+			attack_skill=3
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=3
 			legacy_id=-1
 		}
 	}
 
 	AST_john_northcott={
-		instance = {
-			allowed = {
-				has_dlc = "Together for Victory"
-			}
-			name=AST_john_northcott
-			portraits={
-				army={
-					large="GFX_AST_john_northcott"
-					small=GFX_portrait_AST_john_northcott_small
-				}
-			}
-			corps_commander={
-				traits = { armor_officer}
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
-				legacy_id=-1
+		name=AST_john_northcott
+		portraits={
+			army={
+				large="GFX_AST_john_northcott"
+				small=GFX_portrait_AST_john_northcott_small
 			}
 		}
-		instance = {
-			allowed = {
-				NOT = {
-					has_dlc = "Together for Victory"
-				}
-			}
-			name=AST_john_northcott
-			portraits={
-				army={
-					large="gfx/leaders/ENG/portrait_Britain_Generic_land_4.dds" #taken from base game interface file, GFX_ seems to be broken for non-DLC in mod
-					small=GFX_portrait_AST_john_northcott_small
-				}
-			}
-			corps_commander={
-				traits = { armor_officer}
-				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 1
-				legacy_id=-1
-			}
+		corps_commander={
+			traits={ armor_officer }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
 		}
 	}
 
@@ -312,12 +189,12 @@ characters={
 			}
 		}
 		navy_leader={
-			traits = { aviation_enthusiast naval_lineage }
-			skill = 4
-			attack_skill = 3
-			defense_skill = 3
-			maneuvering_skill = 3
-			coordination_skill = 4
+			traits={ aviation_enthusiast naval_lineage }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			maneuvering_skill=3
+			coordination_skill=4
 			legacy_id=-1
 		}
 	}
@@ -331,30 +208,12 @@ characters={
 			}
 		}
 		navy_leader={
-			traits = { bold }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 2
-			maneuvering_skill = 3
-			coordination_skill = 2
-			legacy_id=99523
-		}
-	}
-
-	AST_hector_waller={
-		name="Hector Waller"
-		portraits={
-			army={
-				large="gfx/leaders/Europe/Portrait_Europe_Generic_navy_3.dds"
-			}
-		}
-		navy_leader={
-			traits = {  }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			maneuvering_skill = 1
-			coordination_skill = 2
+			traits={ bold }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			maneuvering_skill=3
+			coordination_skill=2
 			legacy_id=-1
 		}
 	}
@@ -373,56 +232,25 @@ characters={
 	### THEORISTS ###
 
 	AST_norman_makin={
-		instance = {
-			allowed = {
-				has_dlc = "Together for Victory"
-			}
-			name=AST_norman_makin
-			portraits={
-				army={
-					small="GFX_idea_AST_norman_makin" #small="GFX_idea_generic_political_advisor_europe_3"
-				}
-			}
-			advisor={
-				cost = 100
-				slot = theorist
-				idea_token = AST_norman_makin
-				ledger = navy
-				allowed = {
-					original_tag = AST
-				}
-				
-				traits = {
-					naval_theorist
-				}
+		name=AST_norman_makin
+		portraits={
+			army={
+				small="GFX_idea_AST_norman_makin" #small="GFX_idea_generic_political_advisor_europe_3"
 			}
 		}
-		instance = {
+		advisor={
+			cost = 100
+			slot = theorist
+			idea_token = AST_norman_makin
+			ledger = navy
 			allowed = {
-				NOT = {
-					has_dlc = "Together for Victory"
-				}
+				original_tag = AST
 			}
-			name=AST_norman_makin
-			portraits={
-				army={
-					small="GFX_idea_generic_political_advisor_europe_3"
-				}
+			
+			traits = {
+				naval_theorist
 			}
-			advisor={
-				cost = 100
-				slot = theorist
-				idea_token = AST_norman_makin
-				ledger = navy
-				allowed = {
-					original_tag = AST
-				}
-				
-				traits = {
-					naval_theorist
-				}
-			}
-		}	
+		}		
 	}
 
 	AST_james_fairbairn={
@@ -522,56 +350,24 @@ characters={
 	### NAVY CHIEFS ###
 
 	AST_ragnar_colvin={
-		instance = {
-			allowed = {
-				has_dlc = "Together for Victory"
-			}
-			name=AST_ragnar_colvin
-			portraits={
-				army={
-					small="GFX_idea_AST_ragnar_colvin" #small="GFX_idea_generic_navy_europe_2"
-				}
-			}
-			advisor={
-				slot = navy_chief
-				idea_token = AST_ragnar_colvin
-				allowed = {
-					original_tag = AST
-				}
-				traits = {
-					navy_chief_reform_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
+		name=AST_ragnar_colvin
+		portraits={
+			army={
+				small="GFX_idea_AST_ragnar_colvin" #small="GFX_idea_generic_navy_europe_2"
 			}
 		}
-		instance = {
+		advisor={
+			slot = navy_chief
+			idea_token = AST_ragnar_colvin
 			allowed = {
-				NOT = {
-					has_dlc = "Together for Victory"
-				}
+				original_tag = AST
 			}
-			name=AST_ragnar_colvin
-			portraits={
-				army={
-					small="GFX_idea_generic_navy_europe_2"
-				}
+			traits = {
+				navy_chief_reform_2
 			}
-			advisor={
-				slot = navy_chief
-				idea_token = AST_ragnar_colvin
-				allowed = {
-					original_tag = AST
-				}
-				traits = {
-					navy_chief_reform_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
@@ -603,58 +399,26 @@ characters={
 	### AIR CHIEFS ###
 
 	AST_richard_williams={
-		instance = {
-			allowed = {
-				has_dlc = "Together for Victory"
-			}
-			name=AST_richard_williams
-			portraits={
-				army={
-					small="GFX_idea_AST_richard_williams" #small="GFX_idea_generic_air_europe_1"
-				}
-			}
-			advisor={
-				slot = air_chief
-				idea_token = AST_richard_williams
-				allowed = {
-					original_tag = AST
-				}
-				traits = {
-					air_chief_safety_3
-				}
-				cost = 200
-				ai_will_do = {
-					factor = 1.000
-				}
+		name=AST_richard_williams
+		portraits={
+			army={
+				small="GFX_idea_AST_richard_williams" #small="GFX_idea_generic_air_europe_1"
 			}
 		}
-		instance = {
+		advisor={
+			slot = air_chief
+			idea_token = AST_richard_williams
 			allowed = {
-				NOT = {
-					has_dlc = "Together for Victory"
-				}
+				original_tag = AST
 			}
-			name=AST_richard_williams
-			portraits={
-				army={
-					small="GFX_idea_generic_air_europe_1"
-				}
+			traits = {
+				air_chief_safety_3
 			}
-			advisor={
-				slot = air_chief
-				idea_token = AST_richard_williams
-				allowed = {
-					original_tag = AST
-				}
-				traits = {
-					air_chief_safety_3
-				}
-				cost = 200
-				ai_will_do = {
-					factor = 1.000
-				}
+			cost = 200
+			ai_will_do = {
+				factor = 1.000
 			}
-		}
+		}		
 	}
 
 	AST_charles_burnett={
@@ -711,7 +475,7 @@ characters={
 		name=AST_clive_caldwell
 		portraits={
 			army={
-				small="GFX_idea_ENG_generic_land_5"
+				small="GFX_idea_generic_air_europe_1"
 			}
 		}
 		advisor={
@@ -733,117 +497,51 @@ characters={
 	
 	
 	AST_john_collins={
-		instance = {
-			allowed = {
-				has_dlc = "Together for Victory"
-			}
-			name=AST_john_collins
-			portraits={
-				army={
-					small="GFX_idea_AST_john_collins" #small="GFX_idea_generic_navy_europe_1"
-				}
-			}
-			advisor={
-				slot = high_command
-				idea_token = AST_john_collins
-				ledger = navy
-				allowed = {
-					original_tag = AST
-				}
-				traits = {
-					navy_capital_ship_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
+		name=AST_john_collins
+		portraits={
+			army={
+				small="GFX_idea_AST_john_collins" #small="GFX_idea_generic_navy_europe_1"
 			}
 		}
-		instance = {
+		advisor={
+			slot = high_command
+			idea_token = AST_john_collins
+			ledger = navy
 			allowed = {
-				NOT = {
-					has_dlc = "Together for Victory"
-				}
+				original_tag = AST
 			}
-			name=AST_john_collins
-			portraits={
-				army={
-					small="GFX_idea_generic_navy_europe_1"
-				}
+			traits = {
+				navy_capital_ship_2
 			}
-			advisor={
-				slot = high_command
-				idea_token = AST_john_collins
-				ledger = navy
-				allowed = {
-					original_tag = AST
-				}
-				traits = {
-					navy_capital_ship_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
 			}
-		}	
+		}		
 	}
 
 	AST_edmund_herring={
-		instance = {
-			allowed = {
-				has_dlc = "Together for Victory"
-			}
-			name=AST_edmund_herring
-			portraits={
-				army={
-					small="GFX_idea_AST_edmund_herring" #small="GFX_idea_generic_army_europe_1"
-				}
-			}
-			advisor={
-				slot = high_command
-				idea_token = AST_edmund_herring
-				ledger = army
-				allowed = {
-					original_tag = AST
-				}
-				traits = {
-					army_artillery_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
+		name=AST_edmund_herring
+		portraits={
+			army={
+				small="GFX_idea_AST_edmund_herring" #small="GFX_idea_generic_army_europe_1"
 			}
 		}
-		instance = {
+		advisor={
+			slot = high_command
+			idea_token = AST_edmund_herring
+			ledger = army
 			allowed = {
-				NOT = {
-					has_dlc = "Together for Victory"
-				}
+				original_tag = AST
 			}
-			name=AST_edmund_herring
-			portraits={
-				army={
-					small="GFX_idea_generic_army_europe_1"
-				}
+			traits = {
+				army_artillery_2
 			}
-			advisor={
-				slot = high_command
-				idea_token = AST_edmund_herring
-				ledger = army
-				allowed = {
-					original_tag = AST
-				}
-				traits = {
-					army_artillery_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
 			}
-		}	
+		}		
 	}
 
 	AST_arthur_drakeford={
@@ -883,16 +581,9 @@ characters={
 				original_tag = AST
 				has_dlc = "Together for Victory"
 			}
+			cost = 150.000
 			available = {
-				if = {
-					limit = {
-						has_global_flag = ast_tfv_focus_tree
-					}
-					has_completed_focus = AST_australian_army_catering_corps
-				}
-				else = {
-					has_completed_focus = AST_R56_australian_army_catering_corps
-				}
+				has_completed_focus = AST_australian_army_catering_corps
 			}
 			traits = {
 				army_logistics_2
@@ -927,48 +618,20 @@ characters={
 	}
 	
 	AST_robert_g_menzies={
-		instance = {
-			allowed = {
-				has_dlc = "Together for Victory"
-			}
-			name=AST_robert_g_menzies
-			portraits={
-				army={
-					small="GFX_idea_AST_robert_g_menzies" #small="GFX_idea_generic_political_advisor_europe_2"
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = AST_robert_g_menzies
-				allowed = {
-					original_tag = AST
-				}
-				traits = {
-					backroom_backstabber 
-				}
+		name=AST_robert_g_menzies
+		portraits={
+			army={
+				small="GFX_idea_AST_robert_g_menzies" #small="GFX_idea_generic_political_advisor_europe_2"
 			}
 		}
-		instance = {
+		advisor={
+			slot = political_advisor
+			idea_token = AST_robert_g_menzies
 			allowed = {
-				NOT = {
-					has_dlc = "Together for Victory"
-				}
+				original_tag = AST
 			}
-			name=AST_robert_g_menzies
-			portraits={
-				army={
-					small="GFX_idea_generic_political_advisor_europe_2"
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = AST_robert_g_menzies
-				allowed = {
-					original_tag = AST
-				}
-				traits = {
-					backroom_backstabber 
-				}
+			traits = {
+				backroom_backstabber 
 			}
 		}		
 	}
@@ -1014,70 +677,35 @@ characters={
 			traits = {
 				silent_workhorse 
 			}
-
-			ai_will_do = {
-				factor = 10
-			}			
 			available = {
 				if = {
 					limit = {
 						has_dlc = "Together for Victory"
-						has_global_flag = ast_tfv_focus_tree
 					}
-					has_completed_focus = AST_support_the_policy_of_appeasement
-				}
-				else = {
-					has_government = democratic
+					has_completed_focus = AST_support_the_policy_of_appeasement 
 				}
 			}
 		}		
 	}
 
 	AST_jack_beasley={
-		instance = {
+		name=AST_jack_beasley
+		portraits={
+			army={
+				small="GFX_idea_AST_jack_beasley" #small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AST_jack_beasley
 			allowed = {
+				original_tag = AST
 				has_dlc = "Together for Victory"
 			}
-			name=AST_jack_beasley
-			portraits={
-				army={
-					small="GFX_idea_AST_jack_beasley" #small="GFX_idea_generic_political_advisor_europe_3"
-				}
+			traits = {
+				war_industrialist 
 			}
-			advisor={
-				slot = political_advisor
-				idea_token = AST_jack_beasley
-				allowed = {
-					original_tag = AST
-				}
-				traits = {
-					war_industrialist 
-				}
-			}	
-		}
-		instance = {
-			allowed = {
-				NOT = {
-					has_dlc = "Together for Victory"
-				}
-			}
-			name=AST_jack_beasley
-			portraits={
-				army={
-					small="GFX_idea_generic_political_advisor_europe_3"
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = AST_jack_beasley
-				allowed = {
-					original_tag = AST
-				}
-				traits = {
-					war_industrialist 
-				}
-			}	
-		}	
+		}		
 	}
 
 	AST_frank_forde={
@@ -1092,6 +720,7 @@ characters={
 			idea_token = AST_frank_forde
 			allowed = {
 				original_tag = AST
+				has_dlc = "Together for Victory"
 			}
 			traits = {
 				compassionate_gentleman 
@@ -1114,25 +743,19 @@ characters={
 			}
 			available = {
 				if = {
-					limit = { 
+					limit = {
 						has_dlc = "Together for Victory"
-						has_global_flag = ast_tfv_focus_tree
 					}
-					has_completed_focus = AST_support_the_centre_party
+					has_completed_focus = AST_support_the_centre_party 
 				}
 				if = {
-					limit = { 
-						NOT = { has_global_flag = ast_tfv_focus_tree }
+					limit = {
+						has_dlc = "Man the Guns"
 					}
-					OR = {
-						has_completed_focus = AST_R56_third_time_lucky
-						has_completed_focus = AST_R56_australia_first
+					NOT = {
+						has_autonomy_state = autonomy_supervised_state
 					}
 				}
-				if = {
-					limit = { has_dlc = "Man the Guns" }	
-					NOT = { has_autonomy_state = autonomy_supervised_state }
-				}				
 			}
 			traits = {
 				fascist_demagogue 
@@ -1143,27 +766,7 @@ characters={
 				}
 			}
 			ai_will_do = {
-				factor = 0
-				modifier = {
-					OR = {
-						has_idea = fascist_influence
-						has_idea = AST_abandon_the_westminster_system_fascism
-					}
-					
-					NOT = {
-						OR = {
-							AND = {
-								is_subject = yes
-								NOT = {
-									has_government = fascism
-								}
-							}
-							fascism > 0.7
-							fascism < 0.15
-						}						
-					}
-					add = 20
-				}				
+				factor = 0.000
 			}
 		}		
 	}
@@ -1183,19 +786,19 @@ characters={
 			}
 			available = {
 				if = {
-					limit = { 
+					limit = {
 						has_dlc = "Together for Victory"
-						has_global_flag = ast_tfv_focus_tree
 					}
-					has_completed_focus = AST_empower_the_workers
-				}
-				else ={
-					has_completed_focus = AST_R56_appeal_to_the_labour_dissidents
+					has_completed_focus = AST_empower_the_workers 
 				}
 				if = {
-					limit = { has_dlc = "Man the Guns" }	
-					NOT = { has_autonomy_state = autonomy_supervised_state }
-				}				
+					limit = {
+						has_dlc = "Man the Guns"
+					}
+					NOT = {
+						has_autonomy_state = autonomy_supervised_state
+					}
+				}
 			}
 			traits = {
 				communist_revolutionary 
@@ -1212,329 +815,50 @@ characters={
 	}
 	
 	AST_arthur_calwell={
-		instance = {
-			allowed = {
-				has_dlc = "Together for Victory"
-			}
-			name=AST_arthur_calwell
-			portraits={
-				army={
-					small="GFX_idea_AST_arthur_calwell" #small="GFX_idea_generic_democratic_reformer_western_european_2d"
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = AST_arthur_calwell
-				allowed = {
-					original_tag = AST
-				}
-				available = {
-					if = {
-						limit = { 
-							has_global_flag = ast_tfv_focus_tree
-						}
-						OR = {
-							has_completed_focus = AST_protect_the_homeland
-							has_completed_focus = AST_support_the_policy_of_appeasement
-						}
-					}
-					if = {
-						limit = { 
-							NOT = { has_global_flag = ast_tfv_focus_tree }
-						}
-						has_completed_focus = AST_R56_statute_of_westminster
-					}
-					if = {
-						limit = { has_dlc = "Man the Guns" }	
-						NOT = { has_autonomy_state = autonomy_supervised_state }
-					}				
-				}
-				traits = {
-					democratic_reformer 
-				}
-				do_effect = {
-					NOT = {
-						has_government = democratic 
-					}
-				}
-				ai_will_do = {
-					factor = 0.000
-				}
+		name=AST_arthur_calwell
+		portraits={
+			army={
+				small="GFX_idea_AST_arthur_calwell" #small="GFX_idea_generic_democratic_reformer_western_european_2d"
 			}
 		}
-		instance = {
+		advisor={
+			slot = political_advisor
+			idea_token = AST_arthur_calwell
 			allowed = {
+				original_tag = AST
+			}
+			available = {
+				if = {
+					limit = {
+						has_dlc = "Together for Victory"
+					}
+					or = {
+						has_completed_focus = AST_protect_the_homeland 
+						has_completed_focus = AST_support_the_policy_of_appeasement 
+					}
+				}
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+					}
+					NOT = {
+						has_autonomy_state = autonomy_supervised_state
+					}
+				}
+			}
+			traits = {
+				democratic_reformer 
+			}
+			do_effect = {
 				NOT = {
-					has_dlc = "Together for Victory"
+					has_government = democratic 
 				}
 			}
-			name=AST_arthur_calwell
-			portraits={
-				army={
-					small="GFX_idea_generic_democratic_reformer_western_european_2d"
-				}
-			}
-			advisor={
-				slot = political_advisor
-				idea_token = AST_arthur_calwell
-				allowed = {
-					original_tag = AST
-				}
-				available = {
-					if = {
-						limit = { 
-							NOT = { has_global_flag = ast_tfv_focus_tree }
-						}
-						has_completed_focus = AST_R56_statute_of_westminster
-					}
-					if = {
-						limit = { has_dlc = "Man the Guns" }	
-						NOT = { has_autonomy_state = autonomy_supervised_state }
-					}				
-				}
-				traits = {
-					democratic_reformer 
-				}
-				do_effect = {
-					NOT = {
-						has_government = democratic 
-					}
-				}
-				ai_will_do = {
-					factor = 0.000
-				}
-			}
-		}
-	}
-	###########added by featherus adapted by waffle #########
-
-	AST_essington_lewis={
-		name=AST_essington_lewis
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_2"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = AST_essington_lewis
-			allowed = {
-				original_tag = AST
-			}
-			traits = {
-				quartermaster_general 
+			ai_will_do = {
+				factor = 0.000
 			}
 		}		
 	}
 
-	AST_eric_harrison={
-		name=AST_eric_harrison
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_4"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = AST_eric_harrison
-			allowed = {
-				original_tag = AST
-			}
-			traits = {
-				captain_of_industry 
-			}
-		}		
-	}
-	AST_jack_lang={
-		name=AST_jack_lang
-		portraits={
-			army={
-				small="GFX_idea_AST_jack_lang"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = AST_jack_lang
-			allowed = {
-				original_tag = AST
-			}
-
-			visible = {
-				NOT = { has_global_flag = ast_tfv_focus_tree }
-			}
-
-			available = {
-				has_government = democratic
-			}
-
-			traits = {
-				ideological_crusader 
-			}
-		}		
-	}	
-
-	AST_adela_pankhurst={
-		name=AST_adela_pankhurst
-		portraits={
-			army={
-				small="GFX_idea_AST_adela_pankhurst"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = AST_adela_pankhurst
-			allowed = {
-				original_tag = AST
-			}
-			visible = {
-				NOT = { has_global_flag = ast_tfv_focus_tree }
-			}
-
-			available = {
-				OR = {
-					has_government = fascism
-					has_government = communism
-				}
-			}
-
-			traits = {
-				black_suffragette 
-			}
-		}		
-	}
-	AST_jack_patten={
-		name=AST_jack_patten
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_3"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = AST_jack_patten
-			allowed = {
-				original_tag = AST
-			}
-			visible = {
-				NOT = { has_global_flag = ast_tfv_focus_tree }
-			}
-
-			available = {
-				OR = {
-					has_government = fascism
-					has_government = communism
-				}
-			}
-
-			traits = {
-				aboriginal_journalist 
-			}
-		}		
-	}
-	AST_william_ferguson={
-		name=AST_william_ferguson
-		portraits={
-			army={
-				small="GFX_idea_AST_william_ferguson"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = AST_william_ferguson
-			allowed = {
-				original_tag = AST
-			}
-			visible = {
-				NOT = { has_global_flag = ast_tfv_focus_tree }
-			}
-
-			available = {
-				OR = {
-					has_government = fascism
-					has_government = communism
-				}
-			}
-
-			traits = {
-				aboriginal_rights_activist 
-			}
-		}		
-	}
-	AST_alexander_rud_mills={
-		name=AST_alexander_rud_mills
-		portraits={
-			army={
-				small="GFX_idea_AST_alexander_rud_mills"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = AST_alexander_rud_mills
-			allowed = {
-				original_tag = AST
-			}
-			visible = {
-				NOT = { has_global_flag = ast_tfv_focus_tree }
-			}
-
-			available = {
-				has_government = fascism
-			}
-
-			traits = {
-				odinist 
-			}
-		}		
-	}
-	AST_francis_de_groot={
-		name=AST_francis_de_groot
-		portraits={
-			army={
-				small="GFX_AST_francis_de_groot_small"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = AST_francis_de_groot
-			allowed = {
-				original_tag = AST
-			}
-			visible = {
-				NOT = { has_global_flag = ast_tfv_focus_tree }
-			}
-
-			available = {
-				has_government = fascism
-			}
-
-			traits = {
-				prince_of_terror 
-			}
-		}		
-	}	
-	AST_william_mackay ={ #hesitated with AST_geoffrey_reed
-		name = "William MacKay"
-		portraits={
-			civilian={
-				small="GFX_idea_generic_head_of_intelligence_western_european_2d"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = AST_william_mackay
-			available = {
-				has_intelligence_agency = yes
-			}					
-			visible = {
-				has_dlc = "La Resistance"
-			}
-
-			allowed = {
-				original_tag = AST 
-			}
-			
-			traits = { head_of_intelligence }
-		}
-	}				
 	#Illusive Gentleman auto-generated
 }

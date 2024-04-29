@@ -7,648 +7,284 @@ characters={
 				large="GFX_portrait_POL_karl_albrecht"
 			}
 		}
-	}	
-	#political advisors
-	CZKE_jan_antonin_bata = {
-		name="Jan Antonín Baťa"
-		#desc = CZKE_jan_antonin_bata_desc
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_1"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = CZKE_jan_antonin_bata
-			allowed = {	
-				original_tag = CZE
-			}
-			available = { 
-				has_completed_focus = CZKE_support_consumer_goods_industry
-			}
-			traits = {
-				king_of_the_shoes
-			}
-			cost = 50
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
 	}
-
-	CZKE_emil_kolben = {
-		name="Emil Kolben"
-		#desc = CZKE_emil_kolben_desc
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_2"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = CZKE_emil_kolben
-			allowed = {	
-				original_tag = CZE
-			}
-			available = { 
-				has_completed_focus = CZKE_support_strategic_industry
-			}
-			traits = {
-				war_industrialist
-			}
-			cost = 50
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
-
-	CZKE_karel_husarek = {
-		name="Gen. Karel Husárek"
-		#desc = CZKE_karel_husarek_desc
-		portraits={
-			army={
-				small="GFX_idea_generic_army_europe_2"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = CZKE_karel_husarek
-			allowed = {	
-				original_tag = CZE
-			}
-			available = { 
-				has_completed_focus = CZKE_rop
-			}
-			traits = {
-				rop_director
-			}
-			cost = 50
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
-
-	CZKE_jan_netik = {
-		name="Gen. Jan Netík"
-		#desc = CZKE_jan_netik_desc
-		portraits={
-			army={
-				small="GFX_idea_generic_army_europe_3"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = CZKE_jan_netik
-			allowed = {	
-				original_tag = CZE
-			}
-			available = { 
-				has_completed_focus = CZKE_armament_program
-			}
-			traits = {
-				armaments_organizer
-			}
-			cost = 50
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
-
-	CZKE_milan_hodza = {
-		name="Milan Hodža"
-		#desc = "CZKE_milan_hodza_desc"
+	CZE_edvard_benesh={
+		name="Edvard Beneš"
 		portraits={
 			civilian={
-				large = GFX_CZE_Portrait_milan_hodza
-			}
-			army={
-				small="GFX_idea_generic_political_advisor_europe_2"
+				large=GFX_portrait_Edvard_Benes
 			}
 		}
 		country_leader={
 			ideology=conservatism
-			traits = { ideological_groupie compassionate_gentleman }
-			expire="1965.1.1"
+			expire="1965.1.1.1"
 			id=-1
 		}
+	}
+
+	CZE_jaroslav_krejchi={
+		name="Jaroslav Krejčí"
+		portraits={
+			civilian={
+				large=GFX_portrait_Jaroslav_Krejci
+			}
+		}
+		country_leader={
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	CZE_frantishek_havlik={
+		name=CZE_frantishek_havlik
+		portraits={
+			civilian={
+				large=GFX_portrait_CZE_frantishek_havlik
+			}
+		}
+		country_leader={
+			ideology=oligarchism
+			traits={ eager_collaborator captain_of_industry }
+			expire="1942.1.1.12"
+			id=-1
+		}
+	}
+
+	CZE_klement_gottwald={
+		name=CZE_klement_gottwald
+		portraits={
+			army={
+				small=GFX_portrait_CZE_klement_gottwald_small
+			}
+			civilian={
+				large=GFX_portrait_CZE_klement_gottwald
+			}
+		}
 		advisor={
-			slot = political_advisor
-			idea_token = CZKE_milan_hodza
-			allowed = {	
+			slot = navy_chief
+			idea_token = CZE_klement_gottwald
+			allowed = {
 				original_tag = CZE
 			}
-			do_effect  = {
-				not  = {
-					has_government  = democratic 
-				}
+			traits = {
+				navy_chief_reform_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		country_leader={
+			ideology=stalinism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+	CZE_vojtyech_luzha={
+		name=CZE_vojtyech_luzha
+		portraits={
+			army={
+				large="GFX_Portrait_czechoslovakia_vojtech_luza"
+				small=GFX_portrait_CZE_vojtyech_luzha_small
+			}
+		}
+		field_marshal={
+			traits={ offensive_doctrine fast_planner }
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+
+	CZE_josef_shnejdarek={
+		name=CZE_josef_shnejdarek
+		portraits={
+			army={
+				large="GFX_Portrait_czechoslovakia_josef_snejdarek"
+				small=GFX_portrait_CZE_josef_shnejdarek_small
+			}
+		}
+		field_marshal={
+			traits={ defensive_doctrine thorough_planner }
+			skill=3
+			attack_skill=3
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+
+	CZE_richard_tesarzhik={
+		name=CZE_richard_tesarzhik
+		portraits={
+			army={
+				large="GFX_Portrait_czechoslovakia_richard_tesarik"
+				small=GFX_portrait_CZE_richard_tesarzhik_small
+			}
+		}
+		corps_commander={
+			traits={ armor_officer }
+			skill=2
+			attack_skill=4
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+
+	CZE_sergej_vojcechovsky={
+		name=CZE_sergej_vojcechovsky
+		portraits={
+			army={
+				large="GFX_Portrait_czechoslovakia_sergej_vojcechovsky"
+				small=GFX_portrait_CZE_sergej_vojcechovsky_small
+			}
+		}
+		corps_commander={
+			traits={ winter_specialist }
+			skill=3
+			attack_skill=4
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+
+
+	### THEORISTS ###
+
+	CZE_karel_vaclav_petrik={
+		name="Karel Václav Petrík"
+		portraits={
+			army={
+				small="GFX_idea_CZE_karel_vaclav_petrik"
+			}
+		}
+		advisor={
+			cost = 100
+			slot = theorist
+			idea_token = CZE_karel_vaclav_petrik
+			ledger = army
+			allowed = {
+				original_tag = CZE
+			}
+			
+			traits = {
+				military_theorist
+			}
+		}		
+	}
+
+	CZE_alois_vicherek={
+		name=CZE_alois_vicherek
+		portraits={
+			army={
+				small="GFX_idea_CZE_alois_vicherek"
+			}
+		}
+		advisor={
+			cost = 100
+			slot = theorist
+			idea_token = CZE_alois_vicherek
+			ledger = air
+			allowed = {
+				original_tag = CZE
+			}
+			
+			traits = {
+				air_warfare_theorist
+			}
+		}
+	}
+
+
+	### ARMY CHIEFS ###
+
+	CZE_rudolf_viest={
+		name=CZE_rudolf_viest
+		portraits={
+			army={
+				small="GFX_idea_CZE_rudolf_viest"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = CZE_rudolf_viest
+			allowed = {
+				original_tag = CZE
 			}
 			traits = {
-				democratic_reformer
+				army_chief_offensive_2
 			}
-			cost = 150
+			cost = 100
+			ai_will_do = {
+				factor = 0.500
+			}
+		}
+	}
+
+	CZE_ludvik_krejci={
+		name=CZE_ludvik_krejci
+		portraits={
+			army={
+				small="GFX_idea_CZE_ludvik_krejci"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = CZE_ludvik_krejci
+			allowed = {
+				original_tag = CZE
+			}
+			traits = {
+				army_chief_defensive_2
+			}
+			cost = 100
 			ai_will_do = {
 				factor = 1.000
 			}
 		}
 	}
 
-	CZKE_radola_gajda = {
-		name="Radola Gajda"
-		#desc = "CZKE_radola_gajda_desc"
+	CZE_ludvik_svoboda={
+		name=CZE_ludvik_svoboda
 		portraits={
-			civilian={
-				large= GFX_CZE_Portrait_radola_gajda
-				small="GFX_idea_CZE_radola_gajda2"
-			}
 			army={
-				small="GFX_idea_CZE_radola_gajda1"
-			}
-		}
-		country_leader={
-			ideology=fascism_ideology
-			traits = {
-				dislikes_germany
-				dictator
-			}
-			expire="1965.1.1"
-			id=-1
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = CZKE_radola_gajda_political_advisor
-			allowed = {	
-				original_tag = CZE
-			}
-			available = {
-				OR = { 
-					has_completed_focus = CZKE_czech_fascism_onrise 
-					has_government = communism
-				}
-			}
-			do_effect  = {
-				not  = {
-					has_government  = fascism 
-				}
-			}
-			traits = {
-				fascist_demagogue
-			}
-			cost = 150
-			ai_will_do = { 
-				factor = 0 
-				modifier = {
-					add = 10
-					has_idea = CZKE_state_defense_law_idea
-				}			
+				small="GFX_idea_CZE_ludvik_svoboda"
 			}
 		}
 		advisor={
 			slot = army_chief
-			idea_token = CZKE_radola_gajda_army_chief
-			allowed = {	
+			idea_token = CZE_ludvik_svoboda
+			allowed = {
 				original_tag = CZE
-			}
-			available = {
-				has_country_flag = legionary_government
-				NOT = { has_government = fascism }
 			}
 			traits = {
 				army_chief_morale_3
 			}
-			cost = 50
-			ai_will_do = { 
-				factor = 1		
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = CZKE_radola_gajda_high_command
-			allowed = {	
-				original_tag = CZE
-			}
-			available = {
-				has_country_flag = republic_defense_government
-				NOT = { has_government = fascism }
-			}
-			traits = {
-				army_regrouping_2
-			}
-			cost = 50
-			ai_will_do = { 
-				factor = 1		
-			}
-		}
-	}
-
-	CZKE_klement_gottwald = {
-		name="Klement Gottwald"
-		#desc = CZKE_klement_gottwald_desc
-		portraits={
-			civilian={
-				large="gfx/leaders/CZE/Portrait_Czech_Klement_Gottwald.dds"
-			}
-			army={
-				small="GFX_idea_generic_political_advisor_europe_3"
-			}
-		}
-		country_leader={
-			ideology=stalinism
-			traits = {
-				stalins_puppet
-			}
-			expire="1965.1.1"
-			id=-1
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = CZKE_klement_gottwald
-			allowed = {	
-				original_tag = CZE
-			}
-			available = {
-				OR = { 
-					has_completed_focus = CZKE_strengthen_communism 
-					has_government = fascism
-					has_government = communism
-				}
-				if = {
-					limit = {
-						has_dlc = "Man the Guns"
-					}
-					NOT = {
-						has_autonomy_state = autonomy_supervised_state
-					}
-				}				
-			}
-			do_effect  = {
-				not  = {
-					has_government  = fascism 
-				}
-			}
-			traits = {
-				communist_revolutionary
-			}
-			cost = 150
-			ai_will_do = { 
-				factor = 0 
-				modifier = {
-					add = 10
-					has_idea = CZKE_press_law_idea
-				}			
-			}
-		}
-	}
-
-	CZKE_prokop_drtina = {
-		name="Prokop Drtina"
-		#desc = CZKE_prokop_drtina_desc
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_2"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = CZKE_prokop_drtina
-			allowed = {	
-				original_tag = CZE
-			}
-			traits = {
-				silent_workhorse
-			}
-			cost = 150
-			ai_will_do = { 
-				factor = 1		
-			}
-		}
-	}
-
-	CZE_franz_joseph_ii = {
-		name="Franz Joseph II"
-		portraits={
-			civilian={
-				small="GFX_idea_LIE_advisor_franz_joseph_ii"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = CZE_franz_joseph_ii
-			allowed = {	
-				original_tag = CZE
-			}
-			visible = {
-				has_country_flag = LIE_prince_in_exile
-				LIE = {
-					NOT = {
-						has_government = neutrality
-					}
-				}
-				NOT = {
-					has_government = communism
-				}
-			}
-			traits = {
-				LIE_the_exiled_prince
-			}
-			cost = 150
-			ai_will_do = { 
-				factor = 1		
-			}
-		}
-	}
-	#theorists
-
-	CZKE_silvestr_blaha = {
-		name="Silvestr Bláha"
-		#desc = CZKE_silvestr_blaha_desc
-		portraits={
-			army={
-				small="GFX_idea_generic_army_europe_2"
-			}
-		}
-		advisor={
-			slot = theorist
-			idea_token = CZKE_silvestr_blaha
-			allowed = {	
-				original_tag = CZE
-			}
-			available = {
-				has_completed_focus = CZKE_military_science_institute
-			}
-			traits = {
-				superior_firepower_expert
-			}
-			cost = 50
+			cost = 200
 			ai_will_do = {
-				factor = 0
-				modifier = {
-					has_tech = superior_firepower
-					add = 1
-				}
+				factor = 1.000
 			}
-		}
+		}		
 	}
 
-	CZKE_louis_eugene_faucher = {
-		name="Louis Eugene Faucher"
-		#desc = CZKE_louis_eugene_faucher_desc
-		portraits={
-			army={
-				small="GFX_idea_rene_prioux"
-			}
-		}
-		advisor={
-			slot = theorist
-			idea_token = CZKE_louis_eugene_faucher
-			allowed = {	
-				original_tag = CZE
-			}
-			available = {
-				has_completed_focus = CZKE_french_military_mission
-			}
-			traits = {
-				grand_battle_plan_expert
-			}
-			cost = 50
-			ai_will_do = {
-				factor = 0
-				modifier = {
-					has_tech = trench_warfare
-					add = 1
-				}
-			}
-		}
-	}
 
-	CZKE_holek_brothers = {
-		name="Václav Holek"
-		#desc = CZKE_holek_brothers_desc
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_1"
-			}
-		}
-		advisor={
-			slot = theorist
-			idea_token = CZKE_holek_brothers_theorist
-			allowed = {	
-				original_tag = CZE
-			}
-			available = {
-				has_completed_focus = CZKE_holek_brothers
-			}
-			traits = {
-				firearms_designer
-			}
-			research_bonus = {
-				infantry_weapons = 0.075
-			}
-			cost = 50
-			ai_will_do = {
-				factor = 0
-			}
-		}
-	}
+	### NAVY CHIEFS ###
 
-	CZE_josef_adam = {
-		name="Josef Adam"
-		portraits={
-			army={
-				small="GFX_idea_generic_air_europe_2"
-			}
-		}
-		advisor={
-			slot = theorist
-			idea_token = CZKE_louis_eugene_faucher
-			allowed = {	
-				original_tag = CZE
-			}
-			traits = {
-				air_warfare_theorist
-			}
-			cost = 50
-			ai_will_do = {
-				factor = 0
-			}
-		}
-	}
+	# Klement Gottwald up there (Communist Country Leader -> Stalinism)
 
-	#army chiefs
-
-	CZKE_ludvik_krejci = {
-		name="Ludvík Krejči"
-		#desc = CZKE_ludvik_krejci_desc
-		portraits={
-			army={
-				large="gfx/leaders/CZE/Portrait_Czech_Ludvik_Krejci.dds"
-				small="GFX_idea_generic_army_europe_3"
-			}
-		}
-		advisor={
-			slot = army_chief
-			idea_token = CZKE_ludvik_krejci_army_chief
-			allowed = {	
-				original_tag = CZE
-			}
-			available = {
-				has_country_flag = chief_ludvik_krejci_appointed
-				#added to avoid a crash/bug
-			}
-			traits = {
-				army_chief_defensive_2
-			}
-			cost = 150
-			ai_will_do = { 
-				factor = 1		
-			}
-		}
-		field_marshal={
-			traits = { war_hero infantry_officer homeland_connoisseur lucky defensive_doctrine}
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 2
-			legacy_id=-1
-		}
-	}
-
-	CZKE_vojtech_boris_luza = {
-		name="Vojtěch Boris Luža"
-		#desc = CZKE_vojtech_boris_luza_desc
-		portraits={
-			army={
-				large="GFX_Portrait_czechoslovakia_vojtech_luza"
-				small="GFX_idea_CZE_vojtech_luza"
-			}
-		}
-		allowed_civil_war = { 
-			has_government = democratic 
-			has_government = neutrality
-		}
-		advisor={
-			slot = army_chief
-			idea_token = CZKE_vojtech_boris_luza_army_chief
-			allowed = {	
-				original_tag = CZE
-			}
-			available = { 
-				has_country_flag = chief_luza_appointed
-			}
-			traits = {
-				army_chief_maneuver_2
-			}
-			cost = 50
-			ai_will_do = { 
-				factor = 1		
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = CZKE_vojtech_boris_luza_high_command
-			allowed = {	
-				original_tag = CZE
-			}
-			available = {
-				has_completed_focus = CZKE_military_education
-				NOT = { has_country_flag = chief_luza_appointed }
-			}
-			traits = {
-				army_armored_2
-			}
-			cost = 50
-			ai_will_do = { 
-				factor = 1		
-			}
-		}
-		corps_commander={
-			traits = { 
-				fast_planner
-			}
-			skill = 3
-			attack_skill = 4
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 1
-			legacy_id=-1
-		}
-	}
-
-	CZKE_lev_prchala = {
-		name="Lev Prchala"
-		portraits={
-			army={
-				large="gfx/leaders/CZE/Portrait_Czech_Lev_Prchala.dds"
-				small="GFX_idea_CZE_lev_prchala"
-			}
-		}
-		allowed_civil_war = { 
-			has_government = democratic 
-			has_government = neutrality
-		}
-		advisor={
-			slot = army_chief
-			#desc = CZKE_lev_prchala_desc
-			idea_token = CZKE_lev_prchala_army_chief
-			allowed = {	
-				original_tag = CZE
-			}
-			available = { 
-				has_country_flag = chief_prchala_appointed
-				hidden_trigger = {
-					has_unit_leader = 5650
-				}
-			}
-			traits = {
-				army_chief_offensive_2
-			}
-			cost = 50
-			ai_will_do = { 
-				factor = 1		
-			}
-		}
-		advisor={
-			slot = high_command
-			#desc = CZKE_lev_prchala_desc
-			idea_token = CZKE_lev_prchala_high_command
-			allowed = {	
-				original_tag = CZE
-			}
-			available = {
-				OR = { 
-					has_completed_focus = CZKE_military_coup has_completed_focus = CZKE_ban_communism 
-				}
-				NOT = { has_country_flag = chief_prchala_appointed }
-				hidden_trigger = {
-					has_unit_leader = 5650
-				}
-			}
-			traits = {
-				army_infantry_2
-			}
-			cost = 50
-			ai_will_do = { 
-				factor = 1		
-			}
-		}
-		#Add move to RUT in the future, he commanded the local forces during Hungarian invasion, he would oppose Ukrainian nationalists and Hungarians though
-		corps_commander={
-			traits = { caring_leader infantry_officer }
-			skill = 2
-			attack_skill = 1
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 1
-			legacy_id=5650
-		}
-	}
-
-	#navy chief 
-	CZE_antonin_hasal = {
-		name="Antonin Hasal"
+	CZE_antonin_hasal={
+		name=CZE_antonin_hasal
 		portraits={
 			army={
 				small="GFX_idea_generic_navy_europe_3"
@@ -657,295 +293,344 @@ characters={
 		advisor={
 			slot = navy_chief
 			idea_token = CZE_antonin_hasal
-			allowed = {	
+			allowed = {
 				original_tag = CZE
-			}
-			available = {
-				OR = {
-					amount_taken_ideas = {
-						amount > 0
-						slots = { navy_chief }
-					}
-					any_state = {
-						is_coastal = yes
-						is_controlled_by = ROOT
-					}
-				}
 			}
 			traits = {
 				navy_chief_maneuver_2
 			}
-			cost = 150
-			ai_will_do = { 
-				factor = 1		
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
 
-	CZE_zdenko_hudecek = {
-		name="Zdenko Hudeček"
+	### AIR CHIEFS ###
+
+	CZE_karel_janousek={
+		name=CZE_karel_janousek
 		portraits={
 			army={
-				large = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_1.dds"
-				small="GFX_idea_generic_navy_europe_2"
-			}
-		}
-		advisor={
-			slot = navy_chief
-			idea_token = CZE_zdenko_hudecek
-			allowed = {	
-				original_tag = CZE
-			}
-			available = {
-				OR = {
-					amount_taken_ideas = {
-						amount > 0
-						slots = { navy_chief }
-					}
-					any_state = {
-						is_coastal = yes
-						is_controlled_by = ROOT
-					}
-				}
-			}
-			traits = {
-				navy_chief_commerce_raiding_2
-			}
-			cost = 150
-			ai_will_do = { 
-				factor = 1		
-			}
-		}
-		navy_leader={
-			traits = { bold seawolf }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			maneuvering_skill = 1
-			coordination_skill = 2
-			legacy_id=-1
-		}
-	}
-
-	#air chief
-
-	CZE_karel_janousek = {
-		name="Karel Janoušek"
-		portraits={
-			army={
-				small="GFX_idea_generic_air_europe_3"
+				small="GFX_idea_CZE_karel_janousek"
 			}
 		}
 		advisor={
 			slot = air_chief
-			idea_token = CZE_karel_janousek_air_chief
-			allowed = {	
+			idea_token = CZE_karel_janousek
+			allowed = {
 				original_tag = CZE
 			}
-			#available = {
-			#	NOT = {
-			#		has_idea = CZE_karel_janousek2
-			#	}
-			#}
 			traits = {
-				air_chief_safety_3
+				air_chief_safety_2
 			}
-			cost = 150
-			ai_will_do = { 
-				factor = 1		
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = CZE_karel_janousek_high_comand
-			allowed = {	
-				original_tag = CZE
-			}
-			#available = {
-			#	NOT = {
-			#		has_idea = CZE_karel_janousek
-			#	}
-			#}
-			traits = {
-				air_air_combat_training_3
-			}
-			cost = 150
-			ai_will_do = { 
-				factor = 1		
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
 
-	CZE_jaroslav_fajfr = {
-		name="Jaroslav Fajfr"
+	CZE_jaroslav_fajfr={
+		name=CZE_jaroslav_fajfr
 		portraits={
 			army={
-				small="GFX_idea_generic_air_europe_2"
+				small="GFX_idea_CZE_jaroslav_fajfr"
 			}
 		}
 		advisor={
 			slot = air_chief
 			idea_token = CZE_jaroslav_fajfr
-			allowed = {	
+			allowed = {
 				original_tag = CZE
 			}
 			traits = {
 				air_chief_ground_support_2
 			}
-			cost = 150
-			ai_will_do = { 
-				factor = 1		
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
 
-	#high command
-	CZKE_jan_syrovy = {
-		name="Jan Syrový"
-		#desc = CZKE_jan_syrovy_desc
+
+	### MILITARY HIGH COMMAND ###
+
+	CZE_jan_golian={
+		name=CZE_jan_golian
 		portraits={
-			civilian={ 
-				large = GFX_CZE_Portrait_jan_syrovy
-			}
 			army={
-				small="GFX_idea_CZE_jan_syrovy"
+				small="GFX_idea_CZE_jan_golian"
 			}
-		}
-		country_leader={	#set as a leader of non-aligned party to reduce mr. generico appearance
-			ideology=oligarchism
-			traits = {
-				army_connections
-			}
-			expire="1965.1.1"
-			id=-1
 		}
 		advisor={
 			slot = high_command
-			idea_token = CZKE_jan_syrovy
-			allowed = {	
+			idea_token = CZE_jan_golian
+			ledger = army
+			allowed = {
 				original_tag = CZE
 			}
-			available = {
-				has_completed_focus = CZKE_ministry_of_defense
+			traits = {
+				army_regrouping_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	CZE_josef_frantisek={
+		name=CZE_josef_frantisek
+		portraits={
+			army={
+				small="GFX_idea_CZE_josef_frantisek"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CZE_josef_frantisek
+			ledger = air
+			allowed = {
+				original_tag = CZE
+			}
+			traits = {
+				air_air_superiority_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	CZE_karel_kuttelwascher={
+		name=CZE_karel_kuttelwascher
+		portraits={
+			army={
+				small="GFX_idea_CZE_karel_kuttelwascher"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CZE_karel_kuttelwascher
+			ledger = air
+			allowed = {
+				original_tag = CZE
+			}
+			traits = {
+				air_air_combat_training_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	CZE_frantisek_havel={
+		name=CZE_frantisek_havel
+		portraits={
+			army={
+				small="GFX_idea_CZE_frantisek_havel"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CZE_frantisek_havel
+			ledger = army
+			allowed = {
+				original_tag = CZE
 			}
 			traits = {
 				army_logistics_2
 			}
-			cost = 50
-			ai_will_do = { 
-				factor = 1		
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
 
-	#generals
-	CZE_josef_snejdarek={
-		name="Josef Šnejdárek"
+
+	### POLITICAL ADVISORS ###
+
+	CZE_vojtech_tuka={
+		name=CZE_vojtech_tuka
 		portraits={
 			army={
-				large="GFX_Portrait_czechoslovakia_josef_snejdarek"
+				small="GFX_idea_CZE_vojtech_tuka"
 			}
 		}
-		corps_commander={
-			traits = { career_officer thorough_planner }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 4
-			planning_skill = 2
-			logistics_skill = 1
-			legacy_id=-1
+		advisor={
+			slot = political_advisor
+			idea_token = CZE_vojtech_tuka
+			allowed  = {
+				original_tag  = CZE
+			}
+			traits  = {
+				prince_of_terror 
+			}
 		}
 	}
 
-	CZE_richard_tesarik={
-		name="Richard Tesařík"
+	CZE_ferdinand_catlos={
+		name=CZE_ferdinand_catlos
 		portraits={
 			army={
-				large="GFX_Portrait_czechoslovakia_richard_tesarik"
+				small="GFX_idea_CZE_ferdinand_catlos"
 			}
 		}
-		corps_commander={
-			traits = { armor_officer }
-			skill = 2
-			attack_skill = 4
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id=-1
+		advisor={
+			slot = political_advisor
+			idea_token = CZE_ferdinand_catlos
+			allowed  = {
+				original_tag  = CZE
+			}
+			traits  = {
+				quartermaster_general 
+			}
 		}
 	}
 
-	CZE_sergey_vojcehovsky={
-		name="Sergej Vojcechovský"
+	CZE_jozef_tiso={
+		name=CZE_jozef_tiso
 		portraits={
 			army={
-				large="GFX_Portrait_czechoslovakia_sergej_vojcechovsky"
+				small="GFX_idea_CZE_jozef_tiso"
 			}
 		}
-		corps_commander={
-			traits = { winter_specialist }
-			skill = 3
-			attack_skill = 4
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 1
-			legacy_id=-1
+		advisor={
+			slot = political_advisor
+			idea_token = CZE_jozef_tiso
+			allowed  = {
+				original_tag  = CZE
+			}
+			traits  = {
+				backroom_backstabber 
+			}
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}	
+	}
+
+	CZE_stefan_osusky={
+		name=CZE_stefan_osusky
+		portraits={
+			army={
+				small="GFX_idea_CZE_stefan_osusky"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CZE_stefan_osusky
+			allowed  = {
+				original_tag  = CZE
+			}
+			available  = {
+				if  = {
+					limit  = {
+						has_dlc = "Death or Dishonor"
+					}
+					has_completed_focus  = CZE_democratic_bastion 
+				}
+				if  = {
+					limit  = {
+						has_dlc = "Man the Guns"
+					}
+					not  = {
+						has_autonomy_state  = autonomy_supervised_state
+					}
+				}
+			}
+			traits  = {
+				democratic_reformer 
+			}
+			ai_will_do  = {
+				factor  = 0.000
+			}
 		}
 	}
 
-	CZE_bedrich_neumann={
-		name="Bedrich Neumann"
+	CZE_gustav_husak={
+		name=CZE_gustav_husak
 		portraits={
 			army={
-				large="gfx/leaders/CZE/r56_portrait_CZE_Bedrich_Neumann.dds"
+				small="GFX_idea_CZE_gustav_husak"
 			}
 		}
-		corps_commander={
-			traits = { infantry_officer }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id=-1
+		advisor={
+			slot = political_advisor
+			idea_token = CZE_gustav_husak
+			allowed  = {
+				original_tag  = CZE
+			}
+			available  = {
+				if  = {
+					limit  = {
+						has_dlc = "Death or Dishonor"
+					}
+					has_completed_focus  = CZE_go_left 
+				}
+				if  = {
+					limit  = {
+						has_dlc = "Man the Guns"
+					}
+					not  = {
+						has_autonomy_state  = autonomy_supervised_state
+					}
+				}
+			}
+			traits  = {
+				communist_revolutionary 
+			}
+			ai_will_do  = {
+				factor  = 0.000
+			}
 		}
+	}
+	
+	CZE_konrad_henlein={
+		name=CZE_konrad_henlein
+		portraits={
+			army={
+				small="GFX_idea_CZE_konrad_henlein"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CZE_konrad_henlein
+			allowed  = {
+				original_tag  = CZE
+			}
+			available  = {
+				if  = {
+					limit  = {
+						has_dlc = "Death or Dishonor"
+					}
+					has_completed_focus  = CZE_go_right 
+				}
+				if  = {
+					limit  = {
+						has_dlc = "Man the Guns"
+					}
+					not  = {
+						has_autonomy_state  = autonomy_supervised_state
+					}
+				}
+			}
+			traits  = {
+				fascist_demagogue 
+			}
+			ai_will_do  = {
+				factor  = 0.000
+			}
+		}		
 	}
 
-	CZE_josef_zmek={
-		name="Josef Zmek"
-		portraits={
-			army={
-				large="gfx/leaders/CZE/Portrait_Czech_Josef_Zmek.dds"
-			}
-		}
-		corps_commander={
-			traits = { infantry_officer }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			legacy_id=-1
-		}
-	}
-
-	CZE_josef_vortuba={
-		name="Josef Votruba"
-		portraits={
-			army={
-				large="gfx/leaders/CZE/Portrait_Czech_Josef_Votruba.dds"
-			}
-		}
-		corps_commander={
-			traits = { harsh_leader }
-			skill = 2
-			attack_skill = 1
-			defense_skill = 3
-			planning_skill = 1
-			logistics_skill = 2
-			legacy_id=-1
-		}
-	}
+	
 
 	# Illusive Gentleman auto-generated
 }
