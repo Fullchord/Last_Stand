@@ -1362,3 +1362,40 @@ if = {
 		icon = "GFX_GER_naval_bomber1_medium"
 	}
 }
+###STOCK PILE
+add_equipment_to_stockpile = {
+
+        type = infantry_equipment_1
+
+        amount = 12000
+}
+add_equipment_to_stockpile = {
+
+        type = motorized_equipment_1 
+
+        amount = 800
+}
+add_equipment_to_stockpile = {
+
+        type = train_equipment_1  
+
+        amount = 64
+}
+add_equipment_to_stockpile = {
+
+        type = support_equipment_1 
+
+        amount = 900
+}
+add_equipment_to_stockpile = {
+
+     	name = "Panzer II Ausf. a"
+		type = light_tank_chassis_2
+        amount = 600
+}
+add_equipment_to_stockpile = {
+
+        name = "Panzer I Ausf. A"
+		type = light_tank_chassis_1
+        amount = 50
+}
