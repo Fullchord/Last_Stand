@@ -1,0 +1,14 @@
+on_actions = {
+	on_startup = { 
+		effect = {
+			set_global_flag = { flag = VIC value = 0 }
+			SPR = {
+				add_ideas = no_faction
+			}
+			FIN = {
+				add_ideas = no_faction
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,189 @@
+operations = {
+
+    assist_holland = {
+        allowed = {
+            tag = ENG
+        }
+        fire_only_once = yes
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            available = {
+                HOL = {
+                    is_ai = yes
+                }
+                NOT = {
+                    7 = {
+                        is_controlled_by = HOL
+                    } 
+                }
+            }
+            targets = {
+                HOL
+            }
+            complete_effect = {
+                HOL = {
+                    add_equipment_to_stockpile = {
+                        type = convoy_1
+                        amount = 200
+                    }
+                    add_equipment_to_stockpile = {
+                        type = infantry_equipment_0
+                        amount = 10000
+                    }
+                    add_manpower = 100000
+                }
+            }
+    }
+    annex_South_Africa = {
+            # icon = generic_operation
+            allowed = {
+                tag = RAJ
+            }
+            fire_only_once = yes
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            available = {
+                SAF = {
+                    is_ai = yes
+                }
+                ENG = {
+                    has_completed_focus = uk_south_africa_focus
+                }
+            }
+            targets = {
+                SAF
+            }
+            complete_effect = {
+                SAF = {
+                    transfer_units_fraction = {
+                        target = RAJ
+                        size = 1
+                        stockpile_ratio = 1
+                        army_ratio = 1
+                        navy_ratio = 1
+                        air_ratio = 1
+                        keep_unit_leaders_trigger = {
+                            always = no
+                        }
+                    }
+                }
+                RAJ = {
+                    annex_country = {
+                        target = SAF
+                        transfer_troops = yes
+                    }
+                }
+                every_state = {
+                    limit = {
+                        is_core_of = SAF
+                        is_controlled_by = RAJ
+                    }
+                    add_core_of = RAJ
+                }
+            }
+
+        }
+		annex_Mexiko = {
+            # icon = generic_operation
+            allowed = {
+                tag = BRA
+            }
+            fire_only_once = yes
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            available = {
+                MEX = {
+                    is_ai = yes
+                    has_completed_focus = MEX_focus_soldaderas
+                }
+            }
+            targets = {
+                MEX
+            }
+            complete_effect = {
+                MEX = {
+                    transfer_units_fraction = {
+                        target = BRA
+                        size = 1
+                        stockpile_ratio = 1
+                        army_ratio = 1
+                        navy_ratio = 1
+                        air_ratio = 1
+                        keep_unit_leaders_trigger = {
+                            always = no
+                        }
+                    }
+                }
+                BRA = {
+                    annex_country = {
+                        target = MEX
+                        transfer_troops = yes
+                    }
+                }
+                every_state = {
+                    limit = {
+                        is_core_of = MEX
+                        is_controlled_by = BRA
+                    }
+                    add_core_of = BRA
+                }
+            }
+
+        }
+    annex_Irland = {
+            # icon = generic_operation
+            allowed = {
+                tag = FRA
+            }
+            fire_only_once = yes
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            available = {
+                AND = { IRE = {
+                         is_ai = yes
+                         }
+                        GER = { has_war_with = POL }
+                }
+                    }
+            targets = {
+                IRE
+            }
+            complete_effect = {
+                IRE = {
+                    transfer_units_fraction = {
+                        target = ENG
+                        size = 1
+                        stockpile_ratio = 1
+                        army_ratio = 1
+                        navy_ratio = 1
+                        air_ratio = 1
+                        keep_unit_leaders_trigger = {
+                            always = no
+                        }
+                    }
+                }
+                FRA = {
+                    annex_country = {
+                        target = IRE
+                        transfer_troops = yes
+                    }
+                }
+                every_state = {
+                    limit = {
+                        is_core_of = IRE
+                        is_controlled_by = FRA
+                    }
+                    add_compliance = 100
+                }
+            }
+
+        }
+}

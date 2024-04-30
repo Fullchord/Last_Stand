@@ -1,0 +1,1122 @@
+political_actions = {
+
+	move_capital_to_cascablanca = {
+		fire_only_once = yes
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			tag = FRA
+			NOT = {
+				controls_state = 16
+			}
+		}
+		complete_effect = {
+			set_capital = {
+				state = 461
+			}
+		}
+	}
+
+	move_capital_to_gabon = {
+		fire_only_once = yes
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			tag = FRA
+			NOT = {
+				controls_state = 16
+			}
+		}
+		complete_effect = {
+			set_capital = {
+				state = 539
+			}
+		}
+	}
+
+	fin_war_eco = {
+		fire_only_once = yes
+		allowed = {
+			tag = FIN
+		}
+		available = {
+			SOV = {
+				has_completed_focus = SOV_secure_leningrad
+			}
+		}
+		visible = {
+			tag = FIN
+		}
+		complete_effect = {
+			add_ideas = war_economy
+		}
+	}
+
+	fin_extensive_con = {
+		fire_only_once = yes
+		allowed = {
+			tag = FIN
+		}
+		available = {
+			SOV = {
+				has_completed_focus = SOV_secure_leningrad
+			}
+		}
+		visible = {
+			tag = FIN
+		}
+		complete_effect = {
+			add_ideas = extensive_conscription
+		}
+	}
+}
+
+operations = {
+
+	ITA_annex_ROM = {
+		# icon used to be here rip icon 04/29/2024
+		targets = {
+			ROM
+		}
+		fire_only_once = yes
+
+		available = {
+			original_tag = ITA
+			ROM = { is_ai = yes }
+		}
+		visible = {
+			original_tag = ITA
+			ROM = { is_ai = yes }
+			is_ai = NO
+			country_exists = ROM
+		}
+		complete_effect = {
+			ITA = { 
+
+                set_technology = { fuel_refining2 = 1				popup = no }
+				set_technology = { fuel_refining3 = 1				popup = no }
+				set_technology = { fuel_refining4 = 1				popup = no }
+				set_technology = { fuel_refining5 = 1 				popup = no}
+			}
+			hidden_effect = {
+			if = { limit = { ROM = { NOT = { has_completed_focus = ROM_danubian_transport_network}}} ROM = { complete_national_focus = ROM_danubian_transport_network }}
+			if = { limit = { ROM = { NOT = { has_completed_focus = ROM_malaxa}}} ROM = { complete_national_focus = ROM_malaxa }}
+			if = { limit = { ROM = { NOT = { has_completed_focus = ROM_hunedoara_steel_works}}} ROM = { complete_national_focus = ROM_hunedoara_steel_works }}
+			if = { limit = { ROM = { NOT = { has_completed_focus = ROM_invest_in_the_iar}}} ROM = { complete_national_focus = ROM_invest_in_the_iar }}
+			if = { limit = { ROM = { NOT = { has_completed_focus = ROM_expand_ploiesti_oil_production}}} ROM = { complete_national_focus = ROM_expand_ploiesti_oil_production }}
+			if = { limit = { ROM = { NOT = { has_completed_focus = ROM_german_romanian_oil_exploitation_company}}} ROM = { complete_national_focus = ROM_german_romanian_oil_exploitation_company }}
+			}
+			ITA = { annex_country = { target = ROM transfer_troops = yes }}
+			every_state = {
+				limit = {
+						is_core_of = ROM
+						is_controlled_by = ITA
+					}
+				set_compliance = 100
+			}
+		}
+	}
+	GER_annex_HUN = {
+		# icon used to be here rip icon 04/29/2024
+		targets = {
+			HUN
+		}
+		fire_only_once = yes
+
+		available = {
+			original_tag = GER
+			HUN = { is_ai = yes }
+			date > 1938.01.01
+		}
+		visible = {
+			original_tag = GER
+			HUN = { is_ai = yes }
+			is_ai = NO
+			country_exists = HUN
+		}
+		complete_effect = {
+			annex_country = { target = HUN transfer_troops = yes }
+			GER = { add_state_core = 155 }
+			GER = { add_state_core = 43 }
+			GER = { add_state_core = 154 }
+			GER = { add_state_core = 664 }
+			GER = { add_state_core = 45 }
+			GER = { add_state_core = 508 }
+			}
+	}
+	ITA_annex_BUL = {
+		# icon used to be here rip icon 04/29/2024
+		targets = {
+			BUL
+		}
+		fire_only_once = yes
+
+		available = {
+			original_tag = ITA
+			BUL = { is_ai = yes }
+		}
+		visible = {
+			original_tag = ITA
+			BUL = { is_ai = yes }
+			is_ai = NO
+			country_exists = BUL
+		}
+		complete_effect = {
+			annex_country = { target = BUL transfer_troops = yes }
+			every_state = {
+				limit = {
+						is_core_of = BUL
+						is_controlled_by = ITA
+					}
+				set_compliance = 100
+			}
+		}
+	}
+	FRA_take_north_africa = {
+		visible = {
+			has_completed_focus = FRA_intervention_in_north_africa
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 70
+		remove_effect = {
+			#transfer_state = 513
+			#transfer_state = 461
+			#transfer_state = 462
+			#transfer_state = 514
+			#transfer_state = 459
+			#transfer_state = 460
+			#transfer_state = 665
+			#transfer_state = 458
+			GER = {
+				add_to_faction = VIC
+				#country_event = LaR_france_vichy_notification_events.11
+			}
+			VIC = {
+				declare_war_on = { target = FRA type = annex_everything }
+				declare_war_on = { target = ENG type = topple_government }
+				#country_event = LaR_france_vichy_notification_events.11
+			}
+		}
+	}
+	steal_soviet_anti_tank_research = {
+		icon = GFX_decision_generic_tank
+		allowed = {
+			tag = GER
+		}
+		visible = {
+			tag = GER
+			has_game_rule = {
+				rule = german_anti_tank_bonus
+				option = on
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_tech_bonus = {
+				name = SOV_soviet_artillery_tech_bonus_name_default
+				bonus = 1
+				uses = 2
+				category = artillery
+			}
+		}
+	}
+	# annex_ethiopia = {
+	# 	# icon = generic_operation
+	# 	allowed = {
+	# 		tag = ITA
+	# 	}
+	# 	available = {
+	# 		ETH = {
+	# 			is_ai = yes
+	# 		}
+	# 	}
+	# 	fire_only_once = yes
+	# 	cost = 0
+	# 	ai_will_do = {
+	# 		factor = 0
+	# 	}
+	# 	visible = {
+	# 		tag = ITA
+	# 	}
+	# 	targets = {
+	# 		ETH
+	# 	}
+	# 	complete_effect = {
+	# 		ETH = {
+	# 			transfer_units_fraction = {
+	# 				target = ITA
+	# 				size = 1
+	# 				stockpile_ratio = 1
+	# 				army_ratio = 0
+	# 				navy_ratio = 1
+	# 				air_ratio = 1
+	# 				keep_unit_leaders_trigger = {
+	# 					always = no
+	# 				}
+	# 			}
+	# 		}
+	# 		ITA = {
+	# 			add_equipment_to_stockpile = {
+	# 				type = infantry_equipment_0
+	# 				amount = 7100
+	# 			}
+	# 			annex_country = {
+	# 				target = ETH
+	# 				transfer_troops = no
+	# 			}
+	# 		}
+	# 		hidden_effect = {
+	# 			ITA_end_the_italo_ethiopian_war = yes
+	# 		}
+	# 		every_state = {
+	# 			limit = {
+	# 				is_core_of = ETH
+	# 				is_controlled_by = ITA
+	# 			}
+	# 			add_compliance = 100
+	# 		}
+	# 		delete_unit_template_and_units = {
+	# 			division_template = "Chitet Sefari"
+	# 			disband = yes				# if yes, equipment will be returned to country equipment. default is no
+	# 		}
+	# 		delete_unit_template_and_units = {
+	# 			division_template = "Kebur Zabagna"
+	# 			disband = yes				# if yes, equipment will be returned to country equipment. default is no
+	# 		}
+	# 	}
+	# }
+	annex_siam = {
+		# icon = generic_operation
+		allowed = {
+			tag = JAP
+		}
+		available = {
+			SIA = {
+				is_ai = yes
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		ai_will_do = {
+			factor = 0
+		}
+		visible = {
+			tag = JAP
+		}
+		targets = {
+			SIA
+		}
+		complete_effect = {
+			SIA = {
+				transfer_units_fraction = {
+					target = JAP
+					size = 1
+					stockpile_ratio = 1
+					army_ratio = 1
+					navy_ratio = 1
+					air_ratio = 1
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+				}
+			}
+			JAP = {
+				annex_country = {
+					target = SIA
+					transfer_troops = yes
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = SIA
+					is_controlled_by = JAP
+				}
+				add_compliance = 100
+			}
+		}
+	}
+	annex_manchukuo = {
+		# icon = generic_operation
+		allowed = {
+			tag = JAP
+		}
+		available = {
+			MAN = {
+				is_ai = yes
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		ai_will_do = {
+			factor = 0
+		}
+		visible = {
+			tag = JAP
+		}
+		targets = {
+			MAN
+		}
+		complete_effect = {
+			MAN = {
+				transfer_units_fraction = {
+					target = JAP
+					size = 1
+					stockpile_ratio = 1
+					army_ratio = 1
+					navy_ratio = 1
+					air_ratio = 1
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+				}
+			}
+			JAP = {
+				annex_country = {
+					target = MAN
+					transfer_troops = yes
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = MAN
+					is_controlled_by = JAP
+				}
+				add_compliance = 100
+			}
+		}
+	}
+	annex_new_zealand = {
+		# icon = generic_operation
+		allowed = {
+			tag = AST
+		}
+		fire_only_once = yes
+		cost = 0
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+			NZL = {
+				is_ai = yes
+			}
+			ENG = {
+                    has_completed_focus = uk_new_zealand_focus
+            }
+			NZL = {
+                    has_completed_focus = NZL_think_big
+            }
+
+		}
+		targets = {
+			NZL
+		}
+		complete_effect = {
+			NZL = {
+				transfer_units_fraction = {
+					target = AST
+					size = 1
+					stockpile_ratio = 1
+					army_ratio = 1
+					navy_ratio = 1
+					air_ratio = 1
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+				}
+			}
+			AST = {
+				annex_country = {
+					target = NZL
+					transfer_troops = yes
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = NZL
+					is_controlled_by = AST
+				}
+				add_core_of = AST
+			}
+		}
+	}
+	annex_canada = {
+		# icon = generic_operation
+		allowed = {
+			tag = ENG
+		}
+		fire_only_once = yes
+		cost = 0
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+			CAN = {
+				is_ai = yes
+			}
+		}
+		targets = {
+			CAN
+		}
+		complete_effect = {
+			CAN = {
+				transfer_units_fraction = {
+					target = ENG
+					size = 1
+					stockpile_ratio = 1
+					army_ratio = 1
+					navy_ratio = 1
+					air_ratio = 1
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+				}
+			}
+			ENG = {
+				annex_country = {
+					target = CAN
+					transfer_troops = yes
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = CAN
+					is_controlled_by = ENG
+				}
+				add_compliance = 50
+			}
+		}
+	}
+	annex_south_africa = {
+		# icon = generic_operation
+		allowed = {
+			tag = ENG
+		}
+		fire_only_once = yes
+		cost = 0
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+			SAF = {
+				is_ai = yes
+			}
+		}
+		targets = {
+			SAF
+		}
+		complete_effect = {
+			SAF = {
+				transfer_units_fraction = {
+					target = ENG
+					size = 1
+					stockpile_ratio = 1
+					army_ratio = 1
+					navy_ratio = 1
+					air_ratio = 1
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+				}
+			}
+			ENG = {
+				annex_country = {
+					target = SAF
+					transfer_troops = yes
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = SAF
+					is_controlled_by = ENG
+				}
+				add_compliance = 50
+			}
+		}
+	}
+	annex_british_raj = {
+		# icon = generic_operation
+		allowed = {
+			tag = ENG
+		}
+		fire_only_once = yes
+		cost = 0
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+			RAJ = {
+				is_ai = yes
+			}
+		}
+		targets = {
+			RAJ
+		}
+		complete_effect = {
+			RAJ = {
+				transfer_units_fraction = {
+					target = ENG
+					size = 1
+					stockpile_ratio = 1
+					army_ratio = 1
+					navy_ratio = 1
+					air_ratio = 1
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+				}
+			}
+			ENG = {
+				annex_country = {
+					target = RAJ
+					transfer_troops = yes
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = RAJ
+					is_controlled_by = ENG
+				}
+				add_compliance = 50
+			}
+		}
+	}
+	annex_australia = {
+		# icon = generic_operation
+		allowed = {
+			tag = ENG
+		}
+		fire_only_once = yes
+		cost = 0
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+			AST = {
+				is_ai = yes
+			}
+		}
+		targets = {
+			AST
+		}
+		complete_effect = {
+			AST = {
+				transfer_units_fraction = {
+					target = ENG
+					size = 1
+					stockpile_ratio = 1
+					army_ratio = 1
+					navy_ratio = 1
+					air_ratio = 1
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+				}
+			}
+			ENG = {
+				annex_country = {
+					target = AST
+					transfer_troops = yes
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = AST
+					is_controlled_by = ENG
+				}
+				add_compliance = 50
+			}
+		}
+	}
+	annex_philippines= {
+		# icon = generic_operation
+		allowed = {
+			tag = USA
+		}
+		fire_only_once = yes
+		cost = 0
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+			PHI = {
+				is_ai = yes
+			}
+		}
+		targets = {
+			PHI	
+		}
+		complete_effect = {
+			PHI = {
+				transfer_units_fraction = {
+					target = USA
+					size = 1
+					stockpile_ratio = 1
+					army_ratio = 1
+					navy_ratio = 1
+					air_ratio = 1
+					keep_unit_leaders_trigger = {
+						always = no
+					}
+				}
+			}
+			USA = {
+				annex_country = {
+					target = PHI
+					transfer_troops = yes
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = PHI 
+					is_controlled_by = USA
+				}
+				add_compliance = 100
+			}
+		}
+	}
+}
+
+SOV_spain = {
+	SOV_assist_republican_spain = {
+		icon = GFX_decision_SOV_secure_the_administration
+		fire_only_once = yes
+		cost = 0
+		available = {
+			has_global_flag = spanish_civil_war
+			not = {
+				has_global_flag = scw_over
+			}
+		}
+		complete_effect = {
+			SOV = {
+				army_experience = 300
+			}
+		}
+	}
+}
+
+auto_tech_rush = {
+	auto_at1 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1936.04.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = anti_tank_equipment_1
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+    auto_mech = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1936.12.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = mechanized_equipment_1
+                            version = 1
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+	auto_gun2 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1938.02.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = infantry_equipment_2
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+	auto_aa2 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1938.06.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = anti_air_equipment_2
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+		auto_at2 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1938.06.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = anti_tank_equipment_2
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+		auto_amtrak = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1939.01.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = amphibious_mechanized_equipment_1
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+		auto_at3 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1940.02.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = anti_tank_equipment_3
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+			auto_aa3 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1940.02.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = anti_air_equipment_3
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+		auto_gun3 = {
+            # icon = generic_operation
+            allowed = {
+            }
+            fire_only_once = no
+            cost = 0
+            ai_will_do = {
+                factor = 0
+            }
+            visible = {
+				NOT = {
+                        tag = HOL
+                    }
+			}
+            available = {
+                    date > 1940.03.01
+                }
+            complete_effect = {
+                SWE = {
+                    create_production_license = {
+                        target = ROOT
+                        equipment = {
+                            type = infantry_equipment_3
+                            version = 0
+                            new_prioritised = yes
+                        }
+                        cost_factor = 0
+                    }
+                }
+            }
+			}
+}
+
+
+MOD_countdown_to_victory_cat = {
+	MOD_countdown_to_allied_victory_mission = {
+
+		icon = generic_operation
+
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		days_mission_timeout = 365
+
+		activation = {
+			check_variable = {
+				global.allies_score > 6
+			}
+		}
+
+		cancel_trigger = {
+			check_variable = {
+				global.allies_score < 7
+			}
+		}
+
+		timeout_effect = {
+			GER = { news_event = { id = lastorical.2 } }
+		}
+		is_good = no
+		complete_effect = {
+
+		}
+	}
+	MOD_countdown_to_axis_victory_mission = {
+
+		icon = generic_operation
+
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		days_mission_timeout = 365
+
+		activation = {
+			check_variable = {
+				global.axis_score > 6
+			}
+		}
+
+		cancel_trigger = {
+			check_variable = {
+				global.axis_score < 7
+			}
+		}
+
+		timeout_effect = {
+			GER = { news_event = { id = lastorical.1 } }
+		}
+		is_good = no
+		complete_effect = {
+
+		}
+	}
+	# add_to_allied_score = {
+	# 	visible = {
+	# 		is_debug = yes
+	# 	}
+	# 	cost = 0
+	# 	complete_effect = {
+	# 		add_to_variable = {
+	# 			var = global.allies_score
+	# 			value = 1
+	# 		}
+	# 	}
+	# }
+	# add_to_axis_score = {
+	# 	visible = {
+	# 		is_debug = yes
+	# 	}
+	# 	cost = 0
+	# 	complete_effect = {
+	# 		add_to_variable = {
+	# 			var = global.axis_score
+	# 			value = 1
+	# 		}
+	# 	}
+	# }
+	# sub_from_allied_score = {
+	# 	visible = {
+	# 		is_debug = yes
+	# 	}
+	# 	cost = 0
+	# 	complete_effect = {
+	# 		subtract_from_variable = {
+	# 			var = global.allies_score
+	# 			value = 1
+	# 		}
+	# 	}
+	# }
+	# sub_from_axis_score = {
+	# 	visible = {
+	# 		is_debug = yes
+	# 	}
+	# 	cost = 0
+	# 	complete_effect = {
+	# 		subtract_from_variable = {
+	# 			var = global.axis_score
+	# 			value = 1
+	# 		}
+	# 	}
+	# }
+	# reset_scores = {
+	# 	visible = {
+	# 		is_debug = yes
+	# 	}
+	# 	cost = 0
+	# 	complete_effect = {
+	# 		set_variable = {
+	# 			var = global.axis_score
+	# 			value = 0
+	# 		}
+	# 		set_variable = {
+	# 			var = global.allies_score
+	# 			value = 0
+	# 		}
+	# 	}
+	# }
+
+	# test_start = {
+	# 	visible = {
+	# 		is_debug = yes
+	# 	}
+	# 	cost = 0
+	# 	complete_effect = {
+	# 		initilize_victory_system = yes
+	# 	}
+	# }
+
+}
